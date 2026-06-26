@@ -30,5 +30,5 @@ Cada `*.md` de domínio segue o template em `templates/data/semantic-layer-entry
 ## Integração
 
 - Framework: `rules/data/semantic-layer.md`
-- Projeto Umbra: complementar com `context/business.md` do consumidor
-- Irisys: mapear telas/relatórios conforme forem documentados
+- **Umbra:** fontes em `docs/processes/PROC_*.md` e `docs/specs/EF_IRS_*.md` do monorepo consumidor
+- Irisys: repositórios `Otus7/DriveAnalyticsFrontEnd`, `Otus7/DriveAnalyticsBackEnd`
