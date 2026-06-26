@@ -26,12 +26,16 @@ Usuário ↔ Orchestrator (único contato)
               ↓
     [Fast | Standard | Review | Technical Council]
               ↓
+    Domínios: Development · Data Intelligence · Business/Operations · QA/Validation
+              ↓
+    hybrid-flow-planner / data-orchestrator (quando aplicável)
+              ↓
     Skills sob demanda (nunca auto-iniciam)
               ↓
     Working Context → descartado ao finalizar
 ```
 
-Detalhes: `docs/ARCHITECTURE.md` · `workflows/modes.md`
+Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
 
 ## Estrutura do framework
 
@@ -47,7 +51,11 @@ Detalhes: `docs/ARCHITECTURE.md` · `workflows/modes.md`
 ├── checklists/
 ├── workflows/
 ├── context/           ← overlay do projeto consumidor (ver context/README.md)
-└── examples/
+│   └── semantic-layer/  ← camada semântica Otus/Irisys (templates)
+├── templates/data/    ← templates de dados/BI
+├── checklists/data/
+├── rules/data/
+└── examples/data/
 ```
 
 ## Hierarquia de precedência
@@ -70,7 +78,7 @@ Detalhes: `docs/ARCHITECTURE.md` · `workflows/modes.md`
 
 ## Tipos de demanda
 
-`bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `commercial` · `finance` · `deployment` · `support`
+`bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `commercial` · `finance` · `deployment` · `support`
 
 Mapeamento: `workflows/_index.md`
 
@@ -87,7 +95,37 @@ Mapeamento: `workflows/_index.md`
 | **Implementation Planner** | Plano técnico executável |
 | **Skill Builder** | Gerar novas skills no padrão |
 
-Lista completa de skills técnicas e meta: tabelas em versões anteriores permanecem válidas — ver `workflows/_index.md`.
+### Data Intelligence (v2.1+)
+
+| Skill | Papel |
+|-------|-------|
+| **data-orchestrator** | Sub-orquestrador de domínio de dados |
+| data-analyst | Análise e interpretação de dados |
+| business-data-analyst | Negócio → métricas e relatórios |
+| sql-architect | Design/review SQL, views, procedures |
+| query-optimizer | Performance de queries |
+| dba-reviewer | Segurança de alterações em banco |
+| data-validator | Consistência banco/API/tela/BI |
+| powerbi-specialist · dax-specialist | Power BI e DAX |
+| dashboard-designer · report-ux-reviewer | Dashboards e UX de relatório |
+| etl-specialist | Pipelines ETL |
+| semantic-layer-specialist | Camada semântica |
+| data-quality-reviewer | Qualidade de dados |
+
+### Task / Requirement / Hybrid (v2.1+)
+
+| Skill | Papel |
+|-------|-------|
+| task-analyst | Análise de task/ticket |
+| requirement-reviewer | Completude de requisitos |
+| acceptance-criteria-reviewer | Critérios de aceite testáveis |
+| business-rule-mapper | Regras de negócio → artefatos |
+| impact-analysis | Impacto de mudanças em dados |
+| hybrid-flow-planner | Plano para fluxos multi-domínio |
+| cross-domain-decision-maker | Decisão entre domínios |
+| report-implementation-planner | Plano de relatório end-to-end |
+
+Skill legada `data` preservada — roteia para especializadas. Lista completa: `workflows/_index.md` · `docs/DATA_INTELLIGENCE.md`.
 
 ## Technical Council
 
@@ -105,7 +143,7 @@ Processo (não skill): `workflows/technical-council.md`
 
 Resumo · Diagnóstico · Plano · **Modo** · Skills · Arquivos · Validações · Resultado · Como testar · Riscos · Próximos passos
 
-Template: `templates/final-response.md`
+Templates: `templates/final-response.md` · `templates/data/final-response-data.md` (demandas de dados/BI)
 
 ## Expansão
 

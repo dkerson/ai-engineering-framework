@@ -1,6 +1,6 @@
 # AI Engineering Framework
 
-**v2.0** — Biblioteca reutilizável de agentes com **Orquestração Inteligente Hierárquica** para Codex, Cursor e ferramentas baseadas em AGENTS.md.
+**v2.1** — Biblioteca reutilizável de agentes com **Orquestração Inteligente Hierárquica** para Codex, Cursor e ferramentas baseadas em AGENTS.md. Suporte a **Data Intelligence** (SQL, Power BI, BI) e **fluxos híbridos** (dev + dados + relatórios Umbra/Irisys).
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
@@ -12,6 +12,8 @@ Framework modular e **agnóstico de projeto**. O Orchestrator é o único agente
 Usuário ↔ Orchestrator
               ↓
     Fast | Standard | Review | Technical Council
+              ↓
+    Domínios + Hybrid Flow / Data Orchestrator
               ↓
     Skills sob demanda + Working Context
               ↓
@@ -60,6 +62,10 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 |-----------|----------|
 | [`AGENTS.md`](AGENTS.md) | Bootstrap para agentes |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Arquitetura e responsabilidades |
+| [`docs/DATA_INTELLIGENCE.md`](docs/DATA_INTELLIGENCE.md) | Domínio de dados/BI/SQL/Power BI |
+| [`docs/HYBRID_FLOWS.md`](docs/HYBRID_FLOWS.md) | Fluxos dev + dados + BI |
+| [`docs/USING_IN_PROJECTS.md`](docs/USING_IN_PROJECTS.md) | Umbra, Irisys e consumidores |
+| [`docs/UPDATE_FRAMEWORK.md`](docs/UPDATE_FRAMEWORK.md) | Atualizar submodule |
 | [`docs/INSTALL.md`](docs/INSTALL.md) | Submodule: instalar, atualizar, remover |
 | [`docs/VERSIONING.md`](docs/VERSIONING.md) | Semver e tags |
 | [`CHANGELOG.md`](CHANGELOG.md) | Histórico de versões |
@@ -68,7 +74,7 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 
 ## Stacks suportadas
 
-Node · NestJS · React · Next.js · Flutter · Python · Go · .NET · REST · Microserviços
+Node · NestJS · React · Next.js · Flutter · Python · Go · .NET · REST · SQL Server · Power BI · Microserviços
 
 Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
@@ -82,8 +88,11 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 ├── workflows/
 ├── templates/
 ├── checklists/
-├── context/        # overlay do projeto (não do framework)
-└── examples/
+├── context/        # overlay do projeto + semantic-layer/
+├── templates/data/ # pedidos SQL, relatórios, validação
+├── checklists/data/
+├── rules/data/
+└── examples/data/
 ```
 
 ## Criar nova skill
@@ -92,7 +101,7 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
 ## Versão
 
-Ver [`VERSION`](VERSION) — atual: **2.0.0**
+Ver [`VERSION`](VERSION) — atual: **2.1.0**
 
 ## Licença
 

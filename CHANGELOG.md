@@ -3,6 +3,47 @@
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 Versionamento segue [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [2.1.0] — 2026-06-25
+
+### Adicionado
+
+- **Data Intelligence Domain** — `data-orchestrator` como sub-orquestrador de dados
+- **22 skills novas:** data-analyst, business-data-analyst, sql-architect, query-optimizer, dba-reviewer, data-validator, powerbi-specialist, dax-specialist, dashboard-designer, report-ux-reviewer, etl-specialist, semantic-layer-specialist, data-quality-reviewer, task-analyst, requirement-reviewer, acceptance-criteria-reviewer, business-rule-mapper, impact-analysis, hybrid-flow-planner, cross-domain-decision-maker, report-implementation-planner
+- **Fluxos híbridos** — dev + dados + BI (`docs/HYBRID_FLOWS.md`, `workflows/hybrid-flows.md`)
+- **Camada semântica** — `context/semantic-layer/` (templates CTe, MDFe, financeiro, ...)
+- **Artefatos de dados:** `templates/data/` (12), `checklists/data/` (12), `rules/data/` (9), `examples/data/` (7)
+- **Workflows de dados:** data-sql, data-powerbi, data-report-frontend, data-divergence, data-procedure
+- **Documentação:** `docs/DATA_INTELLIGENCE.md`, `docs/HYBRID_FLOWS.md`, `docs/USING_IN_PROJECTS.md`, `docs/UPDATE_FRAMEWORK.md`
+- **Resposta para dados:** `templates/data/final-response-data.md`
+- Tipo de demanda `hybrid` no Orchestrator
+
+### Alterado
+
+- **Orchestrator** — detecção de domínios, Hybrid Flow, invocação de data-orchestrator
+- **Working Context** — seção Data Intelligence (tabelas, procedures, divergências, ...)
+- **Skill `data`** — evoluída como compatibilidade; roteamento para especializadas
+- **Workflow `data.md`** — pipeline via data-orchestrator
+- **AGENTS.md** e **README.md** — domínios e skills de dados
+
+### Preservado (compatibilidade)
+
+- Todas as skills v2.0 (39+) — nenhuma removida ou renomeada
+- Bootstrap `AGENTS.md` → `orchestrator/SKILL.md`
+- Pasta `Personal-AI/` e estrutura de diretórios
+- Modos Fast / Standard / Review / Technical Council
+
+### Decisões de não-duplicação
+
+| Pedido | Decisão |
+|--------|---------|
+| data-analyst | Nova skill; `data` evoluída como legado/roteamento |
+| etl-specialist | Nova skill; escopo ETL extraído de `data` |
+| impact-analysis | Nova skill; complementa `risk-reviewer` (dependências de dados) |
+| cross-domain-decision-maker | Nova skill; complementa `decision-maker` (trade-offs híbridos) |
+| report-implementation-planner | Nova skill; especializa `implementation-planner` para relatórios |
+| acceptance-criteria-reviewer | Nova skill; complementa `product-owner` (critérios testáveis com dados) |
+| task-analyst | Nova skill; complementa `support` (análise estruturada de task) |
+
 ## [2.0.0] — 2026-06-25
 
 ### Adicionado

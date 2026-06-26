@@ -19,6 +19,9 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Working Context | Manter e reutilizar contexto da sessão |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
+| Domínios lógicos | Development · Data Intelligence · Business/Operations · QA/Validation |
+| Fluxos híbridos | Múltiplos domínios → `hybrid-flow-planner` antes de executar |
+| Sub-orquestração dados | Domínio Data Intelligence → `data-orchestrator` (não substitui este agente) |
 
 ## Processo obrigatório
 
@@ -46,6 +49,9 @@ Detalhes: `workflows/modes.md`
 ```
 1. ENTENDER pedido + AGENTS.md do projeto
 2. CLASSIFICAR tipo(s) de demanda — confidence: alta/média/baixa
+2b. DETECTAR domínio(s): Development · Data Intelligence · Business/Operations · QA/Validation
+2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
+2d. SE Data Intelligence envolvido → data-orchestrator (sub-plano de dados)
 3. ESCOLHER modo (Fast/Standard/Review/Technical Council)
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
@@ -108,8 +114,54 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | `integration` | webhook, terceiro | Review → Council | `workflows/integration.md` |
 | `security` | vulnerabilidade, auth | Review → **Council** | `workflows/security.md` |
 | `architecture` | ADR, decisão técnica | **Council** | `workflows/architecture.md` |
+| `data` | SQL, BI, Power BI, divergência, ETL | Standard → Review | `workflows/data.md` |
+| `hybrid` | task+banco, relatório+API, procedure+tela | Standard → Review | `workflows/hybrid-flows.md` |
 
 Índice completo: `workflows/_index.md`
+
+## Domínios lógicos
+
+| Domínio | Skills típicas |
+|---------|----------------|
+| **Development** | backend, api, react, database, flutter |
+| **Data Intelligence** | data-orchestrator, sql-architect, powerbi-specialist, data-validator, ... |
+| **Business/Operations** | task-analyst, business-rule-mapper, support, product-owner |
+| **QA/Validation** | data-validator, qa, bug-hunter, validator, code-review |
+
+Detalhes: `docs/DATA_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md`
+
+## Critérios para Hybrid Flow
+
+Convocar `hybrid-flow-planner` quando houver:
+
+- task + banco · banco + frontend · Power BI + SQL · relatório + API
+- divergência + regra de negócio · procedure + tela · indicador + financeiro
+- SQL + performance + deploy · dados + implantação/suporte
+
+O Hybrid Flow deve: menor conjunto de skills · Working Context compartilhado · validar código **e** dados · evitar Council sem necessidade.
+
+## Data Orchestrator (sub-orquestrador)
+
+**Não substitui este Orchestrator.** Invocar quando domínio inclui Data Intelligence:
+
+- Classifica subtipo SQL/BI/validação
+- Escolhe skills de dados
+- Aplica economia de tokens SQL (`rules/data/query-performance.md`)
+- Coordena `data-validator` antes da entrega
+
+Resposta predominante de dados: `templates/data/final-response-data.md`
+
+## Pipelines de dados (referência rápida)
+
+| Pedido | Pipeline |
+|--------|----------|
+| Otimize SQL | data-orchestrator → sql-architect → query-optimizer → data-validator |
+| Power BI lento | data-orchestrator → powerbi-specialist → dax-specialist → query-optimizer → data-validator |
+| Relatório Umbra | hybrid-flow-planner → task-analyst → business-data-analyst → semantic-layer → sql → backend → react → report-ux-reviewer → qa → data-validator |
+| Divergência Irisys | business-rule-mapper → data-orchestrator → sql-architect → data-validator → bug-hunter → cross-domain-decision-maker |
+| Procedure/task | task-analyst → requirement-reviewer → business-rule-mapper → sql-architect → dba-reviewer → impact-analysis → data-validator |
+
+Ver: `workflows/data-*.md` · `examples/data/`
 
 ## Working Context
 
@@ -140,9 +192,12 @@ Estrutura: `context/working-context.md`
 | Decisão | decision-maker |
 | Plano | implementation-planner, tech-lead |
 | Implementação | backend, api, database, react, flutter, ... |
+| Dados (sub) | data-orchestrator → sql-architect, query-optimizer, powerbi-specialist, ... |
+| Híbrido | hybrid-flow-planner, report-implementation-planner, cross-domain-decision-maker |
+| Task/Requisito | task-analyst, requirement-reviewer, business-rule-mapper, impact-analysis |
 | Crítica | critic |
-| Validação | validator, qa |
-| Governança | code-review, security-review |
+| Validação | validator, qa, data-validator |
+| Governança | code-review, security-review, dba-reviewer |
 | Documentos | ef-doc-generator, process-doc-generator |
 
 ## Checklist do orchestrator
@@ -191,3 +246,6 @@ Estrutura: `context/working-context.md`
 - Tokens: `rules/token-economy.md`
 - Processo: `workflows/_process.md`
 - Resposta: `templates/final-response.md`
+- Dados: `docs/DATA_INTELLIGENCE.md` · `templates/data/final-response-data.md`
+- Híbridos: `docs/HYBRID_FLOWS.md` · `workflows/hybrid-flows.md`
+- Banco seguro: `rules/data/safe-database-changes.md`

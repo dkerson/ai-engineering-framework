@@ -1,73 +1,48 @@
 ---
 name: data
 description: >-
-  Analytics, ETL, pipelines, relatórios, data modeling.
+  [Legado — evoluída] Analytics, ETL e relatórios. Para demandas novas, o Orchestrator deve preferir data-analyst, etl-specialist e data-orchestrator.
 ---
 
-# Data
+# Data (compatibilidade)
 
-## Objetivo
+> **Skill evoluída em v2.1.** Mantida para workflows e referências legadas. **Não remover.**
+
+## Roteamento para skills especializadas
+
+| Demanda legada | Skill preferida (v2.1+) |
+|----------------|-------------------------|
+| Análise exploratória, interpretação | `data-analyst` |
+| Pipeline ETL/ELT | `etl-specialist` |
+| Qualquer domínio de dados | `data-orchestrator` |
+| SQL design/review | `sql-architect` |
+| Otimização SQL | `query-optimizer` |
+| Power BI | `powerbi-specialist` |
+| Validação | `data-validator` |
+
+## Objetivo (histórico)
 
 Soluções de dados: pipelines, queries analíticas, dashboards.
 
-## Quando usar
+## Quando o Orchestrator ainda invoca `data`
 
-- Pipeline ETL
-- Relatório/analytics
-- Data modeling
+- Workflow legado referencia `data` explicitamente
+- Demanda genérica "dados" sem subtipo claro — redirecionar internamente para `data-orchestrator`
 
-## Quando NÃO usar
+## Responsabilidades mínimas se invocada diretamente
 
-- CRUD app simples (backend)
-- UI sem dados
-
-## Responsabilidades
-
-1. Definir fontes e destinos
-2. Modelar dados analíticos
-3. Pipeline idempotente
-4. Validar qualidade dos dados
-5. Documentar schema analítico
-
-## Entradas esperadas
-
-- Requisitos de reporting
-- Sources disponíveis
-
-## Saídas esperadas
-
-- Pipeline/queries
-- Documentação de dados
-
-## Checklist
-
-- [ ] Schema definido
-- [ ] Pipeline idempotente
-- [ ] Data quality checks
-- [ ] Performance acceptable
-
-## Integração com outras skills
-
-- **Upstream:** product-owner
-- **Downstream:** backend, qa
-
-## Exemplos
-
-**Input:** Dashboard vendas
-**Output:** ETL daily + star schema + API aggregation.
-
+1. Classificar subtipo e delegar mentalmente à skill especializada
+2. Atualizar Working Context
+3. Não duplicar trabalho de data-orchestrator se já no pipeline
 
 ## Orquestração hierárquica
 
-> Regras obrigatórias — ver `rules/hierarchical-orchestration.md`
-
-- **Único contato com usuário:** Orchestrator — esta skill **nunca** auto-inicia
-- **Invocação:** somente quando o Orchestrator incluir no pipeline
-- **Working Context:** reutilizar análises; não reler arquivos já catalogados
-- **Modo Council:** máx. 150 palavras (diagnóstico · risco · recomendação · validação)
-- **Economia:** seguir `rules/token-economy.md`
-
+- **Único contato com usuário:** Orchestrator
+- **Working Context:** reutilizar análises
+- **Economia:** `rules/token-economy.md`
 
 ## Referências
 
-- `context/domain.md`
+- `docs/DATA_INTELLIGENCE.md`
+- `skills/data-analyst/SKILL.md`
+- `skills/data-orchestrator/SKILL.md`

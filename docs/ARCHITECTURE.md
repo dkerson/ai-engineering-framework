@@ -91,9 +91,27 @@ O framework é agnóstico. Skills técnicas cobrem:
 | Flutter | `flutter`, `mobile-ux` |
 | .NET | `backend`, `api`, `database` |
 | Python / Go | `backend`, `api` |
-| REST / microserviços | `api`, `integration` |
+| SQL Server / Power BI | `data-orchestrator`, `sql-architect`, `powerbi-specialist` |
 
 Defina a stack real em `context/tech-stack.md` do projeto consumidor.
+
+## Domínios lógicos (v2.1+)
+
+Além dos modos de execução, o Orchestrator classifica **domínios** envolvidos:
+
+| Domínio | Sub-orquestrador | Skills |
+|---------|------------------|--------|
+| Development | — | backend, api, react, database |
+| Data Intelligence | `data-orchestrator` | sql-architect, powerbi-specialist, data-validator, ... |
+| Business/Operations | — | task-analyst, business-rule-mapper, support |
+| QA/Validation | — | qa, data-validator, bug-hunter, validator |
+
+Fluxos que cruzam domínios usam `hybrid-flow-planner`. Detalhe: `docs/HYBRID_FLOWS.md` · `docs/DATA_INTELLIGENCE.md`.
+
+### data-orchestrator vs Orchestrator
+
+- **Orchestrator** — único contato com usuário; decide modo e domínios.
+- **data-orchestrator** — sub-plano de dados; nunca substitui o principal.
 
 ## Extensibilidade
 
