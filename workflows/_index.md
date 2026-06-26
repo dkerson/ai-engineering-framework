@@ -73,7 +73,10 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 |---------|------|---------------|-------------------|
 | [framework-operating-system.md](framework-operating-system.md) | Framework Operating System | Fast/Standard | FOS docs → Reviewer → Recommendations → Report |
 | [strategic-mission.md](strategic-mission.md) | Strategic Mission | Analysis/Planning/Implementation | SIL → Mission Brief → Orchestrator → Domains → Mission Report |
-| [infrastructure-mission.md](infrastructure-mission.md) | Infrastructure Mission | Standard/Review | Project Resolver → Discovery/Scanner → Registry → Dashboard/Health → FOS |
+| [infrastructure-mission.md](infrastructure-mission.md) | Infrastructure Mission | Standard/Review | Project Resolver → Plugin Resolver* → Discovery/Scanner → Registry → FOS |
+| [plugin-mission.md](plugin-mission.md) | Plugin Mission | Fast/Standard | Plugin Builder* → Plugin Manager → Registry → PROJECT_PLUGINS → FOS |
+| [capability-mission.md](capability-mission.md) | Framework Capability Mission | Fast/Standard | COS: Manager → Evaluator* → Discovery* → Builder* → FOS |
+| [mcp-mission.md](mcp-mission.md) | MCP Mission | Fast/Standard | mcp-discovery → plugin-manager* → MCP catalog → FOS |
 
 | [bug.md](bug.md) | Bug | Standard | Context → Bug Hunter → Tech Lead → [técnica] → QA |
 

@@ -7,13 +7,13 @@ Scale: 0 to 10.
 | Architecture | 9 | Layered and extensible; must watch complexity. |
 | Reuse | 9 | Strong reusable skills/rules/templates model. |
 | Complexity | 7 | Many domains and concepts; FOS should prevent sprawl. |
-| Documentation | 9 | Broad docs coverage. |
+| Documentation | 9 | MCP governance docs complete. |
 | Organization | 8 | Clear folders; FOS adds governance index. |
 | Skills Coverage | 9 | 95 skill directories. |
 | Domain Coverage | 9 | Dev, Data, Product, Growth, Brand, QA, Strategy. |
 | Consistency | 8 | Existing patterns mostly consistent. |
 | Estimated Token Consumption | 7 | Needs continued routing discipline. |
-| Scalability | 9 | Incremental architecture. |
+| Scalability | 9 | COS + Plugin architectures enable long-term modular evolution. |
 | Coupling | 8 | Orchestrator keeps boundaries clear. |
 | Duplication | 7 | Some overlap likely in product/growth reviewers. |
 | Quality | 9 | Governance and validation layers present. |

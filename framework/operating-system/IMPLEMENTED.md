@@ -2,5 +2,9 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-06-26 | 2.11.0 | Codex | MCP Readiness & Connectors | Safe MCP by plugin/project | 7 connector packs, profiles, sentry active | plugins/, projects/, FOS |
+| 2026-06-26 | 2.10.0 | Codex | Capability Operating System (COS) | Govern all capabilities; capability-first | COS registry, builder/evaluator/discovery, PROJECT_CAPABILITIES | `.ai/capabilities/`, docs, FOS |
+| 2026-06-26 | 2.9.0 | Codex | Capability Architecture & RAG Intelligence | Extensible capabilities; RAG ready for future projects | 22 skills, registry, 10 workflows, guardrails | `.ai/capabilities/rag/`, docs, FOS |
+| 2026-06-26 | 2.8.0 | Codex | Plugin Architecture & Integration Packs | Extender framework sem inflar o nucleo | 11 plugins draft, 3 skills, registry, policy, PROJECT_PLUGINS | `.ai/plugins/`, docs, skills, workflows, FOS |
 | 2026-06-26 | 2.5.0 | Codex | Framework Operating System | Govern framework evolution without automatic changes | Adds governance, health, roadmap, backlog, metrics and recommendations | `.ai/framework/operating-system/`, docs, rules, skills, workflows |
 | 2026-06-26 | 2.6.0 | Codex | Infrastructure Intelligence & Project Registry | Register project infrastructure safely | Adds infrastructure registries, project registry, discovery skills and secret policy | `.ai/infrastructure/`, docs, rules, skills, workflows |

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "docker": {
+      "comment": "docker-plugin — revisar antes de ativar. Deploy exige aprovação.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "env": {
+        "DOCKER_HOST": "${DOCKER_HOST}"
+      }
+    }
+  }
+}

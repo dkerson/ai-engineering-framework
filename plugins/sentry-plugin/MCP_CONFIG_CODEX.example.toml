@@ -1,0 +1,7 @@
+[mcp_servers.sentry]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sentry"]
+
+[mcp_servers.sentry.env]
+SENTRY_AUTH_TOKEN = "${SENTRY_AUTH_TOKEN}"
+SENTRY_ORG = "${SENTRY_ORG}"

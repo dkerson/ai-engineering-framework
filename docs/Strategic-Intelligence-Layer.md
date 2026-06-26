@@ -9,14 +9,23 @@ Permitir que o usuario converse naturalmente, sem conhecer skills, fluxos, tecni
 ## Posicao na arquitetura
 
 ```text
-Usuario
+Capabilities (COS)
+-> Usuario
 -> Strategic Intelligence Layer
 -> Master Orchestrator
 -> Technical Council
 -> Domains
 -> Skills
--> Implementacao
+-> Projetos
 ```
+
+## Capability Intelligence (COS v2.10+)
+
+Antes de dominios e plano, o SIL considera:
+
+1. **Ja existe Capability?** → sugerir `capability_id` no Mission Brief
+2. **Se nao** → flag `propose_new_capability` para capability-evaluator
+3. **Nunca implementar** — Orchestrator + COS registram Idea com aprovacao
 
 ## Responsabilidade unica
 
@@ -71,6 +80,7 @@ O SIL deve produzir:
 - Quick wins provaveis
 - Necessidade de Technical Council
 - Knowledge Hub sugerido
+- **Capability sugerida** (COS) ou flag `propose_new_capability`
 - Plano de alto nivel
 
 Detalhes: `docs/Missions.md`, `docs/Mission-Recognition.md`, `docs/Mission-Modes.md`.

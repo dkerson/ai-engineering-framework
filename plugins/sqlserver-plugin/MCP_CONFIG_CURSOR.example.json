@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "user-mssql": {
+      "comment": "SQL Server — sqlserver-plugin. Defina credenciais via variáveis de ambiente do OS. Nunca commitar tokens.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-mssql"],
+      "env": {
+        "MSSQL_CONNECTION_STRING": "${MSSQL_CONNECTION_STRING}"
+      }
+    }
+  }
+}

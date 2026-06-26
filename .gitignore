@@ -9,3 +9,12 @@ Thumbs.db
 __pycache__/
 *.pyc
 .venv/
+
+# MCP / secrets — nunca commitar configs reais
+.cursor/mcp.json
+.codex/config.toml
+.env
+.env.*
+!.env.example
+!**/ENV.example
+!**/MCP_ENV.example

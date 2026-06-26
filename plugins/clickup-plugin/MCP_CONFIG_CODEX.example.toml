@@ -1,0 +1,7 @@
+[mcp_servers.clickup]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-clickup"]
+
+[mcp_servers.clickup.env]
+CLICKUP_API_TOKEN = "${CLICKUP_API_TOKEN}"
+CLICKUP_TEAM_ID = "${CLICKUP_TEAM_ID}"

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "sentry": {
+      "comment": "sentry-plugin — read-only. Token via SENTRY_AUTH_TOKEN.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sentry"],
+      "env": {
+        "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}",
+        "SENTRY_ORG": "${SENTRY_ORG}"
+      }
+    }
+  }
+}

@@ -9,6 +9,10 @@
 | [Infrastructure-Intelligence.md](Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | [Project-Registry.md](Project-Registry.md) | Registry por projeto |
 | [Infrastructure-Registry.md](Infrastructure-Registry.md) | Registry global de infraestrutura |
+| [PLUGIN_ARCHITECTURE.md](PLUGIN_ARCHITECTURE.md) | Plugin Architecture & Integration Packs |
+| [CAPABILITY_ARCHITECTURE.md](CAPABILITY_ARCHITECTURE.md) | Capability Architecture (v2.9) |
+| [CAPABILITY_OPERATING_SYSTEM.md](CAPABILITY_OPERATING_SYSTEM.md) | Capability Operating System (COS v2.10) |
+| [MCP_GOVERNANCE.md](MCP_GOVERNANCE.md) | MCP Readiness, conectores, perfis por projeto |
 | [Strategic-Intelligence-Layer.md](Strategic-Intelligence-Layer.md) | Camada estrategica acima do Orchestrator |
 | [Missions.md](Missions.md) | Mission Types, Mission Score e Mission Memory |
 | [Mission-Recognition.md](Mission-Recognition.md) | Reconhecimento de objetivos humanos |

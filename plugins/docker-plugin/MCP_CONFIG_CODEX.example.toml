@@ -1,0 +1,6 @@
+[mcp_servers.docker]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-docker"]
+
+[mcp_servers.docker.env]
+DOCKER_HOST = "${DOCKER_HOST}"

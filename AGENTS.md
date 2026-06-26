@@ -64,6 +64,8 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `doc
 ├── design-system/       ← tokens UI (Product & Design Intelligence v2.7+)
 ├── framework/operating-system/ ← governanca viva do framework
 ├── infrastructure/    ← registry de projetos e infraestrutura
+├── plugins/           ← Plugin Architecture & Integration Packs (v2.8+)
+├── capabilities/      ← Capability Operating System (COS) v2.10+ · RAG v2.9+
 ├── context/           ← overlay do projeto consumidor (ver context/README.md)
 │   └── semantic-layer/  ← camada semântica Otus/Irisys (templates)
 ├── templates/data/    ← templates de dados/BI
@@ -99,7 +101,7 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `doc
 
 ## Tipos de demanda
 
-`framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
+`framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `plugin-mission` · `capability-mission` · `mcp-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
 
 Mapeamento: `workflows/_index.md`
 
@@ -151,6 +153,37 @@ O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda
 | integration-resolver | Planeja integracoes, MCPs, servicos e skills |
 
 Registries: `infrastructure/registry/` e `infrastructure/projects/`. Credenciais reais nunca sao armazenadas.
+
+### Plugin Architecture (v2.8+)
+
+| Skill | Papel |
+|-------|-------|
+| plugin-manager | Cadastra, atualiza, lista, desativa e valida plugins |
+| plugin-resolver | Seleciona plugin na missão; verifica permissões e riscos |
+| plugin-builder | Cria novos plugins no padrão; registra no Registry e FOS |
+
+Registro: `plugins/PLUGIN_REGISTRY.md`. Integrações externas devem ser plugins independentes — ver `docs/PLUGIN_ARCHITECTURE.md`.
+
+### Capability Operating System (v2.10+)
+
+| Skill | Papel |
+|-------|-------|
+| capability-manager | COS: criar, atualizar, versionar, registrar, planejar — nunca auto-implementar |
+| capability-builder | Criar novas capabilities no padrão COS |
+| capability-evaluator | Skill? Workflow? Plugin? Rule? Nova Capability? |
+| capability-discovery | Identificar oportunidades; registrar only |
+| capability-resolver | Selecionar capability na missão |
+
+Registro: `capabilities/registry/`. **Capability-first:** tecnologia nova → Capability → projeto. Ver `docs/CAPABILITY_OPERATING_SYSTEM.md`.
+
+### MCP Governance (v2.11+)
+
+| Skill | Papel |
+|-------|-------|
+| mcp-discovery-specialist | Discovery MCP por projeto; sugere plugins; classifica risco |
+| plugin-manager | Promoção draft/under-review/active com checklist MCP |
+
+Ver `docs/MCP_GOVERNANCE.md` · `infrastructure/registry/MCP_SERVER_CATALOG.md`.
 
 ### Data Intelligence (v2.1+)
 

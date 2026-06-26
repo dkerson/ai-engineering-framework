@@ -1,0 +1,8 @@
+[mcp_servers.powerbi]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-powerbi"]
+
+[mcp_servers.powerbi.env]
+POWERBI_CLIENT_ID = "${POWERBI_CLIENT_ID}"
+POWERBI_CLIENT_SECRET = "${POWERBI_CLIENT_SECRET}"
+POWERBI_TENANT_ID = "${POWERBI_TENANT_ID}"

@@ -13,10 +13,11 @@ Montar um plano de integracao seguro e documentado.
 ## Responsabilidades
 
 1. Identificar servicos envolvidos.
-2. Identificar MCPs relevantes.
-3. Identificar skills/domains participantes.
-4. Definir registros que devem ser atualizados.
-5. Indicar riscos e validacoes.
+2. Consultar `plugin-resolver` para mapear servico → plugin (`plugins/PLUGIN_REGISTRY.md`).
+3. Identificar MCPs relevantes (via `MCP.md` do plugin quando existir).
+4. Identificar skills/domains participantes.
+5. Definir registros que devem ser atualizados (incl. `PROJECT_PLUGINS.md`).
+6. Indicar riscos e validacoes.
 
 ## Regras
 

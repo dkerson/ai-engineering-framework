@@ -39,9 +39,11 @@ Pipeline:
 
 ```text
 Infrastructure Mission -> Project Resolver -> Infrastructure Discovery
--> Project Scanner -> Integration Resolver -> Registry Update
--> Dashboard/Health -> FOS update
+-> Plugin Resolver* -> Project Scanner -> Integration Resolver
+-> Registry Update -> Dashboard/Health -> FOS update
 ```
+
+`*` Plugin Resolver: antes de sugerir conexão, verificar se existe plugin para a tecnologia detectada (ex.: PostgreSQL → `postgres-plugin`). Se não existir, sugerir criação via Plugin Builder; se existir, registrar uso em `PROJECT_PLUGINS.md`.
 
 ## Referencias
 

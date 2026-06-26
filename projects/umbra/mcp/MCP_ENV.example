@@ -1,0 +1,33 @@
+# MCP Environment — Umbra (example)
+
+> Copiar para `.env` na **raiz do monorepo** (`UMBRA/.env`).  
+> **NUNCA** commitar `.env` com valores reais.
+
+# --- SQL Server (user-mssql / sqlserver-plugin) ---
+# Database Umbra — dev local via Docker (:1433) ou instância SQL dev
+MSSQL_CONNECTION_STRING=
+
+# Alternativa (se o MCP usar vars separadas):
+# MSSQL_SERVER=localhost,1433
+# MSSQL_DATABASE=Umbra
+# MSSQL_USER=
+# MSSQL_PASSWORD=
+
+# --- GitHub (github-plugin) ---
+# PAT com escopo mínimo; conta umbraotus7 / org Otus7
+GITHUB_TOKEN=
+GITHUB_OWNER=Otus7
+
+# --- Docker (docker-plugin) ---
+# Vazio = Docker Desktop default. Linux: unix:///var/run/docker.sock
+DOCKER_HOST=
+
+# --- Azure Entra (azure-plugin — sem MCP; referência appsettings) ---
+# AZURE_TENANT_ID=
+# AZURE_CLIENT_ID=
+# AZURE_CLIENT_SECRET=
+
+# --- Sentry (opcional; plugin disabled no Umbra) ---
+# SENTRY_AUTH_TOKEN=
+# SENTRY_ORG=
+# SENTRY_PROJECT=

@@ -1,0 +1,31 @@
+{
+  "_comment": "Umbra — copiar para .cursor/mcp.json na raiz do monorepo. NUNCA commitar tokens.",
+  "_project": "umbra",
+  "_discovery": "Personal-AI/projects/umbra/mcp/MCP_DISCOVERY_REPORT.md",
+  "mcpServers": {
+    "user-mssql": {
+      "comment": "SQL Server Umbra — sqlserver-plugin. Defina MSSQL_CONNECTION_STRING no OS.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-mssql"],
+      "env": {
+        "MSSQL_CONNECTION_STRING": "${MSSQL_CONNECTION_STRING}"
+      }
+    },
+    "github": {
+      "comment": "GitHub Otus7/Umbra — github-plugin. Token via GITHUB_TOKEN.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "docker": {
+      "comment": "Docker — deploy/docker-compose.yml. Deploy exige aprovação explícita.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-docker"],
+      "env": {
+        "DOCKER_HOST": "${DOCKER_HOST}"
+      }
+    }
+  }
+}

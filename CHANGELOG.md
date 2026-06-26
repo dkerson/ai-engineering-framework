@@ -1,5 +1,109 @@
 # Changelog — AI Engineering Framework
 
+## [2.11.0] - 2026-06-26
+
+### Adicionado
+
+- **MCP Readiness & Connector Implementation**
+- `MCP_SERVER_CATALOG.md`, `MCP_READINESS_AUDIT.md`, `PLUGIN_STATUS_POLICY.md`
+- Conectores por plugin prioritário: PERMISSIONS, USAGE, HEALTH, ENV.example, Cursor/Codex examples
+- **Project MCP Profiles:** `projects/{umbra,irisys,rifsmart}/mcp/`
+- `.cursor/mcp.example.json`, `.codex/config.example.toml`
+- **Skill:** mcp-discovery-specialist
+- **Workflow:** mcp-mission.md · **Rule:** mcp-security.md
+- **docs/MCP_GOVERNANCE.md**
+
+### Alterado
+
+- sentry-plugin → **active** (read-only)
+- sqlserver, github, docker → **under-review**
+- postgres, powerbi, clickup: conectores draft
+- PLUGIN_HEALTH, mcps registry, PROJECT_MCP umbra
+
+### Preservado
+
+- Sem credenciais reais; sem conexão a serviços
+
+## [2.10.0] - 2026-06-26
+
+### Adicionado
+
+- **Capability Operating System (COS)** — núcleo de administração de capabilities
+- Estrutura COS: `registry/`, `roadmap/`, `implemented/`, `planned/`, `templates/`, `documentation/`
+- **CAPABILITY_STATUS**, **CAPABILITY_HEALTH**, **CAPABILITY_REPORT**, **CAPABILITY_ROADMAP**
+- **CAPABILITY_CATEGORIES** (22 categorias)
+- Lifecycle estendido: Idea → Analysis → Planned → Approved → ...
+- **Skills:** capability-builder, capability-evaluator, capability-discovery
+- **capability-manager** evoluído (nunca auto-implementar)
+- **PROJECT_CAPABILITIES.md** (umbra, irisys, rifsmart)
+- **Capability Intelligence** no SIL
+- Regra: **plugin exige capability pai**
+- Knowledge: `knowledge/capabilities/`
+- 14 domain capabilities registradas como Stable
+
+### Alterado
+
+- Registry canônico em `capabilities/registry/`
+- Framework Capability Mission reforçada (framework-only)
+- Hierarquia: Capabilities → SIL → Orchestrator → Domains → Skills → Projetos
+
+### Preservado
+
+- RAG Intelligence Ready v1.0.0
+- Nenhuma skill removida; zero implementação em produtos
+
+## [2.9.0] - 2026-06-26
+
+### Adicionado
+
+- **Capability Architecture** — tecnologias nascem como capabilities reutilizáveis
+- **RAG Intelligence** (Ready v1.0.0) — assistentes baseados em conhecimento próprio
+- Estrutura `capabilities/` com registry, lifecycle, template
+- **22 skills:** capability-manager, capability-resolver, rag-orchestrator + 19 especialistas RAG
+- **9 rules** `rules/rag/`, **8 checklists** `checklists/rag/`, **templates** `templates/rag/`
+- **10 workflows** `workflows/rag/` + `capability-mission.md`
+- **11 knowledge articles** `knowledge/rag/`
+- Capabilities Planned: ocr, vision, voice, memory, agents, evaluation
+- **Documentação:** `docs/CAPABILITY_ARCHITECTURE.md`, `docs/RAG_INTELLIGENCE.md`
+- **CAPABILITY_HEALTH.md**
+
+### Alterado
+
+- Orchestrator integra Capability Resolver (passo 2g)
+- Knowledge Hub estendido com domínio RAG
+
+### Preservado
+
+- Nenhuma skill removida; knowledge-engine distinto de knowledge-architect
+- **Framework-only** — zero implementação em Umbra, Irisys, SmartRifa
+
+## [2.8.0] - 2026-06-26
+
+### Adicionado
+
+- **Plugin Architecture & Integration Packs** — extensibilidade por pacotes independentes
+- Estrutura `plugins/` com policy, registry, template, lifecycle e examples
+- **11 plugins iniciais (draft):** github, postgres, sqlserver, powerbi, clickup, sentry, docker, supabase, firebase, azure, aws
+- **Skills:** plugin-manager, plugin-resolver, plugin-builder
+- **Documentação:** `docs/PLUGIN_ARCHITECTURE.md`
+- **Workflow:** `workflows/plugin-mission.md`
+- **Rule:** `rules/plugin-policy.md`
+- **Checklist:** `checklists/plugin-health.md`
+- **Plugin Health:** `framework/operating-system/health/PLUGIN_HEALTH.md`
+- **Project Registry:** `PROJECT_PLUGINS.md` por projeto (umbra, irisys, rifsmart)
+
+### Alterado
+
+- Orchestrator integra Plugin Resolver em missões com integração externa
+- Infrastructure Intelligence consulta plugins antes de sugerir conexões
+- Integration Resolver delega mapeamento serviço → plugin ao Plugin Resolver
+- Project Registry documenta associação de plugins por projeto
+
+### Preservado
+
+- Núcleo do framework intacto — nenhuma skill existente removida
+- Plugins em draft — integração MCP real permanece backlog
+
 ## [2.7.0] - 2026-06-26
 
 ### Adicionado

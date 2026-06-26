@@ -1,0 +1,10 @@
+# Codex MCP — SQL Server (example)
+# Copiar seção para ~/.codex/config.toml ou .codex/config.toml local.
+# NUNCA commitar config.toml com secrets.
+
+[mcp_servers.user-mssql]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-mssql"]
+
+[mcp_servers.user-mssql.env]
+MSSQL_CONNECTION_STRING = "${MSSQL_CONNECTION_STRING}"

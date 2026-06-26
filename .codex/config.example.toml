@@ -1,0 +1,23 @@
+# Codex MCP — exemplo agregado (Umbra)
+# Copiar para .codex/config.toml local. NUNCA commitar secrets.
+
+[mcp_servers.user-mssql]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-mssql"]
+
+[mcp_servers.user-mssql.env]
+MSSQL_CONNECTION_STRING = "${MSSQL_CONNECTION_STRING}"
+
+[mcp_servers.github]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-github"]
+
+[mcp_servers.github.env]
+GITHUB_PERSONAL_ACCESS_TOKEN = "${GITHUB_TOKEN}"
+
+[mcp_servers.docker]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-docker"]
+
+[mcp_servers.docker.env]
+DOCKER_HOST = "${DOCKER_HOST}"

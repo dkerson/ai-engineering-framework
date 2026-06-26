@@ -59,6 +59,9 @@ Detalhes: `workflows/modes.md`
 2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
 2d. SE Data Intelligence envolvido → data-orchestrator (sub-plano de dados)
 2e. SE Growth & Brand Intelligence envolvido → project-style-analyzer + knowledge-engine + workflow marketing com menor conjunto de skills
+2f. SE integracao externa ou servico de terceiro → plugin-resolver → verificar PLUGIN_REGISTRY + PROJECT_PLUGINS.md
+2g. SE assistente, RAG, FAQ, busca semantica ou tecnologia capability-first → capability-resolver → COS Registry
+2h. SE Mission Brief sugere nova capability → capability-evaluator → capability-discovery (registrar only)
 3. ESCOLHER modo (Fast/Standard/Review/Technical Council)
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
@@ -110,6 +113,10 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | `framework-operating-system` | saude do framework, roadmap, ideias, recomendacoes, skills sem uso, evolucao | Fast/Standard | `workflows/framework-operating-system.md` |
 | `strategic-mission` | objetivo alto nivel, transformar, modernizar, vender mais, reduzir suporte | Analysis/Planning → Standard/Review/Council | `workflows/strategic-mission.md` |
 | `infrastructure-mission` | adicione, cadastre, configure, novo banco, novo Git, nova API, novo MCP | Standard → Review se risco/seguranca | `workflows/infrastructure-mission.md` |
+| `plugin-mission` | plugin, ative plugin, desative plugin, liste plugins, crie plugin | Fast/Standard | `workflows/plugin-mission.md` |
+| `mcp-mission` | MCP, mcp.json, prepare MCPs, promova plugin, pgvector | Fast/Standard | `workflows/mcp-mission.md` |
+| `capability-mission` | capability, RAG, assistente, FAQ, busca semantica, quais capabilities | Fast/Standard | `workflows/capability-mission.md` |
+| `mcp-mission` | MCP, prepare MCPs, mcp.example, promova plugin active, pgvector | Fast/Standard | `workflows/mcp-mission.md` |
 | `bug` | erro, falha, quebrado | Standard → Review se DB/auth | `workflows/bug.md` |
 | `incident` | produção, urgente, downtime | **Council** | `workflows/incident.md` |
 | `feature` | implemente, adicione | Standard → Review/Council | `workflows/feature.md` |
@@ -141,7 +148,9 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | **Development** | backend, api, react, database, flutter |
 | **Data Intelligence** | data-orchestrator, sql-architect, powerbi-specialist, data-validator, ... |
 | **Product & Design** | product-designer, ux-designer, ui-designer, design-system, design-reviewer, product-aesthetic-director, ... |
-| **Infrastructure Intelligence** | project-resolver, infrastructure-discovery, project-scanner, integration-resolver |
+| **Infrastructure Intelligence** | project-resolver, infrastructure-discovery, project-scanner, integration-resolver, plugin-resolver |
+| **Plugin Architecture** | plugin-manager, plugin-resolver, plugin-builder, mcp-discovery-specialist |
+| **Capability / COS** | capability-manager, capability-resolver, capability-evaluator, capability-discovery, capability-builder, rag-orchestrator |
 | **Growth & Brand Intelligence** | project-style-analyzer, knowledge-engine, brand-strategist, content-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
 | **Framework Operating System** | framework-reviewer, framework-optimizer, pattern-extractor, anti-pattern-detector, recommendation-engine |
 | **Business/Operations** | task-analyst, business-rule-mapper, support, product-owner |
@@ -263,6 +272,9 @@ Estrutura: `context/working-context.md`
 | Crítica | critic |
 | Validação | validator, qa, data-validator |
 | Governança | code-review, security-review, dba-reviewer |
+| **Plugins** | plugin-manager, plugin-resolver, plugin-builder |
+| **RAG** | rag-orchestrator → rag-architect, retrieval-specialist, citation-engine, hallucination-guard, ... |
+| **Capabilities** | capability-manager, capability-resolver, capability-evaluator, capability-discovery, capability-builder |
 | Documentos | ef-doc-generator, process-doc-generator |
 
 ## Checklist do orchestrator

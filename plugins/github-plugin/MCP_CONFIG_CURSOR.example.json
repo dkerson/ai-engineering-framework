@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "github": {
+      "comment": "github-plugin — token via GITHUB_TOKEN no OS. Nunca commitar.",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    }
+  }
+}

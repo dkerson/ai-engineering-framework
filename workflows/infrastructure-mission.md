@@ -12,9 +12,10 @@ Adicionar, cadastrar, atualizar, conectar, configurar, registrar, novo banco, no
 Infrastructure Mission
 -> Project Resolver
 -> Infrastructure Discovery*
+-> Plugin Resolver*
 -> Project Scanner
 -> Integration Resolver*
--> Registry Update
+-> Registry Update (incl. PROJECT_PLUGINS.md)
 -> Infrastructure Dashboard
 -> Infrastructure Health
 -> FOS Update
