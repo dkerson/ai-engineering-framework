@@ -1,5 +1,30 @@
 # Changelog — AI Engineering Framework
 
+## [2.7.0] - 2026-06-26
+
+### Adicionado
+
+- **Product & Design Intelligence Domain** — qualidade de interface implementável (UX, UI, Design System)
+- **Design Modes:** LEGACY · HYBRID · GREENFIELD (`docs/DESIGN_MODES.md`)
+- **Design DNA** — `templates/design/design-dna.md`, `design-system/design-dna-default.md`
+- **design-system/** — tokens: cores, tipografia, spacing, componentes, dark/light
+- **15 skills:** product-designer, ux-researcher, ux-designer, ui-designer, design-system, visual-designer, mobile-designer, desktop-designer, interaction-designer, component-library, benchmark-specialist, design-reviewer, product-aesthetic-director, report-designer, accessibility
+- **Artefatos:** `rules/design/`, `checklists/design/`, `templates/design/`, `examples/design/`
+- **Documentação:** `DESIGN_INTELLIGENCE.md`, `DESIGN_GUIDE.md`, `DESIGN_SYSTEM.md`, `DESIGN_MODES.md`, `PRODUCT_DESIGN.md`
+- **Workflow:** `workflows/product-design.md`
+- Gate estético: notas 0–10; entrega bloqueada se dimensão < 8
+- **context/design-dna.md** — exemplo Umbra (overlay consumidor)
+
+### Alterado
+
+- Orchestrator integra Product & Design sem remover SIL, FOS, Infrastructure nem Growth & Brand
+- **dashboard-designer** evoluída (BI, KPIs, resumo executivo)
+
+### Preservado
+
+- Skills legadas `ux`, `mobile-ux`, `report-ux-reviewer`
+- Domínios v2.1–v2.6 intactos
+
 ## [2.6.0] - 2026-06-26
 
 ### Adicionado

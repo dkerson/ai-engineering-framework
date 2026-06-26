@@ -15,6 +15,11 @@
 | [Mission-Modes.md](Mission-Modes.md) | Modos estrategicos de mission |
 | [Continuous-Evolution.md](Continuous-Evolution.md) | Backlog sugerido ao fim de missions |
 | [DATA_INTELLIGENCE.md](DATA_INTELLIGENCE.md) | Domínio de dados, SQL, Power BI, BI |
+| [DESIGN_INTELLIGENCE.md](DESIGN_INTELLIGENCE.md) | Product & Design, Design Modes, pipeline |
+| [DESIGN_GUIDE.md](DESIGN_GUIDE.md) | Guia operacional de interface |
+| [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) | Tokens e componentes |
+| [DESIGN_MODES.md](DESIGN_MODES.md) | LEGACY / HYBRID / GREENFIELD |
+| [PRODUCT_DESIGN.md](PRODUCT_DESIGN.md) | Fluxo de produto e UI |
 | [GROWTH_BRAND_INTELLIGENCE.md](GROWTH_BRAND_INTELLIGENCE.md) | Branding, copywriting, marketing, SEO, conversao e assets |
 | [GROWTH_INTELLIGENCE.md](GROWTH_INTELLIGENCE.md) | Growth, conversao e evolucao continua |
 | [BRAND_INTELLIGENCE.md](BRAND_INTELLIGENCE.md) | Brand DNA, voz, identidade e consistencia |

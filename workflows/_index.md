@@ -107,7 +107,9 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 
 | [product.md](product.md) | Produto | Fast/Standard | Product Owner → Functional Spec |
 
-| [ux.md](ux.md) | UX | Standard | UX → Func Spec |
+| [ux.md](ux.md) | UX | Standard | UX / ux-designer → product-design* |
+
+| [product-design.md](product-design.md) | UI / Design | Standard/Review | Design Mode → product-designer → aesthetic gate |
 | [product-excellence.md](product-excellence.md) | Product Excellence / Audit | Standard/Review | Style Analyzer → Knowledge Engine → Benchmark → Excellence → Evolution |
 
 | [mobile.md](mobile.md) | Mobile | Standard/Review | Mobile UX → Flutter* → QA |

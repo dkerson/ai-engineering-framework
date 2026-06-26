@@ -61,15 +61,19 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `doc
 ├── checklists/
 ├── workflows/
 ├── knowledge/         ← boas práticas resumidas por área
+├── design-system/       ← tokens UI (Product & Design Intelligence v2.7+)
 ├── framework/operating-system/ ← governanca viva do framework
 ├── infrastructure/    ← registry de projetos e infraestrutura
 ├── context/           ← overlay do projeto consumidor (ver context/README.md)
 │   └── semantic-layer/  ← camada semântica Otus/Irisys (templates)
 ├── templates/data/    ← templates de dados/BI
+├── templates/design/  ← Design DNA, interface spec, aesthetic review
 ├── templates/marketing/ ← templates Growth & Brand
 ├── checklists/data/
+├── checklists/design/
 ├── checklists/marketing/
 ├── rules/data/
+├── rules/design/
 ├── rules/marketing/
 ├── examples/data/
 └── examples/marketing-growth-brand.md
@@ -181,7 +185,6 @@ Registries: `infrastructure/registry/` e `infrastructure/projects/`. Credenciais
 Skill legada `data` preservada — roteia para especializadas. Lista completa: `workflows/_index.md` · `docs/DATA_INTELLIGENCE.md`.
 
 ### Growth & Brand Intelligence (v2.2+)
-
 | Skill | Papel |
 |-------|-------|
 | brand-strategist | Tom de voz, posicionamento e personalidade |
@@ -203,6 +206,28 @@ Skill legada `data` preservada — roteia para especializadas. Lista completa: `
 Fluxo automatico para landing page, site, pagina institucional, tela publica, portal, home publica, marketing, onboarding e assets: ver `workflows/marketing.md` e `docs/GROWTH_BRAND_INTELLIGENCE.md`.
 
 Fluxo automatico para "analise esse produto", "faca uma auditoria", "modernize o sistema" e pedidos similares: ver `workflows/product-excellence.md`, `docs/PRODUCT_EXCELLENCE.md` e `docs/PRODUCT_EVOLUTION.md`.
+
+### Product & Design Intelligence (v2.7+)
+
+| Skill | Papel |
+|-------|-------|
+| **product-designer** | Objetivo de produto e escopo de UI |
+| ux-researcher | Jobs-to-be-done, contexto de uso |
+| ux-designer | Fluxos, wireframes, estados |
+| ui-designer | Layout, componentes, tokens visuais |
+| **design-system** | Tokens e padrões DS (`design-system/`) |
+| visual-designer | Composição e hierarquia estética |
+| mobile-designer · desktop-designer | Layout por plataforma |
+| interaction-designer | Microinterações e feedback |
+| component-library | Inventário e reuso de componentes |
+| benchmark-specialist | Princípios de qualidade (sem cópia) |
+| design-reviewer | Checklist de interface |
+| **product-aesthetic-director** | Scores 0–10; gate ≥ 8 |
+| report-designer | Relatórios web/PDF/Excel/PBI |
+| accessibility | WCAG e a11y |
+| dashboard-designer · report-ux-reviewer | Dashboards/BI (evoluídas) |
+
+**Design Modes:** LEGACY · HYBRID · GREENFIELD — `docs/DESIGN_MODES.md`. **Nunca** alterar identidade visual sem pedido explícito. Complementa Growth & Brand (`project-style-analyzer`). Detalhes: `docs/DESIGN_INTELLIGENCE.md`.
 
 ### Knowledge Hub e Product Excellence (v2.3+)
 

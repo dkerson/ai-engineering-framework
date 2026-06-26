@@ -34,6 +34,15 @@ Tarefa concluída → WC descartado
 - Infrastructure Intelligence: [sim/não]
 - Hybrid Flow: [sim/não]
 
+### Product & Design (quando interface)
+- Design Mode: [LEGACY|HYBRID|GREENFIELD]
+- Design DNA: [path ou default]
+- Design System projeto: [sim/não — path]
+- Biblioteca de componentes: [...]
+- Framework UI: [...]
+- Plataforma: Desktop [ ] Tablet [ ] Mobile [ ]
+- Scores estéticos (product-aesthetic-director): UX · UI · ...
+
 ### Mission Memory (quando aplicável)
 - Objetivo principal:
 - Objetivos secundários:

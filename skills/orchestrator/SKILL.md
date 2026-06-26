@@ -19,7 +19,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Working Context | Manter e reutilizar contexto da sessão |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
-| Domínios lógicos | Development · Data Intelligence · Growth & Brand Intelligence · Business/Operations · QA/Validation |
+| Domínios lógicos | Development · Data Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
 | Fluxos híbridos | Múltiplos domínios → `hybrid-flow-planner` antes de executar |
 | Sub-orquestração dados | Domínio Data Intelligence → `data-orchestrator` (não substitui este agente) |
 
@@ -50,7 +50,12 @@ Detalhes: `workflows/modes.md`
 1. ENTENDER pedido + AGENTS.md do projeto
 1a. SE houver objetivo humano amplo → consumir Mission Brief do Strategic Intelligence Layer
 2. CLASSIFICAR tipo(s) de demanda — confidence: alta/média/baixa
-2b. DETECTAR domínio(s): Development · Data Intelligence · Growth & Brand Intelligence · Business/Operations · QA/Validation
+2b. DETECTAR domínio(s): Development · Data Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation
+2b-design. SE criação/alteração de interface (tela, dashboard web, formulário):
+   a. Responder: DS? identidade? componentes? guideline? tema? legado?
+   b. Design Mode: LEGACY | HYBRID | GREENFIELD (`rules/design/design-modes.md`) — ou via `project-style-analyzer`
+   c. Carregar Design DNA (`context/design-dna.md` ou `design-system/design-dna-default.md`)
+   d. Pipeline `workflows/product-design.md` (mínimo para o modo)
 2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
 2d. SE Data Intelligence envolvido → data-orchestrator (sub-plano de dados)
 2e. SE Growth & Brand Intelligence envolvido → project-style-analyzer + knowledge-engine + workflow marketing com menor conjunto de skills
@@ -123,6 +128,9 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | `hybrid` | task+banco, relatório+API, procedure+tela | Standard → Review | `workflows/hybrid-flows.md` |
 | `marketing` | landing page, site, página pública, copy, SEO, assets, brand, auditoria, modernização | Standard → Review | `workflows/marketing.md` |
 | `product-excellence` | auditoria, modernizacao, benchmark, roadmap, melhoria de produto | Standard → Review | `workflows/product-excellence.md` |
+| `product` / `ux` (interface) | tela, layout, componentes, design system | Standard → Review | `workflows/product-design.md` |
+
+**Regra design:** nunca alterar identidade visual sem pedido explícito (`rules/design/visual-identity.md`).
 
 Índice completo: `workflows/_index.md`
 
@@ -132,13 +140,32 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 |---------|----------------|
 | **Development** | backend, api, react, database, flutter |
 | **Data Intelligence** | data-orchestrator, sql-architect, powerbi-specialist, data-validator, ... |
+| **Product & Design** | product-designer, ux-designer, ui-designer, design-system, design-reviewer, product-aesthetic-director, ... |
 | **Infrastructure Intelligence** | project-resolver, infrastructure-discovery, project-scanner, integration-resolver |
 | **Growth & Brand Intelligence** | project-style-analyzer, knowledge-engine, brand-strategist, content-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
 | **Framework Operating System** | framework-reviewer, framework-optimizer, pattern-extractor, anti-pattern-detector, recommendation-engine |
 | **Business/Operations** | task-analyst, business-rule-mapper, support, product-owner |
 | **QA/Validation** | data-validator, qa, bug-hunter, validator, code-review |
 
-Detalhes: `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md`
+Detalhes: `docs/DATA_INTELLIGENCE.md` · `docs/DESIGN_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md`
+
+## Product & Design Intelligence
+
+Invocar para interface implementável (SPA, backoffice, formulários, dashboards web):
+
+```
+Design Mode + Design DNA
+→ product-designer → ux-designer → ui-designer → design-system
+→ benchmark-specialist* → component-library → react|flutter
+→ design-reviewer → product-aesthetic-director (gate ≥8) → qa
+```
+
+- **LEGACY:** pipeline mínimo; preservar identidade (`checklists/design/legacy.md`)
+- **HYBRID:** evolução gradual (`checklists/design/hybrid.md`)
+- **GREENFIELD:** `design-system/` se sem identidade (`checklists/design/greenfield.md`)
+- Complementa Growth & Brand (copy/marketing) — não substitui `project-style-analyzer`
+
+Ver: `docs/DESIGN_INTELLIGENCE.md` · `workflows/product-design.md`
 
 ## Critérios para Hybrid Flow
 
@@ -228,6 +255,7 @@ Estrutura: `context/working-context.md`
 | Decisão | decision-maker |
 | Plano | implementation-planner, tech-lead |
 | Implementação | backend, api, database, react, flutter, ... |
+| **Design** | product-designer, ux-designer, ui-designer, design-system, design-reviewer, product-aesthetic-director |
 | Dados (sub) | data-orchestrator → sql-architect, query-optimizer, powerbi-specialist, ... |
 | Growth/Brand | project-style-analyzer, knowledge-engine, brand-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, product-excellence |
 | Híbrido | hybrid-flow-planner, report-implementation-planner, cross-domain-decision-maker |
@@ -246,6 +274,8 @@ Estrutura: `context/working-context.md`
 - [ ] Technical Council: decisão consolidada (não opiniões brutas)
 - [ ] Token economy aplicada
 - [ ] Validator/Critic conforme modo
+- [ ] Design Mode definido se interface
+- [ ] product-aesthetic-director: gate ≥8 ou revisão solicitada
 - [ ] Resposta final completa
 - [ ] Working Context descartado
 

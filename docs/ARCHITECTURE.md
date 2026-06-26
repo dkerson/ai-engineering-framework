@@ -126,11 +126,12 @@ Além dos modos de execução, o Orchestrator classifica **domínios** envolvido
 | Development | — | backend, api, react, database |
 | Data Intelligence | `data-orchestrator` | sql-architect, powerbi-specialist, data-validator, ... |
 | Infrastructure Intelligence | — | project-resolver, infrastructure-discovery, project-scanner, integration-resolver |
+| Product & Design (v2.7+) | — | product-designer, ux-designer, ui-designer, design-reviewer, product-aesthetic-director, ... |
 | Growth & Brand Intelligence | — | project-style-analyzer, knowledge-engine, brand-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
 | Business/Operations | — | task-analyst, business-rule-mapper, support |
 | QA/Validation | — | qa, data-validator, bug-hunter, validator |
 
-Fluxos que cruzam domínios usam `hybrid-flow-planner`. Detalhe: `docs/HYBRID_FLOWS.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md`.
+Fluxos que cruzam domínios usam `hybrid-flow-planner`. Detalhe: `docs/HYBRID_FLOWS.md` · `docs/DATA_INTELLIGENCE.md` · `docs/DESIGN_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md`.
 
 ### Growth & Brand Intelligence
 

@@ -13,6 +13,7 @@
 | `business.md` | Glossário, personas |
 | `patterns.md` | Padrões recorrentes do projeto |
 | `working-context.md` | **Especificação** do Working Context (não editar por tarefa) |
+| `design-dna.md` | Design DNA do projeto — modo, tokens, componentes (v2.7+) |
 | `semantic-layer/` | Camada semântica — conceitos de negócio → tabelas/APIs/telas (v2.1+) |
 
 ## Novo projeto
