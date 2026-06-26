@@ -5,6 +5,15 @@
 | [../README.md](../README.md) | Visão geral do framework |
 | [../AGENTS.md](../AGENTS.md) | Bootstrap para agentes |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Arquitetura, camadas, responsabilidades |
+| [Framework-Operating-System.md](Framework-Operating-System.md) | Sistema operacional e governanca do framework |
+| [Infrastructure-Intelligence.md](Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
+| [Project-Registry.md](Project-Registry.md) | Registry por projeto |
+| [Infrastructure-Registry.md](Infrastructure-Registry.md) | Registry global de infraestrutura |
+| [Strategic-Intelligence-Layer.md](Strategic-Intelligence-Layer.md) | Camada estrategica acima do Orchestrator |
+| [Missions.md](Missions.md) | Mission Types, Mission Score e Mission Memory |
+| [Mission-Recognition.md](Mission-Recognition.md) | Reconhecimento de objetivos humanos |
+| [Mission-Modes.md](Mission-Modes.md) | Modos estrategicos de mission |
+| [Continuous-Evolution.md](Continuous-Evolution.md) | Backlog sugerido ao fim de missions |
 | [DATA_INTELLIGENCE.md](DATA_INTELLIGENCE.md) | Domínio de dados, SQL, Power BI, BI |
 | [GROWTH_BRAND_INTELLIGENCE.md](GROWTH_BRAND_INTELLIGENCE.md) | Branding, copywriting, marketing, SEO, conversao e assets |
 | [GROWTH_INTELLIGENCE.md](GROWTH_INTELLIGENCE.md) | Growth, conversao e evolucao continua |

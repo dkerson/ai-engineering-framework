@@ -12,6 +12,14 @@ Complemento obrigatório: `rules/hierarchical-orchestration.md`
 
 ## Regras absolutas
 
+Strategic Intelligence Layer:
+
+- Nunca abre arquivos
+- Nunca executa comandos
+- Nunca chama skills diretamente
+- Nunca implementa codigo
+- Apenas interpreta, planeja e entrega Mission Brief ao Orchestrator
+
 
 
 Skills **nunca** devem:
@@ -105,6 +113,17 @@ O `knowledge-engine` deve consultar apenas areas relevantes em `knowledge/`:
 - Flutter: flutter, mobile, performance, design-system
 
 Registrar no Working Context as areas consultadas. Nao copiar documentos inteiros para respostas ou entre skills.
+
+### Infrastructure Intelligence (v2.6+)
+
+Infrastructure Missions devem consultar primeiro registries existentes:
+
+1. `infrastructure/projects/`
+2. `infrastructure/registry/`
+3. `infrastructure/catalog/`
+4. Knowledge Hub de infraestrutura
+
+Nao escanear projeto inteiro se o registry ja responder. Nunca carregar ou registrar credenciais reais.
 
 
 

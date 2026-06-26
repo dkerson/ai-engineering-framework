@@ -1,5 +1,73 @@
 # Changelog — AI Engineering Framework
 
+## [2.6.0] - 2026-06-26
+
+### Adicionado
+
+- **Infrastructure Intelligence** - novo dominio para projetos, repositorios, bancos, servicos, APIs, filas, storage, cloud, MCPs, ambientes, dependencias e conexoes.
+- Estrutura `infrastructure/` com `projects/`, `registry/`, `catalog/`, `services/`, `repositories/`, `databases/`, `mcp/`, `providers/`, `cloud/`, `monitoring/`, `queues/`, `storage/`, `apis/`, `integrations/`, `environments/`.
+- Project Registry para `irisys`, `umbra` e `rifsmart`.
+- Infrastructure Registry global para projects, repositories, databases, services, providers, cloud, queues, storage, APIs, MCPs, integrations e connections.
+- Skills: `infrastructure-discovery`, `project-scanner`, `project-resolver`, `integration-resolver`.
+- Rules/checklists/templates de infraestrutura e secrets.
+- Knowledge Hub de infraestrutura: infrastructure, git, cloud, mcp, docker, kubernetes, apis, queues, storage, providers e monitoring.
+
+### Segurança
+
+- Credenciais reais nunca devem ser armazenadas.
+- Usar placeholders, environment variables, `.env.example` ou Secret Managers.
+
+### Alterado
+
+- Orchestrator, AGENTS, README, Architecture e workflow index reconhecem Infrastructure Missions.
+- FOS passa a registrar evolucao de infraestrutura em status, roadmap, implemented, learning, report e metrics.
+
+## [2.5.0] - 2026-06-26
+
+### Adicionado
+
+- **Framework Operating System (FOS)** - sistema operacional de governanca do proprio framework.
+- Estrutura `framework/operating-system/` com roadmap, backlog, ideas, implemented, under-review, rejected, decisions, learning, metrics, patterns, anti-patterns, retrospectives, releases, versions, knowledge, history, reports, health e governance.
+- Documentos vivos: `FRAMEWORK_STATUS.md`, `FRAMEWORK_HEALTH.md`, `ROADMAP.md`, `BACKLOG.md`, `IDEAS.md`, `IMPLEMENTED.md`, `UNDER_REVIEW.md`, `REJECTED.md`, `DECISIONS.md`, `CHANGELOG.md`, `LEARNING.md`, `RETROSPECTIVES.md`, `PATTERNS.md`, `ANTI_PATTERNS.md`, `RECOMMENDATIONS.md`, `FRAMEWORK_METRICS.md`, `FRAMEWORK_REPORT.md`, `NEXT_STEPS.md`, `VERSION.md`.
+- Skills de governanca: `framework-reviewer`, `framework-optimizer`, `pattern-extractor`, `anti-pattern-detector`, `recommendation-engine`.
+- Workflow `framework-operating-system.md`.
+- Rules, checklists e templates para governanca, health, dashboard, decisions e recommendations.
+
+### Alterado
+
+- AGENTS, README, Architecture, Orchestrator e workflow index passam a reconhecer perguntas naturais sobre saude, roadmap, evolucao e recomendacoes do framework.
+- Framework version atualizado para 2.5.0.
+
+### Governanca
+
+- FOS registra, mede, audita e recomenda.
+- FOS nunca implementa automaticamente.
+- Toda mudanca no framework depende de aprovacao do usuario.
+
+## [2.4.0] - 2026-06-26
+
+### Adicionado
+
+- **Strategic Intelligence Layer (SIL)** - nova camada acima do Master Orchestrator para transformar linguagem natural em Missoes Estrategicas.
+- **Mission System:** Mission Types, Mission Recognition, Mission Planner, Mission Modes, Mission Memory e Mission Score.
+- **Continuous Evolution** - backlog sugerido ao fim de cada mission com oportunidades, melhorias, dividas tecnicas, features e evolucoes de UX/produto.
+- **Documentacao SIL:** `docs/Strategic-Intelligence-Layer.md`, `docs/Missions.md`, `docs/Mission-Recognition.md`, `docs/Mission-Modes.md`, `docs/Continuous-Evolution.md`.
+- **Artefatos de mission:** `templates/mission/`, `checklists/mission-recognition.md`, `checklists/continuous-evolution.md`, `rules/strategic-intelligence-layer.md`.
+- **Workflow:** `workflows/strategic-mission.md`.
+- **Exemplo:** `examples/strategic-mission.md`.
+
+### Alterado
+
+- **AGENTS.md, README, ARCHITECTURE, Orchestrator e workflows** atualizados para posicionar o SIL acima do Master Orchestrator.
+- **Working Context** expandido com Mission Memory.
+- **Final response template** expandido com Mission Report e Continuous Evolution quando aplicavel.
+
+### Preservado (compatibilidade)
+
+- O Master Orchestrator continua sendo o unico executor operacional.
+- O SIL nao implementa codigo, nao chama skills diretamente e nao altera arquivos.
+- Todas as skills, modos e dominios v2.3 permanecem preservados.
+
 ## [2.3.0] - 2026-06-26
 
 ### Adicionado

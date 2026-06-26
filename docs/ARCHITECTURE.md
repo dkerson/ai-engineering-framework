@@ -13,7 +13,7 @@
 ┌──────────────────────────▼──────────────────────────────┐
 │              AI Engineering Framework                    │
 │                                                          │
-│  Orchestrator ──► Modo (Fast|Standard|Review|Council)   │
+│  FOS ──► SIL ──► Mission ──► Orchestrator ──► Modo       │
 │       │                                                  │
 │       ├── Working Context (temporário)                   │
 │       ├── Workflows (pipelines por tipo)                 │
@@ -27,7 +27,10 @@
 
 | Camada | Pasta | Responsabilidade |
 |--------|-------|------------------|
-| Bootstrap | `AGENTS.md` | Entrada universal; aponta para Orchestrator |
+| Bootstrap | `AGENTS.md` | Entrada universal; aponta para SIL + Orchestrator |
+| Framework Operating System | `framework/operating-system/` | Governa evolucao, saude, roadmap, backlog, metricas e recomendacoes |
+| Strategic Intelligence | `docs/Strategic-Intelligence-Layer.md` | Interpreta linguagem natural e cria Mission Briefs |
+| Infrastructure Intelligence | `infrastructure/` | Registra projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | Orquestração | `skills/orchestrator/` | Modo, pipeline, Working Context, entrega |
 | Governança | `critic`, `validator`, `risk-reviewer`, `decision-maker`, `implementation-planner` | Qualidade e decisão |
 | Execução | Skills técnicas (`backend`, `api`, `react`, …) | Implementação especializada |
@@ -51,6 +54,24 @@ Detalhe em `workflows/modes.md`.
 ## Technical Council
 
 Processo — **não é skill**. Documentado em `workflows/technical-council.md`.
+
+## Strategic Intelligence Layer
+
+O SIL fica acima do Master Orchestrator. Ele nao implementa codigo, nao chama skills e nao altera arquivos. Sua saida e um Mission Brief com objetivo, mission type, mission mode, score, dominios, riscos, quick wins e plano estrategico.
+
+Detalhes: `docs/Strategic-Intelligence-Layer.md`, `docs/Missions.md`, `docs/Mission-Recognition.md`, `docs/Mission-Modes.md`, `docs/Continuous-Evolution.md`.
+
+## Framework Operating System
+
+O FOS governa o proprio framework. Ele registra, aprende, mede, organiza, prioriza, versiona, documenta, audita e recomenda. Ele nunca implementa automaticamente e toda mudanca depende de aprovacao do usuario.
+
+Detalhes: `docs/Framework-Operating-System.md` e `framework/operating-system/`.
+
+## Infrastructure Intelligence
+
+Infrastructure Intelligence registra e consulta infraestrutura dos projetos. Ele conhece Project Registry, Infrastructure Registry, MCP Registry, Connection Registry, dashboards e health reports. Credenciais reais nunca sao armazenadas.
+
+Detalhes: `docs/Infrastructure-Intelligence.md`, `docs/Project-Registry.md`, `docs/Infrastructure-Registry.md`.
 
 ## Working Context
 
@@ -104,6 +125,7 @@ Além dos modos de execução, o Orchestrator classifica **domínios** envolvido
 |---------|------------------|--------|
 | Development | — | backend, api, react, database |
 | Data Intelligence | `data-orchestrator` | sql-architect, powerbi-specialist, data-validator, ... |
+| Infrastructure Intelligence | — | project-resolver, infrastructure-discovery, project-scanner, integration-resolver |
 | Growth & Brand Intelligence | — | project-style-analyzer, knowledge-engine, brand-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
 | Business/Operations | — | task-analyst, business-rule-mapper, support |
 | QA/Validation | — | qa, data-validator, bug-hunter, validator |
@@ -140,6 +162,8 @@ Nova skill via `skills/skill-builder/SKILL.md`:
 | Decisão | Motivo |
 |---------|--------|
 | Orchestrator monopólio | Decisão centralizada, menos tokens |
+| SIL acima do Orchestrator | Linguagem natural vira Mission antes da execucao operacional |
+| FOS como sistema operacional | O framework passa a manter saude, historico, roadmap e recomendacoes sem auto-modificacao |
 | Pasta `Personal-AI/` preservada | Compatibilidade Umbra e consumidores v1 |
 | Submodule como instalação primária | Atualização isolada do framework |
 | Council como processo, não skill | Composição dinâmica por demanda |

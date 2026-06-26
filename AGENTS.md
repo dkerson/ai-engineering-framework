@@ -7,13 +7,16 @@
 
 ## Bootstrap obrigatório
 
+0. **Strategic Intelligence Layer (SIL):** interpretar a intenção humana e criar uma Mission antes da execução
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
-4. Respeitar `rules/hierarchical-orchestration.md` e `rules/token-economy.md`
+4. Respeitar `rules/strategic-intelligence-layer.md`, `rules/hierarchical-orchestration.md` e `rules/token-economy.md`
 5. Seguir o processo: Entender → Classificar → Escolher modo → Planejar → Investigar → Implementar → Validar → Revisar → Entregar
 6. Manter **Working Context** durante a execução (`context/working-context.md`)
 7. Terminar com `templates/final-response.md`
+
+SIL nunca implementa, nunca chama skills diretamente e nunca altera arquivos. Ele entrega um Mission Brief ao Orchestrator.
 
 ## Instalação em projetos
 
@@ -22,11 +25,17 @@ Ver `docs/INSTALL.md` (Git Submodule recomendado). Caminhos: `.ai/`, `ai-enginee
 ## Arquitetura hierárquica
 
 ```
-Usuário ↔ Orchestrator (único contato)
+Usuário
+              ↓
+    Framework Operating System (governanca do framework)
+              ↓
+    Strategic Intelligence Layer (Mission)
+              ↓
+    Orchestrator (executor operacional)
               ↓
     [Fast | Standard | Review | Technical Council]
               ↓
-    Domínios: Development · Data Intelligence · Growth & Brand Intelligence · Product Excellence · Knowledge Hub · Business/Operations · QA/Validation
+    Domínios: Development · Data Intelligence · Infrastructure Intelligence · Growth & Brand Intelligence · Product Excellence · Knowledge Hub · Framework Operating System · Business/Operations · QA/Validation
               ↓
     hybrid-flow-planner / data-orchestrator (quando aplicável)
               ↓
@@ -35,7 +44,7 @@ Usuário ↔ Orchestrator (único contato)
     Working Context → descartado ao finalizar
 ```
 
-Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
+Detalhes: `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `docs/Strategic-Intelligence-Layer.md` · `docs/Missions.md` · `docs/Infrastructure-Intelligence.md` · `docs/Project-Registry.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
 
 ## Estrutura do framework
 
@@ -48,9 +57,12 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_
 ├── skills/            ← orchestrator + especializadas
 ├── rules/
 ├── templates/
+├── templates/mission/ ← Mission Brief, Report, Continuous Evolution
 ├── checklists/
 ├── workflows/
 ├── knowledge/         ← boas práticas resumidas por área
+├── framework/operating-system/ ← governanca viva do framework
+├── infrastructure/    ← registry de projetos e infraestrutura
 ├── context/           ← overlay do projeto consumidor (ver context/README.md)
 │   └── semantic-layer/  ← camada semântica Otus/Irisys (templates)
 ├── templates/data/    ← templates de dados/BI
@@ -83,7 +95,7 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_
 
 ## Tipos de demanda
 
-`bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
+`framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
 
 Mapeamento: `workflows/_index.md`
 
@@ -99,6 +111,42 @@ Mapeamento: `workflows/_index.md`
 | **Decision Maker** | Consolida conselho — nunca fala com usuário |
 | **Implementation Planner** | Plano técnico executável |
 | **Skill Builder** | Gerar novas skills no padrão |
+
+### Strategic Intelligence Layer (v2.4+)
+
+| Conceito | Papel |
+|----------|-------|
+| Strategic Intelligence Layer | Interpreta linguagem natural e cria Mission Brief |
+| Mission Recognition | Identifica objetivo, contexto, risco, impacto, dominios e mission type |
+| Mission Planner | Define ordem estrategica, quick wins, riscos e necessidade de Council |
+| Mission Memory | Preserva objetivo, decisoes, hipoteses, roadmap, validacoes e quick wins |
+| Continuous Evolution | Sugere backlog futuro ao fim da mission |
+
+O SIL nao implementa, nao chama skills e nao altera arquivos. Ele entrega ao Master Orchestrator uma Mission pronta para execucao.
+
+### Framework Operating System (v2.5+)
+
+| Conceito | Papel |
+|----------|-------|
+| Framework Operating System | Administra a evolucao do proprio framework |
+| Framework Reviewer | Revisa saude, redundancia, cobertura e complexidade |
+| Framework Optimizer | Recomenda otimizacoes sem alterar arquivos |
+| Pattern Extractor | Sugere padroes apos evidencia recorrente |
+| Anti Pattern Detector | Registra duplicacao, token waste e conflitos |
+| Recommendation Engine | Sugere novas skills, workflows, templates, rules, checklists, docs, missions, dominios ou patterns |
+
+O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda mudanca depende de aprovacao do usuario.
+
+### Infrastructure Intelligence (v2.6+)
+
+| Skill | Papel |
+|-------|-------|
+| infrastructure-discovery | Descobre sinais de infraestrutura sem alterar codigo |
+| project-scanner | Responde perguntas usando registries |
+| project-resolver | Resolve projeto, ambiente, banco, Git, servico e MCP |
+| integration-resolver | Planeja integracoes, MCPs, servicos e skills |
+
+Registries: `infrastructure/registry/` e `infrastructure/projects/`. Credenciais reais nunca sao armazenadas.
 
 ### Data Intelligence (v2.1+)
 

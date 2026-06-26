@@ -71,6 +71,9 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 | Arquivo | Tipo | Modo sugerido | Pipeline resumido |
 
 |---------|------|---------------|-------------------|
+| [framework-operating-system.md](framework-operating-system.md) | Framework Operating System | Fast/Standard | FOS docs → Reviewer → Recommendations → Report |
+| [strategic-mission.md](strategic-mission.md) | Strategic Mission | Analysis/Planning/Implementation | SIL → Mission Brief → Orchestrator → Domains → Mission Report |
+| [infrastructure-mission.md](infrastructure-mission.md) | Infrastructure Mission | Standard/Review | Project Resolver → Discovery/Scanner → Registry → Dashboard/Health → FOS |
 
 | [bug.md](bug.md) | Bug | Standard | Context → Bug Hunter → Tech Lead → [técnica] → QA |
 
@@ -173,6 +176,8 @@ No passo `[técnica]` ou `Impl`, escolher conforme stack:
 - Banco → `database` · SQL analítico/BI → `data-orchestrator` + `sql-architect`
 
 - Dados/BI → ver `docs/DATA_INTELLIGENCE.md`
+
+- Infrastructure → `project-resolver` + `infrastructure-discovery` + `project-scanner` + `integration-resolver`
 
 - Growth/Brand/Marketing → `project-style-analyzer` + `knowledge-engine` + `brand-strategist` + `copywriter` + `asset-intelligence` + `seo-specialist` + `product-excellence`
 

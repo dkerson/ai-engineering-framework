@@ -18,6 +18,13 @@
 ## Modo utilizado
 [Fast | Standard | Review | Technical Council] — [justificativa em 1 frase]
 
+## Missão (quando aplicável)
+- Mission Type:
+- Mission Mode:
+- Objetivo:
+- Domínios envolvidos:
+- Mission Score:
+
 ## Skills utilizadas
 - [skill-1] — [papel nesta execução]
 - [skill-2] — [papel nesta execução]
@@ -42,3 +49,19 @@
 
 ## Próximos passos
 - [Ação opcional recomendada ou "Nenhum"]
+
+## Continuous Evolution (quando aplicável)
+- Quick wins futuros:
+- Melhorias:
+- Refatorações:
+- Features:
+- Dívidas técnicas:
+- Backlog sugerido:
+
+## Infrastructure Registry (quando aplicável)
+- Projeto:
+- Ambiente:
+- Recursos registrados:
+- Registries atualizados:
+- Secret policy:
+- Pendências:

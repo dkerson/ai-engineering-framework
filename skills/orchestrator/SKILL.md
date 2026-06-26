@@ -48,6 +48,7 @@ Detalhes: `workflows/modes.md`
 
 ```
 1. ENTENDER pedido + AGENTS.md do projeto
+1a. SE houver objetivo humano amplo → consumir Mission Brief do Strategic Intelligence Layer
 2. CLASSIFICAR tipo(s) de demanda — confidence: alta/média/baixa
 2b. DETECTAR domínio(s): Development · Data Intelligence · Growth & Brand Intelligence · Business/Operations · QA/Validation
 2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
@@ -101,6 +102,9 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 
 | Tipo | Sinais | Modo sugerido | Workflow |
 |------|--------|---------------|----------|
+| `framework-operating-system` | saude do framework, roadmap, ideias, recomendacoes, skills sem uso, evolucao | Fast/Standard | `workflows/framework-operating-system.md` |
+| `strategic-mission` | objetivo alto nivel, transformar, modernizar, vender mais, reduzir suporte | Analysis/Planning → Standard/Review/Council | `workflows/strategic-mission.md` |
+| `infrastructure-mission` | adicione, cadastre, configure, novo banco, novo Git, nova API, novo MCP | Standard → Review se risco/seguranca | `workflows/infrastructure-mission.md` |
 | `bug` | erro, falha, quebrado | Standard → Review se DB/auth | `workflows/bug.md` |
 | `incident` | produção, urgente, downtime | **Council** | `workflows/incident.md` |
 | `feature` | implemente, adicione | Standard → Review/Council | `workflows/feature.md` |
@@ -128,7 +132,9 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 |---------|----------------|
 | **Development** | backend, api, react, database, flutter |
 | **Data Intelligence** | data-orchestrator, sql-architect, powerbi-specialist, data-validator, ... |
+| **Infrastructure Intelligence** | project-resolver, infrastructure-discovery, project-scanner, integration-resolver |
 | **Growth & Brand Intelligence** | project-style-analyzer, knowledge-engine, brand-strategist, content-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
+| **Framework Operating System** | framework-reviewer, framework-optimizer, pattern-extractor, anti-pattern-detector, recommendation-engine |
 | **Business/Operations** | task-analyst, business-rule-mapper, support, product-owner |
 | **QA/Validation** | data-validator, qa, bug-hunter, validator, code-review |
 

@@ -4,6 +4,8 @@
 
 ## Visão geral
 
+Antes dos modos operacionais, o Strategic Intelligence Layer pode escolher um Mission Mode: Analysis, Planning, Implementation, Validation, Continuous Improvement, Innovation, Emergency ou Learning. O Mission Mode não substitui Fast/Standard/Review/Council; ele orienta o Orchestrator.
+
 ```mermaid
 flowchart TB
     U[Pedido do usuário] --> O[Orchestrator]
@@ -111,3 +113,4 @@ Nunca **descer** de modo sem reavaliar risco.
 | architecture | Council | sempre |
 | database | Review/Council | migration em produção |
 | marketing | Standard/Review | redesign amplo, rebranding, Product Audit, >3 módulos ou decisão de marca crítica |
+| infrastructure-mission | Standard/Review | credenciais, seguranca, producao, multiplos ambientes ou integracao critica |

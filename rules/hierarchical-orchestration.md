@@ -4,6 +4,8 @@
 
 ## Princípio central
 
+O **Strategic Intelligence Layer** fica acima do Orchestrator e transforma linguagem natural em Mission Brief. Ele não implementa, não altera arquivos e não chama skills diretamente.
+
 O **Orchestrator** é o único agente que conversa com o usuário.
 
 - Nenhuma skill inicia execução por conta própria
@@ -102,6 +104,7 @@ O Orchestrator classifica os domínios envolvidos e monta o menor pipeline segur
 
 - Development
 - Data Intelligence
+- Infrastructure Intelligence
 - Growth & Brand Intelligence
 - Product Excellence
 - Knowledge Hub
@@ -111,6 +114,8 @@ O Orchestrator classifica os domínios envolvidos e monta o menor pipeline segur
 Demandas de landing page, site, página pública, marketing, branding, copy, SEO ou assets usam `workflows/marketing.md`. Quando cruzarem produto, frontend, mobile, dados ou QA, tratar como fluxo híbrido.
 
 O usuario nunca precisa escolher skills. Para pedidos como "crie uma home", "analise esse produto", "modernize o sistema" ou "implemente um dashboard", o Orchestrator deve montar o fluxo automaticamente, incluindo `project-style-analyzer`, `knowledge-engine`, especialistas de produto/design/growth e validadores somente quando necessario.
+
+Demandas de infraestrutura como "cadastre um Git", "adicione um banco", "registre um MCP" ou "mapeie este projeto" usam `workflows/infrastructure-mission.md`. Credenciais reais nunca devem ser armazenadas.
 
 ## Prioridade do Decision Maker
 

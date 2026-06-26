@@ -23,13 +23,34 @@ Tarefa concluída → WC descartado
 
 ### Classificação
 - Tipo: [bug|feature|data|hybrid|...]
+- Mission Type: [Development|Growth|Modernization|Dashboard|...]
+- Mission Mode: [Analysis|Planning|Implementation|Validation|Continuous Improvement|Innovation|Emergency|Learning]
 - Modo: [Fast|Standard|Review|Technical Council]
 - Risco: [Muito Baixo|Baixo|Médio|Alto|Crítico]
 - Domínios: [Development|Data Intelligence|Business/Operations|QA/Validation]
 - Growth & Brand: [sim/não]
 - Knowledge Hub: [areas consultadas]
 - Product Excellence: [sim/não]
+- Infrastructure Intelligence: [sim/não]
 - Hybrid Flow: [sim/não]
+
+### Mission Memory (quando aplicável)
+- Objetivo principal:
+- Objetivos secundários:
+- Mission Score:
+  - Valor esperado:
+  - Complexidade:
+  - Esforço:
+  - Impacto:
+  - Prazo estimado:
+  - Confiança:
+  - Risco:
+- Decisões:
+- Hipóteses:
+- Roadmap:
+- Quick wins:
+- Validações:
+- Backlog sugerido:
 
 ### Escopo
 - Módulos afetados: [...]
@@ -78,6 +99,22 @@ Tarefa concluída → WC descartado
 - Estratégico:
 - Impacto/esforço/prioridade:
 
+### Infrastructure Intelligence (quando aplicável)
+- Projeto:
+- Ambiente:
+- Repositorio:
+- Banco:
+- Servico:
+- API:
+- Fila:
+- Storage:
+- Cloud/provider:
+- MCP:
+- Variaveis de ambiente:
+- Secret reference:
+- Registry atualizado:
+- Credenciais reais ausentes: [sim/não]
+
 ### Descobertas
 - [skill]: [bullet resumido]
 
@@ -109,6 +146,7 @@ Para SQL: seguir ordem em `rules/data/query-performance.md`.
 
 ## Integração
 
+- Strategic Intelligence Layer: gera Mission Brief e Mission Memory; não implementa
 - Orchestrator: cria e consolida
 - hybrid-flow-planner / data-orchestrator: plano e domínios
 - Context Builder: popula escopo e stack
