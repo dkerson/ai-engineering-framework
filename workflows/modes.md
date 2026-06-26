@@ -110,3 +110,4 @@ Nunca **descer** de modo sem reavaliar risco.
 | security | Review/Council | sempre Council se auth |
 | architecture | Council | sempre |
 | database | Review/Council | migration em produção |
+| marketing | Standard/Review | redesign amplo, rebranding, Product Audit, >3 módulos ou decisão de marca crítica |

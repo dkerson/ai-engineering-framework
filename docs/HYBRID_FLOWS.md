@@ -1,6 +1,6 @@
 # Fluxos Híbridos
 
-> Demandas que misturam desenvolvimento, banco, BI, suporte e QA.
+> Demandas que misturam desenvolvimento, banco, BI, suporte, Growth & Brand e QA.
 
 ## Princípio
 
@@ -15,7 +15,7 @@ Nem toda demanda é só dev. Nem toda é só dados. O **Orchestrator** detecta m
            │
     ┌──────┴──────┬──────────────┬─────────────┐
     ▼             ▼              ▼             ▼
-Development  Data Intel.   Business/Ops    QA/Validation
+Development  Data Intel.   Growth/Brand   Business/Ops    QA/Validation
 ```
 
 ## Critérios para Hybrid Flow
@@ -29,6 +29,10 @@ Development  Data Intel.   Business/Ops    QA/Validation
 - indicador + financeiro
 - SQL + performance + deploy
 - dados + implantação/suporte
+- landing page + frontend
+- marketing + design system
+- assets + SEO + página pública
+- onboarding + UX writing + produto
 
 ## Fluxos documentados
 
@@ -59,6 +63,14 @@ Orchestrator → task-analyst → requirement-reviewer → business-rule-mapper 
   → sql-architect → dba-reviewer → impact-analysis → data-validator → backend → qa → code-review
 ```
 
+### Landing page com implementação frontend
+
+```
+Orchestrator → brand-strategist → content-strategist → copywriter → ux-writer
+  → asset-intelligence → landing-page-specialist → seo-specialist → react
+  → brand-reviewer → marketing-reviewer → conversion-optimizer → qa
+```
+
 ## Regras
 
 1. Plano único no Working Context
@@ -75,9 +87,11 @@ Orchestrator → task-analyst → requirement-reviewer → business-rule-mapper 
 | cross-domain-decision-maker | Decisão entre domínios |
 | report-implementation-planner | Relatórios end-to-end |
 | data-orchestrator | Sub-plano de dados |
+| asset-intelligence | Decisão sobre recursos visuais em fluxos Growth & Brand |
 
 ## Referências
 
 - `workflows/hybrid-flows.md`
 - `examples/data/hybrid-task-database-frontend.md`
+- `examples/marketing-growth-brand.md`
 - `context/working-context.md` (seção Data Intelligence)

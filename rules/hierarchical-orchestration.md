@@ -96,6 +96,22 @@ O Orchestrator reutiliza contexto já obtido. Se uma skill analisou um arquivo, 
 
 Detalhes complementares: `rules/token-economy.md`
 
+## Domínios lógicos
+
+O Orchestrator classifica os domínios envolvidos e monta o menor pipeline seguro:
+
+- Development
+- Data Intelligence
+- Growth & Brand Intelligence
+- Product Excellence
+- Knowledge Hub
+- Business/Operations
+- QA/Validation
+
+Demandas de landing page, site, página pública, marketing, branding, copy, SEO ou assets usam `workflows/marketing.md`. Quando cruzarem produto, frontend, mobile, dados ou QA, tratar como fluxo híbrido.
+
+O usuario nunca precisa escolher skills. Para pedidos como "crie uma home", "analise esse produto", "modernize o sistema" ou "implemente um dashboard", o Orchestrator deve montar o fluxo automaticamente, incluindo `project-style-analyzer`, `knowledge-engine`, especialistas de produto/design/growth e validadores somente quando necessario.
+
 ## Prioridade do Decision Maker
 
 Quando houver conflito entre recomendações:

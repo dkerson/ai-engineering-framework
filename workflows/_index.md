@@ -105,6 +105,7 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 | [product.md](product.md) | Produto | Fast/Standard | Product Owner → Functional Spec |
 
 | [ux.md](ux.md) | UX | Standard | UX → Func Spec |
+| [product-excellence.md](product-excellence.md) | Product Excellence / Audit | Standard/Review | Style Analyzer → Knowledge Engine → Benchmark → Excellence → Evolution |
 
 | [mobile.md](mobile.md) | Mobile | Standard/Review | Mobile UX → Flutter* → QA |
 
@@ -123,6 +124,7 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 | [data-divergence.md](data-divergence.md) | Divergência | Standard/Review | Rule Mapper → SQL → Validator → Bug Hunter |
 
 | [data-procedure.md](data-procedure.md) | Procedure | Review | SQL → DBA Reviewer → Impact → Validator |
+| [marketing.md](marketing.md) | Growth & Brand / Marketing / Product Excellence | Standard/Review | Style Analyzer → Knowledge Engine → Brand/Copy/UX → Assets/SEO → Frontend → Reviewers → Excellence → QA |
 
 | [commercial.md](commercial.md) | Comercial | Fast/Standard | Commercial → Func Spec |
 
@@ -171,6 +173,8 @@ No passo `[técnica]` ou `Impl`, escolher conforme stack:
 - Banco → `database` · SQL analítico/BI → `data-orchestrator` + `sql-architect`
 
 - Dados/BI → ver `docs/DATA_INTELLIGENCE.md`
+
+- Growth/Brand/Marketing → `project-style-analyzer` + `knowledge-engine` + `brand-strategist` + `copywriter` + `asset-intelligence` + `seo-specialist` + `product-excellence`
 
 
 

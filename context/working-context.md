@@ -26,6 +26,9 @@ Tarefa concluída → WC descartado
 - Modo: [Fast|Standard|Review|Technical Council]
 - Risco: [Muito Baixo|Baixo|Médio|Alto|Crítico]
 - Domínios: [Development|Data Intelligence|Business/Operations|QA/Validation]
+- Growth & Brand: [sim/não]
+- Knowledge Hub: [areas consultadas]
+- Product Excellence: [sim/não]
 - Hybrid Flow: [sim/não]
 
 ### Escopo
@@ -48,6 +51,32 @@ Tarefa concluída → WC descartado
 - Regras de agregação:
 - Validações executadas:
 - Divergências encontradas:
+
+### Growth & Brand Intelligence (quando aplicável)
+- Objetivo de comunicação:
+- Público-alvo:
+- Tom de voz:
+- Posicionamento:
+- Estrutura de página/conteúdo:
+- Copy principal:
+- Assets existentes:
+- Tipo de asset recomendado:
+- SEO/metadados:
+- Prova social:
+- Riscos de marca/conversão:
+- Notas Product Audit:
+
+### Product Excellence / Evolution (quando aplicável)
+- Modo visual: [Legacy|Hybrid|Greenfield|Automatic]
+- Knowledge Hub consultado:
+- Benchmark usado:
+- Dimensões avaliadas:
+- Categorias abaixo de 8:
+- Quick wins:
+- Curto prazo:
+- Médio prazo:
+- Estratégico:
+- Impacto/esforço/prioridade:
 
 ### Descobertas
 - [skill]: [bullet resumido]

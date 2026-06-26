@@ -19,7 +19,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Working Context | Manter e reutilizar contexto da sessão |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
-| Domínios lógicos | Development · Data Intelligence · Business/Operations · QA/Validation |
+| Domínios lógicos | Development · Data Intelligence · Growth & Brand Intelligence · Business/Operations · QA/Validation |
 | Fluxos híbridos | Múltiplos domínios → `hybrid-flow-planner` antes de executar |
 | Sub-orquestração dados | Domínio Data Intelligence → `data-orchestrator` (não substitui este agente) |
 
@@ -49,9 +49,10 @@ Detalhes: `workflows/modes.md`
 ```
 1. ENTENDER pedido + AGENTS.md do projeto
 2. CLASSIFICAR tipo(s) de demanda — confidence: alta/média/baixa
-2b. DETECTAR domínio(s): Development · Data Intelligence · Business/Operations · QA/Validation
+2b. DETECTAR domínio(s): Development · Data Intelligence · Growth & Brand Intelligence · Business/Operations · QA/Validation
 2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
 2d. SE Data Intelligence envolvido → data-orchestrator (sub-plano de dados)
+2e. SE Growth & Brand Intelligence envolvido → project-style-analyzer + knowledge-engine + workflow marketing com menor conjunto de skills
 3. ESCOLHER modo (Fast/Standard/Review/Technical Council)
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
@@ -116,6 +117,8 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | `architecture` | ADR, decisão técnica | **Council** | `workflows/architecture.md` |
 | `data` | SQL, BI, Power BI, divergência, ETL | Standard → Review | `workflows/data.md` |
 | `hybrid` | task+banco, relatório+API, procedure+tela | Standard → Review | `workflows/hybrid-flows.md` |
+| `marketing` | landing page, site, página pública, copy, SEO, assets, brand, auditoria, modernização | Standard → Review | `workflows/marketing.md` |
+| `product-excellence` | auditoria, modernizacao, benchmark, roadmap, melhoria de produto | Standard → Review | `workflows/product-excellence.md` |
 
 Índice completo: `workflows/_index.md`
 
@@ -125,10 +128,11 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 |---------|----------------|
 | **Development** | backend, api, react, database, flutter |
 | **Data Intelligence** | data-orchestrator, sql-architect, powerbi-specialist, data-validator, ... |
+| **Growth & Brand Intelligence** | project-style-analyzer, knowledge-engine, brand-strategist, content-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
 | **Business/Operations** | task-analyst, business-rule-mapper, support, product-owner |
 | **QA/Validation** | data-validator, qa, bug-hunter, validator, code-review |
 
-Detalhes: `docs/DATA_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md`
+Detalhes: `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md`
 
 ## Critérios para Hybrid Flow
 
@@ -139,6 +143,32 @@ Convocar `hybrid-flow-planner` quando houver:
 - SQL + performance + deploy · dados + implantação/suporte
 
 O Hybrid Flow deve: menor conjunto de skills · Working Context compartilhado · validar código **e** dados · evitar Council sem necessidade.
+
+## Growth & Brand Intelligence
+
+Invocar quando o pedido envolver landing page, site, pagina institucional, tela publica, portal, pagina inicial publica, sistema, dashboard, tela, aplicativo, marketing, onboarding, copy, SEO, branding, auditoria, modernizacao ou assets.
+
+Fluxo automatico base:
+
+```
+project-style-analyzer → knowledge-engine → brand-strategist
+→ brand-identity/voice/consistency conforme necessario
+→ content-strategist → copywriter → ux-writer
+→ product/ux/ui/design-system conforme necessario
+→ asset-intelligence → seo-specialist
+→ frontend/mobile conforme stack
+→ visual-consistency-reviewer → brand-reviewer → marketing-reviewer
+→ conversion-optimizer → product-excellence → qa
+```
+
+Regras:
+
+- Asset Intelligence nunca busca imagens automaticamente: primeiro analisa necessidade, assets existentes e tipo de recurso.
+- Sistemas internos devem priorizar clareza e produtividade; assets decorativos so quando agregarem valor.
+- Knowledge Engine consulta `knowledge/` antes de planejar quando houver ganho claro.
+- Project Style Analyzer define Legacy Mode, Hybrid Mode, Greenfield Mode ou Automatic Mode.
+- Product Audit deve pontuar Copy, Brand, Marketing, Conversao, Landing Page, SEO, Assets, Comunicacao, Identidade Visual, Tom de Voz, Design System, Product Market Fit e Escalabilidade de 0 a 10.
+- Categoria abaixo de 8 gera melhoria automatica e pode acionar `product-evolution-planner`.
 
 ## Data Orchestrator (sub-orquestrador)
 
@@ -193,6 +223,7 @@ Estrutura: `context/working-context.md`
 | Plano | implementation-planner, tech-lead |
 | Implementação | backend, api, database, react, flutter, ... |
 | Dados (sub) | data-orchestrator → sql-architect, query-optimizer, powerbi-specialist, ... |
+| Growth/Brand | project-style-analyzer, knowledge-engine, brand-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, product-excellence |
 | Híbrido | hybrid-flow-planner, report-implementation-planner, cross-domain-decision-maker |
 | Task/Requisito | task-analyst, requirement-reviewer, business-rule-mapper, impact-analysis |
 | Crítica | critic |
@@ -247,5 +278,8 @@ Estrutura: `context/working-context.md`
 - Processo: `workflows/_process.md`
 - Resposta: `templates/final-response.md`
 - Dados: `docs/DATA_INTELLIGENCE.md` · `templates/data/final-response-data.md`
+- Growth & Brand: `docs/GROWTH_BRAND_INTELLIGENCE.md` · `workflows/marketing.md`
+- Knowledge Hub: `docs/KNOWLEDGE_HUB.md` · `docs/KNOWLEDGE_ENGINE.md`
+- Product Excellence: `docs/PRODUCT_EXCELLENCE.md` · `docs/PRODUCT_EVOLUTION.md`
 - Híbridos: `docs/HYBRID_FLOWS.md` · `workflows/hybrid-flows.md`
 - Banco seguro: `rules/data/safe-database-changes.md`

@@ -84,6 +84,28 @@ Ao analisar SQL ou divergência de dados, seguir ordem em `rules/data/query-perf
 
 Não ler projeto inteiro. Demandas híbridas: `hybrid-flow-planner` define escopo mínimo por domínio.
 
+### Growth, Brand e assets (v2.2+)
+
+Antes de buscar ou gerar imagens, `asset-intelligence` deve:
+
+1. Analisar se o asset e necessario.
+2. Verificar assets existentes no projeto.
+3. Verificar biblioteca interna/design system.
+4. Decidir o tipo de recurso: logo, icone, SVG, ilustracao, imagem, mockup, screenshot ou outro.
+5. So entao sugerir fonte publica, criacao ou otimizacao.
+
+Nao criar dependencia visual externa quando icone, SVG ou asset interno resolver.
+
+### Knowledge Hub (v2.3+)
+
+O `knowledge-engine` deve consultar apenas areas relevantes em `knowledge/`:
+
+- Landing Page: copywriting, branding, seo, design, ux, marketing
+- Dashboard: dashboard, ux, analytics, design-system, performance
+- Flutter: flutter, mobile, performance, design-system
+
+Registrar no Working Context as areas consultadas. Nao copiar documentos inteiros para respostas ou entre skills.
+
 
 
 ## Leitura de arquivos

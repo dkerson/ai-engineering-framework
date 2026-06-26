@@ -1,6 +1,6 @@
 # AI Engineering Framework
 
-**v2.1** — Biblioteca reutilizável de agentes com **Orquestração Inteligente Hierárquica** para Codex, Cursor e ferramentas baseadas em AGENTS.md. Suporte a **Data Intelligence** (SQL, Power BI, BI) e **fluxos híbridos** (dev + dados + relatórios Umbra/Irisys).
+**v2.3** — Biblioteca reutilizável de agentes com **Orquestração Inteligente Hierárquica** para Codex, Cursor e ferramentas baseadas em AGENTS.md. Suporte a **Data Intelligence** (SQL, Power BI, BI), **Growth & Brand Intelligence** (branding, copy, marketing, SEO, assets), **Knowledge Hub**, **Benchmark Intelligence**, **Product Excellence** e **fluxos híbridos**.
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
@@ -63,6 +63,14 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 | [`AGENTS.md`](AGENTS.md) | Bootstrap para agentes |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Arquitetura e responsabilidades |
 | [`docs/DATA_INTELLIGENCE.md`](docs/DATA_INTELLIGENCE.md) | Domínio de dados/BI/SQL/Power BI |
+| [`docs/GROWTH_BRAND_INTELLIGENCE.md`](docs/GROWTH_BRAND_INTELLIGENCE.md) | Domínio de branding/copy/marketing/SEO/assets |
+| [`docs/GROWTH_INTELLIGENCE.md`](docs/GROWTH_INTELLIGENCE.md) | Crescimento, conversao e evolucao |
+| [`docs/BRAND_INTELLIGENCE.md`](docs/BRAND_INTELLIGENCE.md) | Brand DNA, voz, identidade e consistencia |
+| [`docs/KNOWLEDGE_HUB.md`](docs/KNOWLEDGE_HUB.md) | Biblioteca interna de boas praticas |
+| [`docs/KNOWLEDGE_ENGINE.md`](docs/KNOWLEDGE_ENGINE.md) | Consulta automatica do Knowledge Hub |
+| [`docs/BENCHMARK_INTELLIGENCE.md`](docs/BENCHMARK_INTELLIGENCE.md) | Benchmark por principios, sem copia |
+| [`docs/PRODUCT_EXCELLENCE.md`](docs/PRODUCT_EXCELLENCE.md) | Padrao minimo de excelencia de produto |
+| [`docs/PRODUCT_EVOLUTION.md`](docs/PRODUCT_EVOLUTION.md) | Roadmap apos auditorias |
 | [`docs/HYBRID_FLOWS.md`](docs/HYBRID_FLOWS.md) | Fluxos dev + dados + BI |
 | [`docs/USING_IN_PROJECTS.md`](docs/USING_IN_PROJECTS.md) | Umbra, Irisys e consumidores |
 | [`docs/UPDATE_FRAMEWORK.md`](docs/UPDATE_FRAMEWORK.md) | Atualizar submodule |
@@ -74,7 +82,7 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 
 ## Stacks suportadas
 
-Node · NestJS · React · Next.js · Flutter · Python · Go · .NET · REST · SQL Server · Power BI · Microserviços
+Node · NestJS · React · Next.js · Flutter · Python · Go · .NET · REST · SQL Server · Power BI · Microserviços · Landing Pages · Sites · SEO · Branding
 
 Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
@@ -86,13 +94,18 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 ├── skills/         # orchestrator + governança + técnicas
 ├── rules/
 ├── workflows/
+├── knowledge/
 ├── templates/
 ├── checklists/
 ├── context/        # overlay do projeto + semantic-layer/
 ├── templates/data/ # pedidos SQL, relatórios, validação
+├── templates/marketing/
 ├── checklists/data/
+├── checklists/marketing/
 ├── rules/data/
-└── examples/data/
+├── rules/marketing/
+├── examples/data/
+└── examples/marketing-growth-brand.md
 ```
 
 ## Criar nova skill
@@ -101,7 +114,7 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
 ## Versão
 
-Ver [`VERSION`](VERSION) — atual: **2.1.0**
+Ver [`VERSION`](VERSION) — atual: **2.3.0**
 
 ## Licença
 

@@ -26,7 +26,7 @@ Usuário ↔ Orchestrator (único contato)
               ↓
     [Fast | Standard | Review | Technical Council]
               ↓
-    Domínios: Development · Data Intelligence · Business/Operations · QA/Validation
+    Domínios: Development · Data Intelligence · Growth & Brand Intelligence · Product Excellence · Knowledge Hub · Business/Operations · QA/Validation
               ↓
     hybrid-flow-planner / data-orchestrator (quando aplicável)
               ↓
@@ -35,7 +35,7 @@ Usuário ↔ Orchestrator (único contato)
     Working Context → descartado ao finalizar
 ```
 
-Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
+Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
 
 ## Estrutura do framework
 
@@ -50,12 +50,17 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/HYBRID_
 ├── templates/
 ├── checklists/
 ├── workflows/
+├── knowledge/         ← boas práticas resumidas por área
 ├── context/           ← overlay do projeto consumidor (ver context/README.md)
 │   └── semantic-layer/  ← camada semântica Otus/Irisys (templates)
 ├── templates/data/    ← templates de dados/BI
+├── templates/marketing/ ← templates Growth & Brand
 ├── checklists/data/
+├── checklists/marketing/
 ├── rules/data/
-└── examples/data/
+├── rules/marketing/
+├── examples/data/
+└── examples/marketing-growth-brand.md
 ```
 
 ## Hierarquia de precedência
@@ -78,7 +83,7 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/DATA_INTELLIGENCE.md` · `docs/HYBRID_
 
 ## Tipos de demanda
 
-`bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `commercial` · `finance` · `deployment` · `support`
+`bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
 
 Mapeamento: `workflows/_index.md`
 
@@ -126,6 +131,40 @@ Mapeamento: `workflows/_index.md`
 | report-implementation-planner | Plano de relatório end-to-end |
 
 Skill legada `data` preservada — roteia para especializadas. Lista completa: `workflows/_index.md` · `docs/DATA_INTELLIGENCE.md`.
+
+### Growth & Brand Intelligence (v2.2+)
+
+| Skill | Papel |
+|-------|-------|
+| brand-strategist | Tom de voz, posicionamento e personalidade |
+| project-style-analyzer | Design System, UI library, tema, identidade e modo visual |
+| knowledge-engine | Consulta Knowledge Hub conforme demanda |
+| content-strategist | Arquitetura de conteudo e narrativa |
+| copywriter | Headlines, beneficios, CTAs, FAQ e mensagens de conversao |
+| ux-writer | Microcopy, mensagens internas, onboarding e estados |
+| landing-page-specialist | Estrutura de landing pages modernas |
+| seo-specialist | SEO, metadados, headings e Open Graph |
+| asset-intelligence | Decisao automatica do tipo de asset mais adequado |
+| asset-curator · open-source-asset-finder | Curadoria e recomendacao de fontes abertas |
+| image-curator · illustration-curator · icon-curator | Curadoria visual por tipo de asset |
+| logo-manager · image-optimizer | Logos, favicons, previews sociais e otimizacao |
+| brand-reviewer · marketing-reviewer · conversion-optimizer | Revisao de marca, comunicacao e conversao |
+| social-proof-specialist | Clientes, cases, depoimentos, numeros e autoridade |
+| benchmark-intelligence · product-excellence · product-evolution-planner | Benchmark por principios, auditoria e roadmap evolutivo |
+
+Fluxo automatico para landing page, site, pagina institucional, tela publica, portal, home publica, marketing, onboarding e assets: ver `workflows/marketing.md` e `docs/GROWTH_BRAND_INTELLIGENCE.md`.
+
+Fluxo automatico para "analise esse produto", "faca uma auditoria", "modernize o sistema" e pedidos similares: ver `workflows/product-excellence.md`, `docs/PRODUCT_EXCELLENCE.md` e `docs/PRODUCT_EVOLUTION.md`.
+
+### Knowledge Hub e Product Excellence (v2.3+)
+
+| Conceito | Papel |
+|----------|-------|
+| Knowledge Hub | Biblioteca interna em `knowledge/` com boas praticas resumidas |
+| Knowledge Engine | Seleciona areas relevantes antes de planejar |
+| Benchmark Intelligence | Compara principios com referencias modernas sem copiar |
+| Product Excellence | Padrao minimo de qualidade de produto |
+| Product Evolution | Roadmap apos auditoria, com impacto/esforco/prioridade |
 
 ## Technical Council
 

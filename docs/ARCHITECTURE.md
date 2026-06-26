@@ -33,6 +33,7 @@
 | Execução | Skills técnicas (`backend`, `api`, `react`, …) | Implementação especializada |
 | Fluxos | `workflows/` | Pipelines por tipo de demanda + modos |
 | Regras | `rules/` | Políticas transversais |
+| Knowledge Hub | `knowledge/` | Boas praticas resumidas por area, consultadas pelo Knowledge Engine |
 | Artefatos | `templates/`, `checklists/` | Saídas padronizadas |
 | Contexto | `context/` | Stack e domínio **do projeto consumidor** |
 
@@ -103,10 +104,21 @@ Além dos modos de execução, o Orchestrator classifica **domínios** envolvido
 |---------|------------------|--------|
 | Development | — | backend, api, react, database |
 | Data Intelligence | `data-orchestrator` | sql-architect, powerbi-specialist, data-validator, ... |
+| Growth & Brand Intelligence | — | project-style-analyzer, knowledge-engine, brand-strategist, copywriter, ux-writer, asset-intelligence, seo-specialist, benchmark-intelligence, product-excellence |
 | Business/Operations | — | task-analyst, business-rule-mapper, support |
 | QA/Validation | — | qa, data-validator, bug-hunter, validator |
 
-Fluxos que cruzam domínios usam `hybrid-flow-planner`. Detalhe: `docs/HYBRID_FLOWS.md` · `docs/DATA_INTELLIGENCE.md`.
+Fluxos que cruzam domínios usam `hybrid-flow-planner`. Detalhe: `docs/HYBRID_FLOWS.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md`.
+
+### Growth & Brand Intelligence
+
+- Cobre landing pages, sites, paginas institucionais, telas publicas, onboarding, copy, SEO, branding e assets.
+- Trabalha integrado a product-owner, ux, react, flutter, design system e QA.
+- Asset Intelligence decide o tipo de recurso visual antes de buscar imagens ou sugerir fontes externas.
+- Product Audit inclui notas 0-10 para Copy, Brand, Marketing, Conversao, Landing Page, SEO, Assets, Comunicacao, Identidade Visual e Tom de Voz.
+- Project Style Analyzer define Legacy Mode, Hybrid Mode, Greenfield Mode ou Automatic Mode.
+- Knowledge Engine consulta `knowledge/` antes de planejar quando a demanda exige boas praticas especificas.
+- Product Excellence avalia o padrao minimo de produto e aciona Product Evolution quando notas ficam abaixo de 8.
 
 ### data-orchestrator vs Orchestrator
 
