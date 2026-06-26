@@ -19,10 +19,40 @@
 - **Granularidade:** por lote
 - **Lacuna:** validar fórmula vs soma de pacotes em caso de divergência
 
-## Lacunas conhecidas
+## Emissão de Faturas — quantidade por lote
 
-- [ ] Indicadores financeiros (faturamento, ICMS) — mapear com `financeiro.md` e EF Alíquota ICMS
-- [ ] KPIs PMO Umbra (ClickUp) — fora do Irisys; ver módulo PMO
+- **Definição:** Número de faturas importadas em um lote
+- **Fonte autorizada:** `tb_fin_fat_cliente.qtd_de_faturas` / contagem `tb_fin_faturas`
+- **Granularidade:** por lote de importação
+- **Consumidores:** `/financeiro/emissao_faturas`
+- **Referência:** `EF_IRS_Irisys_EmissaoFaturas.md`
+
+## Ficha de Rota — Irisys vs Pré-Fatura
+
+- **Definição:** Comparação de valores Irisys com pré-fatura do marketplace
+- **Fonte autorizada:** `DetalhesRotasFinanceiroMarketplace` via API financeiro-marketplace
+- **Granularidade:** por rota
+- **Filtros:** período, marketplace, motorista, base, status
+- **Uso:** alertas de divergência (sem pré-fatura, sem base frete, diferença de valores)
+- **Referência:** `EF_IRS_Irisys_FichaRota.md`
+
+## Alíquota ICMS vigente
+
+- **Definição:** Alíquota CST/CFOP por UF origem × destino na vigência
+- **Fonte autorizada:** `tb_aliquota_icms` (`Excluido == false`)
+- **Consumidores:** preparação CT-e (`CTEProcessamentoRepository` quando `aplicar-regra-icms`)
+- **Referência:** `EF_IRS_Irisys_AliquotaICMS.md`
+
+## Power BI Averbação (embed)
+
+- **Definição:** Painel analítico fiscal — **não é fluxo transacional**
+- **Fonte autorizada:** `tb_relatorios.rel_ds_caminho` via controller 776
+- **API:** `/sistema/PowerBI?EncryptCodController={rotaParams}`
+- **Consumidores:** `/fiscal/averbação-`
+- **Referência:** `EF_IRS_Irisys_AverbacaoPowerBI.md`
+
+- [ ] KPIs CIOT consolidados
+- [ ] KPIs PMO Umbra (ClickUp) — módulo PMO do portal, fora do Irisys
 
 ## Referências
 
