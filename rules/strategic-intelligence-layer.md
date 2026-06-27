@@ -2,6 +2,8 @@
 
 ## Regras obrigatorias
 
+- O SIL refina Mission Brief a partir do NLME (v2.12+).
+- O NLME interpreta linguagem natural; o SIL planeja estrategicamente.
 - O SIL interpreta, planeja e seleciona. Nao implementa.
 - O SIL nao abre arquivos, nao executa comandos e nao chama skills diretamente.
 - Toda interacao vira uma Mission.

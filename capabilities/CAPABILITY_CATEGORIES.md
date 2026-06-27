@@ -5,7 +5,7 @@
 | Categoria | Exemplos |
 |-----------|----------|
 | Development | Development Intelligence |
-| Architecture | FOS, SIL, Mission Intelligence |
+| Architecture | FOS, SIL, NLME, Mission Intelligence |
 | Data | Data Intelligence |
 | Infrastructure | Infrastructure Intelligence |
 | Product | Product Excellence, Product Evolution |

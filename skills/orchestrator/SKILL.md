@@ -48,8 +48,17 @@ Detalhes: `workflows/modes.md`
 
 ```
 1. ENTENDER pedido + AGENTS.md do projeto
-1a. SE houver objetivo humano amplo → consumir Mission Brief do Strategic Intelligence Layer
-2. CLASSIFICAR tipo(s) de demanda — confidence: alta/média/baixa
+1-nlme. SE linguagem natural (padrao) → workflow `natural-language-mission.md`:
+   a. mission-translator → Translation Brief
+   b. goal-recognition → objetivo real
+   c. mission-builder → Mission Package + Mission Confidence
+   d. prompt-builder → Structured Prompt (interno — nunca exibir)
+   e. Apresentar `templates/mission/nlme-first-response.md` ANTES de investigar
+   f. SIL → Mission Brief (`templates/mission/mission-brief.md`)
+   g. capability-resolver se capabilities no package
+1a. SE Mission Brief do SIL disponivel → consumir (compativel com NLME)
+2. CLASSIFICAR tipo(s) de demanda — confidence: alta/media/baixa
+   (usar legacy_demand_type do Structured Prompt quando NLME ativo)
 2b. DETECTAR domínio(s): Development · Data Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation
 2b-design. SE criação/alteração de interface (tela, dashboard web, formulário):
    a. Responder: DS? identidade? componentes? guideline? tema? legado?
@@ -110,6 +119,7 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 
 | Tipo | Sinais | Modo sugerido | Workflow |
 |------|--------|---------------|----------|
+| `natural-language-mission` | Linguagem natural (padrao) | NLME → SIL → COS → Orchestrator | `workflows/natural-language-mission.md` |
 | `framework-operating-system` | saude do framework, roadmap, ideias, recomendacoes, skills sem uso, evolucao | Fast/Standard | `workflows/framework-operating-system.md` |
 | `strategic-mission` | objetivo alto nivel, transformar, modernizar, vender mais, reduzir suporte | Analysis/Planning → Standard/Review/Council | `workflows/strategic-mission.md` |
 | `infrastructure-mission` | adicione, cadastre, configure, novo banco, novo Git, nova API, novo MCP | Standard → Review se risco/seguranca | `workflows/infrastructure-mission.md` |

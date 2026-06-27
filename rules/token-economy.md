@@ -20,6 +20,12 @@ Strategic Intelligence Layer:
 - Nunca implementa codigo
 - Apenas interpreta, planeja e entrega Mission Brief ao Orchestrator
 
+Natural Language Mission Engine (NLME):
+
+- mission-translator, mission-builder, prompt-builder nunca abrem codigo do projeto
+- Nunca expoem Structured Prompt ao usuario
+- Entregam Mission Package ao SIL
+
 
 
 Skills **nunca** devem:

@@ -1,6 +1,14 @@
 # Mission Recognition
 
-> Regras para converter frases humanas em Mission Types.
+> Regras para converter frases humanas em Mission Types. **NLME v2.12+** — primeira etapa após Natural Commands.
+
+## Pipeline NLME
+
+```text
+Natural Commands → Mission Recognition → Goal Recognition → Mission Catalog
+```
+
+Ver: `docs/Natural-Language-Missions.md` · `skills/mission-translator/SKILL.md`
 
 ## Reconhecimento automatico
 
@@ -15,7 +23,10 @@
 | "Quero diminuir suporte" | Product Improvement Mission | UX, Onboarding, Help, Microcopy |
 | "Quero preparar para escalar" | Scalability Mission | Architecture, Backend, Data, DevOps |
 | "Quero lancar esse SaaS" | Launch Mission | Product, Growth, Brand, QA, DevOps |
-| "Parece software amador" | Brand/Modernization Mission | Brand, UI, UX, Product Excellence |
+| "Analise o KB" | Audit + Knowledge Mission | Product Excellence, Knowledge Hub, UX, Development |
+| "Prepare um Chat IA" | Capability + RAG Mission | Capability, RAG, Infrastructure |
+| "Otimize os relatórios" | Performance + Data Mission | Data Intelligence, Performance, Dashboard |
+| "Faça parecer SaaS Premium" | Brand + Product Evolution Mission | Brand, UI, UX, Product Excellence |
 
 ## O que identificar
 

@@ -27,6 +27,16 @@
 | Technical Debt Mission | Divida tecnica, refatoracao, manutencao |
 | Quality Mission | QA, confiabilidade, testes, regressao |
 | Continuous Improvement Mission | Backlog evolutivo apos entrega |
+| Audit Mission | Auditoria de produto, modulo ou processo |
+| Knowledge Mission | Biblioteca, KB, documentacao, POPs, treinamentos |
+| RAG Mission | Assistente, busca semantica, FAQ IA |
+| Automation Mission | Automacao, pipelines, CI/CD |
+| Framework Mission | Evolucao e saude do framework (FOS) |
+| Review Mission | Code review, revisao pontual |
+| Infrastructure Mission | Infra, MCP, plugins, conectividade |
+| Capability Mission | Nova capability ou tecnologia capability-first |
+
+> Entrada NLME: `docs/Natural-Language-Missions.md` · Catálogo: `docs/Mission-Catalog.md`
 
 ## Mission Score
 

@@ -7,7 +7,8 @@
 
 ## Bootstrap obrigatório
 
-0. **Strategic Intelligence Layer (SIL):** interpretar a intenção humana e criar uma Mission antes da execução
+0. **Natural Language Mission Engine (NLME):** interpretar linguagem natural → Mission Package → Structured Prompt (interno)
+0a. **Strategic Intelligence Layer (SIL):** refinar Mission Brief a partir do NLME
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
@@ -25,11 +26,15 @@ Ver `docs/INSTALL.md` (Git Submodule recomendado). Caminhos: `.ai/`, `ai-enginee
 ## Arquitetura hierárquica
 
 ```
-Usuário
+Usuário (linguagem natural)
               ↓
-    Framework Operating System (governanca do framework)
+    Natural Language Mission Engine (NLME)
               ↓
-    Strategic Intelligence Layer (Mission)
+    Strategic Intelligence Layer (Mission Brief)
+              ↓
+    Capability Operating System (COS)
+              ↓
+    Framework Operating System (governanca do framework — quando aplicavel)
               ↓
     Orchestrator (executor operacional)
               ↓
@@ -44,7 +49,7 @@ Usuário
     Working Context → descartado ao finalizar
 ```
 
-Detalhes: `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `docs/Strategic-Intelligence-Layer.md` · `docs/Missions.md` · `docs/Infrastructure-Intelligence.md` · `docs/Project-Registry.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
+Detalhes: `docs/Natural-Language-Missions.md` · `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `docs/Strategic-Intelligence-Layer.md` · `docs/Missions.md` · `docs/Infrastructure-Intelligence.md` · `docs/Project-Registry.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
 
 ## Estrutura do framework
 
@@ -101,7 +106,7 @@ Detalhes: `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `doc
 
 ## Tipos de demanda
 
-`framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `plugin-mission` · `capability-mission` · `mcp-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
+`natural-language-mission` · `framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `plugin-mission` · `capability-mission` · `mcp-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
 
 Mapeamento: `workflows/_index.md`
 
@@ -118,11 +123,26 @@ Mapeamento: `workflows/_index.md`
 | **Implementation Planner** | Plano técnico executável |
 | **Skill Builder** | Gerar novas skills no padrão |
 
+### Natural Language Mission Engine (v2.12+)
+
+| Skill / Conceito | Papel |
+|------------------|-------|
+| **mission-translator** | Traduz frase humana → Translation Brief |
+| **Goal Recognition** | Objetivo real vs texto literal |
+| **Mission Recognition** | Tipo de missão e domínios (ver `docs/Mission-Recognition.md`) |
+| **Natural Commands** | Verbos naturais → missões (`docs/Natural-Commands.md`) |
+| **mission-builder** | Mission Package, roadmap, confidence |
+| **prompt-builder** | Structured Prompt interno (usuário nunca vê) |
+| **Mission Confidence** | Score antes de executar (`docs/Mission-Confidence.md`) |
+| **Autonomous Planning** | Seleção automática de skills/workflows/plugins |
+
+NLME nunca implementa, nunca altera código, nunca expõe prompt estruturado. Ver `docs/Natural-Language-Missions.md` · `workflows/natural-language-mission.md`.
+
 ### Strategic Intelligence Layer (v2.4+)
 
 | Conceito | Papel |
 |----------|-------|
-| Strategic Intelligence Layer | Interpreta linguagem natural e cria Mission Brief |
+| Strategic Intelligence Layer | Refina Mission Brief a partir do NLME |
 | Mission Recognition | Identifica objetivo, contexto, risco, impacto, dominios e mission type |
 | Mission Planner | Define ordem estrategica, quick wins, riscos e necessidade de Council |
 | Mission Memory | Preserva objetivo, decisoes, hipoteses, roadmap, validacoes e quick wins |

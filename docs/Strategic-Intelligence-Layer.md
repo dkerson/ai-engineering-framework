@@ -1,23 +1,39 @@
 # Strategic Intelligence Layer
 
-> Camada acima do Master Orchestrator responsavel por transformar linguagem natural em Missoes Estrategicas.
+> Camada estratégica que refina Mission Brief a partir do NLME.
 
 ## Objetivo
 
-Permitir que o usuario converse naturalmente, sem conhecer skills, fluxos, tecnicas ou arquitetura interna.
+Permitir que o usuário converse naturalmente, sem conhecer skills, fluxos, técnicas ou arquitetura interna. O **NLME** traduz a conversa; o **SIL** refine estrategicamente.
 
 ## Posicao na arquitetura
 
 ```text
-Capabilities (COS)
--> Usuario
--> Strategic Intelligence Layer
--> Master Orchestrator
--> Technical Council
--> Domains
--> Skills
--> Projetos
+Usuario (linguagem natural)
+        ↓
+Natural Language Mission Engine (NLME)
+        ↓
+Strategic Intelligence Layer (SIL)
+        ↓
+Capability Operating System (COS)
+        ↓
+Master Orchestrator
+        ↓
+Technical Council (quando necessario)
+        ↓
+Domains → Skills → Projetos
 ```
+
+## Entrada NLME (v2.12+)
+
+O SIL recebe do NLME:
+
+- Translation Brief (mission-translator)
+- Mission Package (mission-builder)
+- Structured Prompt (prompt-builder — interno)
+- Mission Confidence Score
+
+O SIL **refina** e produz **Mission Brief** final → `templates/mission/mission-brief.md`.
 
 ## Capability Intelligence (COS v2.10+)
 
@@ -29,7 +45,7 @@ Antes de dominios e plano, o SIL considera:
 
 ## Responsabilidade unica
 
-O SIL transforma intencoes humanas em Missoes Estrategicas.
+O SIL transforma Mission Package em Mission Brief operacional.
 
 O SIL nunca:
 
@@ -41,11 +57,11 @@ O SIL nunca:
 
 O SIL sempre:
 
-- Interpreta objetivo principal e secundarios
+- Interpreta objetivo principal e secundarios (com Goal Recognition)
 - Reconhece contexto, urgencia, impacto, risco e complexidade
 - Define mission type e mission mode
 - Pontua a mission
-- Decide se precisa perguntar algo
+- Decide se precisa perguntar algo (Mission Confidence)
 - Entrega um Mission Brief ao Master Orchestrator
 
 ## Strategic Thinking
@@ -62,7 +78,7 @@ Antes de classificar a mission, o SIL considera perspectivas de:
 
 ## Question Engine
 
-- Se o objetivo estiver claro, nao perguntar.
+- Se o objetivo estiver claro (Confidence ≥ 60), nao perguntar.
 - Se faltar informacao realmente critica, perguntar o minimo necessario.
 - Evitar entrevistas longas.
 - Preferir decisao autonoma quando o risco for baixo ou medio.
@@ -83,4 +99,4 @@ O SIL deve produzir:
 - **Capability sugerida** (COS) ou flag `propose_new_capability`
 - Plano de alto nivel
 
-Detalhes: `docs/Missions.md`, `docs/Mission-Recognition.md`, `docs/Mission-Modes.md`.
+Detalhes: `docs/Natural-Language-Missions.md` · `docs/Missions.md` · `docs/Mission-Recognition.md` · `docs/Mission-Modes.md`.

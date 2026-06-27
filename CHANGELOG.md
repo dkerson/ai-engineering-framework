@@ -1,5 +1,33 @@
 # Changelog — AI Engineering Framework
 
+## [2.12.0] - 2026-06-26
+
+### Adicionado — Natural Language Mission Engine (NLME)
+
+- **Nova camada:** NLME acima do SIL — linguagem natural → missões autônomas
+- **Skills:** mission-translator, mission-builder, prompt-builder
+- **Mecanismos:** Goal Recognition, Mission Confidence, Autonomous Planning, Natural Commands
+- **Workflow:** `natural-language-mission.md`
+- **Docs:** Natural-Language-Missions, Mission-Translator, Goal-Recognition, Prompt-Builder, Mission-Catalog, Natural-Commands, Autonomous-Planning, Mission-Confidence
+- **Rules:** natural-language-mission-engine, goal-recognition, mission-confidence
+- **Templates:** mission/mission-brief, structured-prompt, nlme-first-response
+- **Checklist:** nlme-mission · **Examples:** natural-language-missions
+- **Capability COS:** natural-language-mission-engine (Stable)
+
+### Alterado
+
+- SIL recebe Mission Package do NLME (refina, não substitui)
+- Orchestrator: pipeline NLME antes de classificação legada
+- Mission Recognition estendido com exemplos vNext
+- Strategic Mission workflow integrado ao NLME
+- AGENTS.md, README, token-economy, Strategic-Intelligence-Layer
+
+### Preservado
+
+- Todas as skills, workflows e interfaces públicas existentes
+- Classificação legada Orchestrator via `legacy_demand_type`
+- COS, FOS, domínios e plugins intactos
+
 ## [2.11.0] - 2026-06-26
 
 ### Adicionado

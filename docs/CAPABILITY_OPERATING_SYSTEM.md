@@ -21,7 +21,13 @@ FOS e COS cooperam; toda mudança de capability atualiza FOS.
 ```text
 Capabilities
       ↓
+Usuario (linguagem natural)
+      ↓
+Natural Language Mission Engine (NLME)
+      ↓
 Strategic Intelligence Layer  ← "Capability existe?"
+      ↓
+Capability Operating System (resolver)
       ↓
 Master Orchestrator
       ↓

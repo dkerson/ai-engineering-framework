@@ -71,6 +71,7 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 | Arquivo | Tipo | Modo sugerido | Pipeline resumido |
 
 |---------|------|---------------|-------------------|
+| [natural-language-mission.md](natural-language-mission.md) | **Linguagem natural (entrada padrão)** | Conforme missão | NLME → SIL → COS → Orchestrator → Domains |
 | [framework-operating-system.md](framework-operating-system.md) | Framework Operating System | Fast/Standard | FOS docs → Reviewer → Recommendations → Report |
 | [strategic-mission.md](strategic-mission.md) | Strategic Mission | Analysis/Planning/Implementation | SIL → Mission Brief → Orchestrator → Domains → Mission Report |
 | [infrastructure-mission.md](infrastructure-mission.md) | Infrastructure Mission | Standard/Review | Project Resolver → Plugin Resolver* → Discovery/Scanner → Registry → FOS |

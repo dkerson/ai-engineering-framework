@@ -13,7 +13,15 @@
 | [CAPABILITY_ARCHITECTURE.md](CAPABILITY_ARCHITECTURE.md) | Capability Architecture (v2.9) |
 | [CAPABILITY_OPERATING_SYSTEM.md](CAPABILITY_OPERATING_SYSTEM.md) | Capability Operating System (COS v2.10) |
 | [MCP_GOVERNANCE.md](MCP_GOVERNANCE.md) | MCP Readiness, conectores, perfis por projeto |
-| [Strategic-Intelligence-Layer.md](Strategic-Intelligence-Layer.md) | Camada estrategica acima do Orchestrator |
+| [Strategic-Intelligence-Layer.md](Strategic-Intelligence-Layer.md) | Camada estrategica — refina Mission Brief apos NLME |
+| [Natural-Language-Missions.md](Natural-Language-Missions.md) | NLME — linguagem natural → missoes |
+| [Mission-Translator.md](Mission-Translator.md) | Skill tradutora NLME |
+| [Goal-Recognition.md](Goal-Recognition.md) | Objetivo real vs texto literal |
+| [Prompt-Builder.md](Prompt-Builder.md) | Prompt estruturado interno |
+| [Mission-Catalog.md](Mission-Catalog.md) | Catalogo de tipos de missao NLME |
+| [Natural-Commands.md](Natural-Commands.md) | Verbos naturais → missoes |
+| [Autonomous-Planning.md](Autonomous-Planning.md) | Selecao automatica de pipeline |
+| [Mission-Confidence.md](Mission-Confidence.md) | Score de confianca pre-execucao |
 | [Missions.md](Missions.md) | Mission Types, Mission Score e Mission Memory |
 | [Mission-Recognition.md](Mission-Recognition.md) | Reconhecimento de objetivos humanos |
 | [Mission-Modes.md](Mission-Modes.md) | Modos estrategicos de mission |

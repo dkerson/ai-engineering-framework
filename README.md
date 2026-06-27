@@ -1,19 +1,21 @@
 # AI Engineering Framework
 
-**v2.6** — Biblioteca reutilizável de agentes com **Framework Operating System**, **Strategic Intelligence Layer**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md. Suporte a governanca viva do framework, **Infrastructure Intelligence**, **Data Intelligence**, **Growth & Brand Intelligence**, **Knowledge Hub**, **Benchmark Intelligence**, **Product Excellence**, **Missions** e **Continuous Evolution**.
+**v2.12** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
 ## O que é
 
-Framework modular e **agnóstico de projeto**. O Framework Operating System governa a evolucao do proprio framework; o Strategic Intelligence Layer entende a intenção humana e cria uma Mission; o Orchestrator executa operacionalmente.
+Framework modular e **agnóstico de projeto**. O usuário conversa em linguagem natural; o NLME traduz em missões; o SIL refine estrategicamente; o Orchestrator executa.
 
 ```
-Usuário
+Usuário (linguagem natural)
               ↓
-    Framework Operating System (quando a pergunta e sobre o framework)
+    Natural Language Mission Engine
               ↓
     Strategic Intelligence Layer
+              ↓
+    Capability Operating System
               ↓
     Orchestrator
               ↓
@@ -72,7 +74,8 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 | [`docs/Infrastructure-Intelligence.md`](docs/Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | [`docs/Project-Registry.md`](docs/Project-Registry.md) | Project Registry por projeto |
 | [`docs/Infrastructure-Registry.md`](docs/Infrastructure-Registry.md) | Registry global de infraestrutura |
-| [`docs/Strategic-Intelligence-Layer.md`](docs/Strategic-Intelligence-Layer.md) | SIL, Mission Brief e decisao estrategica |
+| [`docs/Natural-Language-Missions.md`](docs/Natural-Language-Missions.md) | NLME — linguagem natural → missões autônomas |
+| [`docs/Strategic-Intelligence-Layer.md`](docs/Strategic-Intelligence-Layer.md) | SIL, Mission Brief (após NLME) |
 | [`docs/Missions.md`](docs/Missions.md) | Mission Types, Mission Score e Mission Memory |
 | [`docs/Mission-Recognition.md`](docs/Mission-Recognition.md) | Reconhecimento de intencao humana |
 | [`docs/Mission-Modes.md`](docs/Mission-Modes.md) | Modos estrategicos de mission |

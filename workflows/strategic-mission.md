@@ -16,14 +16,18 @@ Frases naturais como:
 ## Pipeline
 
 ```text
-Strategic Intelligence Layer
--> Mission Recognition
+Natural Language Mission Engine (NLME)
+-> mission-translator -> goal-recognition -> mission-builder -> prompt-builder
+-> Strategic Intelligence Layer
+-> Mission Recognition (refino)
 -> Mission Planner
 -> Mission Brief
+-> capability-resolver (COS)
 -> Master Orchestrator
 -> Domains / Technical Council quando necessario
 -> Validation
 -> Mission Report
+-> Mission Memory (FOS)
 -> Continuous Evolution Backlog
 ```
 

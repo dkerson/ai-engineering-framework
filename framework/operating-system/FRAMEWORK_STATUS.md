@@ -2,8 +2,8 @@
 
 ## Summary
 
-- Version: 2.11.0
-- Health Score: 8.8/10
+- Version: 2.12.0
+- Health Score: 9.0/10
 - Last update: 2026-06-26
 - Operating layer: Framework Operating System (FOS)
 - Governance: user approval required before framework changes
@@ -26,6 +26,7 @@
 
 ## Current Capabilities
 
+- Natural Language Mission Engine (NLME)
 - Strategic Intelligence Layer
 - Master Orchestrator
 - Development Intelligence

@@ -1,5 +1,12 @@
 # FOS Changelog
 
+## 2.12.0 - 2026-06-26
+
+- Natural Language Mission Engine (NLME): mission-translator, mission-builder, prompt-builder.
+- Mission Memory integrada ao FOS via mission-builder.
+- 9 docs NLME, workflow, templates, rules, checklist, examples.
+- Mission Intelligence capability atualizada para v2.12.
+
 ## 2.11.0 - 2026-06-26
 
 - MCP Readiness Audit; MCP_SERVER_CATALOG; connector files for 7 priority plugins.

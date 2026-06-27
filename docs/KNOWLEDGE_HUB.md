@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Oferecer conhecimento estruturado para as skills consultarem antes de planejar, escrever ou implementar.
+Oferecer conhecimento estruturado para as skills consultarem antes de planejar, escrever ou implementar. O **NLME** e o **mission-builder** sugerem areas do Knowledge Hub via Mission Brief quando relevante.
 
 ## Estrutura
 

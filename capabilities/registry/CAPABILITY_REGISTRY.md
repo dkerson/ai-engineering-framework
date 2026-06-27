@@ -133,12 +133,26 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 | Campo | Valor |
 |-------|-------|
 | Nome | Mission Intelligence |
-| Versão | 2.4.0 |
+| Versão | 2.12.0 |
 | Categoria | Architecture |
 | Status | Stable |
-| Descrição | Mission types, recognition, memory, continuous evolution |
-| Health Score | 8.5 |
-| Documentação | `docs/Missions.md` |
+| Descrição | Mission types, recognition, memory, continuous evolution — integrado ao NLME |
+| Skills | mission-translator, mission-builder, prompt-builder |
+| Health Score | 9.0 |
+| Documentação | `docs/Missions.md` · `docs/Natural-Language-Missions.md` |
+
+### natural-language-mission-engine
+
+| Campo | Valor |
+|-------|-------|
+| Nome | Natural Language Mission Engine |
+| Versão | 2.12.0 |
+| Categoria | Architecture |
+| Status | Stable |
+| Descrição | Linguagem natural → Translation Brief → Mission Package → Structured Prompt |
+| Skills | mission-translator, mission-builder, prompt-builder |
+| Health Score | 9.0 |
+| Documentação | `docs/Natural-Language-Missions.md` |
 
 ### product-excellence
 
