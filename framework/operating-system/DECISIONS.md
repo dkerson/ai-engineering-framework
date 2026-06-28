@@ -1,5 +1,17 @@
 # Framework Decisions
 
+## ADR-0005: Execution Intelligence Without Self-Mutation
+
+- Date: 2026-06-28
+- Context: The framework needs to learn from real usage and reduce Codex/Cursor cost.
+- Problem: Full NLME/SIL/COS for every natural-language request can be expensive, and automatic self-modification is risky.
+- Alternatives:
+  - Let the framework evolve itself after every execution.
+  - Add lightweight observation and require user approval before changes.
+- Decision: Add Execution Intelligence ledgers, Token Budget Policy and Fast Path; keep self-modification prohibited.
+- Justification: The framework learns from usage while preserving user control and compatibility.
+- Impact: Simple requests can skip full mission overhead; repeated evidence becomes recommendations, not automatic edits.
+
 ## ADR-0004: Capability Operating System
 
 - Date: 2026-06-26

@@ -37,6 +37,12 @@
 ## Validações executadas
 - [ ] [comando ou verificação] — [resultado]
 
+## Token Economy (quando aplicável)
+- Fast Path considerado:
+- Skills evitadas:
+- Arquivos evitados/reutilizados:
+- Waste signals:
+
 ## Resultado
 [Estado atual: concluído / parcial / bloqueado + motivo]
 

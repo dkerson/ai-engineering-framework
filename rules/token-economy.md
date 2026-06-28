@@ -8,6 +8,8 @@
 
 Complemento obrigatório: `rules/hierarchical-orchestration.md`
 
+Complemento de budget: `rules/token-budget-policy.md`
+
 
 
 ## Regras absolutas
@@ -67,6 +69,14 @@ Fast → Standard → Review → Technical Council
 
 
 Não escalar modo sem justificativa de risco.
+
+### Fast Path antes do NLME completo
+
+Antes de acionar `mission-translator`, `mission-builder`, `prompt-builder`, SIL e COS, o Orchestrator deve verificar `rules/token-budget-policy.md`.
+
+Use Fast Path quando o pedido for simples, direto e baixo risco. Exemplos: confirmar status, explicar um arquivo, rodar um comando simples, corrigir texto/typo, atualizar documentacao estreita ou responder uma pergunta de governanca usando documentos vivos.
+
+Use o caminho completo NLME/SIL/COS quando houver ambiguidade, estrategia, multiplos dominios, produto/design/growth/data, arquitetura, auth, banco, seguranca, producao ou transformacao ampla.
 
 
 
@@ -240,4 +250,15 @@ Nao escanear projeto inteiro se o registry ja responder. Nunca carregar ou regis
 
 
 Somente o **Orchestrator** entrega ao usuário via `templates/final-response.md` — conciso, acionável, sem redundância.
+
+## Execution Intelligence
+
+Ao encerrar uma mission, registrar somente sinais uteis e baratos:
+
+- `framework/operating-system/MISSION_LEDGER.md` para resumo da execucao.
+- `framework/operating-system/SKILL_USAGE.md` para skills realmente usadas.
+- `framework/operating-system/TOKEN_METRICS.md` para waste/savings.
+- `framework/operating-system/PROMOTION_CRITERIA.md` para decidir quando um aprendizado vira recomendacao.
+
+Nao registrar prompts completos, segredos, codigo longo ou dados privados. Nao alterar o framework automaticamente: registrar, recomendar e aguardar aprovacao.
 

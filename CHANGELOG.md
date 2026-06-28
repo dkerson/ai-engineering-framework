@@ -1,5 +1,25 @@
 # Changelog — AI Engineering Framework
 
+## [2.12.1] - 2026-06-28
+
+### Adicionado
+
+- **Execution Intelligence baseline:** `MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`, `PROMOTION_CRITERIA.md`
+- **Token Budget Policy:** `rules/token-budget-policy.md`
+- Fast Path antes do NLME completo para pedidos simples e baixo risco
+- End-of-mission token waste review no Orchestrator
+
+### Alterado
+
+- Orchestrator registra sinais uteis de usage/learning/token notes sem auto-mutacao
+- FOS governance explicita: observar e recomendar, nunca alterar sem aprovacao
+- Framework status/health atualizados com inventario real de skills/workflows/rules/checklists
+
+### Preservado
+
+- NLME/SIL/COS continuam disponiveis para missoes ambiguas, estrategicas ou de maior risco
+- Framework nao implementa mudancas em si mesmo sem aprovacao do usuario
+
 ## [2.12.0] - 2026-06-26
 
 ### Adicionado — Natural Language Mission Engine (NLME)

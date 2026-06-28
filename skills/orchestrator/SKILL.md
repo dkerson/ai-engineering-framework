@@ -48,6 +48,11 @@ Detalhes: `workflows/modes.md`
 
 ```
 1. ENTENDER pedido + AGENTS.md do projeto
+1-fast. SE pedido for simples/baixo risco -> aplicar Fast Path (`rules/token-budget-policy.md`) antes do NLME completo:
+   a. confirmacoes, status, explicacoes, comandos diretos, docs simples, typo ou mudanca estreita
+   b. ler somente bootstrap + arquivo/regra diretamente relevante
+   c. pular mission-translator/mission-builder/prompt-builder quando nao agregarem seguranca
+   d. registrar economia ou desperdicio relevante no FOS ao final, se aplicavel
 1-nlme. SE linguagem natural (padrao) → workflow `natural-language-mission.md`:
    a. mission-translator → Translation Brief
    b. goal-recognition → objetivo real
@@ -86,8 +91,12 @@ Detalhes: `workflows/modes.md`
 8. IMPLEMENTAR — skills técnicas na ordem do plano
 9. VALIDAR — Validator (Review/Council) ou QA (Standard)
 10. REVISAR — Critic se Review/Council
-11. ENTREGAR — templates/final-response.md
-12. DESCARTAR Working Context
+11. EXECUTION INTELLIGENCE:
+   a. checar se o modo escolhido foi o menor modo seguro
+   b. registrar usage/learning/token notes em `framework/operating-system/` somente quando houver sinal util
+   c. nunca alterar comportamento do framework sem aprovacao do usuario
+12. ENTREGAR — templates/final-response.md
+13. DESCARTAR Working Context
 ```
 
 ## Technical Council
@@ -259,10 +268,12 @@ Estrutura: `context/working-context.md`
 ## Economia de tokens
 
 - Modo Fast por padrão quando possível
+- Fast Path antes do NLME completo quando o pedido for simples e baixo risco
 - Menor número de skills no pipeline
 - Reutilizar Working Context entre skills
 - Não mostrar debate do conselho ao usuário
-- `rules/token-economy.md` + `rules/hierarchical-orchestration.md`
+- Registrar sinais relevantes em `MISSION_LEDGER.md`, `SKILL_USAGE.md` e `TOKEN_METRICS.md`
+- `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/hierarchical-orchestration.md`
 
 ## Skills por fase
 
@@ -298,6 +309,9 @@ Estrutura: `context/working-context.md`
 - [ ] Validator/Critic conforme modo
 - [ ] Design Mode definido se interface
 - [ ] product-aesthetic-director: gate ≥8 ou revisão solicitada
+- [ ] Fast Path considerado antes do NLME completo
+- [ ] Token waste review feito antes da entrega
+- [ ] FOS ledger atualizado quando houver aprendizado real
 - [ ] Resposta final completa
 - [ ] Working Context descartado
 
@@ -333,6 +347,8 @@ Estrutura: `context/working-context.md`
 - Conselho: `workflows/technical-council.md`
 - Orquestração: `rules/hierarchical-orchestration.md`
 - Tokens: `rules/token-economy.md`
+- Budget: `rules/token-budget-policy.md`
+- Execution Intelligence: `framework/operating-system/MISSION_LEDGER.md` · `framework/operating-system/TOKEN_METRICS.md` · `framework/operating-system/SKILL_USAGE.md` · `framework/operating-system/PROMOTION_CRITERIA.md`
 - Processo: `workflows/_process.md`
 - Resposta: `templates/final-response.md`
 - Dados: `docs/DATA_INTELLIGENCE.md` · `templates/data/final-response-data.md`

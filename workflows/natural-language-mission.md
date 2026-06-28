@@ -1,47 +1,52 @@
 # Workflow: Natural Language Mission
 
-> Entrada universal para linguagem natural. Preserva SIL, COS e Orchestrator.
+> Entrada para linguagem natural ambigua, estrategica, multi-dominio ou de maior risco. Preserva SIL, COS e Orchestrator.
 
 ## Trigger
 
-Qualquer pedido em linguagem natural — especialmente sem especificação técnica.
+Usar quando o pedido exigir interpretacao de objetivo, planejamento, roadmap, auditoria, transformacao, produto/design/growth/data, arquitetura, seguranca, banco, producao ou multiplos dominios.
 
-Exemplos: "Transforme o Umbra", "Modernize o Irisys", "Analise o KB", "Esse dashboard está ruim", "Quero vender mais".
+Antes deste workflow, o Orchestrator deve avaliar Fast Path em `rules/token-budget-policy.md`.
+
+Nao usar NLME completo para confirmacoes, status, comandos diretos, explicacoes simples, docs estreitas, typo ou mudanca pequena de baixo risco.
+
+Exemplos: "Transforme o Umbra", "Modernize o Irisys", "Analise o KB", "Esse dashboard esta ruim", "Quero vender mais".
 
 ## Pipeline
 
 ```text
-Usuário
-  → mission-translator (Translation Brief)
-  → goal-recognition (objetivo real)
-  → mission-builder (Mission Package + Confidence)
-  → prompt-builder (Structured Prompt — interno)
-  → SIL (Mission Brief)
-  → capability-resolver (COS)
-  → orchestrator (modo + execução)
-  → domains / skills
-  → Mission Report + Mission Memory (FOS)
+Usuario
+  -> mission-translator (Translation Brief)
+  -> goal-recognition (objetivo real)
+  -> mission-builder (Mission Package + Confidence)
+  -> prompt-builder (Structured Prompt - interno)
+  -> SIL (Mission Brief)
+  -> capability-resolver (COS)
+  -> orchestrator (modo + execucao)
+  -> domains / skills
+  -> Mission Report + Mission Memory (FOS)
 ```
 
-## Primeira resposta (obrigatória)
+## Primeira resposta (obrigatoria)
 
 Template: `templates/mission/nlme-first-response.md`
 
-Apresentar missão, objetivo, capabilities, domínios, plano e roadmap **antes** de investigar código.
+Apresentar missao, objetivo, capabilities, dominios, plano e roadmap antes de investigar codigo.
 
 ## Escalonamento
 
-| Confidence | Ação |
+| Confidence | Acao |
 |------------|------|
-| ≥ 60 | Executar após resposta inicial |
-| < 60 | Perguntas mínimas → retomar pipeline |
+| >= 60 | Executar apos resposta inicial |
+| < 60 | Perguntas minimas -> retomar pipeline |
 
 ## Modo operacional
 
-Definido em Mission Package → validado pelo Orchestrator (`workflows/modes.md`).
+Definido em Mission Package -> validado pelo Orchestrator (`workflows/modes.md`).
 
-## Referências
+## Referencias
 
 - `docs/Natural-Language-Missions.md`
-- `workflows/strategic-mission.md` (missões amplas — compatível)
+- `workflows/strategic-mission.md` (missoes amplas - compativel)
 - `rules/natural-language-mission-engine.md`
+- `rules/token-budget-policy.md`

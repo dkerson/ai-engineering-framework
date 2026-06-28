@@ -11,6 +11,7 @@ O **Orchestrator** é o único agente que conversa com o usuário.
 - Nenhuma skill inicia execução por conta própria
 - Todo fluxo passa pelo Orchestrator
 - O Orchestrator decide: quais skills usar, quando usar, quando **não** usar, quando encerrar
+- O Orchestrator avalia Fast Path antes de NLME/SIL/COS completos para pedidos simples e baixo risco
 
 ## Modos de operação
 
@@ -97,6 +98,8 @@ Skills **nunca** devem:
 O Orchestrator reutiliza contexto já obtido. Se uma skill analisou um arquivo, outra deve reutilizar essa análise.
 
 Detalhes complementares: `rules/token-economy.md`
+
+Budget complementar: `rules/token-budget-policy.md`
 
 ## Domínios lógicos
 

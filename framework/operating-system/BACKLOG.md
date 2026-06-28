@@ -8,6 +8,8 @@
 | RAG pgvector Path | postgres-plugin + vector extension for RAG indexing. | RAG + MCP | High | Medium | P1 | Proposed |
 | OCR Capability | Extract text from images and scanned PDFs. | Capability Architecture | Medium | Medium | P2 | RAG Ready | Proposed |
 | Plugin MCP Connectors | Implement real MCP integration for draft plugins incrementally. | Plugin Architecture | High | High | P1 | Plugin registry v2.8 | Proposed |
-| Skill Usage Ledger | Track when each skill is invoked by mission type. | FOS | High | Medium | P1 | Proposed |
-| Pattern Promotion Criteria | Define thresholds for turning repeated flows into patterns. | FOS | Medium | Low | P1 | Proposed |
-| Token Waste Review | Add retrospective field for unnecessary context loading. | FOS | Medium | Low | P2 | Proposed |
+| Skill Usage Ledger | Track when each skill is invoked by mission type. | FOS | High | Medium | P1 | Implemented baseline |
+| Pattern Promotion Criteria | Define thresholds for turning repeated flows into patterns. | FOS | Medium | Low | P1 | Implemented baseline |
+| Token Waste Review | Add retrospective field for unnecessary context loading. | FOS | Medium | Low | P2 | Implemented baseline |
+| Automated Usage Metrics Script | Optional script to compute skill/workflow inventory and drift from files/logs. | FOS | Medium | Medium | P2 | Proposed |
+| Skill Boundary Audit | Review overlapping design/growth/reviewer skills after usage data exists. | FOS | Medium | Low | P2 | Proposed |

@@ -2,6 +2,7 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-06-28 | 2.12.1 | Codex | Execution Intelligence & Token Budget | Reduce Codex/Cursor cost while preserving governance | Fast Path, ledgers, token metrics, promotion criteria | FOS docs, rules, orchestrator, workflows |
 | 2026-06-26 | 2.12.0 | Codex | Natural Language Mission Engine (NLME) | Linguagem natural → missões autônomas | 3 skills, 9 docs, workflow, templates | docs/, skills/, workflows/, rules/ |
 | 2026-06-26 | 2.11.0 | Codex | MCP Readiness & Connectors | Safe MCP by plugin/project | 7 connector packs, profiles, sentry active | plugins/, projects/, FOS |
 | 2026-06-26 | 2.10.0 | Codex | Capability Operating System (COS) | Govern all capabilities; capability-first | COS registry, builder/evaluator/discovery, PROJECT_CAPABILITIES | `.ai/capabilities/`, docs, FOS |

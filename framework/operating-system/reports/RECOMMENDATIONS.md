@@ -1,32 +1,40 @@
 # Framework Recommendations
 
-> Gerado: 2026-06-26 · v2.11.0
+> Gerado: 2026-06-28 - v2.12.1
+
+## Execution Intelligence v2.12.1
+
+1. Usar Fast Path antes do NLME completo para pedidos simples e baixo risco.
+2. Registrar apenas metadados curtos em Mission Ledger, Skill Usage e Token Metrics.
+3. Nunca permitir auto-mutacao do framework; evolucao automatica deve parar em recomendacao.
+4. Rodar auditoria de fronteiras de skills apenas depois de dados reais de uso.
+5. Automatizar inventario/metricas somente se o ledger manual mostrar valor recorrente.
 
 ## MCP Readiness v2.11
 
-1. Validar **user-mssql** localmente → sqlserver active (read-only prod).
-2. **postgres + pgvector** para RAG quando Postgres disponível.
-3. docker/github: manter under-review até aprovação.
+1. Validar **user-mssql** localmente -> sqlserver active (read-only prod).
+2. **postgres + pgvector** para RAG quando Postgres disponivel.
+3. docker/github: manter under-review ate aprovacao.
 
 ## Capability Architecture
 
-1. **Adotar capability-first** em toda missão de tecnologia nova (OCR, voice, agents).
-2. **RAG Stable** após primeiro projeto consumidor validar guardrails em produção.
-3. **OCR Capability** — próximo candidato Planned → In Development (depende de RAG ingestão).
+1. **Adotar capability-first** em toda missao de tecnologia nova (OCR, voice, agents).
+2. **RAG Stable** apos primeiro projeto consumidor validar guardrails em producao.
+3. **OCR Capability** - proximo candidato Planned -> In Development (depende de RAG ingestao).
 
 ## COS v2.10
 
-1. **Capability-first** é política — não convenção.
+1. **Capability-first** e politica, nao convencao.
 2. **PROJECT_CAPABILITIES** substitui listagem de skills por projeto.
-3. **OCR** próxima capability Planned → Approved.
+3. **OCR** proxima capability Planned -> Approved.
 
 ## RAG Intelligence
 
 1. Definir vector DB plugin (postgres pgvector ou dedicado) quando projeto consumir RAG.
 2. Benchmark com rag-evaluator antes de go-live.
-3. Confidence threshold por projeto via template configurável.
+3. Confidence threshold por projeto via template configuravel.
 
 ## Geral
 
-1. Manter distinção knowledge-engine (Hub) vs knowledge-architect (KB RAG).
-2. Não implementar RAG em Umbra/Irisys/SmartRifa até missão explícita de produto aprovada.
+1. Manter distincao knowledge-engine (Hub) vs knowledge-architect (KB RAG).
+2. Nao implementar RAG em Umbra/Irisys/SmartRifa ate missao explicita de produto aprovada.

@@ -8,6 +8,7 @@
 | Capability Operating System | Unified governance for all capabilities. | Architecture | High | Medium | P0 | RAG Ready | Implemented | 2.10.0 |
 | RAG Intelligence | Full RAG capability: retrieval, citations, confidence, guardrails. | Capability | High | High | P0 | Capability Architecture | Implemented (Ready) | 2.9.0 |
 | Plugin Architecture | Extract integrations as independent plugin packs with registry and lifecycle. | Extensibility | High | Medium | P0 | Infrastructure Intelligence | Implemented | 2.8.0 |
-| Usage Metrics Automation | Add approved scripts to compute mission and skill usage from logs. | Metrics | Medium | Medium | P1 | FOS adoption | Backlog | TBD |
+| Execution Intelligence Baseline | Mission ledger, skill usage, token metrics, promotion criteria and token budget policy. | Metrics | High | Low | P0 | FOS adoption | Implemented | 2.12.1 |
+| Usage Metrics Automation | Add approved scripts to compute mission and skill usage from logs. | Metrics | Medium | Medium | P1 | Execution Intelligence baseline | Backlog | TBD |
 | Pattern Library | Promote repeated mission outcomes into reusable patterns. | Knowledge | Medium | Medium | P1 | Real mission history | Backlog | TBD |
 | Redundancy Review | Identify overlapping skills/workflows after usage data exists. | Quality | Medium | Low | P2 | Usage metrics | Backlog | TBD |

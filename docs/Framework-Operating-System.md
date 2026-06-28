@@ -53,8 +53,23 @@ Documentos vivos principais:
 - `RECOMMENDATIONS.md`
 - `FRAMEWORK_METRICS.md`
 - `FRAMEWORK_REPORT.md`
+- `MISSION_LEDGER.md`
+- `SKILL_USAGE.md`
+- `TOKEN_METRICS.md`
+- `PROMOTION_CRITERIA.md`
 - `NEXT_STEPS.md`
 - `VERSION.md`
+
+## Execution Intelligence
+
+O FOS pode observar execucoes reais para reduzir custo e melhorar eficiencia:
+
+- `MISSION_LEDGER.md` registra metadados curtos de missoes.
+- `SKILL_USAGE.md` mede quais skills foram realmente usadas.
+- `TOKEN_METRICS.md` registra sinais de desperdicio e economia.
+- `PROMOTION_CRITERIA.md` define quando aprendizado vira recomendacao.
+
+Limite: observar e recomendar nao autoriza auto-mutacao. Mudancas no framework continuam dependendo de aprovacao do usuario.
 
 ## Natural Questions
 

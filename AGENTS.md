@@ -9,13 +9,15 @@
 
 0. **Natural Language Mission Engine (NLME):** interpretar linguagem natural → Mission Package → Structured Prompt (interno)
 0a. **Strategic Intelligence Layer (SIL):** refinar Mission Brief a partir do NLME
+0b. **Fast Path / Token Budget:** antes do NLME completo, usar `rules/token-budget-policy.md` para pedidos simples e baixo risco
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
 4. Respeitar `rules/strategic-intelligence-layer.md`, `rules/hierarchical-orchestration.md` e `rules/token-economy.md`
 5. Seguir o processo: Entender → Classificar → Escolher modo → Planejar → Investigar → Implementar → Validar → Revisar → Entregar
 6. Manter **Working Context** durante a execução (`context/working-context.md`)
-7. Terminar com `templates/final-response.md`
+7. Registrar Execution Intelligence somente quando houver sinal util (`framework/operating-system/MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`)
+8. Terminar com `templates/final-response.md`
 
 SIL nunca implementa, nunca chama skills diretamente e nunca altera arquivos. Ele entrega um Mission Brief ao Orchestrator.
 
@@ -163,6 +165,18 @@ O SIL nao implementa, nao chama skills e nao altera arquivos. Ele entrega ao Mas
 
 O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda mudanca depende de aprovacao do usuario.
 
+### Execution Intelligence (v2.12.1+)
+
+| Conceito | Papel |
+|----------|-------|
+| Mission Ledger | Registra metadados curtos de missoes reais |
+| Skill Usage | Mede quais skills foram realmente usadas |
+| Token Metrics | Registra sinais de desperdicio e economia |
+| Promotion Criteria | Define quando aprendizado vira recomendacao |
+| Token Budget Policy | Decide Fast Path vs NLME completo |
+
+O framework pode observar execucoes, mas nao pode se modificar sozinho. Auto-evolucao para em recomendacao ate aprovacao do usuario.
+
 ### Infrastructure Intelligence (v2.6+)
 
 | Skill | Papel |
@@ -299,10 +313,11 @@ Processo (não skill): `workflows/technical-council.md`
 ## Economia de tokens
 
 - Menor modo seguro
+- Fast Path antes do NLME completo quando seguro
 - Working Context — sem releitura
 - Council: máx. 150 palavras/skill; usuário vê só decisão consolidada
 
-`rules/token-economy.md` · `rules/hierarchical-orchestration.md`
+`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/hierarchical-orchestration.md`
 
 ## Resposta final
 
