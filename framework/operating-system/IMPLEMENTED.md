@@ -2,6 +2,7 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-06-29 | 2.15.0 | Codex | Execution Reliability Guardrails | Stop long loops, frontend runtime false positives and collateral regressions | Attempt Ledger, Loop Control, Frontend Runtime Validation, Regression Boundary, canary checks | rules, context, orchestrator, bug-hunter, qa, workflows, checklists, docs, FOS |
 | 2026-06-29 | 2.14.0 | Codex | Security Intelligence Domain | Separate SI, authorization, permission cache and threat modeling from generic security review | 5 skills, workflow, rules, checklists, COS registry | docs, skills, rules, checklists, workflows, FOS |
 | 2026-06-29 | 2.13.0 | Codex | Context Hygiene Protocol | Reduce context pollution during long executions | Context Health, Compacted Snapshot, Orchestrator checkpoints | rules, context, orchestrator, workflows, FOS |
 | 2026-06-28 | 2.12.1 | Codex | Execution Intelligence & Token Budget | Reduce Codex/Cursor cost while preserving governance | Fast Path, ledgers, token metrics, promotion criteria | FOS docs, rules, orchestrator, workflows |

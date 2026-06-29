@@ -12,6 +12,12 @@ Complemento de budget: `rules/token-budget-policy.md`
 
 Complemento de higiene de contexto: `rules/context-hygiene.md`
 
+Complemento de confiabilidade de execucao: `rules/execution-loop-control.md`
+
+Complemento de runtime frontend: `rules/frontend-runtime-validation.md`
+
+Complemento de regressao: `rules/regression-boundary.md`
+
 
 
 ## Regras absolutas
@@ -53,6 +59,8 @@ Quando o contexto ativo ficar poluido, o Orchestrator deve compactar o Working C
 
 
 O Orchestrator reutiliza contexto já obtido. Se uma skill analisou um arquivo, outra **deve** reutilizar essa análise.
+
+Quando uma tentativa falhar, a proxima acao deve seguir `rules/execution-loop-control.md`: registrar Attempt Ledger, mudar variavel relevante e parar de repetir a mesma hipotese apos 2 falhas.
 
 
 
@@ -226,6 +234,17 @@ Nao escanear projeto inteiro se o registry ja responder. Nunca carregar ou regis
 | Refatoração ampla | Suíte do pacote |
 
 | Build completo | Apenas Review/Council ou merge/deploy |
+
+### Frontend runtime e regressao
+
+Para telas, rotas, HTML e layout:
+
+- validar porta/URL corretas antes de aceitar evidencia;
+- confirmar cache/bundle coerente com a alteracao;
+- checar console e network para erros novos relevantes;
+- coletar evidencia visual ou DOM da rota alvo;
+- aplicar `rules/regression-boundary.md` quando arquivo compartilhado for alterado;
+- validar canarios definidos no Boundary Map antes de marcar pronto.
 
 
 

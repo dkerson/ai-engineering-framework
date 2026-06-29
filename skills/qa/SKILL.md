@@ -28,6 +28,8 @@ Garantir qualidade via testes direcionados — não suíte completa desnecessár
 3. Verificar edge cases críticos
 4. Documentar `templates/test-plan.md` se feature grande
 5. Reportar falhas ao tech-lead
+6. Validar Boundary Map quando a mudança tocar arquivos compartilhados
+7. Para frontend, confirmar runtime correto antes de aceitar evidencia visual
 
 ## Entradas esperadas
 
@@ -45,6 +47,9 @@ Garantir qualidade via testes direcionados — não suíte completa desnecessár
 - [ ] Edge cases críticos
 - [ ] Regressão mínima ok
 - [ ] Testes relacionados executados
+- [ ] Boundary Map revisado quando aplicável
+- [ ] Rotas/testes canário executados quando arquivo compartilhado mudou
+- [ ] Frontend validado em URL/porta corretas quando aplicável
 
 ## Integração com outras skills
 
@@ -71,5 +76,8 @@ Garantir qualidade via testes direcionados — não suíte completa desnecessár
 ## Referências
 
 - `rules/testing.md`
+- `rules/regression-boundary.md`
+- `rules/frontend-runtime-validation.md`
 - `checklists/feature.md`
+- `checklists/frontend-regression.md`
 - `templates/test-plan.md`

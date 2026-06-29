@@ -1,5 +1,13 @@
 # Workflow: Product & Design
 
+## Guardrails para tela existente
+
+- Definir tela alvo e telas fora de escopo antes de editar.
+- Preservar identidade visual e comportamento de telas vizinhas em LEGACY.
+- Aplicar `rules/frontend-runtime-validation.md` para confirmar porta/URL, cache, console, network e evidencia visual/DOM.
+- Aplicar `rules/regression-boundary.md` se tocar layout, router, provider, CSS global, componente base, hook compartilhado ou cliente API.
+- Validar rotas canario quando componente compartilhado for alterado.
+
 > Criação ou evolução significativa de interface. Modo: **Standard** → **Review** se escopo grande.
 
 ## Trigger

@@ -1,5 +1,12 @@
 # FOS Changelog
 
+## 2.15.0 - 2026-06-29
+
+- Added Execution Reliability guardrails.
+- Added Attempt Ledger and loop breaker for repeated failed hypotheses.
+- Added Frontend Runtime Validation for port, URL, cache, console, network and DOM/screenshot evidence.
+- Added Regression Boundary and frontend canary checks to protect working screens.
+
 ## 2.14.0 - 2026-06-29
 
 - Added Security Intelligence domain.

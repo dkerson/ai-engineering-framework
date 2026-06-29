@@ -18,6 +18,8 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Skills sob demanda | Invocar o mínimo necessário |
 | Working Context | Manter e reutilizar contexto da sessão |
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
+| Execution Loop Control | Bloquear repeticao de tentativa sem evidencia nova |
+| Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
 | Domínios lógicos | Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
@@ -85,6 +87,8 @@ Detalhes: `workflows/modes.md`
 5. PLANEJAR pipeline mínimo para o modo
 6. INVESTIGAR — aplicar token-economy; Context Builder se necessário
 6a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
+6b. EXECUTION LOOP CONTROL — em bugs/validacoes falhando, manter Attempt Ledger (`rules/execution-loop-control.md`); apos 2 falhas com a mesma hipotese, parar de tentar a mesma solucao e replanejar
+6c. REGRESSION BOUNDARY — antes de editar tela/rota/API/arquivo compartilhado, registrar Target surface, Out-of-scope, Shared files e Canary routes/tests (`rules/regression-boundary.md`)
 7. SE Technical Council:
    a. Montar conselho (somente skills necessárias)
    b. Coletar opiniões (máx. 150 palavras/skill)
@@ -94,6 +98,8 @@ Detalhes: `workflows/modes.md`
 8. IMPLEMENTAR — skills técnicas na ordem do plano
 9. VALIDAR — Validator (Review/Council) ou QA (Standard)
 9a. CONTEXT HYGIENE — antes de validacao ampla, garantir que plano ativo, arquivos alterados e pendencias estejam no snapshot/Working Context
+9b. FRONTEND RUNTIME — para telas/rotas, validar porta/URL, cache, console, network e evidencia visual/DOM conforme `rules/frontend-runtime-validation.md`
+9c. REGRESSION CANARIES — se arquivo compartilhado foi alterado, validar canarios definidos no Boundary Map antes de marcar pronto
 10. REVISAR — Critic se Review/Council
 11. EXECUTION INTELLIGENCE:
    a. checar se o modo escolhido foi o menor modo seguro
@@ -287,6 +293,44 @@ Gatilhos minimos:
 
 Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` com objetivo, restricoes, decisoes, arquivos relevantes, evidencias, plano ativo, validacoes, riscos e proximo passo. A partir desse ponto, outputs brutos, planos substituidos e hipoteses invalidadas deixam de guiar a execucao.
 
+## Execution Reliability
+
+O Orchestrator aplica regras de confiabilidade para evitar loops, falso sucesso em frontend e regressao colateral.
+
+### Attempt Ledger
+
+Em bugs, validacoes falhando ou execucoes com mais de uma tentativa:
+
+- registrar cada tentativa no Working Context;
+- nao repetir a mesma hipotese apos 2 falhas;
+- nao repetir comando/teste se nenhuma variavel mudou;
+- se nao houver progresso apos 3 tentativas totais, escalar modo, pedir evidencia externa ou entregar diagnostico bloqueado.
+
+Ver: `rules/execution-loop-control.md`
+
+### Frontend Runtime
+
+Para telas, rotas e HTML:
+
+- confirmar comando oficial, porta e URL;
+- reutilizar dev server existente quando correto;
+- registrar motivo ao usar nova porta;
+- validar cache/bundle, console, network e DOM/screenshot;
+- tratar "funcionou em outra porta" como evidencia de divergencia de runtime, nao como sucesso automatico.
+
+Ver: `rules/frontend-runtime-validation.md`
+
+### Regression Boundary
+
+Antes de editar:
+
+- declarar superficie alvo e fora de escopo;
+- identificar arquivos compartilhados;
+- definir rotas/testes canario;
+- ampliar validacao se layout, router, provider, CSS global, componente base, hook, auth ou API compartilhada forem alterados.
+
+Ver: `rules/regression-boundary.md`
+
 ## Economia de tokens
 
 - Modo Fast por padrão quando possível
@@ -297,6 +341,7 @@ Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` co
 - Não mostrar debate do conselho ao usuário
 - Registrar sinais relevantes em `MISSION_LEDGER.md`, `SKILL_USAGE.md` e `TOKEN_METRICS.md`
 - `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
+- `rules/execution-loop-control.md` + `rules/frontend-runtime-validation.md` + `rules/regression-boundary.md`
 
 ## Skills por fase
 
@@ -332,6 +377,11 @@ Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` co
 - [ ] Skills invocadas somente quando necessário
 - [ ] Technical Council: decisão consolidada (não opiniões brutas)
 - [ ] Token economy aplicada
+- [ ] Attempt Ledger atualizado quando houve retry/falha
+- [ ] Loop breaker aplicado apos repeticao de hipotese
+- [ ] Regression Boundary definido antes de alterar superficie compartilhada
+- [ ] Frontend runtime validado em porta/URL corretas quando aplicavel
+- [ ] Canarios de regressao validados quando houve arquivo compartilhado
 - [ ] Validator/Critic conforme modo
 - [ ] Design Mode definido se interface
 - [ ] product-aesthetic-director: gate ≥8 ou revisão solicitada
@@ -375,6 +425,9 @@ Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` co
 - Tokens: `rules/token-economy.md`
 - Higiene de contexto: `rules/context-hygiene.md`
 - Budget: `rules/token-budget-policy.md`
+- Confiabilidade de execucao: `rules/execution-loop-control.md`
+- Frontend runtime: `rules/frontend-runtime-validation.md`
+- Regressao: `rules/regression-boundary.md`
 - Execution Intelligence: `framework/operating-system/MISSION_LEDGER.md` · `framework/operating-system/TOKEN_METRICS.md` · `framework/operating-system/SKILL_USAGE.md` · `framework/operating-system/PROMOTION_CRITERIA.md`
 - Processo: `workflows/_process.md`
 - Resposta: `templates/final-response.md`

@@ -1,5 +1,27 @@
 # Changelog — AI Engineering Framework
 
+## [2.15.0] - 2026-06-29
+
+### Adicionado
+
+- **Execution Reliability:** `docs/EXECUTION_RELIABILITY.md`
+- Rules: `execution-loop-control.md`, `frontend-runtime-validation.md`, `regression-boundary.md`
+- Checklist: `checklists/frontend-regression.md`
+- Working Context: `Attempt Ledger`, `Regression Boundary` e `Frontend Runtime`
+
+### Alterado
+
+- Orchestrator passa a bloquear repeticao de hipotese apos falhas repetidas
+- Bug Hunter registra tentativas e hipoteses descartadas
+- QA valida Boundary Map, rotas/testes canario e runtime frontend quando aplicavel
+- Workflows de bug e product-design passam a exigir guardrails contra loops, cache/porta errada e regressao colateral
+
+### Preservado
+
+- Menor modo seguro continua obrigatorio
+- Context Hygiene continua responsavel por contexto poluido
+- Execution Reliability nao substitui QA/Validator; define guardrails antes e durante validacao
+
 ## [2.14.0] - 2026-06-29
 
 ### Adicionado

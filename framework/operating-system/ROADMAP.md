@@ -11,6 +11,7 @@
 | Execution Intelligence Baseline | Mission ledger, skill usage, token metrics, promotion criteria and token budget policy. | Metrics | High | Low | P0 | FOS adoption | Implemented | 2.12.1 |
 | Context Hygiene Protocol | Detect polluted execution context and continue from a compacted operational snapshot. | Metrics | High | Low | P0 | Execution Intelligence baseline | Implemented | 2.13.0 |
 | Security Intelligence Domain | Add SI specialists for secure architecture, authorization, permission cache, threat modeling and governance. | Security | High | Medium | P0 | FOS, COS | Implemented | 2.14.0 |
+| Execution Reliability Guardrails | Prevent repeated failed attempts, frontend runtime false positives and collateral regressions. | Quality | High | Low | P0 | Context Hygiene, Execution Intelligence | Implemented | 2.15.0 |
 | Usage Metrics Automation | Add approved scripts to compute mission and skill usage from logs. | Metrics | Medium | Medium | P1 | Execution Intelligence baseline | Backlog | TBD |
 | Pattern Library | Promote repeated mission outcomes into reusable patterns. | Knowledge | Medium | Medium | P1 | Real mission history | Backlog | TBD |
 | Redundancy Review | Identify overlapping skills/workflows after usage data exists. | Quality | Medium | Low | P2 | Usage metrics | Backlog | TBD |

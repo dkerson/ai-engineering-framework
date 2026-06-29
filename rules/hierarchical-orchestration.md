@@ -47,6 +47,12 @@ Estrutura: `context/working-context.md`
 
 Higiene complementar: `rules/context-hygiene.md`
 
+Confiabilidade complementar: `rules/execution-loop-control.md`
+
+Frontend runtime complementar: `rules/frontend-runtime-validation.md`
+
+Regressao complementar: `rules/regression-boundary.md`
+
 ## Technical Council
 
 **Não é uma skill** — é processo de decisão convocado pelo Orchestrator.
@@ -100,6 +106,8 @@ Skills **nunca** devem:
 - Executar validações desnecessárias
 
 O Orchestrator reutiliza contexto já obtido. Se uma skill analisou um arquivo, outra deve reutilizar essa análise.
+
+O Orchestrator tambem controla loops operacionais: apos 2 falhas com a mesma hipotese, a hipotese deve ser descartada ou a missao deve ser replanejada. Comando/teste repetido sem mudanca de variavel nao conta como progresso.
 
 Detalhes complementares: `rules/token-economy.md`
 

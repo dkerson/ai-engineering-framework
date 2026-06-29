@@ -40,6 +40,36 @@ Tarefa concluída → WC descartado
 - Last hygiene check:
 - Active context source: [Full|Compacted Snapshot]
 
+### Attempt Ledger (quando houver retry/falha)
+- Attempt #:
+- Hypothesis:
+- Changed files:
+- Validation command:
+- Result:
+- Evidence:
+- Same as previous attempt: [yes/no]
+- Decision: [continue|change hypothesis|escalate|ask user|stop]
+- Discarded hypotheses:
+
+### Regression Boundary (quando alterar tela/rota/API/compartilhado)
+- Target surface:
+- In-scope behavior:
+- Out-of-scope surfaces:
+- Shared files touched:
+- Canary routes/tests:
+- Regression risk: [low|medium|high]
+- Expanded validation required: [yes/no]
+
+### Frontend Runtime (quando aplicável)
+- Official command:
+- Existing dev server:
+- Port/URL validated:
+- New port used: [yes/no + motivo]
+- Cache/bundle status:
+- Console errors:
+- Network errors:
+- DOM/screenshot evidence:
+
 ### Compacted Snapshot (quando Context Health = Polluted)
 - Objective:
 - Current mode/risk:
@@ -167,6 +197,9 @@ Tarefa concluída → WC descartado
 | Atualizar status de validação | Manter WC entre sessões |
 | Popular seção Data Intelligence em demandas de dados/BI | Inventar regras de negócio |
 | Criar Compacted Snapshot quando o contexto ficar poluido | Continuar usando planos antigos, outputs brutos ou hipoteses invalidadas |
+| Registrar tentativas no Attempt Ledger | Repetir a mesma hipotese apos 2 falhas |
+| Definir Boundary Map antes de editar compartilhados | Corrigir uma tela quebrando telas fora de escopo |
+| Registrar porta/URL/cache em frontend | Declarar sucesso porque funcionou em outra porta |
 
 ## Quando pular leitura
 

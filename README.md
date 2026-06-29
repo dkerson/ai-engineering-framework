@@ -1,6 +1,6 @@
 # AI Engineering Framework
 
-**v2.14** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Security Intelligence**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
+**v2.15** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Security Intelligence**, **Execution Reliability**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
@@ -34,7 +34,7 @@ Usuário (linguagem natural)
 |-----------|---------------|
 | Modular | Skills, rules, workflows independentes |
 | Reutilizável | Git Submodule em múltiplos projetos |
-| Baixo consumo de tokens | Modo mínimo + Working Context + Context Hygiene |
+| Baixo consumo de tokens | Modo mínimo + Working Context + Context Hygiene + Loop Control |
 | Alta qualidade | Critic, Validator, Technical Council |
 | Compatível | Codex, Cursor, AGENTS.md |
 
@@ -72,6 +72,9 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Arquitetura e responsabilidades |
 | [`docs/Framework-Operating-System.md`](docs/Framework-Operating-System.md) | Governanca, saude, roadmap e recomendacoes do framework |
 | [`rules/context-hygiene.md`](rules/context-hygiene.md) | Protocolo de compactacao de contexto poluido |
+| [`rules/execution-loop-control.md`](rules/execution-loop-control.md) | Controle de tentativas, loop breaker e Attempt Ledger |
+| [`rules/frontend-runtime-validation.md`](rules/frontend-runtime-validation.md) | Validacao de frontend em porta/URL/cache/runtime corretos |
+| [`rules/regression-boundary.md`](rules/regression-boundary.md) | Boundary Map e canarios para evitar regressao colateral |
 | [`docs/Infrastructure-Intelligence.md`](docs/Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | [`docs/Project-Registry.md`](docs/Project-Registry.md) | Project Registry por projeto |
 | [`docs/Infrastructure-Registry.md`](docs/Infrastructure-Registry.md) | Registry global de infraestrutura |
@@ -137,7 +140,7 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
 ## Versão
 
-Ver [`VERSION`](VERSION) — atual: **2.14.0**
+Ver [`VERSION`](VERSION) — atual: **2.15.0**
 
 ## Licença
 

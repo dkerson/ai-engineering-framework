@@ -1,5 +1,14 @@
 # Workflow: Bug
 
+## Guardrails obrigatorios
+
+- Aplicar `rules/execution-loop-control.md` quando houver mais de uma tentativa, teste falhando ou hipotese repetida.
+- Aplicar `rules/regression-boundary.md` antes de alterar telas, rotas, APIs, layouts, providers, CSS global, componentes ou hooks compartilhados.
+- Aplicar `rules/frontend-runtime-validation.md` em bugs de frontend, rota, HTML, layout ou visual.
+- Apos 2 falhas com a mesma hipotese, voltar ao diagnostico; nao aplicar novo patch sem evidencia nova.
+- Se a mudanca tocar arquivo compartilhado, definir rotas/testes canario antes de marcar a entrega como pronta.
+- Para frontend/rotas, usar tambem `checklists/frontend-regression.md`.
+
 
 
 > Pipeline para correção de bugs. Modo padrão: **Standard**. Escalar para Review se DB/auth; Council se produção.

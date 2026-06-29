@@ -30,6 +30,8 @@ Encontrar causa raiz com investigação mínima e dirigida.
 3. Bisect: isolar camada (UI/API/DB)
 4. Localizar arquivo+linha
 5. Documentar causa raiz (`templates/root-cause-analysis.md` se complexo)
+6. Registrar Attempt Ledger quando houver mais de uma tentativa
+7. Invalidar hipoteses repetidas apos 2 falhas sem evidencia nova
 
 ## Entradas esperadas
 
@@ -50,6 +52,9 @@ Encontrar causa raiz com investigação mínima e dirigida.
 - [ ] Arquivo/linha localizados
 - [ ] Causa raiz documentada
 - [ ] Leitura mínima de arquivos
+- [ ] Attempt Ledger atualizado se houve retry
+- [ ] Hipoteses descartadas registradas
+- [ ] Nenhuma tentativa repetida sem variavel nova
 
 ## Integração com outras skills
 
@@ -78,3 +83,5 @@ Encontrar causa raiz com investigação mínima e dirigida.
 - `templates/bug-report.md`
 - `templates/root-cause-analysis.md`
 - `rules/token-economy.md`
+- `rules/execution-loop-control.md`
+- `rules/regression-boundary.md`

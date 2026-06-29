@@ -1,6 +1,13 @@
 # Framework Recommendations
 
-> Gerado: 2026-06-29 - v2.14.0
+> Gerado: 2026-06-29 - v2.15.0
+
+## Execution Reliability v2.15.0
+
+1. Usar `rules/execution-loop-control.md` em bugs e validacoes com retry; apos 2 falhas com a mesma hipotese, replanejar.
+2. Usar `rules/frontend-runtime-validation.md` em telas/rotas/HTML antes de aceitar evidencia visual.
+3. Usar `rules/regression-boundary.md` quando uma correcao tocar layout, router, provider, CSS global, componente base, hook ou cliente API.
+4. Validar rotas/testes canario quando arquivo compartilhado for alterado.
 
 ## Security Intelligence v2.14.0
 
