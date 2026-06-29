@@ -146,7 +146,7 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 | Campo | Valor |
 |-------|-------|
 | Nome | Natural Language Mission Engine |
-| Versão | 2.12.0 |
+| Versao | 2.13.0 |
 | Categoria | Architecture |
 | Status | Stable |
 | Descrição | Linguagem natural → Translation Brief → Mission Package → Structured Prompt |
@@ -261,3 +261,17 @@ Ver `capabilities/planned/` e `roadmap/CAPABILITY_ROADMAP.md`.
 | docker-plugin | infrastructure-intelligence |
 | azure-plugin | infrastructure-intelligence |
 | aws-plugin | infrastructure-intelligence |
+
+### document-layout-contract
+
+| Campo | Valor |
+|-------|-------|
+| Nome | Document Layout Contract |
+| Versao | 0.1.0 |
+| Categoria | Documentation, Product Design, Knowledge Hub |
+| Status | Planned |
+| Descricao | Contrato explicito de layout para HTML gerado por IA, evitando renderizacao baseada em heuristica |
+| Skills futuras | document-layout-contract, visual-validator |
+| Dependencias | Product & Design Intelligence, Knowledge Hub |
+| Health Score | n/a |
+| Documentacao | `capabilities/planned/document-layout-contract.md` |

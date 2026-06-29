@@ -15,6 +15,7 @@
 
 | Date | Mission | Mode | Files Read | Skills Used | Validation | Waste Signals | Savings |
 |------|---------|------|------------|-------------|------------|---------------|---------|
+| 2026-06-29 | KB Irisys/Biblioteca context hygiene | Fast | 7 | 1 | status + snapshot | Long mixed thread with uploads, UI fixes, blob updates and generated docs | `docs/handoff-context-kb-irisys-2026-06-29.md` becomes active compacted context |
 | 2026-06-29 | Context Hygiene Protocol | Review | 12 | 1 | diff/status | Context pollution lacked explicit operational handling | Compacted Snapshot prevents stale outputs from guiding later phases |
 | 2026-06-28 | Execution Intelligence setup | Review | 8 | 3 | diff/status | Inventory drift found; no script yet | No code scan beyond framework docs |
 

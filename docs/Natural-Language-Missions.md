@@ -1,6 +1,6 @@
 # Natural Language Mission Engine (NLME)
 
-> v2.12.0 — Camada de interpretação de linguagem natural acima do Strategic Intelligence Layer.
+> v2.13.0 — Camada de interpretação de linguagem natural acima do Strategic Intelligence Layer.
 
 ## Objetivo
 

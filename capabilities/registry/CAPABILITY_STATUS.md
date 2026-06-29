@@ -8,7 +8,7 @@
 |-------|-------|
 | Versão | 2.10.0 |
 | COS | Stable |
-| Total Capabilities | 18 registradas |
+| Total Capabilities | 19 registradas |
 
 ## Capabilities — Status
 
@@ -34,13 +34,14 @@
 | Voice Intelligence | — | Idea |
 | Memory Intelligence | — | Planned |
 | Agents Intelligence | — | Idea |
-| Evaluation Intelligence | — | Planned |
+| Evaluation Intelligence | � | Planned |
+| Document Layout Contract | 0.1.0 | Planned |
 
 ## Resumo
 
 - **Stable:** 14
 - **Ready:** 1 (RAG)
-- **Planned:** 3
+- **Planned:** 4
 - **Idea:** 3
 
 ## Referências
