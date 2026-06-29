@@ -53,6 +53,8 @@ Frontend runtime complementar: `rules/frontend-runtime-validation.md`
 
 Regressao complementar: `rules/regression-boundary.md`
 
+Hardcode/configuracao complementar: `rules/no-hardcode.md`
+
 ## Technical Council
 
 **Não é uma skill** — é processo de decisão convocado pelo Orchestrator.
@@ -108,6 +110,8 @@ Skills **nunca** devem:
 O Orchestrator reutiliza contexto já obtido. Se uma skill analisou um arquivo, outra deve reutilizar essa análise.
 
 O Orchestrator tambem controla loops operacionais: apos 2 falhas com a mesma hipotese, a hipotese deve ser descartada ou a missao deve ser replanejada. Comando/teste repetido sem mudanca de variavel nao conta como progresso.
+
+O Orchestrator tambem bloqueia hardcode funcional: valores que variam por ambiente, cliente, tenant, usuario, permissao, regra ou tempo devem ter fonte configuravel ou justificativa registrada.
 
 Detalhes complementares: `rules/token-economy.md`
 

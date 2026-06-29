@@ -18,6 +18,8 @@ Complemento de runtime frontend: `rules/frontend-runtime-validation.md`
 
 Complemento de regressao: `rules/regression-boundary.md`
 
+Complemento anti-hardcode: `rules/no-hardcode.md`
+
 
 
 ## Regras absolutas
@@ -61,6 +63,8 @@ Quando o contexto ativo ficar poluido, o Orchestrator deve compactar o Working C
 O Orchestrator reutiliza contexto já obtido. Se uma skill analisou um arquivo, outra **deve** reutilizar essa análise.
 
 Quando uma tentativa falhar, a proxima acao deve seguir `rules/execution-loop-control.md`: registrar Attempt Ledger, mudar variavel relevante e parar de repetir a mesma hipotese apos 2 falhas.
+
+Ao criar ou alterar valores variaveis (ambiente, dominio, autorizacao, seeds, modulos, menus, status, thresholds), aplicar `rules/no-hardcode.md` antes de implementar.
 
 
 

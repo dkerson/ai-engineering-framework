@@ -1,5 +1,10 @@
 # Workflow: Code Review
 
+## Guardrail anti-hardcode
+
+- Revisar diff contra `rules/no-hardcode.md`.
+- Acionar `hardcode-scanner` quando o diff tiver seeds, permissoes, modulos, menus, status, URLs, IDs, thresholds ou magic numbers.
+
 > Revisão de PR/código. Modo padrão: **Fast** (só review) ou **Standard** (com security).
 
 ## Trigger

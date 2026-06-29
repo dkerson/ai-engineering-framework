@@ -29,6 +29,7 @@
 | [DATA_INTELLIGENCE.md](DATA_INTELLIGENCE.md) | Domínio de dados, SQL, Power BI, BI |
 | [SECURITY_INTELLIGENCE.md](SECURITY_INTELLIGENCE.md) | SI, autorizacao, permissoes, cache de acesso e threat modeling |
 | [EXECUTION_RELIABILITY.md](EXECUTION_RELIABILITY.md) | Controle de loops, runtime frontend e regressao |
+| [CONFIGURATION_HARDCODE_GOVERNANCE.md](CONFIGURATION_HARDCODE_GOVERNANCE.md) | Governanca anti-hardcode, parametrizacao e scan |
 | [DESIGN_INTELLIGENCE.md](DESIGN_INTELLIGENCE.md) | Product & Design, Design Modes, pipeline |
 | [DESIGN_GUIDE.md](DESIGN_GUIDE.md) | Guia operacional de interface |
 | [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) | Tokens e componentes |

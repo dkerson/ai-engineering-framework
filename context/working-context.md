@@ -70,6 +70,15 @@ Tarefa concluída → WC descartado
 - Network errors:
 - DOM/screenshot evidence:
 
+### Configuration / Hardcode Governance (quando aplicável)
+- Scan scope:
+- Findings:
+- False positives:
+- Hardcode category: [secret|environment|domain|authorization|operational|presentation|test/demo]
+- Recommended source: [database|parameter|config|env|registry|feature flag|domain enum|idempotent seed]
+- Accepted hardcode justification:
+- Validation required:
+
 ### Compacted Snapshot (quando Context Health = Polluted)
 - Objective:
 - Current mode/risk:
@@ -200,6 +209,8 @@ Tarefa concluída → WC descartado
 | Registrar tentativas no Attempt Ledger | Repetir a mesma hipotese apos 2 falhas |
 | Definir Boundary Map antes de editar compartilhados | Corrigir uma tela quebrando telas fora de escopo |
 | Registrar porta/URL/cache em frontend | Declarar sucesso porque funcionou em outra porta |
+| Classificar hardcode por categoria e destino | Manter valor variavel fixo no codigo |
+| Usar seed idempotente para defaults de produto | Usar AddRange/HasData cego para dados configuraveis |
 
 ## Quando pular leitura
 

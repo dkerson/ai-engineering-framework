@@ -14,6 +14,7 @@
 0d. **Execution Loop Control:** usar `rules/execution-loop-control.md`; após 2 falhas com a mesma hipótese, parar de repetir e replanejar
 0e. **Frontend Runtime Validation:** em telas/rotas/HTML, usar `rules/frontend-runtime-validation.md` para validar porta, cache, console, network e evidência visual/DOM
 0f. **Regression Boundary:** antes de alterar superfície compartilhada, usar `rules/regression-boundary.md` para definir escopo, fora de escopo e canários
+0g. **No Hardcode Governance:** usar `rules/no-hardcode.md`; valores variáveis devem vir de banco, parâmetro, config, env, registry ou feature flag
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
@@ -170,7 +171,7 @@ O SIL nao implementa, nao chama skills e nao altera arquivos. Ele entrega ao Mas
 
 O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda mudanca depende de aprovacao do usuario.
 
-### Execution Intelligence (v2.12.1+), Context Hygiene (v2.13.0+) e Execution Reliability (v2.15.0+)
+### Execution Intelligence (v2.12.1+), Context Hygiene (v2.13.0+), Execution Reliability (v2.15.0+) e No Hardcode (v2.16.0+)
 
 | Conceito | Papel |
 |----------|-------|
@@ -183,6 +184,8 @@ O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda
 | Execution Loop Control | Bloqueia repetição de tentativa sem evidência nova e força replanejamento após falhas repetidas |
 | Frontend Runtime Validation | Garante validação na porta/URL corretas, com cache/bundle, console, network e DOM/screenshot coerentes |
 | Regression Boundary | Protege telas, rotas e funções fora de escopo via Boundary Map e canários |
+| No Hardcode Governance | Evita hardcode funcional e orienta parametrização por banco/config/env/feature flag |
+| Hardcode Scanner | Busca e classifica hardcode em projetos consumidores com `rg` dirigido |
 
 O framework pode observar execucoes, mas nao pode se modificar sozinho. Auto-evolucao para em recomendacao ate aprovacao do usuario.
 
@@ -340,7 +343,7 @@ Processo (não skill): `workflows/technical-council.md`
 - Context Hygiene — compactar contexto poluido antes de continuar
 - Council: máx. 150 palavras/skill; usuário vê só decisão consolidada
 
-`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/hierarchical-orchestration.md`
+`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/no-hardcode.md` · `rules/hierarchical-orchestration.md`
 
 ## Resposta final
 

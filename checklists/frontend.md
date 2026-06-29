@@ -1,5 +1,10 @@
 # Checklist: Frontend
 
+## Anti-hardcode
+
+- [ ] Sem hardcode de URL, permissao, menu, status ou regra variavel
+- [ ] Valores variaveis vindos de API/config/contexto apropriado
+
 ## Runtime e regressao
 
 - [ ] Porta/URL corretas confirmadas

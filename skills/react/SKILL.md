@@ -28,6 +28,7 @@ Desenvolver UI React seguindo padrões do projeto.
 3. Tipagem TypeScript estrita
 4. Acessibilidade básica
 5. Mensagens UI em pt-BR se projeto BR
+6. Evitar hardcode de URL, permissao, status, tenant, menu ou regra de exibicao
 
 ## Entradas esperadas
 
@@ -46,6 +47,7 @@ Desenvolver UI React seguindo padrões do projeto.
 - [ ] Responsivo se aplicável
 - [ ] Sem console.log
 - [ ] A11y básica
+- [ ] Sem hardcode de ambiente, permissao, menu, status ou regra variavel
 
 ## Integração com outras skills
 
@@ -72,4 +74,6 @@ Desenvolver UI React seguindo padrões do projeto.
 ## Referências
 
 - `checklists/frontend.md`
+- `checklists/no-hardcode.md`
 - `rules/clean-code.md`
+- `rules/no-hardcode.md`

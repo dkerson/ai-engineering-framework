@@ -2,7 +2,7 @@
 
 ## Summary
 
-- Version: 2.15.0
+- Version: 2.16.0
 - Health Score: 9.0/10
 - Last update: 2026-06-29
 - Operating layer: Framework Operating System (FOS)
@@ -11,15 +11,16 @@
 - Context Hygiene: active (Context Health + Compacted Snapshot)
 - Security Intelligence: active (architecture, authorization, permission cache, threat modeling, SI governance)
 - Execution Reliability: active (Loop Control + Frontend Runtime + Regression Boundary)
+- No Hardcode Governance: active (configuration source + hardcode scan)
 
 ## Inventory
 
 | Area | Count |
 |------|-------|
-| Skills | 156 directories |
-| Workflows | 45 |
-| Rules | 61 |
-| Checklists | 63 |
+| Skills | 157 directories |
+| Workflows | 46 |
+| Rules | 62 |
+| Checklists | 64 |
 | Plugins | 11 (1 active, 3 under-review) |
 | MCP Profiles | 3 projetos |
 | Capabilities | 19 registered (15 Stable, 1 Ready, 4 Planned/Idea) |
@@ -54,6 +55,7 @@
 - Context Hygiene Protocol
 - Security Intelligence Domain
 - Execution Reliability Guardrails
+- Configuration & Hardcode Governance
 
 ## Pending
 

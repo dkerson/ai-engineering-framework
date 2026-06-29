@@ -1,5 +1,28 @@
 # Changelog — AI Engineering Framework
 
+## [2.16.0] - 2026-06-29
+
+### Adicionado
+
+- **Configuration & Hardcode Governance:** `docs/CONFIGURATION_HARDCODE_GOVERNANCE.md`
+- Rule: `rules/no-hardcode.md`
+- Checklist: `checklists/no-hardcode.md`
+- Skill: `hardcode-scanner`
+- Workflow: `workflows/hardcode-audit.md`
+
+### Alterado
+
+- Orchestrator detecta hardcode, valor fixo, seeds, modulos, menus, permissoes, status e parametros configuraveis
+- Backend, API, React, QA e Code Review passam a validar hardcode funcional
+- Working Context registra achados, falso positivo, categoria e destino recomendado
+- Feature e Review ganham guardrail anti-hardcode
+
+### Preservado
+
+- Secrets continuam cobertos por Security/Infrastructure Secrets
+- Constantes tecnicas e enums de contrato seguem permitidos quando justificados
+- Correcoes em projetos consumidores dependem de escopo/aprovacao da missao
+
 ## [2.15.0] - 2026-06-29
 
 ### Adicionado

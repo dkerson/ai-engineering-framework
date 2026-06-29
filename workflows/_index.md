@@ -80,6 +80,7 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 | [mcp-mission.md](mcp-mission.md) | MCP Mission | Fast/Standard | mcp-discovery → plugin-manager* → MCP catalog → FOS |
 
 | [bug.md](bug.md) | Bug | Standard | Context → Bug Hunter → Tech Lead → [técnica] → QA |
+| [hardcode-audit.md](hardcode-audit.md) | Hardcode Audit | Standard/Review | Hardcode Scanner → Risk* → Planner* → Fix* → QA/Review |
 
 | [incident.md](incident.md) | Incidente | **Council** | Conselho → Bug Hunter → Fix → Validator → Release |
 

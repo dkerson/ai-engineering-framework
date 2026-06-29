@@ -1,6 +1,6 @@
 # AI Engineering Framework
 
-**v2.15** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Security Intelligence**, **Execution Reliability**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
+**v2.16** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Security Intelligence**, **Execution Reliability**, **No Hardcode Governance**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
@@ -75,6 +75,7 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 | [`rules/execution-loop-control.md`](rules/execution-loop-control.md) | Controle de tentativas, loop breaker e Attempt Ledger |
 | [`rules/frontend-runtime-validation.md`](rules/frontend-runtime-validation.md) | Validacao de frontend em porta/URL/cache/runtime corretos |
 | [`rules/regression-boundary.md`](rules/regression-boundary.md) | Boundary Map e canarios para evitar regressao colateral |
+| [`rules/no-hardcode.md`](rules/no-hardcode.md) | Governanca anti-hardcode para parametros, dominio, ambiente e autorizacao |
 | [`docs/Infrastructure-Intelligence.md`](docs/Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | [`docs/Project-Registry.md`](docs/Project-Registry.md) | Project Registry por projeto |
 | [`docs/Infrastructure-Registry.md`](docs/Infrastructure-Registry.md) | Registry global de infraestrutura |
@@ -140,7 +141,7 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
 ## Versão
 
-Ver [`VERSION`](VERSION) — atual: **2.15.0**
+Ver [`VERSION`](VERSION) — atual: **2.16.0**
 
 ## Licença
 

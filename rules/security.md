@@ -1,5 +1,11 @@
 # Security
 
+## Guardrail anti-hardcode
+
+- Secrets, tokens e connection strings nunca ficam no codigo.
+- IDs de tenant, cliente, usuario, role, permissao ou escopo nao devem ser hardcoded.
+- Ver tambem `rules/no-hardcode.md`.
+
 > Finalidade: seguranca em codigo, infra, acesso e operacao.
 
 ## Regras

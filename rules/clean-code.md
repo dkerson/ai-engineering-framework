@@ -1,5 +1,11 @@
 # Clean Code
 
+## Guardrail anti-hardcode
+
+- Aplicar `rules/no-hardcode.md` para valores variaveis por ambiente, cliente, tenant, usuario, permissao, regra ou tempo.
+- Numeros magicos devem virar parametro, constante nomeada ou configuracao justificada.
+- Strings de dominio, status, permissao, role, modulo ou menu nao devem ficar soltas no codigo.
+
 > Finalidade: Código legível, funções pequenas, nomes expressivos, DRY sem over-abstraction.
 
 ## Regras

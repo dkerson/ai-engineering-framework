@@ -1,5 +1,10 @@
 # Workflow: Feature
 
+## Guardrail anti-hardcode
+
+- Aplicar `rules/no-hardcode.md` quando a feature criar ou alterar parametros, modulos, menus, permissoes, roles, status, thresholds, URLs, seeds ou regras variaveis.
+- Se houver hardcode aceito, registrar justificativa e plano de configuracao futura.
+
 
 
 > Pipeline para novas funcionalidades. Modo padrão: **Standard**. Escalar para Review/Council se auth, pagamento ou arquitetura.

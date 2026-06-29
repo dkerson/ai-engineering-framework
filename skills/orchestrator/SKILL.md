@@ -20,6 +20,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Execution Loop Control | Bloquear repeticao de tentativa sem evidencia nova |
 | Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
+| No Hardcode | Evitar valores fixos que deveriam vir de banco, parametro, config, env, registry ou feature flag |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
 | Domínios lógicos | Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
@@ -76,6 +77,7 @@ Detalhes: `workflows/modes.md`
 2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
 2d. SE Data Intelligence envolvido → data-orchestrator (sub-plano de dados)
 2d-security. SE Security Intelligence envolvido (SI, authz, permissao, nivel de acesso, cache de permissao, threat model, ataque, multi-tenant) → escolher menor conjunto: security-review, security-architect, authorization-specialist, permission-cache-reviewer, threat-modeler, si-governance, risk-reviewer
+2d-hardcode. SE pedido envolver hardcode, valor fixo, parametro, configuracao, seed, modulo/menu/permissao/status fixo ou scan de projeto → `hardcode-scanner` + `rules/no-hardcode.md`
 2e. SE Growth & Brand Intelligence envolvido → project-style-analyzer + knowledge-engine + workflow marketing com menor conjunto de skills
 2f. SE integracao externa ou servico de terceiro → plugin-resolver → verificar PLUGIN_REGISTRY + PROJECT_PLUGINS.md
 2g. SE assistente, RAG, FAQ, busca semantica ou tecnologia capability-first → capability-resolver → COS Registry
@@ -89,6 +91,7 @@ Detalhes: `workflows/modes.md`
 6a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
 6b. EXECUTION LOOP CONTROL — em bugs/validacoes falhando, manter Attempt Ledger (`rules/execution-loop-control.md`); apos 2 falhas com a mesma hipotese, parar de tentar a mesma solucao e replanejar
 6c. REGRESSION BOUNDARY — antes de editar tela/rota/API/arquivo compartilhado, registrar Target surface, Out-of-scope, Shared files e Canary routes/tests (`rules/regression-boundary.md`)
+6d. NO HARDCODE — antes de criar/alterar valores de ambiente, dominio, permissao, modulo, menu, status, threshold, seed ou regra variavel, definir fonte de configuracao conforme `rules/no-hardcode.md`
 7. SE Technical Council:
    a. Montar conselho (somente skills necessárias)
    b. Coletar opiniões (máx. 150 palavras/skill)
@@ -100,6 +103,7 @@ Detalhes: `workflows/modes.md`
 9a. CONTEXT HYGIENE — antes de validacao ampla, garantir que plano ativo, arquivos alterados e pendencias estejam no snapshot/Working Context
 9b. FRONTEND RUNTIME — para telas/rotas, validar porta/URL, cache, console, network e evidencia visual/DOM conforme `rules/frontend-runtime-validation.md`
 9c. REGRESSION CANARIES — se arquivo compartilhado foi alterado, validar canarios definidos no Boundary Map antes de marcar pronto
+9d. HARDCODE REVIEW — confirmar que a mudanca nao introduziu hardcode proibido; quando houver achado aceito, registrar justificativa e destino futuro
 10. REVISAR — Critic se Review/Council
 11. EXECUTION INTELLIGENCE:
    a. checar se o modo escolhido foi o menor modo seguro
@@ -166,6 +170,7 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | `marketing` | landing page, site, página pública, copy, SEO, assets, brand, auditoria, modernização | Standard → Review | `workflows/marketing.md` |
 | `product-excellence` | auditoria, modernizacao, benchmark, roadmap, melhoria de produto | Standard → Review | `workflows/product-excellence.md` |
 | `product` / `ux` (interface) | tela, layout, componentes, design system | Standard → Review | `workflows/product-design.md` |
+| `hardcode-audit` | hardcode, valor fixo, parametrizar, scan hardcode, magic number | Standard → Review se auth/DB/tenant | `workflows/hardcode-audit.md` |
 
 **Regra design:** nunca alterar identidade visual sem pedido explícito (`rules/design/visual-identity.md`).
 
@@ -186,6 +191,7 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | **Framework Operating System** | framework-reviewer, framework-optimizer, pattern-extractor, anti-pattern-detector, recommendation-engine |
 | **Business/Operations** | task-analyst, business-rule-mapper, support, product-owner |
 | **QA/Validation** | data-validator, qa, bug-hunter, validator, code-review |
+| **Configuration Governance** | hardcode-scanner, code-review, backend, api, database, authorization-specialist |
 
 Detalhes: `docs/DATA_INTELLIGENCE.md` · `docs/DESIGN_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/HYBRID_FLOWS.md`
 
@@ -331,6 +337,28 @@ Antes de editar:
 
 Ver: `rules/regression-boundary.md`
 
+## No Hardcode Governance
+
+O Orchestrator aplica `rules/no-hardcode.md` para impedir que valores variaveis fiquem fixos no codigo.
+
+Acionar quando a tarefa envolver:
+
+- modulos, menus, status, categorias ou permissoes;
+- roles, scopes, tenants, clientes, empresas ou perfis;
+- URLs, hosts, portas, endpoints externos ou provider IDs;
+- thresholds, limites, prazos, prioridades ou ordens;
+- seeds, defaults ou dados iniciais;
+- pedido explicito de scan de hardcode.
+
+Regras:
+
+- preferir banco/parametro/config/env/registry/feature flag quando o valor varia por ambiente, cliente, tenant, usuario, plano, regra ou tempo;
+- permitir enum/constante apenas quando for contrato estavel e nomeado;
+- seeds de produto devem ser idempotentes e preservar customizacoes;
+- scan usa `hardcode-scanner` com `rg` dirigido e classificacao de falso positivo.
+
+Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
+
 ## Economia de tokens
 
 - Modo Fast por padrão quando possível
@@ -342,6 +370,7 @@ Ver: `rules/regression-boundary.md`
 - Registrar sinais relevantes em `MISSION_LEDGER.md`, `SKILL_USAGE.md` e `TOKEN_METRICS.md`
 - `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
 - `rules/execution-loop-control.md` + `rules/frontend-runtime-validation.md` + `rules/regression-boundary.md`
+- `rules/no-hardcode.md`
 
 ## Skills por fase
 
@@ -361,6 +390,7 @@ Ver: `rules/regression-boundary.md`
 | Crítica | critic |
 | Validação | validator, qa, data-validator |
 | Governança | code-review, security-review, dba-reviewer |
+| Configuração | hardcode-scanner, code-review, backend, api, database |
 | **Security Intelligence** | security-architect, authorization-specialist, permission-cache-reviewer, threat-modeler, si-governance |
 | **Plugins** | plugin-manager, plugin-resolver, plugin-builder |
 | **RAG** | rag-orchestrator → rag-architect, retrieval-specialist, citation-engine, hallucination-guard, ... |
@@ -382,6 +412,8 @@ Ver: `rules/regression-boundary.md`
 - [ ] Regression Boundary definido antes de alterar superficie compartilhada
 - [ ] Frontend runtime validado em porta/URL corretas quando aplicavel
 - [ ] Canarios de regressao validados quando houve arquivo compartilhado
+- [ ] No Hardcode aplicado para valores configuraveis, seeds, permissoes, modulos, menus e status
+- [ ] Hardcode scan executado quando solicitado ou quando diff indicar risco
 - [ ] Validator/Critic conforme modo
 - [ ] Design Mode definido se interface
 - [ ] product-aesthetic-director: gate ≥8 ou revisão solicitada
@@ -428,6 +460,7 @@ Ver: `rules/regression-boundary.md`
 - Confiabilidade de execucao: `rules/execution-loop-control.md`
 - Frontend runtime: `rules/frontend-runtime-validation.md`
 - Regressao: `rules/regression-boundary.md`
+- Hardcode/configuracao: `rules/no-hardcode.md`
 - Execution Intelligence: `framework/operating-system/MISSION_LEDGER.md` · `framework/operating-system/TOKEN_METRICS.md` · `framework/operating-system/SKILL_USAGE.md` · `framework/operating-system/PROMOTION_CRITERIA.md`
 - Processo: `workflows/_process.md`
 - Resposta: `templates/final-response.md`

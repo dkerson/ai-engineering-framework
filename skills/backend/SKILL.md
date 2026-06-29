@@ -28,6 +28,7 @@ Implementar alterações server-side seguindo camadas e convenções do projeto.
 3. Respeitar camadas (Api → App → Domain → Infra)
 4. Tratar erros e validações
 5. Não alterar appsettings/secrets sem preservar valores
+6. Evitar hardcode funcional; valores variáveis devem seguir `rules/no-hardcode.md`
 
 ## Entradas esperadas
 
@@ -45,6 +46,7 @@ Implementar alterações server-side seguindo camadas e convenções do projeto.
 - [ ] Validação de entrada
 - [ ] Erros tratados
 - [ ] Sem secrets expostos
+- [ ] Sem hardcode de ambiente, domínio, tenant, permissão ou regra variável
 - [ ] Diff mínimo
 
 ## Integração com outras skills
@@ -72,4 +74,6 @@ Implementar alterações server-side seguindo camadas e convenções do projeto.
 ## Referências
 
 - `rules/clean-code.md`
+- `rules/no-hardcode.md`
 - `checklists/backend.md`
+- `checklists/no-hardcode.md`

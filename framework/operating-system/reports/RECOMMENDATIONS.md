@@ -1,6 +1,14 @@
 # Framework Recommendations
 
-> Gerado: 2026-06-29 - v2.15.0
+> Gerado: 2026-06-29 - v2.16.0
+
+## No Hardcode Governance v2.16.0
+
+1. Usar `rules/no-hardcode.md` em features/reviews que criem modulos, menus, permissoes, status, URLs, thresholds, seeds ou regras variaveis.
+2. Usar `hardcode-scanner` para scans dirigidos em projetos consumidores.
+3. Classificar achados como real ou falso positivo antes de corrigir.
+4. Preferir banco/parametro/config/env/registry/feature flag para valores variaveis.
+5. Seeds de produto devem ser idempotentes e preservar customizacoes.
 
 ## Execution Reliability v2.15.0
 

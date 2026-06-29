@@ -1,5 +1,12 @@
 # FOS Changelog
 
+## 2.16.0 - 2026-06-29
+
+- Added Configuration & Hardcode Governance.
+- Added no-hardcode rule, checklist, hardcode-scanner skill and hardcode-audit workflow.
+- Added Working Context fields for scan findings, false positives, category and recommended configuration source.
+- Integrated anti-hardcode checks into Orchestrator, backend, api, react, qa and code-review.
+
 ## 2.15.0 - 2026-06-29
 
 - Added Execution Reliability guardrails.

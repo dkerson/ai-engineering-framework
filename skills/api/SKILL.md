@@ -28,6 +28,7 @@ Garantir APIs consistentes, versionadas e bem documentadas.
 3. Documentar OpenAPI/Swagger
 4. Seguir convenções REST do projeto
 5. Usar `rules/api.md`
+6. Evitar URLs, status, tenant, permissao ou regras fixas sem fonte configuravel
 
 ## Entradas esperadas
 
@@ -46,6 +47,7 @@ Garantir APIs consistentes, versionadas e bem documentadas.
 - [ ] Paginação/filtros se listagem
 - [ ] Swagger atualizado
 - [ ] Breaking changes identificados
+- [ ] Sem hardcode de parametros variaveis, status, permissao ou tenant
 
 ## Integração com outras skills
 
@@ -72,4 +74,6 @@ Garantir APIs consistentes, versionadas e bem documentadas.
 ## Referências
 
 - `rules/api.md`
+- `rules/no-hardcode.md`
 - `checklists/api.md`
+- `checklists/no-hardcode.md`

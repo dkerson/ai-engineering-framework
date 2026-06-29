@@ -28,6 +28,7 @@ Garantir qualidade antes de merge — foco em issues reais.
 3. Checar testes adequados
 4. Classificar: Critical / Suggestion / Nice-to-have
 5. Usar `checklists/review.md`
+6. Checar hardcode funcional e recomendar fonte configuravel
 
 ## Entradas esperadas
 
@@ -46,6 +47,7 @@ Garantir qualidade antes de merge — foco em issues reais.
 - [ ] Testes adequados
 - [ ] Convenções seguidas
 - [ ] Sem secrets/debug code
+- [ ] Sem hardcode proibido ou justificativa registrada
 
 ## Integração com outras skills
 
@@ -72,5 +74,7 @@ Garantir qualidade antes de merge — foco em issues reais.
 ## Referências
 
 - `rules/clean-code.md`
+- `rules/no-hardcode.md`
 - `rules/solid.md`
 - `checklists/review.md`
+- `checklists/no-hardcode.md`
