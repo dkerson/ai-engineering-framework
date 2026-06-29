@@ -1,5 +1,26 @@
 # Changelog — AI Engineering Framework
 
+## [2.14.0] - 2026-06-29
+
+### Adicionado
+
+- **Security Intelligence Domain:** `docs/SECURITY_INTELLIGENCE.md`
+- Skills: `security-architect`, `authorization-specialist`, `permission-cache-reviewer`, `threat-modeler`, `si-governance`
+- Workflow: `workflows/security-intelligence.md`
+- Rules: `security-access-control.md`, `permission-cache.md`, `threat-modeling.md`
+- Checklists: `security-architecture.md`, `authorization.md`, `permission-cache.md`, `threat-model.md`
+
+### Alterado
+
+- `security-review` passa a ser revisor geral e delega profundidade para especialistas de Security Intelligence
+- Orchestrator detecta SI, permissionamento, nivel de acesso, cache de permissao, threat model, ataques e multi-tenant
+- COS registra `security-intelligence` como capability Stable
+
+### Preservado
+
+- Security Intelligence nao implementa automaticamente; o Orchestrator escolhe o menor pipeline seguro
+- Regras existentes de security, plugin e RAG permission-aware continuam validas
+
 ## [2.13.0] - 2026-06-29
 
 ### Adicionado

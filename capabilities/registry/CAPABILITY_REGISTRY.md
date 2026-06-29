@@ -76,6 +76,20 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 | Health Score | 8.5 |
 | Documentação | `docs/Infrastructure-Intelligence.md` |
 
+### security-intelligence
+
+| Campo | Valor |
+|-------|-------|
+| Nome | Security Intelligence |
+| Versao | 2.14.0 |
+| Categoria | Security, Architecture |
+| Status | Stable |
+| Descricao | Arquitetura segura, autorizacao, cache de permissoes, threat modeling e governanca de SI |
+| Skills | security-architect, authorization-specialist, permission-cache-reviewer, threat-modeler, si-governance, security-review |
+| Dependencias | development-intelligence, infrastructure-intelligence, plugin-architecture |
+| Health Score | 8.8 |
+| Documentacao | `docs/SECURITY_INTELLIGENCE.md`, `workflows/security-intelligence.md` |
+
 ### plugin-architecture
 
 | Campo | Valor |
@@ -244,7 +258,7 @@ Ver `capabilities/planned/` e `roadmap/CAPABILITY_ROADMAP.md`.
 
 | Status | Count | IDs |
 |--------|-------|-----|
-| Stable | 14 | development, data, product-design, growth-brand, infrastructure, plugin, fos, sil, knowledge-hub, mission, product-excellence, product-evolution, continuous-improvement, cos |
+| Stable | 15 | development, data, product-design, growth-brand, infrastructure, security, plugin, fos, sil, knowledge-hub, mission, product-excellence, product-evolution, continuous-improvement, cos |
 | Ready | 1 | rag |
 | Planned | 3 | ocr, memory, evaluation |
 | Idea | 3 | vision, voice, agents |

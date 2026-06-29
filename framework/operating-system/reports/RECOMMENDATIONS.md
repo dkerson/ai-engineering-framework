@@ -1,6 +1,13 @@
 # Framework Recommendations
 
-> Gerado: 2026-06-29 - v2.13.0
+> Gerado: 2026-06-29 - v2.14.0
+
+## Security Intelligence v2.14.0
+
+1. Usar `authorization-specialist` para RBAC/ABAC, roles, scopes, tenants e matriz de permissoes.
+2. Usar `permission-cache-reviewer` sempre que permissao for cacheada em memoria, sessao, claims, edge ou Redis.
+3. Usar `threat-modeler` antes de mudancas sensiveis em auth, multi-tenant, dados sensiveis ou producao.
+4. Manter `security-review` como revisor geral, nao como substituto de arquitetura segura.
 
 ## Context Hygiene v2.13.0
 

@@ -2,9 +2,9 @@
 
 ## Dashboard
 
-- Version: 2.13.0
-- Health Score: 8.9/10
-- Implementations: FOS initialized; Infrastructure Intelligence; NLME; Execution Intelligence; Context Hygiene
+- Version: 2.14.0
+- Health Score: 9.0/10
+- Implementations: FOS initialized; Infrastructure Intelligence; NLME; Execution Intelligence; Context Hygiene; Security Intelligence
 - Roadmap: 10 items
 - Backlog: 3 items
 - Ideas: 2 items

@@ -20,7 +20,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
-| Domínios lógicos | Development · Data Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
+| Domínios lógicos | Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
 | Fluxos híbridos | Múltiplos domínios → `hybrid-flow-planner` antes de executar |
 | Sub-orquestração dados | Domínio Data Intelligence → `data-orchestrator` (não substitui este agente) |
 
@@ -65,7 +65,7 @@ Detalhes: `workflows/modes.md`
 1a. SE Mission Brief do SIL disponivel → consumir (compativel com NLME)
 2. CLASSIFICAR tipo(s) de demanda — confidence: alta/media/baixa
    (usar legacy_demand_type do Structured Prompt quando NLME ativo)
-2b. DETECTAR domínio(s): Development · Data Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation
+2b. DETECTAR domínio(s): Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation
 2b-design. SE criação/alteração de interface (tela, dashboard web, formulário):
    a. Responder: DS? identidade? componentes? guideline? tema? legado?
    b. Design Mode: LEGACY | HYBRID | GREENFIELD (`rules/design/design-modes.md`) — ou via `project-style-analyzer`
@@ -73,6 +73,7 @@ Detalhes: `workflows/modes.md`
    d. Pipeline `workflows/product-design.md` (mínimo para o modo)
 2c. SE múltiplos domínios OU critérios híbridos → hybrid-flow-planner → plano único
 2d. SE Data Intelligence envolvido → data-orchestrator (sub-plano de dados)
+2d-security. SE Security Intelligence envolvido (SI, authz, permissao, nivel de acesso, cache de permissao, threat model, ataque, multi-tenant) → escolher menor conjunto: security-review, security-architect, authorization-specialist, permission-cache-reviewer, threat-modeler, si-governance, risk-reviewer
 2e. SE Growth & Brand Intelligence envolvido → project-style-analyzer + knowledge-engine + workflow marketing com menor conjunto de skills
 2f. SE integracao externa ou servico de terceiro → plugin-resolver → verificar PLUGIN_REGISTRY + PROJECT_PLUGINS.md
 2g. SE assistente, RAG, FAQ, busca semantica ou tecnologia capability-first → capability-resolver → COS Registry
@@ -152,6 +153,7 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 | `api` | endpoint, REST | Standard → Review | `workflows/api.md` |
 | `integration` | webhook, terceiro | Review → Council | `workflows/integration.md` |
 | `security` | vulnerabilidade, auth | Review → **Council** | `workflows/security.md` |
+| `security-intelligence` | SI, permissao, nivel de acesso, cache de permissao, threat model, ataque, multi-tenant | Review → **Council** | `workflows/security-intelligence.md` |
 | `architecture` | ADR, decisão técnica | **Council** | `workflows/architecture.md` |
 | `data` | SQL, BI, Power BI, divergência, ETL | Standard → Review | `workflows/data.md` |
 | `hybrid` | task+banco, relatório+API, procedure+tela | Standard → Review | `workflows/hybrid-flows.md` |
@@ -169,6 +171,7 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 |---------|----------------|
 | **Development** | backend, api, react, database, flutter |
 | **Data Intelligence** | data-orchestrator, sql-architect, powerbi-specialist, data-validator, ... |
+| **Security Intelligence** | security-architect, authorization-specialist, permission-cache-reviewer, threat-modeler, si-governance, security-review |
 | **Product & Design** | product-designer, ux-designer, ui-designer, design-system, design-reviewer, product-aesthetic-director, ... |
 | **Infrastructure Intelligence** | project-resolver, infrastructure-discovery, project-scanner, integration-resolver, plugin-resolver |
 | **Plugin Architecture** | plugin-manager, plugin-resolver, plugin-builder, mcp-discovery-specialist |
@@ -313,6 +316,7 @@ Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` co
 | Crítica | critic |
 | Validação | validator, qa, data-validator |
 | Governança | code-review, security-review, dba-reviewer |
+| **Security Intelligence** | security-architect, authorization-specialist, permission-cache-reviewer, threat-modeler, si-governance |
 | **Plugins** | plugin-manager, plugin-resolver, plugin-builder |
 | **RAG** | rag-orchestrator → rag-architect, retrieval-specialist, citation-engine, hallucination-guard, ... |
 | **Capabilities** | capability-manager, capability-resolver, capability-evaluator, capability-discovery, capability-builder |
@@ -375,6 +379,7 @@ Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` co
 - Processo: `workflows/_process.md`
 - Resposta: `templates/final-response.md`
 - Dados: `docs/DATA_INTELLIGENCE.md` · `templates/data/final-response-data.md`
+- Security Intelligence: `docs/SECURITY_INTELLIGENCE.md` · `workflows/security-intelligence.md`
 - Growth & Brand: `docs/GROWTH_BRAND_INTELLIGENCE.md` · `workflows/marketing.md`
 - Knowledge Hub: `docs/KNOWLEDGE_HUB.md` · `docs/KNOWLEDGE_ENGINE.md`
 - Product Excellence: `docs/PRODUCT_EXCELLENCE.md` · `docs/PRODUCT_EVOLUTION.md`

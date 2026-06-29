@@ -1,5 +1,12 @@
 # FOS Changelog
 
+## 2.14.0 - 2026-06-29
+
+- Added Security Intelligence domain.
+- Added specialists for secure architecture, authorization, permission cache, threat modeling and SI governance.
+- Registered security-intelligence capability in COS.
+- Expanded security rules, checklists and workflow routing.
+
 ## 2.13.0 - 2026-06-29
 
 - Added Context Hygiene Protocol.

@@ -151,6 +151,12 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 
 ## Processos especiais
 
+## Workflows Security Intelligence
+
+| Arquivo | Tipo | Modo sugerido | Pipeline resumido |
+|---------|------|---------------|-------------------|
+| [security-intelligence.md](security-intelligence.md) | Security Intelligence / SI | Review/**Council** | Authz/Cache/Threat/SI specialists -> Security Review -> Validator |
+
 
 
 | Arquivo | Descrição |

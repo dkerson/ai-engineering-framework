@@ -31,5 +31,6 @@
 
 | Date | Project | Mission | Type | Mode | Domains | Skills | Files Read | Files Changed | Validation | Token Notes | Outcome |
 |------|---------|---------|------|------|---------|--------|------------|---------------|------------|-------------|---------|
+| 2026-06-29 | framework | Security Intelligence Domain | framework-operating-system | Review | Security, FOS, COS, Orchestrator | orchestrator, skill-creator | security/rules/workflows/FOS docs | security intelligence docs, skills, rules, checklists, workflows, FOS | diff/status | Reused existing security-review and split only high-risk responsibilities | Done |
 | 2026-06-29 | framework | Context Hygiene Protocol | framework-operating-system | Review | FOS, Orchestrator, Token Economy | orchestrator | context/rules/orchestrator/FOS docs | rules/context-hygiene, working-context, orchestrator, token rules, FOS docs | diff/status | Added compacted snapshot to avoid polluted context in long missions | Done |
 | 2026-06-28 | rifsmart/framework | Execution Intelligence setup | framework-operating-system | Review | FOS, Orchestrator, Token Economy | orchestrator, framework-reviewer, framework-optimizer | FOS docs, token rules, orchestrator | FOS docs/rules/templates | diff/status | Implemented as lightweight docs, no runtime script | Done |

@@ -44,7 +44,7 @@ Usuário (linguagem natural)
               ↓
     [Fast | Standard | Review | Technical Council]
               ↓
-    Domínios: Development · Data Intelligence · Infrastructure Intelligence · Growth & Brand Intelligence · Product Excellence · Knowledge Hub · Framework Operating System · Business/Operations · QA/Validation
+    Domínios: Development · Data Intelligence · Security Intelligence · Infrastructure Intelligence · Growth & Brand Intelligence · Product Excellence · Knowledge Hub · Framework Operating System · Business/Operations · QA/Validation
               ↓
     hybrid-flow-planner / data-orchestrator (quando aplicável)
               ↓
@@ -53,7 +53,7 @@ Usuário (linguagem natural)
     Working Context → descartado ao finalizar
 ```
 
-Detalhes: `docs/Natural-Language-Missions.md` · `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `docs/Strategic-Intelligence-Layer.md` · `docs/Missions.md` · `docs/Infrastructure-Intelligence.md` · `docs/Project-Registry.md` · `docs/DATA_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
+Detalhes: `docs/Natural-Language-Missions.md` · `docs/ARCHITECTURE.md` · `docs/Framework-Operating-System.md` · `docs/Strategic-Intelligence-Layer.md` · `docs/Missions.md` · `docs/Infrastructure-Intelligence.md` · `docs/Project-Registry.md` · `docs/DATA_INTELLIGENCE.md` · `docs/SECURITY_INTELLIGENCE.md` · `docs/GROWTH_BRAND_INTELLIGENCE.md` · `docs/KNOWLEDGE_HUB.md` · `docs/PRODUCT_EXCELLENCE.md` · `docs/HYBRID_FLOWS.md` · `workflows/modes.md`
 
 ## Estrutura do framework
 
@@ -110,7 +110,7 @@ Detalhes: `docs/Natural-Language-Missions.md` · `docs/ARCHITECTURE.md` · `docs
 
 ## Tipos de demanda
 
-`natural-language-mission` · `framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `plugin-mission` · `capability-mission` · `mcp-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
+`natural-language-mission` · `framework-operating-system` · `strategic-mission` · `infrastructure-mission` · `plugin-mission` · `capability-mission` · `mcp-mission` · `bug` · `incident` · `feature` · `refactor` · `review` · `documentation` · `functional-spec-doc` · `process-doc` · `performance` · `database` · `api` · `integration` · `devops` · `testing` · `architecture` · `product` · `ux` · `mobile` · `security` · `security-intelligence` · `data` · `hybrid` · `marketing` · `growth` · `brand` · `audit` · `benchmark` · `product-excellence` · `commercial` · `finance` · `deployment` · `support`
 
 Mapeamento: `workflows/_index.md`
 
@@ -253,6 +253,19 @@ Ver `docs/MCP_GOVERNANCE.md` · `infrastructure/registry/MCP_SERVER_CATALOG.md`.
 | report-implementation-planner | Plano de relatório end-to-end |
 
 Skill legada `data` preservada — roteia para especializadas. Lista completa: `workflows/_index.md` · `docs/DATA_INTELLIGENCE.md`.
+
+### Security Intelligence (v2.14+)
+
+| Skill | Papel |
+|-------|-------|
+| **security-architect** | Arquitetura segura, trust boundaries, isolamento, controles estruturais |
+| **authorization-specialist** | RBAC, ABAC, roles, scopes, tenants, matriz de permissoes e nivel de acesso |
+| **permission-cache-reviewer** | Cache de permissao em memoria/sessao/claims/Redis, TTL, invalidacao e fail-closed |
+| **threat-modeler** | Atores, assets, abuse cases, caminhos de ataque, mitigacoes e risco residual |
+| **si-governance** | Politicas de SI, auditoria, secrets, MFA, segregacao de funcoes e controles operacionais |
+| security-review | OWASP, auth, secrets, injection e findings gerais |
+
+Acionar automaticamente para SI, permissionamento, nivel de acesso, cache de permissao, multi-tenant, ataques, privilege escalation, threat model, dados sensiveis, producao e arquitetura segura. Ver `docs/SECURITY_INTELLIGENCE.md` · `workflows/security-intelligence.md`.
 
 ### Growth & Brand Intelligence (v2.2+)
 | Skill | Papel |

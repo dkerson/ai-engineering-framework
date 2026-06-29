@@ -1,6 +1,6 @@
 # AI Engineering Framework
 
-**v2.13** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
+**v2.14** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Security Intelligence**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
@@ -21,7 +21,7 @@ Usuário (linguagem natural)
               ↓
     Fast | Standard | Review | Technical Council
               ↓
-    Domínios + Hybrid Flow / Data Orchestrator
+    Domínios + Hybrid Flow / Data Orchestrator / Security Intelligence
               ↓
     Skills sob demanda + Working Context + Context Hygiene
               ↓
@@ -82,6 +82,7 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 | [`docs/Mission-Modes.md`](docs/Mission-Modes.md) | Modos estrategicos de mission |
 | [`docs/Continuous-Evolution.md`](docs/Continuous-Evolution.md) | Backlog sugerido apos missions |
 | [`docs/DATA_INTELLIGENCE.md`](docs/DATA_INTELLIGENCE.md) | Domínio de dados/BI/SQL/Power BI |
+| [`docs/SECURITY_INTELLIGENCE.md`](docs/SECURITY_INTELLIGENCE.md) | SI, autorizacao, permissoes, cache de acesso e threat modeling |
 | [`docs/GROWTH_BRAND_INTELLIGENCE.md`](docs/GROWTH_BRAND_INTELLIGENCE.md) | Domínio de branding/copy/marketing/SEO/assets |
 | [`docs/GROWTH_INTELLIGENCE.md`](docs/GROWTH_INTELLIGENCE.md) | Crescimento, conversao e evolucao |
 | [`docs/BRAND_INTELLIGENCE.md`](docs/BRAND_INTELLIGENCE.md) | Brand DNA, voz, identidade e consistencia |
@@ -101,7 +102,7 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 
 ## Stacks suportadas
 
-Node · NestJS · React · Next.js · Flutter · Python · Go · .NET · REST · SQL Server · Power BI · Microserviços · Landing Pages · Sites · SEO · Branding
+Node · NestJS · React · Next.js · Flutter · Python · Go · .NET · REST · SQL Server · Power BI · Microserviços · Security/SI · Landing Pages · Sites · SEO · Branding
 
 Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
@@ -136,7 +137,7 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
 ## Versão
 
-Ver [`VERSION`](VERSION) — atual: **2.13.0**
+Ver [`VERSION`](VERSION) — atual: **2.14.0**
 
 ## Licença
 

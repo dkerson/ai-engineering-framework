@@ -2,13 +2,14 @@
 
 ## Summary
 
-- Version: 2.13.0
-- Health Score: 8.9/10
+- Version: 2.14.0
+- Health Score: 9.0/10
 - Last update: 2026-06-29
 - Operating layer: Framework Operating System (FOS)
 - Governance: user approval required before framework changes
 - Execution Intelligence: baseline active (observe, measure, recommend; never self-modify)
 - Context Hygiene: active (Context Health + Compacted Snapshot)
+- Security Intelligence: active (architecture, authorization, permission cache, threat modeling, SI governance)
 
 ## Inventory
 
@@ -20,7 +21,7 @@
 | Checklists | 58 |
 | Plugins | 11 (1 active, 3 under-review) |
 | MCP Profiles | 3 projetos |
-| Capabilities | 18 registered (14 Stable, 1 Ready, 4 Planned/Idea) |
+| Capabilities | 19 registered (15 Stable, 1 Ready, 4 Planned/Idea) |
 | COS | Stable v2.10.0 |
 | Knowledge Articles | 40 |
 | Patterns | 0 initial |
@@ -50,6 +51,7 @@
 - MCP Governance & Connector Readiness
 - Execution Intelligence & Token Budget Policy
 - Context Hygiene Protocol
+- Security Intelligence Domain
 
 ## Pending
 
