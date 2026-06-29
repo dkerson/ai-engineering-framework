@@ -68,6 +68,7 @@ O FOS pode observar execucoes reais para reduzir custo e melhorar eficiencia:
 - `SKILL_USAGE.md` mede quais skills foram realmente usadas.
 - `TOKEN_METRICS.md` registra sinais de desperdicio e economia.
 - `PROMOTION_CRITERIA.md` define quando aprendizado vira recomendacao.
+- `rules/context-hygiene.md` define quando o Orchestrator cria Compacted Snapshot para evitar contexto poluido.
 
 Limite: observar e recomendar nao autoriza auto-mutacao. Mudancas no framework continuam dependendo de aprovacao do usuario.
 

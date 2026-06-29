@@ -10,6 +10,8 @@ Complemento obrigatório: `rules/hierarchical-orchestration.md`
 
 Complemento de budget: `rules/token-budget-policy.md`
 
+Complemento de higiene de contexto: `rules/context-hygiene.md`
+
 
 
 ## Regras absolutas
@@ -45,6 +47,8 @@ Skills **nunca** devem:
 - Executar validações desnecessárias
 
 - Auto-iniciar — somente via Orchestrator
+
+Quando o contexto ativo ficar poluido, o Orchestrator deve compactar o Working Context antes de continuar. A compactacao preserva decisoes, evidencias, arquivos relevantes, plano ativo, validacoes e riscos; outputs brutos, hipoteses invalidadas e planos substituidos devem ser descartados operacionalmente.
 
 
 
@@ -166,6 +170,10 @@ Nao escanear projeto inteiro se o registry ja responder. Nunca carregar ou regis
 
 
 - Resumir descobertas em 2–5 bullets no Working Context
+
+- Avaliar `Context Health` em missoes longas, mudancas de plano e antes de validacoes amplas
+
+- Criar `Compacted Snapshot` quando o contexto estiver `Polluted`
 
 - Nunca repetir código já citado
 

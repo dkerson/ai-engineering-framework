@@ -1,5 +1,18 @@
 # FOS Changelog
 
+## 2.13.0 - 2026-06-29
+
+- Added Context Hygiene Protocol.
+- Added Context Health and Compacted Snapshot to Working Context.
+- Orchestrator now checks context pollution during phase transitions and before broad validation.
+- Token metrics track context pollution as an avoidable waste signal.
+
+## 2.12.1 - 2026-06-28
+
+- Added Execution Intelligence ledgers: Mission Ledger, Skill Usage, Token Metrics and Promotion Criteria.
+- Added Token Budget Policy and Fast Path before full NLME for simple low-risk requests.
+- Reinforced no self-mutation: observe, measure and recommend only.
+
 ## 2.12.0 - 2026-06-26
 
 - Natural Language Mission Engine (NLME): mission-translator, mission-builder, prompt-builder.

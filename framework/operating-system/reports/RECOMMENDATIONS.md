@@ -1,6 +1,12 @@
 # Framework Recommendations
 
-> Gerado: 2026-06-28 - v2.12.1
+> Gerado: 2026-06-29 - v2.13.0
+
+## Context Hygiene v2.13.0
+
+1. Avaliar Context Health em missoes longas, mudancas de plano e antes de validacoes amplas.
+2. Usar Compacted Snapshot quando contexto poluido misturar decisoes, hipoteses antigas e outputs brutos.
+3. Registrar em Token Metrics apenas quando a compactacao evitar desperdicio real.
 
 ## Execution Intelligence v2.12.1
 

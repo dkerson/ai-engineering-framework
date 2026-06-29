@@ -64,6 +64,8 @@
 
 - Atualizar Working Context — não reler arquivos
 
+- Avaliar Context Health; se poluido, criar Compacted Snapshot antes de seguir
+
 
 
 ### 6. Implementar
@@ -81,6 +83,8 @@
 - **Standard:** QA
 
 - **Review/Council:** Critic + Validator
+
+- Antes de validacao ampla, confirmar que o Working Context ou Compacted Snapshot contem plano ativo, arquivos alterados e pendencias reais
 
 - Checklist do tipo (`checklists/`)
 
@@ -119,6 +123,8 @@ Aplicar em todas as fases:
 - `rules/hierarchical-orchestration.md`
 
 - `rules/token-economy.md`
+
+- `rules/context-hygiene.md`
 
 - Rules específicas conforme área (ver `rules/`)
 

@@ -34,6 +34,26 @@ Tarefa concluída → WC descartado
 - Infrastructure Intelligence: [sim/não]
 - Hybrid Flow: [sim/não]
 
+### Context Health
+- Status: [Clean|Growing|Polluted]
+- Pollution signals:
+- Last hygiene check:
+- Active context source: [Full|Compacted Snapshot]
+
+### Compacted Snapshot (quando Context Health = Polluted)
+- Objective:
+- Current mode/risk:
+- User constraints:
+- Decisions:
+- Relevant files:
+- Preserved evidence:
+- Open hypotheses:
+- Active plan:
+- Validation state:
+- Next action:
+- Risks/blockers:
+- Dropped noise:
+
 ### Product & Design (quando interface)
 - Design Mode: [LEGACY|HYBRID|GREENFIELD]
 - Design DNA: [path ou default]
@@ -146,12 +166,24 @@ Tarefa concluída → WC descartado
 | Indicar arquivos já lidos | Reler arquivo já no WC |
 | Atualizar status de validação | Manter WC entre sessões |
 | Popular seção Data Intelligence em demandas de dados/BI | Inventar regras de negócio |
+| Criar Compacted Snapshot quando o contexto ficar poluido | Continuar usando planos antigos, outputs brutos ou hipoteses invalidadas |
 
 ## Quando pular leitura
 
 Se o Working Context já contém análise de um arquivo, a skill seguinte **deve** reutilizar — não abrir o arquivo novamente, exceto se a implementação exigir edição.
 
 Para SQL: seguir ordem em `rules/data/query-performance.md`.
+
+## Higiene de contexto
+
+O Orchestrator avalia `Context Health` durante a missao, conforme `rules/context-hygiene.md`.
+
+Quando o status for `Polluted`, o Orchestrator deve:
+
+1. Consolidar objetivo, decisoes, evidencias, arquivos relevantes, plano ativo, validacoes e riscos em `Compacted Snapshot`.
+2. Marcar `Active context source: Compacted Snapshot`.
+3. Tratar outputs antigos, planos substituidos e hipoteses invalidadas como descartados operacionalmente.
+4. Continuar a execucao usando somente o snapshot e novos achados relevantes.
 
 ## Integração
 

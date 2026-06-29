@@ -17,6 +17,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Monopólio de comunicação | Só o Orchestrator fala com o usuário |
 | Skills sob demanda | Invocar o mínimo necessário |
 | Working Context | Manter e reutilizar contexto da sessão |
+| Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
 | Domínios lógicos | Development · Data Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
@@ -82,6 +83,7 @@ Detalhes: `workflows/modes.md`
 4. CRIAR Working Context (context/working-context.md)
 5. PLANEJAR pipeline mínimo para o modo
 6. INVESTIGAR — aplicar token-economy; Context Builder se necessário
+6a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
 7. SE Technical Council:
    a. Montar conselho (somente skills necessárias)
    b. Coletar opiniões (máx. 150 palavras/skill)
@@ -90,6 +92,7 @@ Detalhes: `workflows/modes.md`
    e. NÃO mostrar opiniões individuais ao usuário
 8. IMPLEMENTAR — skills técnicas na ordem do plano
 9. VALIDAR — Validator (Review/Council) ou QA (Standard)
+9a. CONTEXT HYGIENE — antes de validacao ampla, garantir que plano ativo, arquivos alterados e pendencias estejam no snapshot/Working Context
 10. REVISAR — Critic se Review/Council
 11. EXECUTION INTELLIGENCE:
    a. checar se o modo escolhido foi o menor modo seguro
@@ -261,9 +264,25 @@ O Orchestrator **mantém** o Working Context durante toda a execução:
 - Criar ao classificar
 - Atualizar após cada skill
 - Reutilizar — proibir releitura de arquivos já analisados
+- Avaliar Context Health em transicoes de fase
+- Criar Compacted Snapshot quando o contexto ficar poluido
 - Descartar ao entregar
 
 Estrutura: `context/working-context.md`
+
+## Context Hygiene
+
+O Orchestrator aplica `rules/context-hygiene.md` para manter a janela operacionalmente limpa.
+
+Gatilhos minimos:
+
+- apos investigacao longa ou muitos outputs de ferramenta
+- antes de implementar quando o plano mudou
+- antes de validar quando ha muitos achados
+- antes de escalar modo
+- quando uma skill sinaliza repeticao, ruido ou conflito
+
+Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` com objetivo, restricoes, decisoes, arquivos relevantes, evidencias, plano ativo, validacoes, riscos e proximo passo. A partir desse ponto, outputs brutos, planos substituidos e hipoteses invalidadas deixam de guiar a execucao.
 
 ## Economia de tokens
 
@@ -271,9 +290,10 @@ Estrutura: `context/working-context.md`
 - Fast Path antes do NLME completo quando o pedido for simples e baixo risco
 - Menor número de skills no pipeline
 - Reutilizar Working Context entre skills
+- Compactar contexto poluido antes de continuar
 - Não mostrar debate do conselho ao usuário
 - Registrar sinais relevantes em `MISSION_LEDGER.md`, `SKILL_USAGE.md` e `TOKEN_METRICS.md`
-- `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/hierarchical-orchestration.md`
+- `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
 
 ## Skills por fase
 
@@ -302,6 +322,8 @@ Estrutura: `context/working-context.md`
 
 - [ ] Modo escolhido e justificado
 - [ ] Working Context criado
+- [ ] Context Health avaliado quando aplicavel
+- [ ] Compacted Snapshot criado se contexto ficou poluido
 - [ ] Pipeline mínimo definido
 - [ ] Skills invocadas somente quando necessário
 - [ ] Technical Council: decisão consolidada (não opiniões brutas)
@@ -347,6 +369,7 @@ Estrutura: `context/working-context.md`
 - Conselho: `workflows/technical-council.md`
 - Orquestração: `rules/hierarchical-orchestration.md`
 - Tokens: `rules/token-economy.md`
+- Higiene de contexto: `rules/context-hygiene.md`
 - Budget: `rules/token-budget-policy.md`
 - Execution Intelligence: `framework/operating-system/MISSION_LEDGER.md` · `framework/operating-system/TOKEN_METRICS.md` · `framework/operating-system/SKILL_USAGE.md` · `framework/operating-system/PROMOTION_CRITERIA.md`
 - Processo: `workflows/_process.md`

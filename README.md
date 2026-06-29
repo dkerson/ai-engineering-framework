@@ -1,6 +1,6 @@
 # AI Engineering Framework
 
-**v2.12** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
+**v2.13** — Biblioteca reutilizável de agentes com **Natural Language Mission Engine (NLME)**, **Framework Operating System**, **Strategic Intelligence Layer**, **Context Hygiene**, **Orquestração Inteligente Hierárquica** e domínios especializados para Codex, Cursor e ferramentas baseadas em AGENTS.md.
 
 > **Compatibilidade:** este diretório pode chamar-se `Personal-AI/` (legado Umbra), `.ai/` ou `ai-engineering-framework/` — o conteúdo é o mesmo.
 
@@ -23,7 +23,7 @@ Usuário (linguagem natural)
               ↓
     Domínios + Hybrid Flow / Data Orchestrator
               ↓
-    Skills sob demanda + Working Context
+    Skills sob demanda + Working Context + Context Hygiene
               ↓
     Resposta consolidada
 ```
@@ -34,7 +34,7 @@ Usuário (linguagem natural)
 |-----------|---------------|
 | Modular | Skills, rules, workflows independentes |
 | Reutilizável | Git Submodule em múltiplos projetos |
-| Baixo consumo de tokens | Modo mínimo + Working Context |
+| Baixo consumo de tokens | Modo mínimo + Working Context + Context Hygiene |
 | Alta qualidade | Critic, Validator, Technical Council |
 | Compatível | Codex, Cursor, AGENTS.md |
 
@@ -71,6 +71,7 @@ Detalhes: [`workflows/modes.md`](workflows/modes.md)
 | [`AGENTS.md`](AGENTS.md) | Bootstrap para agentes |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Arquitetura e responsabilidades |
 | [`docs/Framework-Operating-System.md`](docs/Framework-Operating-System.md) | Governanca, saude, roadmap e recomendacoes do framework |
+| [`rules/context-hygiene.md`](rules/context-hygiene.md) | Protocolo de compactacao de contexto poluido |
 | [`docs/Infrastructure-Intelligence.md`](docs/Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | [`docs/Project-Registry.md`](docs/Project-Registry.md) | Project Registry por projeto |
 | [`docs/Infrastructure-Registry.md`](docs/Infrastructure-Registry.md) | Registry global de infraestrutura |
@@ -135,7 +136,7 @@ Defina a stack em `context/tech-stack.md` — templates em `context/_template/`.
 
 ## Versão
 
-Ver [`VERSION`](VERSION) — atual: **2.6.0**
+Ver [`VERSION`](VERSION) — atual: **2.13.0**
 
 ## Licença
 

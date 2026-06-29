@@ -15,6 +15,7 @@
 
 | Date | Mission | Mode | Files Read | Skills Used | Validation | Waste Signals | Savings |
 |------|---------|------|------------|-------------|------------|---------------|---------|
+| 2026-06-29 | Context Hygiene Protocol | Review | 12 | 1 | diff/status | Context pollution lacked explicit operational handling | Compacted Snapshot prevents stale outputs from guiding later phases |
 | 2026-06-28 | Execution Intelligence setup | Review | 8 | 3 | diff/status | Inventory drift found; no script yet | No code scan beyond framework docs |
 
 ## Waste Signals
@@ -24,6 +25,7 @@
 - More than 12 files read before first hypothesis.
 - Build or full suite run for a small documentation/framework edit.
 - Same file re-read by multiple skills instead of using Working Context.
+- Long execution continues from stale plans, raw outputs or invalidated hypotheses.
 
 ## Savings Signals
 
@@ -32,3 +34,4 @@
 - Search narrowed files before reading.
 - Validation scoped to changed module.
 - Final response summarized instead of replaying all analysis.
+- Compacted Snapshot becomes the active context source after pollution is detected.

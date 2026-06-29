@@ -12,6 +12,7 @@ O **Orchestrator** é o único agente que conversa com o usuário.
 - Todo fluxo passa pelo Orchestrator
 - O Orchestrator decide: quais skills usar, quando usar, quando **não** usar, quando encerrar
 - O Orchestrator avalia Fast Path antes de NLME/SIL/COS completos para pedidos simples e baixo risco
+- O Orchestrator compacta contexto poluido antes que isso afete decisao, custo ou validacao
 
 ## Modos de operação
 
@@ -39,9 +40,12 @@ Durante uma execução, todas as skills compartilham o mesmo **Working Context**
 | Criar | Orchestrator inicia ao classificar a demanda |
 | Atualizar | Cada skill adiciona descobertas resumidas (bullets) |
 | Reutilizar | Skills seguintes **não** relêem arquivos já analisados |
+| Compactar | Se o contexto ficar poluido, Orchestrator cria `Compacted Snapshot` e continua a partir dele |
 | Descartar | Ao encerrar a tarefa — não persiste entre sessões |
 
 Estrutura: `context/working-context.md`
+
+Higiene complementar: `rules/context-hygiene.md`
 
 ## Technical Council
 

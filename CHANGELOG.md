@@ -1,5 +1,25 @@
 # Changelog — AI Engineering Framework
 
+## [2.13.0] - 2026-06-29
+
+### Adicionado
+
+- **Context Hygiene Protocol:** `rules/context-hygiene.md`
+- `Context Health` e `Compacted Snapshot` no Working Context
+- Checkpoints do Orchestrator para compactar contexto poluido durante a execucao
+- Integracao com Token Economy, processo universal e hierarquia de orquestracao
+
+### Alterado
+
+- Orchestrator passa a avaliar poluicao de contexto em transicoes de fase, antes de validacoes amplas e quando houver outputs longos ou planos substituidos
+- Token Economy passa a tratar compactacao de contexto como economia operacional
+- FOS atualizado para registrar Context Hygiene como evolucao de Execution Intelligence
+
+### Preservado
+
+- O protocolo nao apaga historico tecnicamente; ele define o contexto operacional ativo
+- Skills continuam sem auto-iniciar e nao compactam contexto por conta propria
+
 ## [2.12.1] - 2026-06-28
 
 ### Adicionado

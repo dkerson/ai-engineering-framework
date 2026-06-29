@@ -2,6 +2,7 @@
 
 | Date | Mission | What We Learned | Recurring Flows | Recurring Skills | Improvements |
 |------|---------|-----------------|-----------------|------------------|--------------|
+| 2026-06-29 | Context Hygiene v2.13.0 | Long executions need an operational snapshot that preserves decisions and drops stale noise. | FOS Mission, Token Economy, Working Context | orchestrator | Added Context Health, Compacted Snapshot and context-hygiene rule |
 | 2026-06-28 | Execution Intelligence v2.12.1 | Framework evolution should observe every execution lightly, but never self-modify without approval. | FOS Mission, Token Budget, Fast Path | orchestrator, framework-reviewer, framework-optimizer | Added mission ledger, skill usage, token metrics, promotion criteria and token budget policy |
 | 2026-06-26 | MCP Readiness v2.11 | Safe MCP via examples only; sentry first active plugin | MCP Mission | mcp-discovery, plugin-manager | Validate user-mssql before sqlserver active |
 | 2026-06-26 | COS v2.10 | Capability-first enforced; SIL integrates Capability Intelligence | Capability Mission, evaluator, discovery | OCR next Planned |

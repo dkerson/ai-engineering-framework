@@ -13,7 +13,7 @@
 
 | Skill | Count | Mission Types | Last Used | Notes |
 |-------|-------|---------------|-----------|-------|
-| orchestrator | 1 | framework-operating-system | 2026-06-28 | Required entry point. |
+| orchestrator | 2 | framework-operating-system | 2026-06-29 | Required entry point; added Context Hygiene protocol. |
 | framework-reviewer | 1 | framework-operating-system | 2026-06-28 | Used to assess FOS health and drift. |
 | framework-optimizer | 1 | framework-operating-system | 2026-06-28 | Used to design token efficiency improvements. |
 

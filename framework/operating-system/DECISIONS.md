@@ -1,5 +1,17 @@
 # Framework Decisions
 
+## ADR-0006: Context Hygiene Uses Operational Snapshots
+
+- Date: 2026-06-29
+- Context: Long Codex/Cursor executions can accumulate stale plans, repeated outputs and invalidated hypotheses.
+- Problem: The framework had Working Context and Token Economy, but no explicit protocol to decide when context became polluted.
+- Alternatives:
+  - Keep relying on ad-hoc summaries.
+  - Add a dedicated Context Hygiene protocol inside the Orchestrator.
+- Decision: Add Context Health and Compacted Snapshot, controlled by the Orchestrator.
+- Justification: Operational snapshots preserve the useful state without pretending to delete the underlying tool history.
+- Impact: Later phases can continue from decisions, evidence and next actions instead of noisy prior context.
+
 ## ADR-0005: Execution Intelligence Without Self-Mutation
 
 - Date: 2026-06-28

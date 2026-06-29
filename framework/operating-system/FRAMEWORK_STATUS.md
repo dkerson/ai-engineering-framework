@@ -2,12 +2,13 @@
 
 ## Summary
 
-- Version: 2.12.1
-- Health Score: 8.8/10
-- Last update: 2026-06-28
+- Version: 2.13.0
+- Health Score: 8.9/10
+- Last update: 2026-06-29
 - Operating layer: Framework Operating System (FOS)
 - Governance: user approval required before framework changes
 - Execution Intelligence: baseline active (observe, measure, recommend; never self-modify)
+- Context Hygiene: active (Context Health + Compacted Snapshot)
 
 ## Inventory
 
@@ -48,6 +49,7 @@
 - Capability Operating System (COS)
 - MCP Governance & Connector Readiness
 - Execution Intelligence & Token Budget Policy
+- Context Hygiene Protocol
 
 ## Pending
 

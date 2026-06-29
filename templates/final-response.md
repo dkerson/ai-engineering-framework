@@ -41,6 +41,7 @@
 - Fast Path considerado:
 - Skills evitadas:
 - Arquivos evitados/reutilizados:
+- Context Hygiene:
 - Waste signals:
 
 ## Resultado

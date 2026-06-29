@@ -12,7 +12,7 @@ Scale: 0 to 10.
 | Skills Coverage | 9 | 151 skill directories; coverage is broad, usage data now required to identify redundancy. |
 | Domain Coverage | 9 | Dev, Data, Product, Growth, Brand, QA, Strategy. |
 | Consistency | 8 | Existing patterns mostly consistent. |
-| Estimated Token Consumption | 8 | Fast Path and Token Budget Policy added; needs real mission metrics. |
+| Estimated Token Consumption | 9 | Fast Path, Token Budget Policy and Context Hygiene reduce avoidable context cost; needs real mission metrics. |
 | Scalability | 9 | COS + Plugin architectures enable long-term modular evolution. |
 | Coupling | 8 | Orchestrator keeps boundaries clear. |
 | Duplication | 7 | Some overlap likely in product/growth reviewers. |
@@ -20,7 +20,7 @@ Scale: 0 to 10.
 
 ## Health Score
 
-8.8/10
+8.9/10
 
 ## Priority Health Recommendations
 
@@ -28,3 +28,4 @@ Scale: 0 to 10.
 2. Promote patterns only after repeated real missions using `PROMOTION_CRITERIA.md`.
 3. Keep SIL and FOS non-executing to avoid architecture drift.
 4. Use Fast Path before full NLME for simple, low-risk requests.
+5. Use Context Hygiene before long validations or after noisy investigation.
