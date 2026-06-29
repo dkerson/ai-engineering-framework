@@ -17,6 +17,10 @@
 ## Notas
 
 - **user-mssql:** MCP local observado no workspace Umbra; config via env.
+- **mssql/mssql-fiscal:** usar `npx -y @mcp-collection/mssql-mcp`; nunca path absoluto de usuario.
+- **context7:** MCP remoto com API key por env/header placeholder.
+- **clickup:** preferir MCP remoto oficial `https://mcp.clickup.com/mcp` com OAuth no cliente.
+- **github:** preferir MCP remoto `https://api.githubcopilot.com/mcp/` com OAuth no cliente.
 - **postgres + RAG:** pgvector requer postgres-plugin active + extensão — ver MCP_READINESS_AUDIT.
 - **sentry:** único plugin **active** — read-only global.
 

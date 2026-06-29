@@ -1,10 +1,28 @@
-# Codex MCP — SQL Server (example)
-# Copiar seção para ~/.codex/config.toml ou .codex/config.toml local.
+# Codex MCP - SQL Server (example)
 # NUNCA commitar config.toml com secrets.
 
-[mcp_servers.user-mssql]
+[mcp_servers.mssql]
+transport = "stdio"
 command = "npx"
-args = ["-y", "@modelcontextprotocol/server-mssql"]
+args = ["-y", "@mcp-collection/mssql-mcp"]
 
-[mcp_servers.user-mssql.env]
-MSSQL_CONNECTION_STRING = "${MSSQL_CONNECTION_STRING}"
+[mcp_servers.mssql.env]
+HOST = "${MSSQL_HOST}"
+PORT = "${MSSQL_PORT}"
+USER = "${MSSQL_USER}"
+PASSWORD = "${MSSQL_PASSWORD}"
+DATABASE = "${MSSQL_DATABASE}"
+TRUST_SERVER_CERTIFICATE = "${MSSQL_TRUST_SERVER_CERTIFICATE}"
+
+[mcp_servers.mssql-fiscal]
+transport = "stdio"
+command = "npx"
+args = ["-y", "@mcp-collection/mssql-mcp"]
+
+[mcp_servers.mssql-fiscal.env]
+HOST = "${MSSQL_FISCAL_HOST}"
+PORT = "${MSSQL_FISCAL_PORT}"
+USER = "${MSSQL_FISCAL_USER}"
+PASSWORD = "${MSSQL_FISCAL_PASSWORD}"
+DATABASE = "${MSSQL_FISCAL_DATABASE}"
+TRUST_SERVER_CERTIFICATE = "${MSSQL_FISCAL_TRUST_SERVER_CERTIFICATE}"

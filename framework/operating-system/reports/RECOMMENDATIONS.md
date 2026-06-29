@@ -1,6 +1,14 @@
 # Framework Recommendations
 
-> Gerado: 2026-06-29 - v2.16.0
+> Gerado: 2026-06-29 - v2.17.0
+
+## MCP Portability v2.17.0
+
+1. Usar `rules/mcp-portability.md` em qualquer configuracao MCP.
+2. Preferir ClickUp remoto `https://mcp.clickup.com/mcp` com OAuth no cliente.
+3. Preferir GitHub remoto `https://api.githubcopilot.com/mcp/` com OAuth no cliente.
+4. Usar `npx -y @mcp-collection/mssql-mcp` para MSSQL local, sem path de usuario.
+5. Separar credenciais por conexao (`MSSQL_*`, `MSSQL_FISCAL_*`).
 
 ## No Hardcode Governance v2.16.0
 

@@ -1,33 +1,37 @@
-# MCP Environment — Umbra (example)
+# MCP Environment - Umbra (example)
 
-> Copiar para `.env` na **raiz do monorepo** (`UMBRA/.env`).  
-> **NUNCA** commitar `.env` com valores reais.
+> Copiar para `.env` na raiz do monorepo (`UMBRA/.env`).
+> NUNCA commitar `.env` com valores reais.
 
-# --- SQL Server (user-mssql / sqlserver-plugin) ---
-# Database Umbra — dev local via Docker (:1433) ou instância SQL dev
-MSSQL_CONNECTION_STRING=
+# --- Context7 remote MCP ---
+CONTEXT7_API_KEY=
 
-# Alternativa (se o MCP usar vars separadas):
-# MSSQL_SERVER=localhost,1433
-# MSSQL_DATABASE=Umbra
-# MSSQL_USER=
-# MSSQL_PASSWORD=
-
-# --- GitHub (github-plugin) ---
-# PAT com escopo mínimo; conta umbraotus7 / org Otus7
+# --- GitHub remote MCP ---
+# Preferir OAuth do cliente. PAT somente fallback local quando o cliente nao suportar OAuth.
 GITHUB_TOKEN=
 GITHUB_OWNER=Otus7
 
+# --- ClickUp remote MCP ---
+# Preferir OAuth do cliente em https://mcp.clickup.com/mcp.
+# Fallback legado apenas se algum cliente exigir token:
+CLICKUP_API_TOKEN=
+CLICKUP_TEAM_ID=
+
+# --- SQL Server principal (mssql / sqlserver-plugin) ---
+MSSQL_HOST=
+MSSQL_PORT=1433
+MSSQL_USER=
+MSSQL_PASSWORD=
+MSSQL_DATABASE=
+MSSQL_TRUST_SERVER_CERTIFICATE=true
+
+# --- SQL Server fiscal (mssql-fiscal / sqlserver-plugin) ---
+MSSQL_FISCAL_HOST=
+MSSQL_FISCAL_PORT=1433
+MSSQL_FISCAL_USER=
+MSSQL_FISCAL_PASSWORD=
+MSSQL_FISCAL_DATABASE=
+MSSQL_FISCAL_TRUST_SERVER_CERTIFICATE=true
+
 # --- Docker (docker-plugin) ---
-# Vazio = Docker Desktop default. Linux: unix:///var/run/docker.sock
 DOCKER_HOST=
-
-# --- Azure Entra (azure-plugin — sem MCP; referência appsettings) ---
-# AZURE_TENANT_ID=
-# AZURE_CLIENT_ID=
-# AZURE_CLIENT_SECRET=
-
-# --- Sentry (opcional; plugin disabled no Umbra) ---
-# SENTRY_AUTH_TOKEN=
-# SENTRY_ORG=
-# SENTRY_PROJECT=

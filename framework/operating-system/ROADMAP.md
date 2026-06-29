@@ -13,6 +13,7 @@
 | Security Intelligence Domain | Add SI specialists for secure architecture, authorization, permission cache, threat modeling and governance. | Security | High | Medium | P0 | FOS, COS | Implemented | 2.14.0 |
 | Execution Reliability Guardrails | Prevent repeated failed attempts, frontend runtime false positives and collateral regressions. | Quality | High | Low | P0 | Context Hygiene, Execution Intelligence | Implemented | 2.15.0 |
 | Configuration & Hardcode Governance | Prevent functional hardcode and support scans for configurable values in projects. | Quality | High | Low | P0 | Execution Reliability, Security | Implemented | 2.16.0 |
+| MCP Portability & Local Secrets | Make MCP templates portable across machines and prefer remote OAuth where available. | Infrastructure | High | Low | P0 | MCP Governance, No Hardcode | Implemented | 2.17.0 |
 | Usage Metrics Automation | Add approved scripts to compute mission and skill usage from logs. | Metrics | Medium | Medium | P1 | Execution Intelligence baseline | Backlog | TBD |
 | Pattern Library | Promote repeated mission outcomes into reusable patterns. | Knowledge | Medium | Medium | P1 | Real mission history | Backlog | TBD |
 | Redundancy Review | Identify overlapping skills/workflows after usage data exists. | Quality | Medium | Low | P2 | Usage metrics | Backlog | TBD |

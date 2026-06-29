@@ -1,12 +1,9 @@
 {
   "mcpServers": {
     "github": {
-      "comment": "github-plugin — token via GITHUB_TOKEN no OS. Nunca commitar.",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
-      }
+      "comment": "github-plugin - MCP remoto GitHub/Copilot. Preferir OAuth do cliente; PAT somente como fallback local.",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
     }
   }
 }

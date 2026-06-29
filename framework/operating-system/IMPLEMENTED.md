@@ -2,6 +2,7 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-06-29 | 2.17.0 | Codex | MCP Portability & Local Secrets | Remove user-specific MCP paths and protect local secrets | Remote ClickUp/GitHub, Context7, portable MSSQL via npx, split env vars | rules, docs, plugins, projects/umbra/mcp, FOS |
 | 2026-06-29 | 2.16.0 | Codex | Configuration & Hardcode Governance | Avoid functional hardcode in modules, permissions, status, URLs, thresholds and seeds | no-hardcode rule, checklist, hardcode-scanner, hardcode-audit workflow, WC fields | rules, skills, workflows, checklists, docs, orchestrator, FOS |
 | 2026-06-29 | 2.15.0 | Codex | Execution Reliability Guardrails | Stop long loops, frontend runtime false positives and collateral regressions | Attempt Ledger, Loop Control, Frontend Runtime Validation, Regression Boundary, canary checks | rules, context, orchestrator, bug-hunter, qa, workflows, checklists, docs, FOS |
 | 2026-06-29 | 2.14.0 | Codex | Security Intelligence Domain | Separate SI, authorization, permission cache and threat modeling from generic security review | 5 skills, workflow, rules, checklists, COS registry | docs, skills, rules, checklists, workflows, FOS |

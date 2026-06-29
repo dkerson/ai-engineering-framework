@@ -1,26 +1,56 @@
 {
-  "_comment": "Umbra — copiar para .cursor/mcp.json na raiz do monorepo. NUNCA commitar tokens.",
+  "_comment": "Umbra - copiar para .cursor/mcp.json local. NUNCA commitar tokens, senhas ou paths C:\\Users\\{pessoa}.",
   "_project": "umbra",
   "_discovery": "Personal-AI/projects/umbra/mcp/MCP_DISCOVERY_REPORT.md",
   "mcpServers": {
-    "user-mssql": {
-      "comment": "SQL Server Umbra — sqlserver-plugin. Defina MSSQL_CONNECTION_STRING no OS.",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-mssql"],
-      "env": {
-        "MSSQL_CONNECTION_STRING": "${MSSQL_CONNECTION_STRING}"
+    "context7": {
+      "comment": "Context7 remoto - API key via env/header placeholder.",
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
       }
     },
     "github": {
-      "comment": "GitHub Otus7/Umbra — github-plugin. Token via GITHUB_TOKEN.",
+      "comment": "GitHub/Copilot MCP remoto - preferir OAuth do cliente; PAT somente fallback local.",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "clickup": {
+      "comment": "ClickUp MCP remoto oficial - autenticar via OAuth no cliente. Writes exigem pedido explicito.",
+      "type": "http",
+      "url": "https://mcp.clickup.com/mcp"
+    },
+    "mssql": {
+      "comment": "SQL Server principal - portavel via npx; credenciais no ambiente local.",
+      "transport": "stdio",
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": ["-y", "@mcp-collection/mssql-mcp"],
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+        "HOST": "${MSSQL_HOST}",
+        "PORT": "${MSSQL_PORT}",
+        "USER": "${MSSQL_USER}",
+        "PASSWORD": "${MSSQL_PASSWORD}",
+        "DATABASE": "${MSSQL_DATABASE}",
+        "TRUST_SERVER_CERTIFICATE": "${MSSQL_TRUST_SERVER_CERTIFICATE}"
+      }
+    },
+    "mssql-fiscal": {
+      "comment": "SQL Server fiscal - variaveis separadas para evitar mistura de credenciais.",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@mcp-collection/mssql-mcp"],
+      "env": {
+        "HOST": "${MSSQL_FISCAL_HOST}",
+        "PORT": "${MSSQL_FISCAL_PORT}",
+        "USER": "${MSSQL_FISCAL_USER}",
+        "PASSWORD": "${MSSQL_FISCAL_PASSWORD}",
+        "DATABASE": "${MSSQL_FISCAL_DATABASE}",
+        "TRUST_SERVER_CERTIFICATE": "${MSSQL_FISCAL_TRUST_SERVER_CERTIFICATE}"
       }
     },
     "docker": {
-      "comment": "Docker — deploy/docker-compose.yml. Deploy exige aprovação explícita.",
+      "comment": "Docker - deploy/docker-compose.yml. Deploy exige aprovacao explicita.",
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-docker"],
       "env": {

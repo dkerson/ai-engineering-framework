@@ -15,6 +15,7 @@
 
 | Date | Mission | Mode | Files Read | Skills Used | Validation | Waste Signals | Savings |
 |------|---------|------|------------|-------------|------------|---------------|---------|
+| 2026-06-29 | MCP Portability & Local Secrets | Review | 12 | 2 | rg/git diff | MCP examples used older local/package assumptions | Remote OAuth and npx templates reduce local setup failures |
 | 2026-06-29 | Configuration & Hardcode Governance | Review | 16 | 4 | rg/git diff | Existing rules covered secrets but not functional hardcode | Hardcode scanner and checklist reduce repeated manual review and future rework |
 | 2026-06-29 | Execution Reliability Guardrails | Review | 14 | 3 | rg/git diff | Repeated frontend attempts lacked hard loop breaker and runtime proof | Attempt Ledger and Boundary Map reduce repeated commands, wrong-port validation and collateral regressions |
 | 2026-06-29 | Context Hygiene Protocol | Review | 12 | 1 | diff/status | Context pollution lacked explicit operational handling | Compacted Snapshot prevents stale outputs from guiding later phases |

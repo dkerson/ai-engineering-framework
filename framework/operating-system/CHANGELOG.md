@@ -1,5 +1,12 @@
 # FOS Changelog
 
+## 2.17.0 - 2026-06-29
+
+- Added MCP Portability & Local Secrets.
+- Updated ClickUp and GitHub examples to prefer remote OAuth MCP endpoints.
+- Updated MSSQL examples to use `npx -y @mcp-collection/mssql-mcp` instead of user-specific paths.
+- Split MSSQL principal and fiscal environment variables.
+
 ## 2.16.0 - 2026-06-29
 
 - Added Configuration & Hardcode Governance.

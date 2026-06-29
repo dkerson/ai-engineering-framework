@@ -1,11 +1,31 @@
 {
   "mcpServers": {
-    "user-mssql": {
-      "comment": "SQL Server — sqlserver-plugin. Defina credenciais via variáveis de ambiente do OS. Nunca commitar tokens.",
+    "mssql": {
+      "comment": "SQL Server principal - use npx, nunca path C:\\Users\\{pessoa}. Credenciais via env local.",
+      "transport": "stdio",
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-mssql"],
+      "args": ["-y", "@mcp-collection/mssql-mcp"],
       "env": {
-        "MSSQL_CONNECTION_STRING": "${MSSQL_CONNECTION_STRING}"
+        "HOST": "${MSSQL_HOST}",
+        "PORT": "${MSSQL_PORT}",
+        "USER": "${MSSQL_USER}",
+        "PASSWORD": "${MSSQL_PASSWORD}",
+        "DATABASE": "${MSSQL_DATABASE}",
+        "TRUST_SERVER_CERTIFICATE": "${MSSQL_TRUST_SERVER_CERTIFICATE}"
+      }
+    },
+    "mssql-fiscal": {
+      "comment": "SQL Server fiscal - variaveis separadas para evitar reutilizar segredo de outro banco.",
+      "transport": "stdio",
+      "command": "npx",
+      "args": ["-y", "@mcp-collection/mssql-mcp"],
+      "env": {
+        "HOST": "${MSSQL_FISCAL_HOST}",
+        "PORT": "${MSSQL_FISCAL_PORT}",
+        "USER": "${MSSQL_FISCAL_USER}",
+        "PASSWORD": "${MSSQL_FISCAL_PASSWORD}",
+        "DATABASE": "${MSSQL_FISCAL_DATABASE}",
+        "TRUST_SERVER_CERTIFICATE": "${MSSQL_FISCAL_TRUST_SERVER_CERTIFICATE}"
       }
     }
   }

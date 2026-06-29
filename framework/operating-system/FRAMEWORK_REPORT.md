@@ -2,10 +2,10 @@
 
 ## Dashboard
 
-- Version: 2.16.0
+- Version: 2.17.0
 - Health Score: 9.0/10
-- Implementations: FOS initialized; Infrastructure Intelligence; NLME; Execution Intelligence; Context Hygiene; Security Intelligence; Execution Reliability; No Hardcode Governance
-- Roadmap: 12 items
+- Implementations: FOS initialized; Infrastructure Intelligence; NLME; Execution Intelligence; Context Hygiene; Security Intelligence; Execution Reliability; No Hardcode Governance; MCP Portability
+- Roadmap: 13 items
 - Backlog: 3 items
 - Ideas: 2 items
 - Recommendations: 3 items

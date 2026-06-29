@@ -1,13 +1,9 @@
 {
   "mcpServers": {
     "clickup": {
-      "comment": "clickup-plugin — não alterar status sem pedido explícito.",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-clickup"],
-      "env": {
-        "CLICKUP_API_TOKEN": "${CLICKUP_API_TOKEN}",
-        "CLICKUP_TEAM_ID": "${CLICKUP_TEAM_ID}"
-      }
+      "comment": "clickup-plugin - MCP remoto oficial. Autenticar via OAuth no cliente. Nao alterar status sem pedido explicito.",
+      "type": "http",
+      "url": "https://mcp.clickup.com/mcp"
     }
   }
 }

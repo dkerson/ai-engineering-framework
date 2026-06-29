@@ -2,6 +2,7 @@
 
 | Date | Mission | What We Learned | Recurring Flows | Recurring Skills | Improvements |
 |------|---------|-----------------|-----------------|------------------|--------------|
+| 2026-06-29 | MCP Portability v2.17.0 | MCP templates can silently depend on another developer machine when paths and secrets are copied directly. | MCP Mission, Infrastructure Mission | orchestrator, plugin-resolver, mcp-discovery-specialist | Added portability rule and remote/OAuth templates for ClickUp/GitHub plus npx MSSQL |
 | 2026-06-29 | No Hardcode Governance v2.16.0 | Seeds, modules, permissions and operational values can be non-secret hardcode that still creates future maintenance risk. | Feature, Review, Hardcode Audit, Authorization | orchestrator, hardcode-scanner, backend, api, react, code-review | Added no-hardcode rule, scanner skill, checklist and workflow |
 | 2026-06-29 | Execution Reliability v2.15.0 | Simple frontend bugs can become expensive when retries repeat stale hypotheses, runtime state is unclear, or shared UI changes lack regression boundaries. | Bug Mission, Frontend UI, QA/Validation | orchestrator, bug-hunter, qa, react | Added loop breaker, Attempt Ledger, frontend runtime validation and regression boundary canaries |
 | 2026-06-29 | Security Intelligence v2.14.0 | Generic security review should not carry architecture, authorization, permission cache and SI governance alone. | Security Mission, Architecture, Capability Mission | orchestrator, security-review | Added Security Intelligence specialists and permission cache/access-control rules |

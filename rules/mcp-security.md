@@ -1,5 +1,11 @@
 # MCP Security Rules
 
+## Portabilidade obrigatoria
+
+- Templates MCP compartilhados nao podem depender de `C:\Users\{outro_usuario}\...`.
+- Usar `npx`, MCP remoto OAuth ou variaveis de ambiente para paths inevitaveis.
+- Ver `rules/mcp-portability.md`.
+
 > Obrigatório para plugins, projetos e agentes. Complementa `rules/infrastructure-secrets.md`.
 
 ## Proibido

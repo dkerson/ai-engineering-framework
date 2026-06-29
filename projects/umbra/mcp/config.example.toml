@@ -1,20 +1,47 @@
-# Codex MCP — Umbra (example)
-# Copiar para .codex/config.toml na raiz do monorepo. NUNCA commitar secrets.
+# Codex MCP - Umbra (example)
+# Copiar para .codex/config.toml local. NUNCA commitar secrets.
 # Discovery: projects/umbra/mcp/MCP_DISCOVERY_REPORT.md
 
-[mcp_servers.user-mssql]
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-mssql"]
+[mcp_servers.context7]
+type = "http"
+url = "https://mcp.context7.com/mcp"
 
-[mcp_servers.user-mssql.env]
-MSSQL_CONNECTION_STRING = "${MSSQL_CONNECTION_STRING}"
+[mcp_servers.context7.headers]
+CONTEXT7_API_KEY = "${CONTEXT7_API_KEY}"
 
 [mcp_servers.github]
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-github"]
+type = "http"
+url = "https://api.githubcopilot.com/mcp/"
 
-[mcp_servers.github.env]
-GITHUB_PERSONAL_ACCESS_TOKEN = "${GITHUB_TOKEN}"
+[mcp_servers.clickup]
+type = "http"
+url = "https://mcp.clickup.com/mcp"
+
+[mcp_servers.mssql]
+transport = "stdio"
+command = "npx"
+args = ["-y", "@mcp-collection/mssql-mcp"]
+
+[mcp_servers.mssql.env]
+HOST = "${MSSQL_HOST}"
+PORT = "${MSSQL_PORT}"
+USER = "${MSSQL_USER}"
+PASSWORD = "${MSSQL_PASSWORD}"
+DATABASE = "${MSSQL_DATABASE}"
+TRUST_SERVER_CERTIFICATE = "${MSSQL_TRUST_SERVER_CERTIFICATE}"
+
+[mcp_servers.mssql-fiscal]
+transport = "stdio"
+command = "npx"
+args = ["-y", "@mcp-collection/mssql-mcp"]
+
+[mcp_servers.mssql-fiscal.env]
+HOST = "${MSSQL_FISCAL_HOST}"
+PORT = "${MSSQL_FISCAL_PORT}"
+USER = "${MSSQL_FISCAL_USER}"
+PASSWORD = "${MSSQL_FISCAL_PASSWORD}"
+DATABASE = "${MSSQL_FISCAL_DATABASE}"
+TRUST_SERVER_CERTIFICATE = "${MSSQL_FISCAL_TRUST_SERVER_CERTIFICATE}"
 
 [mcp_servers.docker]
 command = "npx"

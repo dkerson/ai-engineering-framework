@@ -1,5 +1,25 @@
 # Changelog — AI Engineering Framework
 
+## [2.17.0] - 2026-06-29
+
+### Adicionado
+
+- **MCP Portability & Local Secrets:** `docs/MCP_PORTABILITY.md`
+- Rule: `rules/mcp-portability.md`
+- Templates agregados com `context7`, `github`, `clickup`, `mssql` e `mssql-fiscal`
+
+### Alterado
+
+- ClickUp passa a preferir MCP remoto oficial `https://mcp.clickup.com/mcp`
+- GitHub passa a preferir MCP remoto `https://api.githubcopilot.com/mcp/`
+- MSSQL deixa de depender de path `C:\Users\Danie\...` e usa `npx -y @mcp-collection/mssql-mcp`
+- Variaveis MSSQL principal e fiscal ficam separadas
+
+### Preservado
+
+- Nenhum secret real e versionado
+- Writes em ClickUp, SQL, GitHub e Docker seguem exigindo pedido explicito/aprovacao
+
 ## [2.16.0] - 2026-06-29
 
 ### Adicionado

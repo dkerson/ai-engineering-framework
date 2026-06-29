@@ -15,6 +15,7 @@
 0e. **Frontend Runtime Validation:** em telas/rotas/HTML, usar `rules/frontend-runtime-validation.md` para validar porta, cache, console, network e evidência visual/DOM
 0f. **Regression Boundary:** antes de alterar superfície compartilhada, usar `rules/regression-boundary.md` para definir escopo, fora de escopo e canários
 0g. **No Hardcode Governance:** usar `rules/no-hardcode.md`; valores variáveis devem vir de banco, parâmetro, config, env, registry ou feature flag
+0h. **MCP Portability:** usar `rules/mcp-portability.md`; templates MCP não podem depender de paths de outro usuário nem conter secrets reais
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
@@ -343,7 +344,7 @@ Processo (não skill): `workflows/technical-council.md`
 - Context Hygiene — compactar contexto poluido antes de continuar
 - Council: máx. 150 palavras/skill; usuário vê só decisão consolidada
 
-`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/no-hardcode.md` · `rules/hierarchical-orchestration.md`
+`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/no-hardcode.md` · `rules/mcp-portability.md` · `rules/hierarchical-orchestration.md`
 
 ## Resposta final
 
