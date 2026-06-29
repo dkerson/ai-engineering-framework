@@ -9,10 +9,13 @@
 - product-design-intelligence
 - infrastructure-intelligence
 - plugin-architecture
+- security-intelligence
+- knowledge-quality-governance
 
 ## Planned Capabilities
 
-- rag-intelligence (help center / KB futuro)
+- rag-intelligence (fase futura: depende de Azure OpenAI e banco vetorial/Postgres provisionados)
+- semantic-retrieval (fase futura: embeddings, citações e avaliação de respostas)
 
 ## Disabled Capabilities
 
@@ -21,7 +24,8 @@
 ## Notas
 
 - Plugins (sqlserver, github, docker, azure) via plugin-architecture capability
-- RAG não ativo — aguarda Capability Mission de produto
+- RAG semântico não ativo — aguarda credenciais Azure OpenAI e banco vetorial/Postgres
+- Enquanto isso, Umbra usa índice lexical (`KbContentChunks`) e relatório administrativo de saúde da KB
 
 ## Referências
 

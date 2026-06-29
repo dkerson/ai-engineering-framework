@@ -78,6 +78,8 @@ await permissionSeeder.UpsertDefaultPermissionsAsync(moduleDefinitions, cancella
 
 O scan deve ser dirigido e barato. Usar `rg` primeiro e depois classificar achados.
 
+Quando o pedido envolver modulo, menu, role, permissao, status ou seed, a primeira passada deve focar codigo de runtime: seeders, bootstrap/startup, policies, guards, navegacao, menus e services. Documentacao, migrations e snapshots historicos so entram depois, como contexto ou falso positivo.
+
 Padroes iniciais:
 
 ```text

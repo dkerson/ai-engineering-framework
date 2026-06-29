@@ -9,6 +9,8 @@
 - [ ] Permissoes/scopes/roles definidos por policy/matriz, nao strings soltas sem fonte
 - [ ] Numeros magicos convertidos para parametro, constante nomeada ou configuracao
 - [ ] Seeds sao idempotentes e preservam customizacoes
+- [ ] Seeds/bootstrap foram verificados antes de docs/migrations quando o pedido envolve modulo, menu, role, permissao ou status
+- [ ] Migrations e documentacao historica foram separadas de codigo runtime na classificacao
 - [ ] Defaults podem ser sobrescritos por banco/configuracao quando aplicavel
 - [ ] Fallback seguro definido quando parametro/config estiver ausente
 - [ ] Achados de scan classificados como real ou falso positivo

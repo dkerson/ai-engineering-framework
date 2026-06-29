@@ -26,12 +26,14 @@ Encontrar valores fixos que dificultam manutencao, multi-tenant, configuracao po
 ## Responsabilidades
 
 1. Definir escopo do scan: projeto, modulo, pasta ou diff.
-2. Rodar busca dirigida com `rg`, nunca varrer tudo sem filtro.
-3. Classificar achados: secret, environment, domain, authorization, operational, presentation, test/demo.
-4. Marcar falso positivo quando o valor for constante tecnica estavel ou fixture isolada.
-5. Recomendar destino: banco, parametro, env/config, registry, feature flag, enum ou seed idempotente.
-6. Priorizar por risco e impacto.
-7. Registrar achados no Working Context.
+2. Priorizar arquivos executaveis de runtime antes de docs/migrations: seeders, bootstrap/startup, configuracao, policies, guards, navegacao, menus e services.
+3. Rodar busca dirigida com `rg`, nunca varrer tudo sem filtro.
+4. Quando o usuario trouxer evidencia visual ou arquivo/linha, iniciar pelo mesmo padrao e pelos arquivos equivalentes.
+5. Classificar achados: secret, environment, domain, authorization, operational, presentation, test/demo.
+6. Marcar falso positivo quando o valor for constante tecnica estavel, migration historica, documentacao sem efeito runtime ou fixture isolada.
+7. Recomendar destino: banco, parametro, env/config, registry, feature flag, enum ou seed idempotente.
+8. Priorizar por risco e impacto.
+9. Registrar achados no Working Context.
 
 ## Padroes iniciais de busca
 
@@ -42,6 +44,17 @@ rg -n "\b\d{2,}\b|[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0
 ```
 
 O Orchestrator deve adaptar extensoes e pastas excluidas conforme stack (`bin/`, `obj/`, `node_modules/`, `dist/`, `.git/`, outputs gerados).
+
+## Seeds, modulos e permissoes
+
+Para pedidos sobre modulos, menus, departamentos, roles ou permissoes, o scan deve ter uma primeira passada obrigatoria em arquivos de seed/bootstrap e controle de acesso. Exemplo:
+
+```powershell
+rg -n "NewModule\(|AddRange|HasData|Ensure.*Module|Ensure.*Permission|RolePermission|UserPermission|portal\.|\.read|\.manage" backend frontend --glob "!**/Migrations/**" --glob "!**/node_modules/**"
+rg -n "\"rh\"|\"legal\"|\"commercial\"|\"finance\"|\"operations\"|\"it\"|Jur[ií]dico|Comercial|Financeiro|Opera" backend frontend --glob "!**/Migrations/**"
+```
+
+Nao considerar o scan concluido enquanto achados em seeder/bootstrap nao forem classificados como real, falso positivo ou contrato estavel justificado.
 
 ## Saida esperada
 

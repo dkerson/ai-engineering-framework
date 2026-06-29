@@ -14,9 +14,11 @@
 
 1. Usar `rules/no-hardcode.md` em features/reviews que criem modulos, menus, permissoes, status, URLs, thresholds, seeds ou regras variaveis.
 2. Usar `hardcode-scanner` para scans dirigidos em projetos consumidores.
-3. Classificar achados como real ou falso positivo antes de corrigir.
-4. Preferir banco/parametro/config/env/registry/feature flag para valores variaveis.
-5. Seeds de produto devem ser idempotentes e preservar customizacoes.
+3. Em modulos/menus/roles/permissoes/status, escanear seed/bootstrap/policies antes de docs, migrations e bibliotecas geradas.
+4. Quando houver evidencia do usuario (screenshot, arquivo ou linha), iniciar por esse padrao e por arquivos equivalentes.
+5. Classificar achados como real ou falso positivo antes de corrigir.
+6. Preferir banco/parametro/config/env/registry/feature flag para valores variaveis.
+7. Seeds de produto devem ser idempotentes e preservar customizacoes.
 
 ## Execution Reliability v2.15.0
 
