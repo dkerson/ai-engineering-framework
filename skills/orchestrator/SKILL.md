@@ -20,6 +20,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Execution Loop Control | Bloquear repeticao de tentativa sem evidencia nova |
 | Model Routing & Approval Gate | Apresentar plano + modelo recomendado e aguardar aprovacao antes de executar |
+| Surface Routing & Execution Banner | Separar Cursor/Codex/desconhecido e exibir banner inicial do framework |
 | Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
 | No Hardcode | Evitar valores fixos que deveriam vir de banco, parametro, config, env, registry ou feature flag |
 | Escalonamento | Subir de modo se complexidade aumentar |
@@ -31,7 +32,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 ## Processo obrigatório
 
 ```
-Entender → Classificar → Escolher modo → Planejar + recomendar modelo → pedir aprovacao → Investigar → Implementar → Validar → Revisar → Entregar
+Entender → detectar superficie → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovacao → Investigar → Implementar → Validar → Revisar → Entregar
 ```
 
 Detalhes: `workflows/_process.md`
@@ -67,6 +68,7 @@ Detalhes: `workflows/modes.md`
    f. SIL → Mission Brief (`templates/mission/mission-brief.md`)
    g. capability-resolver se capabilities no package
 1a. SE Mission Brief do SIL disponivel → consumir (compativel com NLME)
+1b. DETECTAR SUPERFICIE (`rules/surface-routing.md`) — Cursor, Codex ou Desconhecida; registrar confianca e evidencias
 2. CLASSIFICAR tipo(s) de demanda — confidence: alta/media/baixa
    (usar legacy_demand_type do Structured Prompt quando NLME ativo)
 2b. DETECTAR domínio(s): Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation
@@ -87,12 +89,12 @@ Detalhes: `workflows/modes.md`
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
 4. APLICAR MODEL ROUTING (`rules/model-routing.md`)
-   a. recomendar Composer 2.5 Standard, Auto ou modelo forte conforme custo/risco
+   a. recomendar modelo conforme superficie detectada: Cursor (Composer/Auto) ou Codex (gpt-5.4-mini/gpt-5.5)
    b. definir gatilhos objetivos de escalonamento durante a execucao
-   c. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo no Cursor antes de continuar
+   c. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar
 5. CRIAR Working Context (context/working-context.md), incluindo Model Routing
 6. PLANEJAR pipeline mínimo para o modo
-6a. APRESENTAR plano + modelo recomendado + pergunta "Posso seguir com este plano?"
+6a. EXIBIR EXECUTION BANNER (`rules/execution-banner.md`) com "Executando tarefa com AI Engineering Framework", superficie, modelo, modo, plano e pergunta "Posso seguir com este plano?"
    a. aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar
    b. excecao: pergunta/resposta sem leitura ampla, comando, edicao ou validacao pode ser respondida em Fast Path
 7. INVESTIGAR — aplicar token-economy; Context Builder se necessário
@@ -116,7 +118,8 @@ Detalhes: `workflows/modes.md`
 12. EXECUTION INTELLIGENCE:
    a. checar se o modo escolhido foi o menor modo seguro
    b. registrar usage/learning/token notes em `framework/operating-system/` somente quando houver sinal util
-   c. nunca alterar comportamento do framework sem aprovacao do usuario
+   c. registrar execution metrics conforme `rules/execution-metrics.md` quando a task for executavel
+   d. nunca alterar comportamento do framework sem aprovacao do usuario
 13. ENTREGAR — templates/final-response.md
 14. DESCARTAR Working Context
 ```
@@ -152,6 +155,7 @@ Sempre: `risk-reviewer` + `decision-maker` → `implementation-planner`
 |------|--------|---------------|----------|
 | `natural-language-mission` | Linguagem natural (padrao) | NLME → SIL → COS → Orchestrator | `workflows/natural-language-mission.md` |
 | `framework-operating-system` | saude do framework, roadmap, ideias, recomendacoes, skills sem uso, evolucao | Fast/Standard | `workflows/framework-operating-system.md` |
+| `token-savings-report` | report de economia de tokens, eficiencia do framework, token economy report | Fast/Standard | `workflows/token-savings-report.md` |
 | `strategic-mission` | objetivo alto nivel, transformar, modernizar, vender mais, reduzir suporte | Analysis/Planning → Standard/Review/Council | `workflows/strategic-mission.md` |
 | `infrastructure-mission` | adicione, cadastre, configure, novo banco, novo Git, nova API, novo MCP | Standard → Review se risco/seguranca | `workflows/infrastructure-mission.md` |
 | `plugin-mission` | plugin, ative plugin, desative plugin, liste plugins, crie plugin | Fast/Standard | `workflows/plugin-mission.md` |
@@ -370,8 +374,11 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 ## Economia de tokens
 
 - Modo Fast por padrão quando possível
+- Surface Routing antes do Model Routing
+- Execution Banner antes de task executavel
 - Plano + modelo recomendado antes de executar task
-- Composer 2.5 Standard como recomendacao economica padrao; Auto/modelo forte somente com gatilho objetivo
+- Cursor: Composer 2.5 Standard como recomendacao economica padrao; Auto/modelo forte somente com gatilho objetivo
+- Codex: gpt-5.4-mini como recomendacao economica padrao; gpt-5.5 para risco/complexidade
 - Fast Path antes do NLME completo quando o pedido for simples e baixo risco
 - Menor número de skills no pipeline
 - Reutilizar Working Context entre skills
@@ -381,7 +388,11 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
 - `rules/execution-loop-control.md` + `rules/frontend-runtime-validation.md` + `rules/regression-boundary.md`
 - `rules/no-hardcode.md`
+- `rules/surface-routing.md`
 - `rules/model-routing.md`
+- `rules/execution-banner.md`
+- `rules/token-savings-report.md`
+- `rules/execution-metrics.md`
 
 ## Skills por fase
 
@@ -411,6 +422,8 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 ## Checklist do orchestrator
 
 - [ ] Modo escolhido e justificado
+- [ ] Superficie detectada e confianca registrada
+- [ ] Execution Banner exibido quando aplicavel
 - [ ] Modelo recomendado e justificado
 - [ ] Plano apresentado ao usuario antes da execucao
 - [ ] Aprovacao explicita recebida antes de executar task
@@ -434,6 +447,8 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - [ ] product-aesthetic-director: gate ≥8 ou revisão solicitada
 - [ ] Fast Path considerado antes do NLME completo
 - [ ] Token waste review feito antes da entrega
+- [ ] Execution Metrics registrado quando aplicavel
+- [ ] Token Savings Report gerado quando solicitado
 - [ ] FOS ledger atualizado quando houver aprendizado real
 - [ ] Resposta final completa
 - [ ] Working Context descartado

@@ -4,11 +4,19 @@
 
 ## Principio central
 
-O framework nao altera automaticamente o seletor de modelo do Cursor. O Orchestrator deve recomendar o modelo, justificar a escolha e pausar quando uma troca manual for necessaria.
+O framework nao altera automaticamente o seletor de modelo do Cursor ou Codex. O Orchestrator deve recomendar o modelo, justificar a escolha e pausar quando uma troca manual for necessaria.
+
+Aplicar `rules/surface-routing.md` antes desta regra.
 
 ## Modelo padrao recomendado
 
-Use `Composer 2.5 Standard` como recomendacao padrao quando o objetivo principal for economia de custo.
+Use a recomendacao padrao da superficie detectada:
+
+| Superficie | Padrao economico | Escalonamento |
+|------------|------------------|---------------|
+| Cursor | `Composer 2.5 Standard` | `Auto` ou modelo forte disponivel |
+| Codex | `gpt-5.4-mini` | `gpt-5.5` |
+| Desconhecida | informar opcoes Cursor e Codex | perguntar se a escolha bloquear execucao |
 
 Use `Auto` ou modelo mais forte somente quando o risco, a ambiguidade ou a chance de retrabalho justificar o custo adicional.
 
@@ -22,7 +30,8 @@ Antes de executar qualquer task, o Orchestrator deve apresentar:
 2. ...
 
 ## Modelo recomendado
-- Modelo: [Composer 2.5 Standard | Auto | modelo forte especifico]
+- Superficie: [Cursor | Codex | Desconhecida]
+- Modelo: [Composer 2.5 Standard | Auto | gpt-5.4-mini | gpt-5.5 | modelo forte especifico]
 - Motivo: [custo, risco, complexidade, velocidade ou confiabilidade]
 - Escalonamento previsto: [quando mudar de modelo durante a execucao]
 
@@ -33,20 +42,20 @@ A execucao so continua apos aprovacao explicita do usuario, exceto em pedidos qu
 
 ## Matriz de escolha
 
-| Cenario | Modelo recomendado |
-|---------|--------------------|
-| Pergunta, explicacao, documentacao simples | Composer 2.5 Standard |
-| Fast Path, ajuste localizado, label, copy, CSS simples | Composer 2.5 Standard |
-| Analise inicial de bug ou feature pequena | Composer 2.5 Standard |
-| Frontend simples ou componente isolado | Composer 2.5 Standard |
-| Backend simples, DTO, controller ou service localizado | Composer 2.5 Standard |
-| Auth, autorizacao, permissoes, tenants, claims | Auto |
-| Banco, migration, query critica, dados financeiros/fiscais | Auto |
-| Integracao externa, webhook, pagamento, SEFAZ, marketplace | Auto |
-| Deploy, producao, incidente, Docker/infra critica | Auto |
-| Refatoracao multi-modulo ou arquitetura | Auto |
-| 2 falhas com a mesma hipotese ou causa incerta | Auto |
-| Latencia humana mais importante que custo | Auto ou modo rapido explicitamente justificado |
+| Cenario | Cursor | Codex |
+|---------|--------|-------|
+| Pergunta, explicacao, documentacao simples | Composer 2.5 Standard | gpt-5.4-mini |
+| Fast Path, ajuste localizado, label, copy, CSS simples | Composer 2.5 Standard | gpt-5.4-mini |
+| Analise inicial de bug ou feature pequena | Composer 2.5 Standard | gpt-5.4-mini |
+| Frontend simples ou componente isolado | Composer 2.5 Standard | gpt-5.4-mini |
+| Backend simples, DTO, controller ou service localizado | Composer 2.5 Standard | gpt-5.4-mini |
+| Auth, autorizacao, permissoes, tenants, claims | Auto | gpt-5.5 |
+| Banco, migration, query critica, dados financeiros/fiscais | Auto | gpt-5.5 |
+| Integracao externa, webhook, pagamento, SEFAZ, marketplace | Auto | gpt-5.5 |
+| Deploy, producao, incidente, Docker/infra critica | Auto | gpt-5.5 |
+| Refatoracao multi-modulo ou arquitetura | Auto | gpt-5.5 |
+| 2 falhas com a mesma hipotese ou causa incerta | Auto | gpt-5.5 |
+| Latencia humana mais importante que custo | Auto ou modo rapido explicitamente justificado | gpt-5.3-codex-spark se disponivel, senao gpt-5.5 |
 
 ## Escalonamento durante a execucao
 
@@ -56,11 +65,11 @@ Se durante a task surgir um gatilho de escalonamento, o Orchestrator deve parar 
 Identifiquei necessidade de trocar o modelo.
 
 - Modelo atual assumido: [modelo informado/assumido]
-- Modelo recomendado agora: [Auto | modelo forte]
+- Modelo recomendado agora: [Auto | gpt-5.5 | modelo forte]
 - Motivo: [risco/ambiguidade/retry/contexto]
 - Proxima acao apos a troca: [...]
 
-Por favor altere o modelo no Cursor para o recomendado e me avise quando estiver pronto para continuar.
+Por favor altere o modelo na superficie ativa para o recomendado e me avise quando estiver pronto para continuar.
 ```
 
 Depois da confirmacao do usuario, continuar do Working Context ativo sem reiniciar a investigacao.
@@ -84,7 +93,9 @@ Registrar em toda task executavel:
 
 ```markdown
 ### Model Routing
+- Superficie:
 - Modelo recomendado:
+- Modelo atual: [detectado|assumido|nao detectavel]
 - Motivo:
 - Gatilhos de escalonamento:
 - Aprovacao do usuario: [pendente|aprovado|nao aplicavel]

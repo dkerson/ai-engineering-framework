@@ -2,6 +2,9 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-06-30 | 2.21.0 | Codex | Execution Metrics | Enable future token savings reports with estimated percentages, retries avoided and errors avoided | EXECUTION_METRICS ledger, operational units, report percentages, WC/final response fields | rules, FOS ledger, token report, orchestrator, templates |
+| 2026-06-30 | 2.20.0 | Codex | Token Savings Report | Let users request token economy reports and evaluate framework efficiency | token savings rule, workflow, template, generated report, ledger updates | rules, workflows, templates, FOS reports, ledgers, orchestrator |
+| 2026-06-30 | 2.19.0 | Codex | Surface Routing & Execution Banner | Separate Cursor/Codex messaging and show framework activation before executable tasks | Surface detection, model recommendations by surface, execution banner, WC/final response fields | rules, orchestrator, token policy, workflows, context, templates |
 | 2026-06-30 | 2.18.0 | Codex | Model Routing & Approval Gate | Recommend cost-effective Cursor models and require user approval before executable tasks | Composer 2.5 Standard default, Auto escalation triggers, plan/model approval gate, WC/final response fields | rules, orchestrator, token policy, workflows, context, templates |
 | 2026-06-29 | 2.17.0 | Codex | MCP Portability & Local Secrets | Remove user-specific MCP paths and protect local secrets | Remote ClickUp/GitHub, Context7, portable MSSQL via npx, split env vars | rules, docs, plugins, projects/umbra/mcp, FOS |
 | 2026-06-29 | 2.16.0 | Codex | Configuration & Hardcode Governance | Avoid functional hardcode in modules, permissions, status, URLs, thresholds and seeds | no-hardcode rule, checklist, hardcode-scanner, hardcode-audit workflow, WC fields | rules, skills, workflows, checklists, docs, orchestrator, FOS |

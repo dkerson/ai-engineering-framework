@@ -1,5 +1,65 @@
 # Changelog — AI Engineering Framework
 
+## [2.21.0] - 2026-06-30
+
+### Adicionado
+
+- **Execution Metrics:** `rules/execution-metrics.md`
+- Ledger: `framework/operating-system/EXECUTION_METRICS.md`
+- Percentual estimado de economia operacional, retries evitados e erros evitados nos reports de tokens
+
+### Alterado
+
+- Token Savings Report passa a usar baseline units vs actual units para percentuais estimados
+- Working Context e resposta final passam a ter campos de execution metrics
+- Orchestrator registra metricas ao final de tasks executaveis quando aplicavel
+
+### Preservado
+
+- Percentual estimado nao e token real
+- Conversao para dolares continua proibida sem telemetria real de tokens/modelo
+
+## [2.20.0] - 2026-06-30
+
+### Adicionado
+
+- **Token Savings Report:** `rules/token-savings-report.md`
+- Workflow: `workflows/token-savings-report.md`
+- Template: `templates/token-savings-report.md`
+- Primeiro report gerado: `framework/operating-system/reports/TOKEN_SAVINGS_REPORT.md`
+
+### Alterado
+
+- Orchestrator reconhece pedidos como "gera um report de economia de tokens"
+- Workflow index registra `token-savings-report`
+- Ledgers do FOS passam a registrar a mission de economia de tokens
+
+### Preservado
+
+- O report nao inventa tokens, dolares ou percentuais sem fonte real
+- Quando nao ha telemetria real, o report declara economia estimada/qualitativa e nivel de confianca
+
+## [2.19.0] - 2026-06-30
+
+### Adicionado
+
+- **Surface Routing:** `rules/surface-routing.md`
+- **Execution Banner:** `rules/execution-banner.md`
+- Separacao de mensagens e modelos entre Cursor, Codex e superficie desconhecida
+- Banner inicial: "Executando tarefa com AI Engineering Framework"
+
+### Alterado
+
+- Model Routing agora recomenda modelos por superficie: Cursor usa Composer/Auto; Codex usa gpt-5.4-mini/gpt-5.5
+- Orchestrator passa a detectar superficie antes de recomendar modelo
+- Working Context e resposta final registram superficie, confianca e se o modelo atual e detectavel
+- Token Budget, Token Economy e processo universal passam a exigir Surface Routing antes do Model Routing
+
+### Preservado
+
+- O framework continua sem prometer controle automatico do seletor de modelo
+- Quando o modelo atual nao for detectavel, a resposta deve declarar essa limitacao
+
 ## [2.18.0] - 2026-06-30
 
 ### Adicionado

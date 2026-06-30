@@ -44,6 +44,7 @@ Registrar de forma leve:
 - `framework/operating-system/MISSION_LEDGER.md` - resumo da mission.
 - `framework/operating-system/SKILL_USAGE.md` - skills usadas de verdade.
 - `framework/operating-system/TOKEN_METRICS.md` - sinais de desperdicio/economia.
+- `framework/operating-system/EXECUTION_METRICS.md` - baseline, actual units, savings %, retries e errors avoided.
 - `framework/operating-system/PROMOTION_CRITERIA.md` - limiares para promover aprendizados.
 
 Regras:

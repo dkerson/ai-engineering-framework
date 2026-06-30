@@ -73,6 +73,7 @@ Antes de executar qualquer workflow, o Orchestrator escolhe o modo: `workflows/m
 |---------|------|---------------|-------------------|
 | [natural-language-mission.md](natural-language-mission.md) | **Linguagem natural (entrada padrão)** | Conforme missão | NLME → SIL → COS → Orchestrator → Domains |
 | [framework-operating-system.md](framework-operating-system.md) | Framework Operating System | Fast/Standard | FOS docs → Reviewer → Recommendations → Report |
+| [token-savings-report.md](token-savings-report.md) | Token Savings Report | Fast/Standard | Token Metrics → Mission Ledger → Skill Usage → Report |
 | [strategic-mission.md](strategic-mission.md) | Strategic Mission | Analysis/Planning/Implementation | SIL → Mission Brief → Orchestrator → Domains → Mission Report |
 | [infrastructure-mission.md](infrastructure-mission.md) | Infrastructure Mission | Standard/Review | Project Resolver → Plugin Resolver* → Discovery/Scanner → Registry → FOS |
 | [plugin-mission.md](plugin-mission.md) | Plugin Mission | Fast/Standard | Plugin Builder* → Plugin Manager → Registry → PROJECT_PLUGINS → FOS |

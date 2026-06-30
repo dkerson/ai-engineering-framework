@@ -13,7 +13,7 @@
 
 | Skill | Count | Mission Types | Last Used | Notes |
 |-------|-------|---------------|-----------|-------|
-| orchestrator | 2 | framework-operating-system | 2026-06-29 | Required entry point; added Context Hygiene protocol. |
+| orchestrator | 5 | framework-operating-system, token-savings-report | 2026-06-30 | Required entry point; added routing, reporting, metrics and governance protocols. |
 | skill-creator | 1 | framework-operating-system | 2026-06-29 | Used to guide creation of Security Intelligence skills. |
 | security-review | 1 | security-intelligence | 2026-06-29 | Refined into general reviewer that delegates SI depth to specialists. |
 | framework-reviewer | 1 | framework-operating-system | 2026-06-28 | Used to assess FOS health and drift. |

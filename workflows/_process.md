@@ -14,6 +14,8 @@
 
 - Extrair intenção, escopo, restrições
 
+- Detectar superficie de execucao conforme `rules/surface-routing.md`: Cursor, Codex ou Desconhecida
+
 - Identificar tipo(s) de demanda
 
 - Confirmar ambiguidades críticas (perguntar só se bloqueante)
@@ -48,13 +50,13 @@
 
 - Selecionar pipeline mínimo para o modo
 
-- Aplicar `rules/model-routing.md`: recomendar modelo, justificar custo/risco e definir gatilhos de escalonamento
+- Aplicar `rules/model-routing.md`: recomendar modelo por superficie, justificar custo/risco e definir gatilhos de escalonamento
 
 - Technical Council: montar conselho + Decision Maker + Implementation Planner
 
 - Listar skills e ordem (máx. 10 passos visíveis)
 
-- Apresentar plano + modelo recomendado ao usuario e perguntar "Posso seguir com este plano?"
+- Exibir `rules/execution-banner.md` com superficie, modelo recomendado, modo, plano e pergunta "Posso seguir com este plano?"
 
 - Aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar, exceto pergunta/resposta Fast Path sem leitura ampla, comando, edicao ou validacao
 
@@ -130,7 +132,11 @@ Aplicar em todas as fases:
 
 - `rules/token-economy.md`
 
+- `rules/surface-routing.md`
+
 - `rules/model-routing.md`
+
+- `rules/execution-banner.md`
 
 - `rules/context-hygiene.md`
 

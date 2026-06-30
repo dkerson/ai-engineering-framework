@@ -40,12 +40,32 @@ Tarefa concluída → WC descartado
 - Last hygiene check:
 - Active context source: [Full|Compacted Snapshot]
 
+### Surface Routing
+- Superficie detectada: [Cursor|Codex|Desconhecida]
+- Confianca: [alta|media|baixa]
+- Evidencias:
+- Mensagem de modelo deve usar:
+- Modelo atual detectavel: [sim|nao|parcial]
+
 ### Model Routing
+- Superficie:
 - Modelo recomendado:
+- Modelo atual: [detectado|assumido|nao detectavel]
 - Motivo:
 - Gatilhos de escalonamento:
 - Aprovacao do usuario: [pendente|aprovado|nao aplicavel]
 - Mudanca solicitada durante execucao:
+
+### Execution Metrics
+- Baseline Route:
+- Actual Route:
+- Baseline Units:
+- Actual Units:
+- Estimated Savings %:
+- Retries Avoided:
+- Errors Avoided:
+- Confidence:
+- Evidence:
 
 ### Attempt Ledger (quando houver retry/falha)
 - Attempt #:
@@ -218,7 +238,9 @@ Tarefa concluída → WC descartado
 | Registrar porta/URL/cache em frontend | Declarar sucesso porque funcionou em outra porta |
 | Classificar hardcode por categoria e destino | Manter valor variavel fixo no codigo |
 | Usar seed idempotente para defaults de produto | Usar AddRange/HasData cego para dados configuraveis |
+| Registrar superficie e confianca | Afirmar Cursor/Codex sem evidencia |
 | Registrar modelo recomendado e aprovacao | Executar task sem plano/modelo aprovados |
+| Registrar execution metrics quando aplicavel | Converter unidades estimadas em tokens reais |
 
 ## Quando pular leitura
 

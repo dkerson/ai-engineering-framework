@@ -10,7 +10,9 @@ Complemento obrigatório: `rules/hierarchical-orchestration.md`
 
 Complemento de budget: `rules/token-budget-policy.md`
 
-Complemento de modelo: `rules/model-routing.md`
+Complemento de superficie/modelo: `rules/surface-routing.md`, `rules/model-routing.md`, `rules/execution-banner.md`
+
+Complemento de metricas: `rules/execution-metrics.md`
 
 Complemento de higiene de contexto: `rules/context-hygiene.md`
 
@@ -98,13 +100,13 @@ Use o caminho completo NLME/SIL/COS quando houver ambiguidade, estrategia, multi
 
 ### Model Routing antes da execucao
 
-Antes de executar task com leitura ampla, comandos, edicao ou validacao, o Orchestrator deve apresentar plano, modelo recomendado e pergunta de aprovacao conforme `rules/model-routing.md`.
+Antes de executar task com leitura ampla, comandos, edicao ou validacao, o Orchestrator deve detectar superficie, apresentar banner, plano, modelo recomendado e pergunta de aprovacao conforme `rules/surface-routing.md`, `rules/model-routing.md` e `rules/execution-banner.md`.
 
-Padrao economico: `Composer 2.5 Standard`.
+Padrao economico: Cursor `Composer 2.5 Standard`; Codex `gpt-5.4-mini`.
 
-Escalar para `Auto` ou modelo forte quando houver auth, autorizacao, banco, seguranca, producao, integracao critica, arquitetura, refatoracao multi-modulo, dados fiscais/financeiros ou falha repetida.
+Escalar para Cursor `Auto` ou Codex `gpt-5.5` quando houver auth, autorizacao, banco, seguranca, producao, integracao critica, arquitetura, refatoracao multi-modulo, dados fiscais/financeiros ou falha repetida.
 
-Se o gatilho de escalonamento surgir durante a execucao, pausar, explicar o motivo e pedir ao usuario para alterar o modelo no Cursor antes de continuar.
+Se o gatilho de escalonamento surgir durante a execucao, pausar, explicar o motivo e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar.
 
 
 
@@ -301,6 +303,7 @@ Ao encerrar uma mission, registrar somente sinais uteis e baratos:
 - `framework/operating-system/MISSION_LEDGER.md` para resumo da execucao.
 - `framework/operating-system/SKILL_USAGE.md` para skills realmente usadas.
 - `framework/operating-system/TOKEN_METRICS.md` para waste/savings.
+- `framework/operating-system/EXECUTION_METRICS.md` para baseline, actual units, estimated savings %, retries e errors avoided.
 - `framework/operating-system/PROMOTION_CRITERIA.md` para decidir quando um aprendizado vira recomendacao.
 
 Nao registrar prompts completos, segredos, codigo longo ou dados privados. Nao alterar o framework automaticamente: registrar, recomendar e aguardar aprovacao.

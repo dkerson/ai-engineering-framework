@@ -20,6 +20,9 @@
 | 2026-06-29 | Execution Reliability Guardrails | Review | 14 | 3 | rg/git diff | Repeated frontend attempts lacked hard loop breaker and runtime proof | Attempt Ledger and Boundary Map reduce repeated commands, wrong-port validation and collateral regressions |
 | 2026-06-29 | Context Hygiene Protocol | Review | 12 | 1 | diff/status | Context pollution lacked explicit operational handling | Compacted Snapshot prevents stale outputs from guiding later phases |
 | 2026-06-28 | Execution Intelligence setup | Review | 8 | 3 | diff/status | Inventory drift found; no script yet | No code scan beyond framework docs |
+| 2026-06-30 | Surface Routing & Execution Banner | Standard | 8 | 1 | rg/git diff | Model routing still used Cursor-only language in some paths | Surface split prevents wrong model guidance between Cursor and Codex |
+| 2026-06-30 | Token Savings Report | Standard | 7 | 1 | rg/git diff | Token metrics were qualitative and had no report workflow | Adds report generation with confidence level and avoids fake exact token counts |
+| 2026-06-30 | Execution Metrics | Standard | 6 | 1 | rg/git diff | Token savings reports lacked structured percentage/retry/error fields | Adds baseline vs actual units for estimated savings reports |
 
 ## Waste Signals
 

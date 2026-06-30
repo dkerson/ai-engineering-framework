@@ -15,6 +15,11 @@
 2. [Passo 2]
 ...
 
+## Superficie
+- Detectada:
+- Confianca:
+- Modelo atual: [detectado/assumido/nao detectavel pelo framework]
+
 ## Modelo recomendado
 - Modelo:
 - Motivo:
@@ -49,6 +54,10 @@
 - Arquivos evitados/reutilizados:
 - Context Hygiene:
 - Waste signals:
+- Estimated savings %:
+- Retries avoided:
+- Errors avoided:
+- Confidence:
 
 ## Resultado
 [Estado atual: concluído / parcial / bloqueado + motivo]
