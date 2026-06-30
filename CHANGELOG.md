@@ -1,5 +1,25 @@
 # Changelog — AI Engineering Framework
 
+## [2.18.0] - 2026-06-30
+
+### Adicionado
+
+- **Model Routing & Approval Gate:** `rules/model-routing.md`
+- Recomendacao de modelo antes da execucao: Composer 2.5 Standard, Auto ou modelo forte conforme custo/risco
+- Gate obrigatorio de plano + modelo recomendado + aprovacao do usuario antes de executar tasks
+
+### Alterado
+
+- Orchestrator passa a aplicar Model Routing antes de criar o plano executavel
+- Token Budget e Token Economy passam a exigir recomendacao de modelo e pausa quando houver gatilho de escalonamento
+- Working Context e resposta final registram modelo recomendado, motivo, aprovacao e troca solicitada
+- Processo universal passa a incluir plano + modelo + aprovacao antes de investigar, editar, executar comandos ou validar
+
+### Preservado
+
+- O framework nao altera automaticamente o seletor de modelo do Cursor
+- Fast Path pode responder sem gate quando for pergunta/resposta sem leitura ampla, comando, edicao ou validacao
+
 ## [2.17.0] - 2026-06-29
 
 ### Adicionado

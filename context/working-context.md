@@ -40,6 +40,13 @@ Tarefa concluída → WC descartado
 - Last hygiene check:
 - Active context source: [Full|Compacted Snapshot]
 
+### Model Routing
+- Modelo recomendado:
+- Motivo:
+- Gatilhos de escalonamento:
+- Aprovacao do usuario: [pendente|aprovado|nao aplicavel]
+- Mudanca solicitada durante execucao:
+
 ### Attempt Ledger (quando houver retry/falha)
 - Attempt #:
 - Hypothesis:
@@ -211,6 +218,7 @@ Tarefa concluída → WC descartado
 | Registrar porta/URL/cache em frontend | Declarar sucesso porque funcionou em outra porta |
 | Classificar hardcode por categoria e destino | Manter valor variavel fixo no codigo |
 | Usar seed idempotente para defaults de produto | Usar AddRange/HasData cego para dados configuraveis |
+| Registrar modelo recomendado e aprovacao | Executar task sem plano/modelo aprovados |
 
 ## Quando pular leitura
 

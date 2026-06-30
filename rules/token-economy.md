@@ -10,6 +10,8 @@ Complemento obrigatório: `rules/hierarchical-orchestration.md`
 
 Complemento de budget: `rules/token-budget-policy.md`
 
+Complemento de modelo: `rules/model-routing.md`
+
 Complemento de higiene de contexto: `rules/context-hygiene.md`
 
 Complemento de confiabilidade de execucao: `rules/execution-loop-control.md`
@@ -93,6 +95,16 @@ Antes de acionar `mission-translator`, `mission-builder`, `prompt-builder`, SIL 
 Use Fast Path quando o pedido for simples, direto e baixo risco. Exemplos: confirmar status, explicar um arquivo, rodar um comando simples, corrigir texto/typo, atualizar documentacao estreita ou responder uma pergunta de governanca usando documentos vivos.
 
 Use o caminho completo NLME/SIL/COS quando houver ambiguidade, estrategia, multiplos dominios, produto/design/growth/data, arquitetura, auth, banco, seguranca, producao ou transformacao ampla.
+
+### Model Routing antes da execucao
+
+Antes de executar task com leitura ampla, comandos, edicao ou validacao, o Orchestrator deve apresentar plano, modelo recomendado e pergunta de aprovacao conforme `rules/model-routing.md`.
+
+Padrao economico: `Composer 2.5 Standard`.
+
+Escalar para `Auto` ou modelo forte quando houver auth, autorizacao, banco, seguranca, producao, integracao critica, arquitetura, refatoracao multi-modulo, dados fiscais/financeiros ou falha repetida.
+
+Se o gatilho de escalonamento surgir durante a execucao, pausar, explicar o motivo e pedir ao usuario para alterar o modelo no Cursor antes de continuar.
 
 
 

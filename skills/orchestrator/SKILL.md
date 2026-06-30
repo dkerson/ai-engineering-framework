@@ -19,6 +19,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Working Context | Manter e reutilizar contexto da sessão |
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Execution Loop Control | Bloquear repeticao de tentativa sem evidencia nova |
+| Model Routing & Approval Gate | Apresentar plano + modelo recomendado e aguardar aprovacao antes de executar |
 | Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
 | No Hardcode | Evitar valores fixos que deveriam vir de banco, parametro, config, env, registry ou feature flag |
 | Escalonamento | Subir de modo se complexidade aumentar |
@@ -30,7 +31,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 ## Processo obrigatório
 
 ```
-Entender → Classificar → Escolher modo → Planejar → Investigar → Implementar → Validar → Revisar → Entregar
+Entender → Classificar → Escolher modo → Planejar + recomendar modelo → pedir aprovacao → Investigar → Implementar → Validar → Revisar → Entregar
 ```
 
 Detalhes: `workflows/_process.md`
@@ -85,32 +86,39 @@ Detalhes: `workflows/modes.md`
 3. ESCOLHER modo (Fast/Standard/Review/Technical Council)
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
-4. CRIAR Working Context (context/working-context.md)
-5. PLANEJAR pipeline mínimo para o modo
-6. INVESTIGAR — aplicar token-economy; Context Builder se necessário
-6a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
-6b. EXECUTION LOOP CONTROL — em bugs/validacoes falhando, manter Attempt Ledger (`rules/execution-loop-control.md`); apos 2 falhas com a mesma hipotese, parar de tentar a mesma solucao e replanejar
-6c. REGRESSION BOUNDARY — antes de editar tela/rota/API/arquivo compartilhado, registrar Target surface, Out-of-scope, Shared files e Canary routes/tests (`rules/regression-boundary.md`)
-6d. NO HARDCODE — antes de criar/alterar valores de ambiente, dominio, permissao, modulo, menu, status, threshold, seed ou regra variavel, definir fonte de configuracao conforme `rules/no-hardcode.md`
-7. SE Technical Council:
+4. APLICAR MODEL ROUTING (`rules/model-routing.md`)
+   a. recomendar Composer 2.5 Standard, Auto ou modelo forte conforme custo/risco
+   b. definir gatilhos objetivos de escalonamento durante a execucao
+   c. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo no Cursor antes de continuar
+5. CRIAR Working Context (context/working-context.md), incluindo Model Routing
+6. PLANEJAR pipeline mínimo para o modo
+6a. APRESENTAR plano + modelo recomendado + pergunta "Posso seguir com este plano?"
+   a. aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar
+   b. excecao: pergunta/resposta sem leitura ampla, comando, edicao ou validacao pode ser respondida em Fast Path
+7. INVESTIGAR — aplicar token-economy; Context Builder se necessário
+7a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
+7b. EXECUTION LOOP CONTROL — em bugs/validacoes falhando, manter Attempt Ledger (`rules/execution-loop-control.md`); apos 2 falhas com a mesma hipotese, parar de tentar a mesma solucao e replanejar
+7c. REGRESSION BOUNDARY — antes de editar tela/rota/API/arquivo compartilhado, registrar Target surface, Out-of-scope, Shared files e Canary routes/tests (`rules/regression-boundary.md`)
+7d. NO HARDCODE — antes de criar/alterar valores de ambiente, dominio, permissao, modulo, menu, status, threshold, seed ou regra variavel, definir fonte de configuracao conforme `rules/no-hardcode.md`
+8. SE Technical Council:
    a. Montar conselho (somente skills necessárias)
    b. Coletar opiniões (máx. 150 palavras/skill)
    c. Decision Maker → decisão consolidada
    d. Implementation Planner → plano técnico
    e. NÃO mostrar opiniões individuais ao usuário
-8. IMPLEMENTAR — skills técnicas na ordem do plano
-9. VALIDAR — Validator (Review/Council) ou QA (Standard)
-9a. CONTEXT HYGIENE — antes de validacao ampla, garantir que plano ativo, arquivos alterados e pendencias estejam no snapshot/Working Context
-9b. FRONTEND RUNTIME — para telas/rotas, validar porta/URL, cache, console, network e evidencia visual/DOM conforme `rules/frontend-runtime-validation.md`
-9c. REGRESSION CANARIES — se arquivo compartilhado foi alterado, validar canarios definidos no Boundary Map antes de marcar pronto
-9d. HARDCODE REVIEW — confirmar que a mudanca nao introduziu hardcode proibido; quando houver achado aceito, registrar justificativa e destino futuro
-10. REVISAR — Critic se Review/Council
-11. EXECUTION INTELLIGENCE:
+9. IMPLEMENTAR — skills técnicas na ordem do plano
+10. VALIDAR — Validator (Review/Council) ou QA (Standard)
+10a. CONTEXT HYGIENE — antes de validacao ampla, garantir que plano ativo, arquivos alterados e pendencias estejam no snapshot/Working Context
+10b. FRONTEND RUNTIME — para telas/rotas, validar porta/URL, cache, console, network e evidencia visual/DOM conforme `rules/frontend-runtime-validation.md`
+10c. REGRESSION CANARIES — se arquivo compartilhado foi alterado, validar canarios definidos no Boundary Map antes de marcar pronto
+10d. HARDCODE REVIEW — confirmar que a mudanca nao introduziu hardcode proibido; quando houver achado aceito, registrar justificativa e destino futuro
+11. REVISAR — Critic se Review/Council
+12. EXECUTION INTELLIGENCE:
    a. checar se o modo escolhido foi o menor modo seguro
    b. registrar usage/learning/token notes em `framework/operating-system/` somente quando houver sinal util
    c. nunca alterar comportamento do framework sem aprovacao do usuario
-12. ENTREGAR — templates/final-response.md
-13. DESCARTAR Working Context
+13. ENTREGAR — templates/final-response.md
+14. DESCARTAR Working Context
 ```
 
 ## Technical Council
@@ -362,6 +370,8 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 ## Economia de tokens
 
 - Modo Fast por padrão quando possível
+- Plano + modelo recomendado antes de executar task
+- Composer 2.5 Standard como recomendacao economica padrao; Auto/modelo forte somente com gatilho objetivo
 - Fast Path antes do NLME completo quando o pedido for simples e baixo risco
 - Menor número de skills no pipeline
 - Reutilizar Working Context entre skills
@@ -371,6 +381,7 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
 - `rules/execution-loop-control.md` + `rules/frontend-runtime-validation.md` + `rules/regression-boundary.md`
 - `rules/no-hardcode.md`
+- `rules/model-routing.md`
 
 ## Skills por fase
 
@@ -400,6 +411,10 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 ## Checklist do orchestrator
 
 - [ ] Modo escolhido e justificado
+- [ ] Modelo recomendado e justificado
+- [ ] Plano apresentado ao usuario antes da execucao
+- [ ] Aprovacao explicita recebida antes de executar task
+- [ ] Gatilhos de troca de modelo definidos
 - [ ] Working Context criado
 - [ ] Context Health avaliado quando aplicavel
 - [ ] Compacted Snapshot criado se contexto ficou poluido

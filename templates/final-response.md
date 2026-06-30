@@ -15,6 +15,12 @@
 2. [Passo 2]
 ...
 
+## Modelo recomendado
+- Modelo:
+- Motivo:
+- Troca solicitada durante execução: [sim/não + motivo]
+- Aprovação do plano: [sim/não/não aplicável]
+
 ## Modo utilizado
 [Fast | Standard | Review | Technical Council] — [justificativa em 1 frase]
 
