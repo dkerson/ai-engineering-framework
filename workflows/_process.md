@@ -50,7 +50,7 @@
 
 - Selecionar pipeline mínimo para o modo
 
-- Aplicar `rules/model-routing.md`: recomendar modelo por superficie, justificar custo/risco e definir gatilhos de escalonamento
+- Aplicar `rules/pre-execution-gate.md` e `rules/model-routing.md`: recomendar modelo por superficie, justificar custo/risco e definir gatilhos de escalonamento
 
 - Technical Council: montar conselho + Decision Maker + Implementation Planner
 
@@ -59,6 +59,8 @@
 - Exibir `rules/execution-banner.md` com superficie, modelo recomendado, modo, plano e pergunta "Posso seguir com este plano?"
 
 - Aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar, exceto pergunta/resposta Fast Path sem leitura ampla, comando, edicao ou validacao
+
+- Tratar o pedido inicial de execucao como demanda, nao como aprovacao do plano; a aprovacao deve vir depois do banner
 
 
 
@@ -133,6 +135,8 @@ Aplicar em todas as fases:
 - `rules/token-economy.md`
 
 - `rules/surface-routing.md`
+
+- `rules/pre-execution-gate.md`
 
 - `rules/model-routing.md`
 

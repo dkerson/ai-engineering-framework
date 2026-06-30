@@ -16,14 +16,14 @@
 0f. **Regression Boundary:** antes de alterar superfície compartilhada, usar `rules/regression-boundary.md` para definir escopo, fora de escopo e canários
 0g. **No Hardcode Governance:** usar `rules/no-hardcode.md`; valores variáveis devem vir de banco, parâmetro, config, env, registry ou feature flag
 0h. **MCP Portability:** usar `rules/mcp-portability.md`; templates MCP não podem depender de paths de outro usuário nem conter secrets reais
-0i. **Model Routing & Approval Gate:** usar `rules/model-routing.md`; antes de executar task, apresentar plano, modelo recomendado e pedir aprovação. Se a execução exigir troca de modelo, pausar e pedir alteração manual no Cursor antes de continuar.
+0i. **Pre-Execution Gate + Model Routing:** usar `rules/pre-execution-gate.md` e `rules/model-routing.md`; antes de qualquer task executavel, apresentar plano, modelo recomendado e pedir aprovacao explicita. Se a execucao exigir troca de modelo, pausar e pedir alteracao manual na superficie ativa antes de continuar.
 0j. **Surface Routing & Execution Banner:** usar `rules/surface-routing.md` e `rules/execution-banner.md`; identificar Cursor/Codex/desconhecido, exibir "Executando tarefa com AI Engineering Framework" e separar recomendação de modelo por superfície.
 0k. **Execution Metrics:** usar `rules/execution-metrics.md`; ao final de tasks executáveis, registrar baseline, actual units, percentual estimado, retries evitados e erros evitados em `framework/operating-system/EXECUTION_METRICS.md`.
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
 4. Respeitar `rules/strategic-intelligence-layer.md`, `rules/hierarchical-orchestration.md` e `rules/token-economy.md`
-5. Seguir o processo: Entender → detectar superfície → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovação → Investigar → Implementar → Validar → Revisar → Entregar
+5. Seguir o processo: Entender → detectar superfície → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovação → **parar ate aprovacao explicita** → Investigar → Implementar → Validar → Revisar → Entregar
 6. Manter **Working Context** durante a execução (`context/working-context.md`)
 6a. Avaliar **Context Health** em transições de fase; se poluído, trabalhar a partir de **Compacted Snapshot**
 7. Registrar Execution Intelligence somente quando houver sinal util (`framework/operating-system/MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`)
@@ -186,6 +186,7 @@ O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda
 | Token Budget Policy | Decide Fast Path vs NLME completo |
 | Execution Metrics | Registra metricas por execucao para percentual estimado, retries e erros evitados |
 | Token Savings Report | Gera report estimado/medido de economia de tokens usando ledgers do FOS |
+| Pre-Execution Gate | Bloqueia a primeira acao executavel ate banner, plano, modelo recomendado e aprovacao explicita |
 | Model Routing Policy | Recomenda Composer 2.5 Standard, Auto ou modelo forte conforme custo, risco e chance de retrabalho |
 | Surface Routing Policy | Separa mensagens e modelos entre Cursor, Codex e superficie desconhecida |
 | Execution Banner | Exibe mensagem inicial padronizada com superficie, modelo, modo e plano |
@@ -347,6 +348,7 @@ Processo (não skill): `workflows/technical-council.md`
 ## Economia de tokens
 
 - Menor modo seguro
+- Pre-Execution Gate antes de qualquer task executavel
 - Surface Routing antes do Model Routing
 - Execution Banner antes de task executavel
 - Plano + modelo recomendado antes de executar
@@ -355,7 +357,7 @@ Processo (não skill): `workflows/technical-council.md`
 - Context Hygiene — compactar contexto poluido antes de continuar
 - Council: máx. 150 palavras/skill; usuário vê só decisão consolidada
 
-`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/surface-routing.md` · `rules/model-routing.md` · `rules/execution-banner.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/no-hardcode.md` · `rules/mcp-portability.md` · `rules/hierarchical-orchestration.md`
+`rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/pre-execution-gate.md` · `rules/surface-routing.md` · `rules/model-routing.md` · `rules/execution-banner.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/no-hardcode.md` · `rules/mcp-portability.md` · `rules/hierarchical-orchestration.md`
 `rules/execution-metrics.md`
 `rules/token-savings-report.md`
 

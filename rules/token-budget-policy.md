@@ -2,7 +2,7 @@
 
 > Execution budget rules for Codex/Cursor cost control.
 
-Complementos obrigatorios: `rules/surface-routing.md`, `rules/model-routing.md`, `rules/execution-banner.md`.
+Complementos obrigatorios: `rules/pre-execution-gate.md`, `rules/surface-routing.md`, `rules/model-routing.md`, `rules/execution-banner.md`.
 
 ## Default Route
 
@@ -21,7 +21,7 @@ Cursor: Composer 2.5 Standard -> Auto -> stronger explicit model
 Codex: gpt-5.4-mini -> gpt-5.5 -> latency-focused model when justified
 ```
 
-The Orchestrator must detect the active surface, present the execution banner, recommended model and approval question before running an executable task.
+The Orchestrator must detect the active surface, present the execution banner, recommended model and approval question, then stop until explicit approval before running an executable task.
 
 ## Fast Path
 
@@ -58,6 +58,7 @@ Full Mission Path must include an explicit model recommendation. Prefer `Auto` w
 - Do not include raw specialist debate in user responses.
 - Do not persist private content, secrets or long code excerpts in FOS ledgers.
 - Do not execute an approved task plan silently; ask the user to confirm the plan and recommended model first.
+- Do not treat the user's initial "do it" request as approval for a plan that has not been shown yet.
 - Do not continue after discovering a model escalation trigger; pause and ask the user to switch the model in the active surface.
 
 ## Required End-of-Mission Check

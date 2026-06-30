@@ -6,6 +6,8 @@
 
 O framework nao altera automaticamente o seletor de modelo do Cursor ou Codex. O Orchestrator deve recomendar o modelo, justificar a escolha e pausar quando uma troca manual for necessaria.
 
+Para tasks executaveis, esta regra deve ser aplicada dentro do gate bloqueante de `rules/pre-execution-gate.md`.
+
 Aplicar `rules/surface-routing.md` antes desta regra.
 
 ## Modelo padrao recomendado
@@ -38,7 +40,7 @@ Antes de executar qualquer task, o Orchestrator deve apresentar:
 Posso seguir com este plano?
 ```
 
-A execucao so continua apos aprovacao explicita do usuario, exceto em pedidos que sejam apenas pergunta/resposta e nao envolvam leitura ampla, comandos, edicao ou validacao.
+A execucao so continua apos aprovacao explicita do usuario depois do plano e banner, exceto em pedidos que sejam apenas pergunta/resposta e nao envolvam leitura ampla, comandos, edicao ou validacao. O pedido inicial de execucao nao conta como aprovacao do plano.
 
 ## Matriz de escolha
 

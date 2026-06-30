@@ -6,6 +6,8 @@
 
 Exibir antes de investigar, editar, executar comandos ou validar uma task.
 
+O banner e parte do gate bloqueante definido em `rules/pre-execution-gate.md`. Depois de exibir o banner, o Orchestrator deve parar ate receber aprovacao explicita.
+
 Pode ser omitido apenas em pergunta/resposta Fast Path sem leitura ampla, comando, edicao ou validacao.
 
 ## Template obrigatorio
@@ -26,6 +28,19 @@ Executando tarefa com AI Engineering Framework.
 
 Posso seguir com este plano?
 ```
+
+## Condicao de parada
+
+A resposta do usuario que originou a task nao aprova este banner. A aprovacao precisa vir depois da exibicao do plano.
+
+Se o usuario ainda nao aprovou:
+
+- nao investigar;
+- nao executar comandos;
+- nao editar arquivos;
+- nao validar;
+- nao iniciar dev server;
+- nao acionar ferramentas externas para implementar.
 
 ## Regras de linguagem por superficie
 

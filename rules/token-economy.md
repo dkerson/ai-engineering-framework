@@ -10,7 +10,7 @@ Complemento obrigatório: `rules/hierarchical-orchestration.md`
 
 Complemento de budget: `rules/token-budget-policy.md`
 
-Complemento de superficie/modelo: `rules/surface-routing.md`, `rules/model-routing.md`, `rules/execution-banner.md`
+Complemento de superficie/modelo/gate: `rules/pre-execution-gate.md`, `rules/surface-routing.md`, `rules/model-routing.md`, `rules/execution-banner.md`
 
 Complemento de metricas: `rules/execution-metrics.md`
 
@@ -100,7 +100,7 @@ Use o caminho completo NLME/SIL/COS quando houver ambiguidade, estrategia, multi
 
 ### Model Routing antes da execucao
 
-Antes de executar task com leitura ampla, comandos, edicao ou validacao, o Orchestrator deve detectar superficie, apresentar banner, plano, modelo recomendado e pergunta de aprovacao conforme `rules/surface-routing.md`, `rules/model-routing.md` e `rules/execution-banner.md`.
+Antes de executar task com leitura ampla, comandos, edicao ou validacao, o Orchestrator deve detectar superficie, apresentar banner, plano, modelo recomendado e pergunta de aprovacao conforme `rules/pre-execution-gate.md`, `rules/surface-routing.md`, `rules/model-routing.md` e `rules/execution-banner.md`. Depois disso deve parar ate aprovacao explicita.
 
 Padrao economico: Cursor `Composer 2.5 Standard`; Codex `gpt-5.4-mini`.
 

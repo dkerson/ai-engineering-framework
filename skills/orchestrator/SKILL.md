@@ -19,6 +19,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Working Context | Manter e reutilizar contexto da sessão |
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Execution Loop Control | Bloquear repeticao de tentativa sem evidencia nova |
+| Pre-Execution Gate | Bloquear a primeira acao executavel ate banner, plano, modelo recomendado e aprovacao explicita |
 | Model Routing & Approval Gate | Apresentar plano + modelo recomendado e aguardar aprovacao antes de executar |
 | Surface Routing & Execution Banner | Separar Cursor/Codex/desconhecido e exibir banner inicial do framework |
 | Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
@@ -32,7 +33,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 ## Processo obrigatório
 
 ```
-Entender → detectar superficie → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovacao → Investigar → Implementar → Validar → Revisar → Entregar
+Entender → detectar superficie → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovacao → parar ate aprovacao explicita → Investigar → Implementar → Validar → Revisar → Entregar
 ```
 
 Detalhes: `workflows/_process.md`
@@ -88,15 +89,17 @@ Detalhes: `workflows/modes.md`
 3. ESCOLHER modo (Fast/Standard/Review/Technical Council)
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
-4. APLICAR MODEL ROUTING (`rules/model-routing.md`)
+4. APLICAR PRE-EXECUTION GATE (`rules/pre-execution-gate.md`) + MODEL ROUTING (`rules/model-routing.md`)
    a. recomendar modelo conforme superficie detectada: Cursor (Composer/Auto) ou Codex (gpt-5.4-mini/gpt-5.5)
    b. definir gatilhos objetivos de escalonamento durante a execucao
    c. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar
-5. CRIAR Working Context (context/working-context.md), incluindo Model Routing
+5. CRIAR Working Context (context/working-context.md), incluindo Pre-Execution Gate e Model Routing
 6. PLANEJAR pipeline mínimo para o modo
 6a. EXIBIR EXECUTION BANNER (`rules/execution-banner.md`) com "Executando tarefa com AI Engineering Framework", superficie, modelo, modo, plano e pergunta "Posso seguir com este plano?"
    a. aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar
    b. excecao: pergunta/resposta sem leitura ampla, comando, edicao ou validacao pode ser respondida em Fast Path
+   c. o pedido inicial do usuario para executar nao conta como aprovacao do plano; a aprovacao deve vir depois do banner
+   d. se a aprovacao estiver pendente, parar a execucao conforme `rules/pre-execution-gate.md`
 7. INVESTIGAR — aplicar token-economy; Context Builder se necessário
 7a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
 7b. EXECUTION LOOP CONTROL — em bugs/validacoes falhando, manter Attempt Ledger (`rules/execution-loop-control.md`); apos 2 falhas com a mesma hipotese, parar de tentar a mesma solucao e replanejar
@@ -374,6 +377,7 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 ## Economia de tokens
 
 - Modo Fast por padrão quando possível
+- Pre-Execution Gate antes de qualquer task executavel
 - Surface Routing antes do Model Routing
 - Execution Banner antes de task executavel
 - Plano + modelo recomendado antes de executar task
@@ -386,6 +390,7 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - Não mostrar debate do conselho ao usuário
 - Registrar sinais relevantes em `MISSION_LEDGER.md`, `SKILL_USAGE.md` e `TOKEN_METRICS.md`
 - `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
+- `rules/pre-execution-gate.md`
 - `rules/execution-loop-control.md` + `rules/frontend-runtime-validation.md` + `rules/regression-boundary.md`
 - `rules/no-hardcode.md`
 - `rules/surface-routing.md`
@@ -422,6 +427,7 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 ## Checklist do orchestrator
 
 - [ ] Modo escolhido e justificado
+- [ ] Pre-Execution Gate aplicado quando a task for executavel
 - [ ] Superficie detectada e confianca registrada
 - [ ] Execution Banner exibido quando aplicavel
 - [ ] Modelo recomendado e justificado

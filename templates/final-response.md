@@ -26,6 +26,11 @@
 - Troca solicitada durante execução: [sim/não + motivo]
 - Aprovação do plano: [sim/não/não aplicável]
 
+## Pre-Execution Gate
+- Task executavel: [sim/não]
+- Gate aplicado: [sim/não/não aplicável]
+- Aprovação explícita recebida antes da primeira ação executavel: [sim/não/não aplicável]
+
 ## Modo utilizado
 [Fast | Standard | Review | Technical Council] — [justificativa em 1 frase]
 
