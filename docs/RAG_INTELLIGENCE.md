@@ -1,6 +1,7 @@
 # RAG Intelligence
 
-> Capability **Ready** v1.0.0 — framework-only.
+> Capability **Stable Candidate** v1.1.0 - validated by Umbra KB/RAG consumer evidence.
+
 
 ## Objetivo
 

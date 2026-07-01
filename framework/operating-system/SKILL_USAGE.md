@@ -13,7 +13,9 @@
 
 | Skill | Count | Mission Types | Last Used | Notes |
 |-------|-------|---------------|-----------|-------|
-| orchestrator | 5 | framework-operating-system, token-savings-report | 2026-06-30 | Required entry point; added routing, reporting, metrics and governance protocols. |
+| orchestrator | 6 | framework-operating-system, token-savings-report | 2026-07-01 | Required entry point; added routing, reporting, metrics, learning loop and governance protocols. |
+| rag-evaluator | 1 | framework-operating-system, capability-mission | 2026-07-01 | Used conceptually to promote Umbra RAG evidence into Stable Candidate guardrails. |
+| knowledge-curator | 1 | framework-operating-system, knowledge-mission | 2026-07-01 | Used conceptually to define unanswered-question and wrong-citation curation loop. |
 | skill-creator | 1 | framework-operating-system | 2026-06-29 | Used to guide creation of Security Intelligence skills. |
 | security-review | 1 | security-intelligence | 2026-06-29 | Refined into general reviewer that delegates SI depth to specialists. |
 | framework-reviewer | 1 | framework-operating-system | 2026-06-28 | Used to assess FOS health and drift. |

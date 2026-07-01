@@ -17,6 +17,9 @@ The framework may observe every execution, but it must not change itself automat
 | 10 similar missions with stable outcome | Consider capability/workflow formalization. |
 | 3 repeated token waste signals | Add backlog item or tighten trigger rule. |
 | 2 failed/blocked missions for same cause | Add risk note and validator checklist. |
+| 1 high-severity production correction | Add immediate recommendation and risk note. |
+| 1 real consumer project validates a capability | Mark capability as Stable Candidate, not Stable. |
+| 1 duplicate-data/RAG citation bug in production | Add canonical identity requirement to RAG checklists. |
 
 ## Promotion Workflow
 
@@ -26,3 +29,25 @@ The framework may observe every execution, but it must not change itself automat
 4. Ask user approval before implementation.
 5. If approved, update docs/rules/templates.
 6. Update `CHANGELOG.md`, `VERSION` when release-worthy, and FOS status.
+
+## Promotion Status
+
+| Status | Meaning |
+|--------|---------|
+| observed | Evidence captured; no framework behavior change yet. |
+| recommended | Concrete improvement proposed for user approval. |
+| approved | User approved implementation. |
+| implemented | Framework artifact changed and validated. |
+| rejected | Not adopted or superseded. |
+
+## Capability Promotion
+
+Capabilities move through:
+
+```text
+Idea -> Planned -> In Development -> Ready -> Stable Candidate -> Stable
+```
+
+`Ready` means the framework has a design and guardrails.
+`Stable Candidate` means at least one real consumer project produced evidence.
+`Stable` requires reusable checklists, validation examples and no open critical lessons from the consumer evidence.

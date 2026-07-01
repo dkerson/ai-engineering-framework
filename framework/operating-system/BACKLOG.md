@@ -5,6 +5,8 @@
 | Title | Description | Source | Impact | Effort | Priority | Status |
 |-------|-------------|--------|--------|--------|----------|--------|
 | MCP Connector Validation | User validates local MCP before plugin active promotion. | MCP Governance | High | Low | P0 | Proposed |
+| RAG Golden Question Evaluator | Create a repeatable evaluator for domain golden questions and expected canonical documents. | RAG + Evaluation Intelligence | High | Medium | P0 | Proposed |
+| RAG Duplicate Cluster Report | Provide a standard report/checklist for duplicate document clusters by canonical title/hash. | RAG Governance | High | Medium | P0 | Proposed |
 | RAG pgvector Path | postgres-plugin + vector extension for RAG indexing. | RAG + MCP | High | Medium | P1 | Proposed |
 | OCR Capability | Extract text from images and scanned PDFs. | Capability Architecture | Medium | Medium | P2 | RAG Ready | Proposed |
 | Plugin MCP Connectors | Implement real MCP integration for draft plugins incrementally. | Plugin Architecture | High | High | P1 | Plugin registry v2.8 | Proposed |

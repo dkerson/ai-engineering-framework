@@ -2,6 +2,7 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-07-01 | 2.22.0 | Codex | Execution Learning Loop + RAG Consumer Hardening | Turn real Umbra KB/RAG production lessons into reusable framework behavior | Learning loop, canonical document identity, golden questions, RAG Stable Candidate | rules, checklists, capabilities/rag, FOS ledgers |
 | 2026-06-30 | 2.21.0 | Codex | Execution Metrics | Enable future token savings reports with estimated percentages, retries avoided and errors avoided | EXECUTION_METRICS ledger, operational units, report percentages, WC/final response fields | rules, FOS ledger, token report, orchestrator, templates |
 | 2026-06-30 | 2.20.0 | Codex | Token Savings Report | Let users request token economy reports and evaluate framework efficiency | token savings rule, workflow, template, generated report, ledger updates | rules, workflows, templates, FOS reports, ledgers, orchestrator |
 | 2026-06-30 | 2.19.0 | Codex | Surface Routing & Execution Banner | Separate Cursor/Codex messaging and show framework activation before executable tasks | Surface detection, model recommendations by surface, execution banner, WC/final response fields | rules, orchestrator, token policy, workflows, context, templates |

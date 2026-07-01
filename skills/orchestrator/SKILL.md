@@ -24,6 +24,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Surface Routing & Execution Banner | Separar Cursor/Codex/desconhecido e exibir banner inicial do framework |
 | Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
 | No Hardcode | Evitar valores fixos que deveriam vir de banco, parametro, config, env, registry ou feature flag |
+| Execution Learning Loop | Registrar aprendizados reutilizaveis sem autoalterar o framework sem aprovacao |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
 | Domínios lógicos | Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
@@ -122,7 +123,8 @@ Detalhes: `workflows/modes.md`
    a. checar se o modo escolhido foi o menor modo seguro
    b. registrar usage/learning/token notes em `framework/operating-system/` somente quando houver sinal util
    c. registrar execution metrics conforme `rules/execution-metrics.md` quando a task for executavel
-   d. nunca alterar comportamento do framework sem aprovacao do usuario
+   d. aplicar `rules/execution-learning-loop.md` para capturar aprendizados reutilizaveis, anti-padroes e recomendacoes
+   e. nunca alterar comportamento do framework sem aprovacao do usuario
 13. ENTREGAR — templates/final-response.md
 14. DESCARTAR Working Context
 ```

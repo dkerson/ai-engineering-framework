@@ -19,6 +19,7 @@
 0i. **Pre-Execution Gate + Model Routing:** usar `rules/pre-execution-gate.md` e `rules/model-routing.md`; antes de qualquer task executavel, apresentar plano, modelo recomendado e pedir aprovacao explicita. Se a execucao exigir troca de modelo, pausar e pedir alteracao manual na superficie ativa antes de continuar.
 0j. **Surface Routing & Execution Banner:** usar `rules/surface-routing.md` e `rules/execution-banner.md`; identificar Cursor/Codex/desconhecido, exibir "Executando tarefa com AI Engineering Framework" e separar recomendação de modelo por superfície.
 0k. **Execution Metrics:** usar `rules/execution-metrics.md`; ao final de tasks executáveis, registrar baseline, actual units, percentual estimado, retries evitados e erros evitados em `framework/operating-system/EXECUTION_METRICS.md`.
+0l. **Execution Learning Loop:** usar `rules/execution-learning-loop.md`; ao final de tasks executaveis, registrar aprendizados reutilizaveis, anti-padroes, recomendacoes e candidatos a padrao sem salvar segredos ou alterar o framework sem aprovacao.
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
@@ -26,7 +27,7 @@
 5. Seguir o processo: Entender → detectar superfície → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovação → **parar ate aprovacao explicita** → Investigar → Implementar → Validar → Revisar → Entregar
 6. Manter **Working Context** durante a execução (`context/working-context.md`)
 6a. Avaliar **Context Health** em transições de fase; se poluído, trabalhar a partir de **Compacted Snapshot**
-7. Registrar Execution Intelligence somente quando houver sinal util (`framework/operating-system/MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`)
+7. Registrar Execution Intelligence somente quando houver sinal util (`framework/operating-system/MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`, `EXECUTION_METRICS.md`, `LEARNING.md`, `PATTERNS.md`, `ANTI_PATTERNS.md`, `RECOMMENDATIONS.md`)
 8. Terminar com `templates/final-response.md`
 
 SIL nunca implementa, nunca chama skills diretamente e nunca altera arquivos. Ele entrega um Mission Brief ao Orchestrator.

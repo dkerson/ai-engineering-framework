@@ -1,5 +1,26 @@
 # Changelog — AI Engineering Framework
 
+## [2.22.0] - 2026-07-01
+
+### Added
+
+- **Execution Learning Loop:** `rules/execution-learning-loop.md`
+- Checklist: `checklists/execution-learning.md`
+- RAG canonical document identity: `rules/rag/canonical-document-identity.md`
+- RAG golden questions: `checklists/rag/golden-questions.md`
+
+### Changed
+
+- RAG Intelligence promoted to **Stable Candidate v1.1.0** after Umbra KB/RAG consumer evidence.
+- RAG guidance now separates chunk, record, document and canonical document.
+- RAG production readiness now requires canonical identity, curation loop and golden-question validation.
+- FOS promotion criteria now include `observed`, `recommended`, `approved`, `implemented` and `rejected` statuses.
+
+### Preserved
+
+- The framework still cannot self-modify without explicit user approval.
+- Learning records must remain short, sanitized and free of secrets, full prompts and private payloads.
+
 ## [2.21.0] - 2026-06-30
 
 ### Adicionado

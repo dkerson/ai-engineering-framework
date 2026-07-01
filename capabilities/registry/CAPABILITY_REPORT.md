@@ -1,64 +1,57 @@
 # Capability Report
 
-> Responde perguntas naturais via COS · v2.10.0
+> Answers natural questions through COS. Updated after Umbra KB/RAG consumer evidence.
 
-## Quais Capabilities temos?
+## Current Capabilities
 
-**18 registradas:** 14 Stable (domínios + COS) · 1 Ready (RAG) · 3 Planned · 3 Idea.
+18 registered capabilities:
 
-Ver `CAPABILITY_STATUS.md` para lista completa.
+- 14 Stable domain/governance capabilities.
+- 1 Stable Candidate: RAG Intelligence v1.1.0.
+- 3 Planned.
+- 3 Idea.
 
-## Quais estão prontas?
+See `CAPABILITY_STATUS.md` for the full list.
 
-- **Ready for projects:** RAG Intelligence v1.0.0
-- **Stable (em uso via Orchestrator):** Development, Data, Product & Design, Growth & Brand, Infrastructure, Plugin, FOS, SIL, Knowledge Hub, Mission, Product Excellence/Evolution, Continuous Improvement, COS
+## Ready Or Candidate Capabilities
 
-## Quais ainda faltam?
+- **Stable Candidate:** RAG Intelligence v1.1.0, validated by Umbra KB/RAG and awaiting one production validation cycle for Stable.
+- **Stable:** Development, Data, Product & Design, Growth & Brand, Infrastructure, Plugin, FOS, SIL, Knowledge Hub, Mission, Product Excellence/Evolution, Continuous Improvement and COS.
 
-| Prioridade | Capability | Status |
-|------------|------------|--------|
+## Missing Or Planned
+
+| Priority | Capability | Status |
+|----------|------------|--------|
 | P1 | OCR Intelligence | Planned |
 | P1 | Evaluation Intelligence | Planned |
 | P2 | Memory Intelligence | Planned |
 | P3 | Vision, Voice, Agents | Idea |
 
-Ver `roadmap/CAPABILITY_ROADMAP.md`.
+## In Development
 
-## Quais estão em desenvolvimento?
+None currently. RAG moved from Ready to Stable Candidate after first consumer evidence.
 
-Nenhuma em **In Development** no momento. RAG concluiu fase Ready.
+## Consumer Projects
 
-## Quais projetos utilizam cada Capability?
+| Project | Capabilities |
+|---------|--------------|
+| umbra | development, data, infrastructure, product-design, plugin, rag |
+| irisys | development, data, growth-brand |
+| rifsmart | development |
 
-| Projeto | Capabilities (declaradas) |
-|---------|---------------------------|
-| umbra | development, data, infrastructure, product-design, plugin (via PROJECT_CAPABILITIES) |
-| irisys | development, data, growth-brand (planejado RAG) |
-| rifsmart | development (mínimo) |
+Umbra KB/RAG produced reusable lessons: canonical document identity, duplicate document handling, curation flow and golden questions.
 
-**Nenhum projeto consome RAG ainda** — framework-only.
+## Does The Framework Support RAG?
 
-Ver `infrastructure/projects/*/PROJECT_CAPABILITIES.md`.
+Yes. RAG is Stable Candidate v1.1.0. New RAG consumers should run a Capability Mission, define canonical document identity, implement curation, and validate golden questions before production.
 
-## Quais possuem maior impacto?
+## Next Recommended Capability
 
-1. RAG Intelligence — assistentes, help centers, documentação
-2. OCR Intelligence — desbloqueia PDFs escaneados para RAG
-3. Data Intelligence — já Stable; base para BI e RAG híbrido
+Evaluation Intelligence should move up because RAG Stable requires repeatable golden-question evaluation.
 
-## O Framework suporta RAG?
-
-**Sim.** Capability Ready v1.0.0. Consumo em projeto requer Capability Mission aprovada — não implementação ad hoc.
-
-## O Framework suporta OCR?
-
-**Planejado.** Status Planned; depende de RAG para ingestão.
-
-## Próxima Capability recomendada
-
-**OCR Intelligence** — impacto alto, esforço médio, dependência RAG satisfeita (Ready).
-
-## Referências
+## References
 
 - `skills/capability-manager/SKILL.md`
 - `examples/capability-operating-system.md`
+- `rules/rag/canonical-document-identity.md`
+- `checklists/rag/golden-questions.md`
