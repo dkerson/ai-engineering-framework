@@ -18,7 +18,8 @@ Default model recommendation for cost-sensitive usage:
 
 ```text
 Cursor: Composer 2.5 Standard -> Auto -> stronger explicit model
-Codex: GPT-5.4-Mini -> GPT-5.5 -> GPT-5.3-Codex-Spark when latency is explicitly more important than depth
+Codex: GPT-5.3-Codex-Spark -> GPT-5.4-Mini -> GPT-5.4 -> GPT-5.5
+Codex reasoning: Baixa -> Média -> Alta -> Altíssimo
 ```
 
 The Orchestrator must detect the active surface, choose the cheapest safe model/reasoning
@@ -56,7 +57,7 @@ when the task has high ambiguity, auth/security/database/production risk, multi-
 scope or repeated failure risk.
 
 For high-risk full missions in Codex, prefer `GPT-5.5` with `Alta` reasoning. Use
-`Altissimo` for Technical Council, production, security, database migrations, RAG
+`Altíssimo` for Technical Council, production, security, database migrations, RAG
 architecture, permission-aware retrieval or deploy decisions.
 
 ## Hard Guards

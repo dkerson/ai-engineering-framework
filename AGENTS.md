@@ -9,7 +9,7 @@
 
 0. **Natural Language Mission Engine (NLME):** interpretar linguagem natural → Mission Package → Structured Prompt (interno)
 0a. **Strategic Intelligence Layer (SIL):** refinar Mission Brief a partir do NLME
-0b. **Fast Path / Token Budget:** antes do NLME completo, usar `rules/token-budget-policy.md` para pedidos simples e baixo risco; no Codex, alinhar modelo/raciocinio com `docs/CODEX_MODEL_SELECTION.md`
+0b. **Fast Path / Token Budget:** antes do NLME completo, usar `rules/token-budget-policy.md` para pedidos simples e baixo risco; no Codex, alinhar modelo/raciocínio com `docs/CODEX_MODEL_SELECTION.md`
 0c. **Context Hygiene:** durante a execução, usar `rules/context-hygiene.md` para avaliar poluição de contexto e criar Compacted Snapshot quando necessário
 0d. **Execution Loop Control:** usar `rules/execution-loop-control.md`; após 2 falhas com a mesma hipótese, parar de repetir e replanejar
 0e. **Frontend Runtime Validation:** em telas/rotas/HTML, usar `rules/frontend-runtime-validation.md` para validar porta, cache, console, network e evidência visual/DOM
@@ -187,7 +187,7 @@ O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda
 | Execution Metrics | Registra metricas por execucao para percentual estimado, retries e erros evitados |
 | Token Savings Report | Gera report estimado/medido de economia de tokens usando ledgers do FOS |
 | Pre-Execution Gate | Bloqueia a primeira acao executavel ate banner, plano, modelo recomendado e aprovacao explicita |
-| Model Routing Policy | Recomenda Composer 2.5 Standard, Auto ou modelo forte conforme custo, risco e chance de retrabalho |
+| Model Routing Policy | Recomenda por superficie: Cursor Composer/Auto; Codex `GPT-5.3-Codex-Spark`, `GPT-5.4-Mini`, `GPT-5.4` ou `GPT-5.5` com raciocínio `Baixa`, `Média`, `Alta` ou `Altíssimo` conforme custo, risco e chance de retrabalho |
 | Surface Routing Policy | Separa mensagens e modelos entre Cursor, Codex e superficie desconhecida |
 | Execution Banner | Exibe mensagem inicial padronizada com superficie, modelo, modo e plano |
 | Context Hygiene Protocol | Avalia contexto poluido, cria Compacted Snapshot e preserva apenas o que guia execucao |

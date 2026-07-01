@@ -90,7 +90,7 @@ Detalhes: `workflows/modes.md`
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
 4. APLICAR PRE-EXECUTION GATE (`rules/pre-execution-gate.md`) + MODEL ROUTING (`rules/model-routing.md`)
-   a. recomendar modelo conforme superficie detectada: Cursor (Composer/Auto) ou Codex (gpt-5.4-mini/gpt-5.5)
+   a. recomendar modelo conforme superficie detectada: Cursor (Composer/Auto) ou Codex (`GPT-5.3-Codex-Spark`, `GPT-5.4-Mini`, `GPT-5.4`, `GPT-5.5`) com raciocínio `Baixa`, `Média`, `Alta` ou `Altíssimo`
    b. definir gatilhos objetivos de escalonamento durante a execucao
    c. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar
 5. CRIAR Working Context (context/working-context.md), incluindo Pre-Execution Gate e Model Routing
@@ -382,7 +382,7 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - Execution Banner antes de task executavel
 - Plano + modelo recomendado antes de executar task
 - Cursor: Composer 2.5 Standard como recomendacao economica padrao; Auto/modelo forte somente com gatilho objetivo
-- Codex: gpt-5.4-mini como recomendacao economica padrao; gpt-5.5 para risco/complexidade
+- Codex: `GPT-5.4-Mini` como recomendacao economica padrao; `GPT-5.4` para trabalho medio; `GPT-5.5` para risco/complexidade; `GPT-5.3-Codex-Spark` apenas quando velocidade e baixo risco forem mais importantes que profundidade
 - Fast Path antes do NLME completo quando o pedido for simples e baixo risco
 - Menor número de skills no pipeline
 - Reutilizar Working Context entre skills

@@ -63,9 +63,11 @@ Por favor altere o modelo no Cursor para [modelo] e me avise quando estiver pron
 
 Use termos como:
 
-- `gpt-5.4-mini`
-- `gpt-5.5`
-- `gpt-5.3-codex-spark`, se disponivel
+- `GPT-5.3-Codex-Spark`
+- `GPT-5.4-Mini`
+- `GPT-5.4`
+- `GPT-5.5`
+- raciocínio `Baixa`, `Média`, `Alta` ou `Altíssimo`
 - `/model`
 - `config.toml`
 - seletor da IDE Codex

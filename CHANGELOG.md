@@ -50,7 +50,7 @@
 
 ### Alterado
 
-- Model Routing agora recomenda modelos por superficie: Cursor usa Composer/Auto; Codex usa gpt-5.4-mini/gpt-5.5
+- Model Routing agora recomenda modelos por superficie: Cursor usa Composer/Auto; Codex usa `GPT-5.3-Codex-Spark`, `GPT-5.4-Mini`, `GPT-5.4` ou `GPT-5.5` com raciocínio `Baixa`, `Média`, `Alta` ou `Altíssimo`
 - Orchestrator passa a detectar superficie antes de recomendar modelo
 - Working Context e resposta final registram superficie, confianca e se o modelo atual e detectavel
 - Token Budget, Token Economy e processo universal passam a exigir Surface Routing antes do Model Routing
@@ -65,7 +65,7 @@
 ### Adicionado
 
 - **Model Routing & Approval Gate:** `rules/model-routing.md`
-- Recomendacao de modelo antes da execucao: Composer 2.5 Standard, Auto ou modelo forte conforme custo/risco
+- Recomendacao de modelo antes da execucao: Composer 2.5 Standard, Auto ou modelos Codex do seletor atual conforme custo/risco
 - Gate obrigatorio de plano + modelo recomendado + aprovacao do usuario antes de executar tasks
 
 ### Alterado

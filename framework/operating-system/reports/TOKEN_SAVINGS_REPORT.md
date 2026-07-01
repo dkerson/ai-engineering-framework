@@ -41,7 +41,7 @@
 | Menor modo seguro | Orchestrator e Token Budget Policy | Alto |
 | Context Hygiene / Compacted Snapshot | `TOKEN_METRICS.md` registra contexto poluido como desperdicio evitavel | Alto |
 | Execution Loop Control | guardrails contra repeticao de hipotese e comandos | Alto |
-| Model Routing | Composer 2.5 Standard / gpt-5.4-mini como defaults economicos | Medio-alto |
+| Model Routing | Composer 2.5 Standard / `GPT-5.4-Mini` como defaults economicos; `GPT-5.4` e `GPT-5.5` por risco | Medio-alto |
 | Surface Routing | evita recomendacao errada entre Cursor e Codex | Medio |
 | Ledgers leves | Mission Ledger, Skill Usage e Token Metrics usam metadados curtos | Medio |
 | Report sob demanda | `rules/token-savings-report.md` e workflow dedicado | Medio |
