@@ -84,4 +84,4 @@ Para cada nova skill, criar ou atualizar:
 
 - Template: `skills/_template/SKILL.md`
 - Arquitetura: `docs/ARCHITECTURE.md`
-- Regeneração em lote: `tools/generate_framework.py`
+- Geracao incremental: usar `skills/_template/SKILL.md`; geradores em lote legados foram removidos

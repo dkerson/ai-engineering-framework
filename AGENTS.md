@@ -12,19 +12,23 @@
 0b. **Fast Path / Token Budget:** antes do NLME completo, usar `rules/token-budget-policy.md` para pedidos simples e baixo risco; no Codex, alinhar modelo/raciocínio com `docs/CODEX_MODEL_SELECTION.md`
 0c. **Context Hygiene:** durante a execução, usar `rules/context-hygiene.md` para avaliar poluição de contexto e criar Compacted Snapshot quando necessário
 0d. **Execution Loop Control:** usar `rules/execution-loop-control.md`; após 2 falhas com a mesma hipótese, parar de repetir e replanejar
+0d1. **Execution Memory:** usar `rules/execution-memory.md`; antes de tasks nao triviais, consultar `framework/operating-system/EXECUTION_MEMORY_INDEX.md` para evitar repetir erros e leituras desnecessarias
+0d2. **Evidence Anchoring:** usar `rules/evidence-anchoring.md`; conclusoes devem separar observado, inferido e hipotese
+0d3. **Post-Mission Evaluation:** usar `rules/post-mission-evaluation.md`; ao fim de tasks executaveis, avaliar outcome, validacao, eficiencia e aprendizado reutilizavel
 0e. **Frontend Runtime Validation:** em telas/rotas/HTML, usar `rules/frontend-runtime-validation.md` para validar porta, cache, console, network e evidência visual/DOM
 0f. **Regression Boundary:** antes de alterar superfície compartilhada, usar `rules/regression-boundary.md` para definir escopo, fora de escopo e canários
 0g. **No Hardcode Governance:** usar `rules/no-hardcode.md`; valores variáveis devem vir de banco, parâmetro, config, env, registry ou feature flag
 0h. **MCP Portability:** usar `rules/mcp-portability.md`; templates MCP não podem depender de paths de outro usuário nem conter secrets reais
-0i. **Pre-Execution Gate + Model Routing:** usar `rules/pre-execution-gate.md` e `rules/model-routing.md`; antes de qualquer task executavel, apresentar plano, modelo recomendado e pedir aprovacao explicita. Se a execucao exigir troca de modelo, pausar e pedir alteracao manual na superficie ativa antes de continuar.
+0i. **Pre-Execution Gate + Model Routing:** usar `rules/pre-execution-gate.md` e `rules/model-routing.md`; antes de qualquer task executavel, apresentar Execution Target Map (repo/sistema/banco/ambiente/superficies), plano, modelo recomendado e pedir aprovacao explicita. Se a execucao exigir troca de modelo, pausar e pedir alteracao manual na superficie ativa antes de continuar.
 0j. **Surface Routing & Execution Banner:** usar `rules/surface-routing.md` e `rules/execution-banner.md`; identificar Cursor/Codex/desconhecido, exibir "Executando tarefa com AI Engineering Framework" e separar recomendação de modelo por superfície.
 0k. **Execution Metrics:** usar `rules/execution-metrics.md`; ao final de tasks executáveis, registrar baseline, actual units, percentual estimado, retries evitados e erros evitados em `framework/operating-system/EXECUTION_METRICS.md`.
 0l. **Execution Learning Loop:** usar `rules/execution-learning-loop.md`; ao final de tasks executaveis, registrar aprendizados reutilizaveis, anti-padroes, recomendacoes e candidatos a padrao sem salvar segredos ou alterar o framework sem aprovacao.
+0m. **Team Telemetry:** quando solicitado report de uso do time, usar `rules/team-telemetry.md` e `tools/collect_execution_metrics.py`; nunca publicar prompts, secrets, codigo longo ou dados privados.
 1. **Sempre** iniciar lendo `skills/orchestrator/SKILL.md`
 2. O **Orchestrator** é o único agente que conversa com o usuário
 3. Nenhuma skill inicia execução por conta própria — todo fluxo passa pelo Orchestrator
 4. Respeitar `rules/strategic-intelligence-layer.md`, `rules/hierarchical-orchestration.md` e `rules/token-economy.md`
-5. Seguir o processo: Entender → detectar superfície → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovação → **parar ate aprovacao explicita** → Investigar → Implementar → Validar → Revisar → Entregar
+5. Seguir o processo: Entender → detectar superfície → Classificar → Escolher modo → mapear alvo de execucao → Planejar + recomendar modelo → exibir banner + pedir aprovação → **parar ate aprovacao explicita** → Investigar → Implementar → Validar → Revisar → Entregar
 6. Manter **Working Context** durante a execução (`context/working-context.md`)
 6a. Avaliar **Context Health** em transições de fase; se poluído, trabalhar a partir de **Compacted Snapshot**
 7. Registrar Execution Intelligence somente quando houver sinal util (`framework/operating-system/MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`, `EXECUTION_METRICS.md`, `LEARNING.md`, `PATTERNS.md`, `ANTI_PATTERNS.md`, `RECOMMENDATIONS.md`)
@@ -186,11 +190,15 @@ O FOS registra, mede, audita e recomenda. Nunca implementa automaticamente; toda
 | Promotion Criteria | Define quando aprendizado vira recomendacao |
 | Token Budget Policy | Decide Fast Path vs NLME completo |
 | Execution Metrics | Registra metricas por execucao para percentual estimado, retries e erros evitados |
+| Team Telemetry | Consolida uso por projeto/time em repo separado de telemetria |
+| Execution Memory | Recupera aprendizados de execucoes anteriores antes de repetir trabalho |
+| Evidence Anchoring | Separa fatos observados, inferencias e hipoteses para reduzir alucinacao |
+| Post-Mission Evaluation | Avalia outcome, validacao, eficiencia e aprendizado reutilizavel ao fim da missao |
 | Token Savings Report | Gera report estimado/medido de economia de tokens usando ledgers do FOS |
 | Pre-Execution Gate | Bloqueia a primeira acao executavel ate banner, plano, modelo recomendado e aprovacao explicita |
 | Model Routing Policy | Recomenda por superficie: Cursor Composer/Auto; Codex `GPT-5.3-Codex-Spark`, `GPT-5.4-Mini`, `GPT-5.4` ou `GPT-5.5` com raciocínio `Baixa`, `Média`, `Alta` ou `Altíssimo` conforme custo, risco e chance de retrabalho |
 | Surface Routing Policy | Separa mensagens e modelos entre Cursor, Codex e superficie desconhecida |
-| Execution Banner | Exibe mensagem inicial padronizada com superficie, modelo, modo e plano |
+| Execution Banner | Exibe mensagem inicial padronizada com superficie, alvo de execucao, modelo, modo e plano |
 | Context Hygiene Protocol | Avalia contexto poluido, cria Compacted Snapshot e preserva apenas o que guia execucao |
 | Execution Loop Control | Bloqueia repetição de tentativa sem evidência nova e força replanejamento após falhas repetidas |
 | Frontend Runtime Validation | Garante validação na porta/URL corretas, com cache/bundle, console, network e DOM/screenshot coerentes |
@@ -352,14 +360,20 @@ Processo (não skill): `workflows/technical-council.md`
 - Pre-Execution Gate antes de qualquer task executavel
 - Surface Routing antes do Model Routing
 - Execution Banner antes de task executavel
-- Plano + modelo recomendado antes de executar
+- Plano + Execution Target Map + modelo recomendado antes de executar
 - Fast Path antes do NLME completo quando seguro
 - Working Context — sem releitura
 - Context Hygiene — compactar contexto poluido antes de continuar
+- Execution Memory — consultar aprendizados anteriores antes de task nao trivial
+- Evidence Anchoring — ancorar conclusoes em evidencia ou declarar hipotese
+- Post-Mission Evaluation — registrar aprendizado reutilizavel sem inflar ledgers
 - Council: máx. 150 palavras/skill; usuário vê só decisão consolidada
 
 `rules/token-economy.md` · `rules/token-budget-policy.md` · `rules/pre-execution-gate.md` · `rules/surface-routing.md` · `rules/model-routing.md` · `rules/execution-banner.md` · `rules/context-hygiene.md` · `rules/execution-loop-control.md` · `rules/frontend-runtime-validation.md` · `rules/regression-boundary.md` · `rules/no-hardcode.md` · `rules/mcp-portability.md` · `rules/hierarchical-orchestration.md`
 `rules/execution-metrics.md`
+`rules/execution-memory.md`
+`rules/evidence-anchoring.md`
+`rules/post-mission-evaluation.md`
 `rules/token-savings-report.md`
 
 ## Resposta final

@@ -32,9 +32,9 @@
 | OCR Intelligence | — | Planned |
 | Vision Intelligence | — | Idea |
 | Voice Intelligence | — | Idea |
-| Memory Intelligence | — | Planned |
+| Memory Intelligence | — | Planned (operational baseline) |
 | Agents Intelligence | — | Idea |
-| Evaluation Intelligence | — | Planned |
+| Evaluation Intelligence | — | Planned (operational baseline) |
 
 ## Resumo
 

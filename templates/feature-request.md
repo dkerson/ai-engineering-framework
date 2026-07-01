@@ -1,4 +1,4 @@
-<!-- Template: feature-request — Personal AI Framework -->
+<!-- Template: feature-request — AI Engineering Framework -->
 
 # Feature Request
 

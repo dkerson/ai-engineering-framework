@@ -1,4 +1,4 @@
-<!-- Template: root-cause-analysis — Personal AI Framework -->
+<!-- Template: root-cause-analysis — AI Engineering Framework -->
 
 # Root Cause Analysis
 

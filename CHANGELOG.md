@@ -1,5 +1,53 @@
 # Changelog — AI Engineering Framework
 
+## [2.24.0] - 2026-07-01
+
+### Adicionado
+
+- **Team Telemetry:** `rules/team-telemetry.md` e `docs/TEAM_TELEMETRY.md`
+- Coletor `tools/collect_execution_metrics.py` para gerar report local e consolidar uso por projeto/time em repo externo
+- Reports gerados: `framework/operating-system/reports/USAGE_REPORT.md` e `USAGE_REPORT.json`
+- Template `templates/framework/usage-report.md`
+- Publicacao opcional para repo de telemetria com contributors anonimizados por padrao
+
+### Alterado
+
+- `AGENTS.md`, indice de docs e reports do FOS passam a apontar o fluxo de telemetria do time
+- Roadmap, backlog, recomendacoes e ledgers passam a tratar automacao de metricas como baseline implementado
+
+### Preservado
+
+- Os reports continuam usando unidades operacionais estimadas, nao tokens reais quando a superficie nao fornece telemetria confiavel
+- O coletor nao publica prompts, secrets, codigo longo ou dados privados; publica apenas ledgers sanitizados e agregados
+- Repo de telemetria deve ser separado do repositorio do framework/produto
+
+## [2.23.0] - 2026-07-01
+
+### Adicionado
+
+- **Execution Memory:** `rules/execution-memory.md` e `framework/operating-system/EXECUTION_MEMORY_INDEX.md`
+- **Evidence Anchoring:** `rules/evidence-anchoring.md` para separar fatos observados, inferencias e hipoteses
+- **Post-Mission Evaluation:** `rules/post-mission-evaluation.md` e `templates/mission/post-mission-evaluation.md`
+- Promotion review ativa a cada 10 missoes reais, com revisao antecipada para sinais criticos
+
+### Alterado
+
+- Orchestrator passa a consultar memoria antes de tasks nao triviais e a avaliar aprendizado reutilizavel ao final
+- Working Context e resposta final passam a registrar Execution Memory, Evidence Anchoring e Post-Mission Evaluation
+- FOS passa a ter indice de memoria operacional para evitar repetir erros e leituras desnecessarias
+- Headers de templates legados passam a usar AI Engineering Framework
+- Pre-Execution Gate passa a exigir Execution Target Map antes da aprovacao: workspace/repo, sistema, ambiente, banco, servicos/APIs, frontend/rotas, arquivos candidatos e fora de escopo
+
+### Preservado
+
+- O framework continua sem auto-mutacao: memoria recomenda, mas mudancas estruturais continuam dependendo de aprovacao do usuario
+- Ledgers continuam curtos e sem prompts completos, secrets, codigo longo ou dados privados
+- Alias de caminho `Personal-AI/` continua documentado para compatibilidade
+
+### Removido
+
+- `tools/generate_framework.py`, gerador em lote legado que podia recriar artefatos com padroes antigos
+
 ## [2.22.0] - 2026-07-01
 
 ### Added

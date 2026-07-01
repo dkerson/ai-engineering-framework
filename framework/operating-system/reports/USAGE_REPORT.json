@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "scope": "local",
+    "project": "framework",
+    "team": "Otus7",
+    "generated_at": "2026-07-01 20:12:05"
+  },
+  "scope": "local",
+  "project": "framework",
+  "team": "Otus7",
+  "generated_at": "2026-07-01 20:12:05",
+  "mission_count": 14,
+  "done_count": 14,
+  "execution_count": 10,
+  "baseline_units": 306,
+  "actual_units": 201,
+  "estimated_savings_pct": 34,
+  "retries_avoided": 5,
+  "errors_avoided": 20,
+  "promotion_review_due": false,
+  "promotion_review_reason": "6 mission(s) until next 10-mission review.",
+  "mode_counts": {
+    "Review": 8,
+    "Standard": 6
+  },
+  "surface_counts": {
+    "Codex": 10
+  },
+  "model_counts": {
+    "GPT-5.5 + Raciocinio Alta": 4,
+    "gpt-5.4-mini": 2,
+    "GPT-5.4-Mini + Raciocinio Media": 2,
+    "GPT-5.5": 1,
+    "gpt-5.5": 1
+  },
+  "skill_counts": {
+    "orchestrator": 7,
+    "rag-evaluator": 1,
+    "knowledge-curator": 1,
+    "skill-creator": 1,
+    "security-review": 1,
+    "framework-reviewer": 1,
+    "framework-optimizer": 1
+  },
+  "waste_signals": [
+    "MCP examples used older local/package assumptions",
+    "Existing rules covered secrets but not functional hardcode",
+    "Repeated frontend attempts lacked hard loop breaker and runtime proof",
+    "Context pollution lacked explicit operational handling",
+    "Inventory drift found; no script yet",
+    "Model routing still used Cursor-only language in some paths",
+    "Token metrics were qualitative and had no report workflow",
+    "Token savings reports lacked structured percentage/retry/error fields",
+    "Ledgers were passive and not retrieved before similar missions",
+    "Legacy batch generator could recreate outdated framework artifacts",
+    "Team usage reports would require manual counting across contributors and projects"
+  ],
+  "savings_signals": [
+    "Remote OAuth and npx templates reduce local setup failures",
+    "Hardcode scanner and checklist reduce repeated manual review and future rework",
+    "Attempt Ledger and Boundary Map reduce repeated commands, wrong-port validation and collateral regressions",
+    "Compacted Snapshot prevents stale outputs from guiding later phases",
+    "No code scan beyond framework docs",
+    "Surface split prevents wrong model guidance between Cursor and Codex",
+    "Adds report generation with confidence level and avoids fake exact token counts",
+    "Adds baseline vs actual units for estimated savings reports",
+    "Execution Memory, Evidence Anchoring and Post-Mission Evaluation reduce repeated reads, unsupported conclusions and repeated mistakes",
+    "Removing generator prevents accidental large stale rewrites; incremental skill template remains",
+    "Collector consolidates existing ledgers into local, project and team reports without exposing prompts or secrets"
+  ],
+  "data_quality": {
+    "measurement_type": "estimated operational units, not real tokens",
+    "confidence": "Media",
+    "privacy": "No prompts, secrets, long code excerpts or private data"
+  }
+}

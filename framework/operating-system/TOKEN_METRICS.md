@@ -23,6 +23,9 @@
 | 2026-06-30 | Surface Routing & Execution Banner | Standard | 8 | 1 | rg/git diff | Model routing still used Cursor-only language in some paths | Surface split prevents wrong model guidance between Cursor and Codex |
 | 2026-06-30 | Token Savings Report | Standard | 7 | 1 | rg/git diff | Token metrics were qualitative and had no report workflow | Adds report generation with confidence level and avoids fake exact token counts |
 | 2026-06-30 | Execution Metrics | Standard | 6 | 1 | rg/git diff | Token savings reports lacked structured percentage/retry/error fields | Adds baseline vs actual units for estimated savings reports |
+| 2026-07-01 | Execution Memory & Evaluation Baseline | Review | 18 | 1 | rg/git diff | Ledgers were passive and not retrieved before similar missions | Execution Memory, Evidence Anchoring and Post-Mission Evaluation reduce repeated reads, unsupported conclusions and repeated mistakes |
+| 2026-07-01 | Legacy generator cleanup | Standard | 6 | 1 | rg/git diff | Legacy batch generator could recreate outdated framework artifacts | Removing generator prevents accidental large stale rewrites; incremental skill template remains |
+| 2026-07-01 | Team Telemetry Collector | Standard | 10 | 1 | collector local run/temp publish/rg/git diff | Team usage reports would require manual counting across contributors and projects | Collector consolidates existing ledgers into local, project and team reports without exposing prompts or secrets |
 
 ## Waste Signals
 
@@ -41,3 +44,7 @@
 - Validation scoped to changed module.
 - Final response summarized instead of replaying all analysis.
 - Compacted Snapshot becomes the active context source after pollution is detected.
+- Execution Memory is checked before non-trivial tasks.
+- Evidence Anchoring marks unsupported conclusions as hypotheses.
+- Promotion review runs every 10 real missions.
+- Team Telemetry aggregates sanitized ledger summaries across projects/contributors.

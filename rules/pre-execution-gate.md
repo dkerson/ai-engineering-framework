@@ -37,11 +37,34 @@ Antes da primeira acao executavel:
 
 1. detectar superficie conforme `rules/surface-routing.md`;
 2. classificar tipo, dominio e modo;
-3. aplicar `rules/model-routing.md`;
-4. criar plano curto e verificavel;
-5. exibir `rules/execution-banner.md`;
-6. perguntar `Posso seguir com este plano?`;
-7. parar a execucao ate aprovacao explicita.
+3. montar Execution Target Map com repositorio, sistema, banco, ambiente e superficies afetadas quando aplicavel;
+4. aplicar `rules/model-routing.md`;
+5. criar plano curto e verificavel;
+6. exibir `rules/execution-banner.md`;
+7. perguntar `Posso seguir com este plano?`;
+8. parar a execucao ate aprovacao explicita.
+
+## Execution Target Map
+
+Todo plano executavel deve declarar onde a acao vai acontecer antes da aprovacao.
+
+Campos obrigatorios no plano:
+
+```markdown
+## Onde vou atuar
+- Workspace/repo: [path ou nome]
+- Projeto/sistema: [nome ou "nao identificado"]
+- Ambiente: [local/dev/homolog/producao/nao aplicavel]
+- Banco(s): [nome(s) ou "nenhum"]
+- Servicos/APIs: [nome(s) ou "nenhum"]
+- Frontend/rotas/telas: [alvos ou "nenhum"]
+- Arquivos/areas candidatas: [lista curta ou "a descobrir na investigacao aprovada"]
+- Fora de escopo: [o que nao sera alterado]
+```
+
+Se algum campo nao for conhecido antes da investigacao, declarar como `a confirmar` e explicar qual sera a primeira leitura/comando aprovado para confirmar.
+
+Para alteracoes em banco, producao, auth, permissao, tenant, pagamento, deploy, MCP ou integracao externa, o campo alvo deve ser explicito o bastante para o usuario entender o risco antes de aprovar.
 
 ## Aprovacao explicita
 
@@ -72,6 +95,7 @@ Registrar em toda task executavel:
 - Banner exibido: [sim|nao]
 - Plano apresentado: [sim|nao]
 - Modelo recomendado: [sim|nao]
+- Execution Target Map apresentado: [sim|nao]
 - Pergunta de aprovacao: [sim|nao]
 - Aprovacao explicita recebida: [pendente|sim|nao aplicavel]
 - Frase de aprovacao:

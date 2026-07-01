@@ -2,6 +2,8 @@
 
 | Date | Version | Responsible | What | Motivation | Impact | Files |
 |------|---------|-------------|------|------------|--------|-------|
+| 2026-07-01 | 2.24.0 | Codex | Team Telemetry Collector | Let the Otus7 team aggregate framework usage, estimated savings and learning signals across contributors/projects | Local reports, optional external telemetry repo, anonymized contributor snapshots, project/team summaries | tools, docs, rules, report template, FOS reports, ledgers |
+| 2026-07-01 | 2.23.0 | Codex | Execution Memory & Evaluation Baseline | Turn passive ledgers into retrievable learning and reduce repeated errors/hallucinations | Execution Memory retrieval, Evidence Anchoring, Post-Mission Evaluation, 10-mission promotion cadence | rules, FOS memory index, orchestrator, context, templates, COS |
 | 2026-07-01 | 2.22.0 | Codex | Execution Learning Loop + RAG Consumer Hardening | Turn real Umbra KB/RAG production lessons into reusable framework behavior | Learning loop, canonical document identity, golden questions, RAG Stable Candidate | rules, checklists, capabilities/rag, FOS ledgers |
 | 2026-06-30 | 2.21.0 | Codex | Execution Metrics | Enable future token savings reports with estimated percentages, retries avoided and errors avoided | EXECUTION_METRICS ledger, operational units, report percentages, WC/final response fields | rules, FOS ledger, token report, orchestrator, templates |
 | 2026-06-30 | 2.20.0 | Codex | Token Savings Report | Let users request token economy reports and evaluate framework efficiency | token savings rule, workflow, template, generated report, ledger updates | rules, workflows, templates, FOS reports, ledgers, orchestrator |

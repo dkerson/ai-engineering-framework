@@ -31,6 +31,16 @@ Antes de executar qualquer task, o Orchestrator deve apresentar:
 1. ...
 2. ...
 
+## Onde vou atuar
+- Workspace/repo: [path ou nome]
+- Projeto/sistema: [nome ou "nao identificado"]
+- Ambiente: [local/dev/homolog/producao/nao aplicavel]
+- Banco(s): [nome(s) ou "nenhum"]
+- Servicos/APIs: [nome(s) ou "nenhum"]
+- Frontend/rotas/telas: [alvos ou "nenhum"]
+- Arquivos/areas candidatas: [lista curta ou "a descobrir na investigacao aprovada"]
+- Fora de escopo: [o que nao sera alterado]
+
 ## Modelo recomendado
 - Superficie: [Cursor | Codex | Desconhecida]
 - Modelo: [Composer 2.5 Standard | Auto | GPT-5.3-Codex-Spark | GPT-5.4-Mini | GPT-5.4 | GPT-5.5 | modelo forte especifico]

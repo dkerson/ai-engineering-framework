@@ -1,4 +1,4 @@
-<!-- Template: release-notes — Personal AI Framework -->
+<!-- Template: release-notes — AI Engineering Framework -->
 
 # Release Notes — v[X.Y.Z]
 

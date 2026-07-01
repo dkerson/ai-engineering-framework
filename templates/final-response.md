@@ -15,6 +15,16 @@
 2. [Passo 2]
 ...
 
+## Onde atuei
+- Workspace/repo:
+- Projeto/sistema:
+- Ambiente:
+- Banco(s):
+- Servicos/APIs:
+- Frontend/rotas/telas:
+- Arquivos/areas:
+- Fora de escopo:
+
 ## Superficie
 - Detectada:
 - Confianca:
@@ -22,6 +32,7 @@
 
 ## Modelo recomendado
 - Modelo:
+- Raciocínio recomendado:
 - Motivo:
 - Troca solicitada durante execução: [sim/não + motivo]
 - Aprovação do plano: [sim/não/não aplicável]
@@ -53,8 +64,14 @@
 ## Validações executadas
 - [ ] [comando ou verificação] — [resultado]
 
+## Evidencias
+- Observado:
+- Inferido:
+- Hipoteses/limites:
+
 ## Token Economy (quando aplicável)
 - Fast Path considerado:
+- Execution Memory:
 - Skills evitadas:
 - Arquivos evitados/reutilizados:
 - Context Hygiene:
@@ -63,6 +80,14 @@
 - Retries avoided:
 - Errors avoided:
 - Confidence:
+
+## Post-Mission Evaluation (quando aplicavel)
+- Outcome:
+- Validation fit:
+- Token efficiency:
+- Reusable learning:
+- Memory index update:
+- Promotion candidate:
 
 ## Resultado
 [Estado atual: concluído / parcial / bloqueado + motivo]

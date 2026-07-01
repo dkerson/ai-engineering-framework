@@ -21,6 +21,30 @@ The framework may observe every execution, but it must not change itself automat
 | 1 real consumer project validates a capability | Mark capability as Stable Candidate, not Stable. |
 | 1 duplicate-data/RAG citation bug in production | Add canonical identity requirement to RAG checklists. |
 
+## Active Review Cadence
+
+Run a promotion review every 10 real missions.
+
+Early review is allowed when any critical signal appears:
+
+- 2 failed or blocked missions for the same cause;
+- 3 repeated token waste signals;
+- 2 repeated hallucination/evidence failures;
+- 2 repeated validations that passed but did not prove the real outcome;
+- 1 high-risk security, data, production or authorization anti-pattern.
+
+The review must inspect `EXECUTION_MEMORY_INDEX.md`, `MISSION_LEDGER.md`, `EXECUTION_METRICS.md`, `TOKEN_METRICS.md`, `LEARNING.md`, `PATTERNS.md` and `ANTI_PATTERNS.md`.
+
+Outcome must be one of:
+
+- no action;
+- learning note;
+- pattern candidate;
+- anti-pattern update;
+- recommendation;
+- backlog item;
+- approved implementation plan for user confirmation.
+
 ## Promotion Workflow
 
 1. Record evidence in `MISSION_LEDGER.md`.

@@ -15,3 +15,8 @@
 | Token Waste Review | Add retrospective field for unnecessary context loading. | FOS | Medium | Low | P2 | Implemented baseline |
 | Automated Usage Metrics Script | Optional script to compute skill/workflow inventory and drift from files/logs. | FOS | Medium | Medium | P2 | Proposed |
 | Skill Boundary Audit | Review overlapping design/growth/reviewer skills after usage data exists. | FOS | Medium | Low | P2 | Proposed |
+| Execution Memory Retrieval | Consult prior execution learning before non-trivial plans to avoid repeated errors and unnecessary reads. | Execution Intelligence | High | Low | P0 | Implemented baseline |
+| Evidence Anchoring | Require observed/inferred/hypothesis separation before conclusions and final responses. | Execution Intelligence | High | Low | P0 | Implemented baseline |
+| Post-Mission Evaluation | Add lightweight end-of-mission review to update memory only when learning is reusable. | Execution Intelligence | High | Low | P0 | Implemented baseline |
+| Active Promotion Review | Review promotion candidates every 10 real missions or earlier on critical signals. | FOS | High | Low | P0 | Implemented baseline |
+| Team Telemetry Collector | Generate local/project/team usage reports from sanitized ledgers and optional external telemetry repo. | FOS / Team Operations | High | Low | P0 | Implemented baseline |

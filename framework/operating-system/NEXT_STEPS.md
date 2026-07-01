@@ -8,4 +8,7 @@
 6. Review recommendations with user before any framework change.
 7. Use Fast Path for simple requests before full NLME/SIL/COS.
 8. Update `MISSION_LEDGER.md`, `SKILL_USAGE.md`, `TOKEN_METRICS.md`, `EXECUTION_METRICS.md` and learning ledgers only when there is useful signal.
-9. Consider an automated inventory/metrics script only after ledger usage proves value.
+9. Use `tools/collect_execution_metrics.py` for local usage reports and optional Otus7 telemetry publishing.
+10. Consult `EXECUTION_MEMORY_INDEX.md` before non-trivial tasks and update it only with reusable learning.
+11. Run active promotion review every 10 real missions, or earlier on repeated critical failures.
+12. Keep the shared telemetry repo private and separate from framework/product repositories.

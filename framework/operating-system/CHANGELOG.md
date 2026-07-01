@@ -1,5 +1,24 @@
 # FOS Changelog
 
+## 2.24.0 - 2026-07-01
+
+- Added Team Telemetry governance for shared Otus7 usage reporting.
+- Added `tools/collect_execution_metrics.py` to generate local usage reports and optional external telemetry snapshots.
+- Added `docs/TEAM_TELEMETRY.md`, `rules/team-telemetry.md` and `templates/framework/usage-report.md`.
+- Added generated `USAGE_REPORT.md` and `USAGE_REPORT.json` under FOS reports.
+- Preserved privacy guardrails: no prompts, secrets, long code or private data; contributor ids are anonymized by default.
+
+## 2.23.0 - 2026-07-01
+
+- Added Execution Memory Index for reusable operational learnings.
+- Added Evidence Anchoring to reduce unsupported conclusions.
+- Added Post-Mission Evaluation as the learning gate before final response.
+- Added active promotion review every 10 real missions, with early review for critical repeated signals.
+- Connected memory/evaluation baseline to Orchestrator, Working Context, FOS and COS planned capabilities.
+- Removed legacy batch generator `tools/generate_framework.py`; skill creation now uses incremental templates.
+- Updated legacy template headers from Personal AI Framework to AI Engineering Framework.
+- Added Execution Target Map requirement to the approval gate and execution banner.
+
 ## 2.17.0 - 2026-06-29
 
 - Added MCP Portability & Local Secrets.

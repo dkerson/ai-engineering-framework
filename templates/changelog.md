@@ -1,4 +1,4 @@
-<!-- Template: changelog — Personal AI Framework -->
+<!-- Template: changelog — AI Engineering Framework -->
 
 # Changelog
 

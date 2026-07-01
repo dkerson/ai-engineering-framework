@@ -246,9 +246,9 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 | ocr | OCR Intelligence | AI, Vision | Planned | 1.0.0 |
 | vision | Vision Intelligence | Vision, AI | Idea | TBD |
 | voice | Voice Intelligence | Voice, AI | Idea | TBD |
-| memory | Memory Intelligence | AI | Planned | 1.0.0 |
+| memory | Memory Intelligence | AI | Planned (operational baseline) | 1.0.0 |
 | agents | Agents Intelligence | AI, Automation | Idea | TBD |
-| evaluation | Evaluation Intelligence | AI, Testing | Planned | 1.0.0 |
+| evaluation | Evaluation Intelligence | AI, Testing | Planned (operational baseline) | 1.0.0 |
 
 Ver `capabilities/planned/` e `roadmap/CAPABILITY_ROADMAP.md`.
 

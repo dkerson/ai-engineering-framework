@@ -20,3 +20,6 @@
 | Usage Metrics Automation | Add approved scripts to compute mission and skill usage from logs. | Metrics | Medium | Medium | P1 | Execution Intelligence baseline | Backlog | TBD |
 | Pattern Library | Promote repeated mission outcomes into reusable patterns. | Knowledge | Medium | Medium | P1 | Real mission history | Backlog | TBD |
 | Redundancy Review | Identify overlapping skills/workflows after usage data exists. | Quality | Medium | Low | P2 | Usage metrics | Backlog | TBD |
+| Execution Memory & Evaluation | Recover prior learnings before execution, anchor conclusions in evidence and evaluate outcomes after each executable mission. | Quality, Metrics | High | Low | P0 | Execution Intelligence baseline | Implemented baseline | 2.23.0 |
+| Active Promotion Cadence | Review patterns, anti-patterns and recommendations every 10 real missions, with early review for critical repeated failures. | Governance | High | Low | P0 | Execution Memory & Evaluation | Implemented baseline | 2.23.0 |
+| Team Telemetry Collector | Aggregate sanitized framework usage, estimated savings and learning signals across Otus7 contributors/projects. | Metrics, Team Operations | High | Low | P0 | Execution Metrics, Team Telemetry policy | Implemented baseline | 2.24.0 |

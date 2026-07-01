@@ -1,4 +1,4 @@
-<!-- Template: migration — Personal AI Framework -->
+<!-- Template: migration — AI Engineering Framework -->
 
 # Migration Plan
 

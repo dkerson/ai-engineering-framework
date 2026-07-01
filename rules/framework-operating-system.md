@@ -51,6 +51,7 @@ Registrar de forma leve:
 - `framework/operating-system/PATTERNS.md` - abordagens repetidas com resultado positivo.
 - `framework/operating-system/ANTI_PATTERNS.md` - caminhos repetidos que causaram erro, retrabalho ou desperdicio.
 - `framework/operating-system/RECOMMENDATIONS.md` - mudancas propostas, aguardando aprovacao quando alterarem comportamento.
+- `framework/operating-system/EXECUTION_MEMORY_INDEX.md` - aprendizados reutilizaveis para consulta antes de missoes similares.
 - `framework/operating-system/PROMOTION_CRITERIA.md` - limiares para promover aprendizados.
 
 Regras:
@@ -76,3 +77,5 @@ Estados permitidos:
 | rejected | Proposta recusada ou supersedida |
 
 Uma missao pode registrar aprendizado sem virar versao nova. Uma mudanca em regra, checklist, workflow, capability ou bootstrap deve atualizar changelog/status quando for release-worthy.
+
+Revisar promocao ativa a cada 10 missoes reais, ou antes quando houver sinal critico.

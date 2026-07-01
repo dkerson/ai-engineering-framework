@@ -1,4 +1,4 @@
-<!-- Template: technical-spec — Personal AI Framework -->
+<!-- Template: technical-spec — AI Engineering Framework -->
 
 # Especificação Técnica
 
