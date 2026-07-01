@@ -1,6 +1,7 @@
 # RAG Intelligence
 
-> Capability **Ready** v1.0.0 — framework-only; nenhuma implementação em projetos consumidores.
+> Capability **Stable Candidate** v1.1.0 - validated by the Umbra KB/RAG consumer project, with additional canonical identity, curation and golden-question guardrails.
+
 
 ## Objetivo
 
@@ -50,3 +51,14 @@ Ver `FLOWS.md` e `workflows/rag/`.
 - `docs/RAG_INTELLIGENCE.md`
 - `capabilities/CAPABILITY_REGISTRY.md`
 - `rules/rag/`
+
+## Consumer Evidence Guardrails
+
+5. **Canonical Document Identity** - never confuse chunks, records and user-facing documents.
+6. **Golden Questions** - validate representative questions before production.
+7. **Curation Loop** - route unanswered, low-confidence and wrong-citation questions to review.
+
+## Additional References
+
+- `rules/rag/canonical-document-identity.md`
+- `checklists/rag/golden-questions.md`

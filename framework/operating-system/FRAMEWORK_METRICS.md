@@ -2,17 +2,18 @@
 
 | Metric | Value | Date |
 |--------|-------|------|
-| Skills | 104 | 2026-06-26 |
-| Workflows | 39 | 2026-06-26 |
-| Templates | 45 | 2026-06-26 |
-| Rules | 35 | 2026-06-26 |
-| Checklists | 40 | 2026-06-26 |
-| Knowledge Articles | 37 | 2026-06-26 |
-| Missions | 0 tracked by FOS | 2026-06-26 |
-| Improvements | 3 initial backlog items | 2026-06-26 |
+| Skills | 157 | 2026-07-01 |
+| Workflows | 57 | 2026-07-01 |
+| Templates | 61 | 2026-07-01 |
+| Rules | 72 | 2026-07-01 |
+| Checklists | 64 | 2026-07-01 |
+| Knowledge Articles | 51 | 2026-07-01 |
+| Missions | Active ledger | 2026-07-01 |
+| Improvements | 14 backlog items | 2026-07-01 |
 | Roadmaps | 1 | 2026-06-26 |
 | Ideas | 2 | 2026-06-26 |
-| Recommendations | 3 | 2026-06-26 |
+| Recommendations | 7 | 2026-07-01 |
+| Usage Reports | 2 generated files | 2026-07-01 |
 
 ## Coverage
 

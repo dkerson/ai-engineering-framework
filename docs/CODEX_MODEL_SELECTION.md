@@ -1,41 +1,41 @@
 # Codex Model Selection
 
-> Regra operacional para escolher modelo e nivel de raciocinio no Codex antes de missoes do framework.
+> Regra operacional para escolher modelo e nível de raciocínio no Codex antes de missões do framework.
 
 ## Objetivo
 
-Evitar recomendacoes desatualizadas de modelo e alinhar custo, risco e profundidade de raciocinio ao tipo de missao.
+Evitar recomendações desatualizadas de modelo e alinhar custo, risco e profundidade de raciocínio ao tipo de missão.
 
-## Modelos disponiveis no Codex
+## Modelos disponíveis no Codex
 
-Lista observada no Codex:
+Lista observada no seletor atual do Codex:
 
 | Modelo | Uso recomendado |
 |--------|-----------------|
-| `GPT-5.5` | Missoes complexas, arquitetura, RAG, banco, seguranca, producao, refatoracao ampla e execucao end-to-end. |
-| `GPT-5.4` | Features medias, revisoes tecnicas, bugs com algum contexto e implementacoes sem alto risco. |
-| `GPT-5.4-Mini` | Ajustes pequenos, UI simples, documentacao, perguntas tecnicas e validacoes pontuais. |
-| `GPT-5.3-Codex-Spark` | Tarefas rapidas, comandos diretos, leitura curta, triagem e respostas de baixo risco. |
+| `GPT-5.5` | Missões complexas, arquitetura, RAG, banco, segurança, produção, refatoração ampla e execução end-to-end. |
+| `GPT-5.4` | Features médias, revisões técnicas, bugs com algum contexto e implementações sem alto risco. |
+| `GPT-5.4-Mini` | Ajustes pequenos, UI simples, documentação, perguntas técnicas e validações pontuais. |
+| `GPT-5.3-Codex-Spark` | Tarefas rápidas, comandos diretos, leitura curta, triagem e respostas de baixo risco. |
 
-## Niveis de raciocinio
+## Níveis de raciocínio
 
 | Nivel | Uso recomendado |
 |-------|-----------------|
 | `Baixa` | Perguntas diretas, comandos simples e mudancas triviais. |
-| `Media` | Trabalho padrao de desenvolvimento com baixo ou medio risco. |
-| `Alta` | Implementacao com multiplos arquivos, backend/API, banco, auth, integracoes e validacao. |
-| `Altissimo` | Arquitetura, RAG, seguranca, producao, migracoes sensiveis, incidentes e Technical Council. |
+| `Média` | Trabalho padrão de desenvolvimento com baixo ou médio risco. |
+| `Alta` | Implementação com múltiplos arquivos, backend/API, banco, auth, integrações e validação. |
+| `Altíssimo` | Arquitetura, RAG, segurança, produção, migrações sensíveis, incidentes e Technical Council. |
 
 ## Matriz rapida
 
-| Missao | Modelo | Raciocinio |
+| Missão | Modelo | Raciocínio |
 |--------|--------|------------|
-| Fast Path, pergunta, status, explicacao | `GPT-5.3-Codex-Spark` ou `GPT-5.4-Mini` | `Baixa` |
-| Ajuste pontual de UI/docs/codigo | `GPT-5.4-Mini` | `Baixa` ou `Media` |
-| Feature pequena ou bug comum | `GPT-5.4` | `Media` |
+| Fast Path, pergunta, status, explicação | `GPT-5.3-Codex-Spark` ou `GPT-5.4-Mini` | `Baixa` |
+| Ajuste pontual de UI/docs/código | `GPT-5.4-Mini` | `Baixa` ou `Média` |
+| Feature pequena ou bug comum | `GPT-5.4` | `Média` |
 | Backend/API/banco sem arquitetura nova | `GPT-5.4` | `Alta` |
 | RAG, chat com base de conhecimento, pgvector, Azure OpenAI | `GPT-5.5` | `Alta` |
-| RAG em producao, seguranca, permission-aware retrieval, deploy, Technical Council | `GPT-5.5` | `Altissimo` |
+| RAG em produção, segurança, permission-aware retrieval, deploy, Technical Council | `GPT-5.5` | `Altíssimo` |
 
 ## Regra para Umbra RAG
 
@@ -43,18 +43,18 @@ Para implementar RAG + chat da base Irisys/Biblioteca no Umbra, usar:
 
 ```text
 Modelo: GPT-5.5
-Raciocinio: Alta
+Raciocínio: Alta
 ```
 
-Escalar para `Altissimo` quando a etapa envolver decisao arquitetural, seguranca, permissao por escopo, migracao de banco, deploy em producao ou incidente.
+Escalar para `Altíssimo` quando a etapa envolver decisão arquitetural, segurança, permissão por escopo, migração de banco, deploy em produção ou incidente.
 
 ## Politica de custo
 
-Usar o menor par modelo/raciocinio seguro. Nao escolher `GPT-5.5` por padrao para tarefas pequenas, mas tambem nao usar modelos compactos para missoes que cruzam backend, frontend, banco, infra, seguranca e producao.
+Usar o menor par modelo/raciocínio seguro. Não escolher `GPT-5.5` por padrão para tarefas pequenas, mas também não usar modelos compactos para missões que cruzam backend, frontend, banco, infra, segurança e produção.
 
 ## Atualizacao
 
-Quando o Codex alterar a lista de modelos disponiveis, atualizar este documento e revisar:
+Quando o Codex alterar a lista de modelos disponíveis, atualizar este documento e revisar:
 
 - `rules/token-budget-policy.md`
 - `workflows/modes.md`

@@ -2,36 +2,44 @@
 
 ## Summary
 
-- Version: 2.17.0
+- Version: 2.24.0
 - Health Score: 9.0/10
-- Last update: 2026-06-29
+- Last update: 2026-07-01
 - Operating layer: Framework Operating System (FOS)
 - Governance: user approval required before framework changes
 - Execution Intelligence: baseline active (observe, measure, recommend; never self-modify)
+- Execution Learning Loop: active (observe, classify, record, recommend, approve, implement)
 - Context Hygiene: active (Context Health + Compacted Snapshot)
 - Security Intelligence: active (architecture, authorization, permission cache, threat modeling, SI governance)
 - Execution Reliability: active (Loop Control + Frontend Runtime + Regression Boundary)
 - No Hardcode Governance: active (configuration source + hardcode scan)
 - MCP Portability: active (remote OAuth + npx + local secrets)
+- RAG Consumer Hardening: active (canonical identity + golden questions + curation)
+- Execution Memory: active baseline (retrieve prior learnings before non-trivial tasks)
+- Evidence Anchoring: active baseline (observed/inferred/hypothesis separation)
+- Post-Mission Evaluation: active baseline (reusable learning gate)
+- Team Telemetry: active baseline (local/project/team usage reports from sanitized ledgers)
 
 ## Inventory
 
 | Area | Count |
 |------|-------|
 | Skills | 157 directories |
-| Workflows | 46 |
-| Rules | 63 |
+| Workflows | 57 |
+| Rules | 72 |
 | Checklists | 64 |
 | Plugins | 11 (1 active, 3 under-review) |
 | MCP Profiles | 3 projetos |
-| Capabilities | 19 registered (15 Stable, 1 Ready, 4 Planned/Idea) |
+| Capabilities | 19 registered (15 Stable, 1 Stable Candidate, 4 Planned/Idea) |
 | COS | Stable v2.10.0 |
-| Knowledge Articles | 40 |
+| Knowledge Articles | 51 |
 | Patterns | 0 initial |
 | Implementations | 1 initial FOS entry |
 | Mission Ledger | Active baseline |
 | Skill Usage Ledger | Active baseline |
 | Token Metrics | Active baseline |
+| Execution Memory Index | Active baseline |
+| Usage Reports | Active baseline |
 
 ## Current Capabilities
 
@@ -58,13 +66,18 @@
 - Execution Reliability Guardrails
 - Configuration & Hardcode Governance
 - MCP Portability & Local Secrets
+- Execution Learning Loop
+- RAG Consumer Hardening
+- Execution Memory & Evaluation Baseline
+- Team Telemetry Collector
 
 ## Pending
 
 - Track real mission usage over time via `MISSION_LEDGER.md`.
 - Register recurring patterns after repeated missions.
+- Run promotion review every 10 real missions.
 - Identify unused skills from actual execution history.
-- Add automated metrics collection script if approved.
+- Publish sanitized reports to a separate private Otus7 telemetry repo when team workflow is ready.
 - Run skill boundary audit after enough usage data exists.
 
 ## Roadmap

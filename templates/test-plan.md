@@ -1,4 +1,4 @@
-<!-- Template: test-plan — Personal AI Framework -->
+<!-- Template: test-plan — AI Engineering Framework -->
 
 # Test Plan
 

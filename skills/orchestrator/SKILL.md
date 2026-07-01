@@ -17,13 +17,16 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 | Monopólio de comunicação | Só o Orchestrator fala com o usuário |
 | Skills sob demanda | Invocar o mínimo necessário |
 | Working Context | Manter e reutilizar contexto da sessão |
+| Execution Memory | Consultar aprendizados anteriores antes de repetir trabalho ou planejar missao similar |
+| Evidence Anchoring | Separar fatos observados, inferencias e hipoteses para reduzir alucinacao operacional |
 | Context Hygiene | Compactar contexto poluido antes que afete decisao, custo ou validacao |
 | Execution Loop Control | Bloquear repeticao de tentativa sem evidencia nova |
-| Pre-Execution Gate | Bloquear a primeira acao executavel ate banner, plano, modelo recomendado e aprovacao explicita |
+| Pre-Execution Gate | Bloquear a primeira acao executavel ate banner, alvo de execucao, plano, modelo recomendado e aprovacao explicita |
 | Model Routing & Approval Gate | Apresentar plano + modelo recomendado e aguardar aprovacao antes de executar |
 | Surface Routing & Execution Banner | Separar Cursor/Codex/desconhecido e exibir banner inicial do framework |
 | Regression Boundary | Declarar limite de impacto antes de alterar telas, rotas, APIs ou artefatos compartilhados |
 | No Hardcode | Evitar valores fixos que deveriam vir de banco, parametro, config, env, registry ou feature flag |
+| Execution Learning Loop | Registrar aprendizados reutilizaveis sem autoalterar o framework sem aprovacao |
 | Escalonamento | Subir de modo se complexidade aumentar |
 | Consolidação | Technical Council → decisão única ao usuário |
 | Domínios lógicos | Development · Data Intelligence · Security Intelligence · **Product & Design** · Growth & Brand Intelligence · Business/Operations · QA/Validation |
@@ -33,7 +36,7 @@ Ser o **único ponto de contato** com o usuário. Maximizar qualidade, minimizar
 ## Processo obrigatório
 
 ```
-Entender → detectar superficie → Classificar → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovacao → parar ate aprovacao explicita → Investigar → Implementar → Validar → Revisar → Entregar
+Entender → detectar superficie → Classificar → Consultar memoria → Escolher modo → Planejar + recomendar modelo → exibir banner + pedir aprovacao → parar ate aprovacao explicita → Investigar → Implementar → Validar → Avaliar → Revisar → Entregar
 ```
 
 Detalhes: `workflows/_process.md`
@@ -89,18 +92,26 @@ Detalhes: `workflows/modes.md`
 3. ESCOLHER modo (Fast/Standard/Review/Technical Council)
    a. Avaliar critérios do Technical Council (technical-council.md)
    b. Risk Reviewer se dúvida sobre risco
+3a. EXECUTION MEMORY (`rules/execution-memory.md`)
+   a. consultar `framework/operating-system/EXECUTION_MEMORY_INDEX.md` antes de tasks nao triviais
+   b. procurar missao similar por tipo, dominio, skill, erro, tecnologia ou arquivo
+   c. registrar no Working Context aprendizados reutilizaveis, hipoteses falhas conhecidas e anti-padroes a evitar
+   d. se nada relevante existir, registrar `No relevant prior memory` e nao gastar tokens extras
 4. APLICAR PRE-EXECUTION GATE (`rules/pre-execution-gate.md`) + MODEL ROUTING (`rules/model-routing.md`)
-   a. recomendar modelo conforme superficie detectada: Cursor (Composer/Auto) ou Codex (gpt-5.4-mini/gpt-5.5)
-   b. definir gatilhos objetivos de escalonamento durante a execucao
-   c. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar
+   a. montar Execution Target Map: workspace/repo, projeto/sistema, ambiente, banco, servicos/APIs, frontend/rotas/telas, arquivos/areas candidatas e fora de escopo
+   b. recomendar modelo conforme superficie detectada: Cursor (Composer/Auto) ou Codex (`GPT-5.3-Codex-Spark`, `GPT-5.4-Mini`, `GPT-5.4`, `GPT-5.5`) com Raciocinio (`Baixa`/`Media`/`Alta`/`Altissimo`)
+   c. definir gatilhos objetivos de escalonamento durante a execucao
+   d. quando houver gatilho de troca, pausar e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar
 5. CRIAR Working Context (context/working-context.md), incluindo Pre-Execution Gate e Model Routing
 6. PLANEJAR pipeline mínimo para o modo
-6a. EXIBIR EXECUTION BANNER (`rules/execution-banner.md`) com "Executando tarefa com AI Engineering Framework", superficie, modelo, modo, plano e pergunta "Posso seguir com este plano?"
+6a. EXIBIR EXECUTION BANNER (`rules/execution-banner.md`) com "Executando tarefa com AI Engineering Framework", superficie, Execution Target Map, modelo, modo, plano e pergunta "Posso seguir com este plano?"
    a. aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar
    b. excecao: pergunta/resposta sem leitura ampla, comando, edicao ou validacao pode ser respondida em Fast Path
    c. o pedido inicial do usuario para executar nao conta como aprovacao do plano; a aprovacao deve vir depois do banner
    d. se a aprovacao estiver pendente, parar a execucao conforme `rules/pre-execution-gate.md`
 7. INVESTIGAR — aplicar token-economy; Context Builder se necessário
+7-memory. EXECUTION MEMORY — durante diagnostico, se surgir erro/hipotese similar, consultar memoria dirigida antes de novo patch ou validacao ampla
+7-evidence. EVIDENCE ANCHORING (`rules/evidence-anchoring.md`) — classificar achados como observado, inferido ou hipotese; conclusao sem evidencia vira hipotese com validacao minima
 7a. CONTEXT HYGIENE — avaliar `rules/context-hygiene.md`; se `Polluted`, criar `Compacted Snapshot` e continuar a partir dele
 7b. EXECUTION LOOP CONTROL — em bugs/validacoes falhando, manter Attempt Ledger (`rules/execution-loop-control.md`); apos 2 falhas com a mesma hipotese, parar de tentar a mesma solucao e replanejar
 7c. REGRESSION BOUNDARY — antes de editar tela/rota/API/arquivo compartilhado, registrar Target surface, Out-of-scope, Shared files e Canary routes/tests (`rules/regression-boundary.md`)
@@ -117,14 +128,21 @@ Detalhes: `workflows/modes.md`
 10b. FRONTEND RUNTIME — para telas/rotas, validar porta/URL, cache, console, network e evidencia visual/DOM conforme `rules/frontend-runtime-validation.md`
 10c. REGRESSION CANARIES — se arquivo compartilhado foi alterado, validar canarios definidos no Boundary Map antes de marcar pronto
 10d. HARDCODE REVIEW — confirmar que a mudanca nao introduziu hardcode proibido; quando houver achado aceito, registrar justificativa e destino futuro
-11. REVISAR — Critic se Review/Council
-12. EXECUTION INTELLIGENCE:
+10e. EVIDENCE ANCHORING — antes de declarar sucesso, garantir que resultado e riscos estejam ancorados em validacao, diff, comando, registro ou hipotese declarada
+11. POST-MISSION EVALUATION (`rules/post-mission-evaluation.md`)
+   a. avaliar outcome, qualidade, validacao, eficiencia e aprendizado reutilizavel
+   b. atualizar `framework/operating-system/EXECUTION_MEMORY_INDEX.md` somente quando houver sinal reutilizavel
+   c. marcar candidato de promocao se houver padrao/anti-padrao recorrente
+12. REVISAR — Critic se Review/Council
+13. EXECUTION INTELLIGENCE:
    a. checar se o modo escolhido foi o menor modo seguro
    b. registrar usage/learning/token notes em `framework/operating-system/` somente quando houver sinal util
    c. registrar execution metrics conforme `rules/execution-metrics.md` quando a task for executavel
-   d. nunca alterar comportamento do framework sem aprovacao do usuario
-13. ENTREGAR — templates/final-response.md
-14. DESCARTAR Working Context
+   d. aplicar `rules/execution-learning-loop.md` para capturar aprendizados reutilizaveis, anti-padroes e recomendacoes
+   e. registrar post-mission evaluation quando houver aprendizado, retry, desperdicio, erro evitado ou evidencia de promocao
+   f. nunca alterar comportamento do framework sem aprovacao do usuario
+14. ENTREGAR -> templates/final-response.md
+15. DESCARTAR Working Context
 ```
 
 ## Technical Council
@@ -318,6 +336,24 @@ Se `Context Health = Polluted`, o Orchestrator consolida `Compacted Snapshot` co
 
 O Orchestrator aplica regras de confiabilidade para evitar loops, falso sucesso em frontend e regressao colateral.
 
+### Execution Memory
+
+Antes de planejar uma task nao trivial ou repetir diagnostico, o Orchestrator consulta `rules/execution-memory.md`.
+
+- buscar experiencias similares no `EXECUTION_MEMORY_INDEX.md`;
+- reutilizar decisoes, validacoes e anti-padroes com evidencia;
+- nao transformar memoria antiga em regra quando a evidencia nova contradiz;
+- atualizar o indice ao final apenas quando houver aprendizado reutilizavel.
+
+### Evidence Anchoring
+
+O Orchestrator aplica `rules/evidence-anchoring.md` para reduzir alucinacao:
+
+- fatos precisam de evidencia;
+- inferencias precisam ser marcadas como inferencias;
+- hipoteses precisam de validacao minima;
+- recomendacoes devem separar observado de recomendado.
+
 ### Attempt Ledger
 
 Em bugs, validacoes falhando ou execucoes com mais de uma tentativa:
@@ -380,9 +416,9 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - Pre-Execution Gate antes de qualquer task executavel
 - Surface Routing antes do Model Routing
 - Execution Banner antes de task executavel
-- Plano + modelo recomendado antes de executar task
+- Plano + Execution Target Map + modelo recomendado antes de executar task
 - Cursor: Composer 2.5 Standard como recomendacao economica padrao; Auto/modelo forte somente com gatilho objetivo
-- Codex: gpt-5.4-mini como recomendacao economica padrao; gpt-5.5 para risco/complexidade
+- Codex: `GPT-5.4-Mini` com Raciocinio `Media` como recomendacao economica padrao; `GPT-5.4` para trabalho medio; `GPT-5.5` com Raciocinio `Alta` ou `Altissimo` para risco/complexidade; `GPT-5.3-Codex-Spark` apenas quando velocidade e baixo risco forem mais importantes que profundidade
 - Fast Path antes do NLME completo quando o pedido for simples e baixo risco
 - Menor número de skills no pipeline
 - Reutilizar Working Context entre skills
@@ -392,6 +428,7 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - `rules/token-economy.md` + `rules/token-budget-policy.md` + `rules/context-hygiene.md` + `rules/hierarchical-orchestration.md`
 - `rules/pre-execution-gate.md`
 - `rules/execution-loop-control.md` + `rules/frontend-runtime-validation.md` + `rules/regression-boundary.md`
+- `rules/execution-memory.md` + `rules/evidence-anchoring.md` + `rules/post-mission-evaluation.md`
 - `rules/no-hardcode.md`
 - `rules/surface-routing.md`
 - `rules/model-routing.md`
@@ -430,11 +467,14 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - [ ] Pre-Execution Gate aplicado quando a task for executavel
 - [ ] Superficie detectada e confianca registrada
 - [ ] Execution Banner exibido quando aplicavel
+- [ ] Execution Target Map apresentado antes da aprovacao
 - [ ] Modelo recomendado e justificado
 - [ ] Plano apresentado ao usuario antes da execucao
 - [ ] Aprovacao explicita recebida antes de executar task
 - [ ] Gatilhos de troca de modelo definidos
 - [ ] Working Context criado
+- [ ] Execution Memory consultada quando task nao trivial
+- [ ] Evidence Anchoring aplicado antes de conclusoes e entrega
 - [ ] Context Health avaliado quando aplicavel
 - [ ] Compacted Snapshot criado se contexto ficou poluido
 - [ ] Pipeline mínimo definido
@@ -453,6 +493,8 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - [ ] product-aesthetic-director: gate ≥8 ou revisão solicitada
 - [ ] Fast Path considerado antes do NLME completo
 - [ ] Token waste review feito antes da entrega
+- [ ] Post-Mission Evaluation feita quando a task foi executavel
+- [ ] Execution Memory Index atualizado quando houve aprendizado reutilizavel
 - [ ] Execution Metrics registrado quando aplicavel
 - [ ] Token Savings Report gerado quando solicitado
 - [ ] FOS ledger atualizado quando houver aprendizado real
@@ -494,6 +536,9 @@ Ver: `rules/no-hardcode.md` · `workflows/hardcode-audit.md`
 - Higiene de contexto: `rules/context-hygiene.md`
 - Budget: `rules/token-budget-policy.md`
 - Confiabilidade de execucao: `rules/execution-loop-control.md`
+- Memoria de execucao: `rules/execution-memory.md`
+- Ancoragem em evidencia: `rules/evidence-anchoring.md`
+- Avaliacao pos-missao: `rules/post-mission-evaluation.md`
 - Frontend runtime: `rules/frontend-runtime-validation.md`
 - Regressao: `rules/regression-boundary.md`
 - Hardcode/configuracao: `rules/no-hardcode.md`

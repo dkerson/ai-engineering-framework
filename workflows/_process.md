@@ -2,7 +2,7 @@
 
 
 
-> Finalidade: fases obrigatórias em toda execução do Personal AI Framework.
+> Finalidade: fases obrigatorias em toda execucao do AI Engineering Framework.
 
 
 
@@ -48,6 +48,10 @@
 
 - Criar Working Context (`context/working-context.md`)
 
+- Consultar Execution Memory (`rules/execution-memory.md`) para missoes nao triviais antes de fechar o plano
+
+- Montar Execution Target Map: workspace/repo, projeto/sistema, ambiente, banco, servicos/APIs, frontend/rotas/telas, arquivos/areas candidatas e fora de escopo
+
 - Selecionar pipeline mínimo para o modo
 
 - Aplicar `rules/pre-execution-gate.md` e `rules/model-routing.md`: recomendar modelo por superficie, justificar custo/risco e definir gatilhos de escalonamento
@@ -56,7 +60,7 @@
 
 - Listar skills e ordem (máx. 10 passos visíveis)
 
-- Exibir `rules/execution-banner.md` com superficie, modelo recomendado, modo, plano e pergunta "Posso seguir com este plano?"
+- Exibir `rules/execution-banner.md` com superficie, Execution Target Map, modelo recomendado, modo, plano e pergunta "Posso seguir com este plano?"
 
 - Aguardar aprovacao explicita antes de investigar, editar, executar comandos ou validar, exceto pergunta/resposta Fast Path sem leitura ampla, comando, edicao ou validacao
 
@@ -67,6 +71,8 @@
 ### 5. Investigar
 
 - Aplicar `rules/token-economy.md`
+
+- Ancorar conclusoes em evidencia conforme `rules/evidence-anchoring.md`
 
 - Localizar erro/stack/arquivo antes de leitura ampla
 
@@ -110,6 +116,8 @@
 
 - Security review se auth/dados sensíveis
 
+- Avaliacao pos-missao conforme `rules/post-mission-evaluation.md` antes da resposta final quando a task foi executavel
+
 
 
 ### 9. Entregar
@@ -143,6 +151,12 @@ Aplicar em todas as fases:
 - `rules/execution-banner.md`
 
 - `rules/context-hygiene.md`
+
+- `rules/execution-memory.md`
+
+- `rules/evidence-anchoring.md`
+
+- `rules/post-mission-evaluation.md`
 
 - Rules específicas conforme área (ver `rules/`)
 

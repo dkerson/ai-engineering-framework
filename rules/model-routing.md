@@ -14,11 +14,11 @@ Aplicar `rules/surface-routing.md` antes desta regra.
 
 Use a recomendacao padrao da superficie detectada:
 
-| Superficie | Padrao economico | Escalonamento |
-|------------|------------------|---------------|
-| Cursor | `Composer 2.5 Standard` | `Auto` ou modelo forte disponivel |
-| Codex | `GPT-5.4-Mini` | `GPT-5.5` |
-| Desconhecida | informar opcoes Cursor e Codex | perguntar se a escolha bloquear execucao |
+| Superficie | Padrao economico | Trabalho medio | Escalonamento |
+|------------|------------------|---------------|---------------|
+| Cursor | `Composer 2.5 Standard` | `Composer 2.5 Standard` ou `Auto` | `Auto` ou modelo forte disponivel |
+| Codex | `GPT-5.4-Mini` com `Baixa`/`Média` | `GPT-5.4` com `Média`/`Alta` | `GPT-5.5` com `Alta`/`Altíssimo` |
+| Desconhecida | informar opcoes Cursor e Codex | informar opcoes Cursor e Codex | perguntar se a escolha bloquear execucao |
 
 Use `Auto` ou modelo mais forte somente quando o risco, a ambiguidade ou a chance de retrabalho justificar o custo adicional.
 
@@ -31,9 +31,20 @@ Antes de executar qualquer task, o Orchestrator deve apresentar:
 1. ...
 2. ...
 
+## Onde vou atuar
+- Workspace/repo: [path ou nome]
+- Projeto/sistema: [nome ou "nao identificado"]
+- Ambiente: [local/dev/homolog/producao/nao aplicavel]
+- Banco(s): [nome(s) ou "nenhum"]
+- Servicos/APIs: [nome(s) ou "nenhum"]
+- Frontend/rotas/telas: [alvos ou "nenhum"]
+- Arquivos/areas candidatas: [lista curta ou "a descobrir na investigacao aprovada"]
+- Fora de escopo: [o que nao sera alterado]
+
 ## Modelo recomendado
 - Superficie: [Cursor | Codex | Desconhecida]
-- Modelo: [Composer 2.5 Standard | Auto | GPT-5.4-Mini | GPT-5.4 | GPT-5.5 | modelo forte especifico]
+- Modelo: [Composer 2.5 Standard | Auto | GPT-5.3-Codex-Spark | GPT-5.4-Mini | GPT-5.4 | GPT-5.5 | modelo forte especifico]
+- Raciocínio Codex: [Baixa | Média | Alta | Altíssimo | nao aplicavel]
 - Motivo: [custo, risco, complexidade, velocidade ou confiabilidade]
 - Escalonamento previsto: [quando mudar de modelo durante a execucao]
 
@@ -68,7 +79,8 @@ Se durante a task surgir um gatilho de escalonamento, o Orchestrator deve parar 
 Identifiquei necessidade de trocar o modelo.
 
 - Modelo atual assumido: [modelo informado/assumido]
-- Modelo recomendado agora: [Auto | GPT-5.5 | modelo forte]
+- Modelo recomendado agora: [Auto | GPT-5.4 | GPT-5.5 | modelo forte]
+- Raciocínio recomendado agora: [Baixa | Média | Alta | Altíssimo | nao aplicavel]
 - Motivo: [risco/ambiguidade/retry/contexto]
 - Proxima acao apos a troca: [...]
 
@@ -98,6 +110,7 @@ Registrar em toda task executavel:
 ### Model Routing
 - Superficie:
 - Modelo recomendado:
+- Raciocínio Codex:
 - Modelo atual: [detectado|assumido|nao detectavel]
 - Motivo:
 - Gatilhos de escalonamento:

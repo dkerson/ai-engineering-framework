@@ -1,4 +1,4 @@
-<!-- Template: prompt — Personal AI Framework -->
+<!-- Template: prompt — AI Engineering Framework -->
 
 # Prompt Template
 

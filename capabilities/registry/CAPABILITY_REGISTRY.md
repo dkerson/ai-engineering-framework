@@ -219,7 +219,7 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 
 ---
 
-## Ready — Capabilities entregues (framework-only)
+## Stable Candidate / Ready Capabilities
 
 ### rag — RAG Intelligence
 
@@ -228,11 +228,11 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 | Nome | RAG Intelligence |
 | Versão | 1.0.0 |
 | Categoria | AI, Search, Knowledge |
-| Status | Ready |
+| Status | Stable Candidate |
 | Descrição | Assistentes com conhecimento próprio: retrieval, citations, guardrails |
 | Dependências | knowledge-hub, plugin-architecture (opcional vector DB) |
 | Skills | rag-orchestrator + 19 especialistas (ver `capabilities/rag/`) |
-| Projetos | Nenhum (consumo futuro) |
+| Projetos | Umbra KB/RAG (consumer evidence) |
 | Health Score | 8.2 |
 | Roadmap | Stable após 1º projeto consumidor |
 | Documentação | `capabilities/rag/`, `docs/RAG_INTELLIGENCE.md` |
@@ -246,9 +246,9 @@ Nome · Descrição · Versão · Categoria · Status · Domínios · Skills · 
 | ocr | OCR Intelligence | AI, Vision | Planned | 1.0.0 |
 | vision | Vision Intelligence | Vision, AI | Idea | TBD |
 | voice | Voice Intelligence | Voice, AI | Idea | TBD |
-| memory | Memory Intelligence | AI | Planned | 1.0.0 |
+| memory | Memory Intelligence | AI | Planned (operational baseline) | 1.0.0 |
 | agents | Agents Intelligence | AI, Automation | Idea | TBD |
-| evaluation | Evaluation Intelligence | AI, Testing | Planned | 1.0.0 |
+| evaluation | Evaluation Intelligence | AI, Testing | Planned (operational baseline) | 1.0.0 |
 
 Ver `capabilities/planned/` e `roadmap/CAPABILITY_ROADMAP.md`.
 
@@ -259,7 +259,7 @@ Ver `capabilities/planned/` e `roadmap/CAPABILITY_ROADMAP.md`.
 | Status | Count | IDs |
 |--------|-------|-----|
 | Stable | 15 | development, data, product-design, growth-brand, infrastructure, security, plugin, fos, sil, knowledge-hub, mission, product-excellence, product-evolution, continuous-improvement, cos |
-| Ready | 1 | rag |
+| Stable Candidate | 1 | rag |
 | Planned | 3 | ocr, memory, evaluation |
 | Idea | 3 | vision, voice, agents |
 

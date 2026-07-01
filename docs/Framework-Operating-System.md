@@ -56,6 +56,8 @@ Documentos vivos principais:
 - `MISSION_LEDGER.md`
 - `SKILL_USAGE.md`
 - `TOKEN_METRICS.md`
+- `EXECUTION_METRICS.md`
+- `EXECUTION_MEMORY_INDEX.md`
 - `PROMOTION_CRITERIA.md`
 - `NEXT_STEPS.md`
 - `VERSION.md`
@@ -67,8 +69,13 @@ O FOS pode observar execucoes reais para reduzir custo e melhorar eficiencia:
 - `MISSION_LEDGER.md` registra metadados curtos de missoes.
 - `SKILL_USAGE.md` mede quais skills foram realmente usadas.
 - `TOKEN_METRICS.md` registra sinais de desperdicio e economia.
+- `EXECUTION_METRICS.md` registra baseline, actual units, savings %, retries e errors avoided.
+- `EXECUTION_MEMORY_INDEX.md` concentra aprendizados reutilizaveis para consulta antes de tasks similares.
 - `PROMOTION_CRITERIA.md` define quando aprendizado vira recomendacao.
 - `rules/context-hygiene.md` define quando o Orchestrator cria Compacted Snapshot para evitar contexto poluido.
+- `rules/execution-memory.md` define recuperacao dirigida de aprendizados anteriores.
+- `rules/evidence-anchoring.md` exige separar fatos observados, inferencias e hipoteses.
+- `rules/post-mission-evaluation.md` fecha o ciclo de avaliacao e atualizacao de memoria.
 
 Limite: observar e recomendar nao autoriza auto-mutacao. Mudancas no framework continuam dependendo de aprovacao do usuario.
 
@@ -86,3 +93,5 @@ O framework deve responder usando documentos vivos:
 - Qual nossa Saude?
 - Quais padroes aprendemos?
 - Qual nossa divida tecnica?
+- Quais erros nao devemos repetir?
+- A promocao de padroes das ultimas 10 missoes esta em dia?

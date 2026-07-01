@@ -4,9 +4,10 @@
 |-----------|-----------|
 | [../README.md](../README.md) | Visão geral do framework |
 | [../AGENTS.md](../AGENTS.md) | Bootstrap para agentes |
-| [CODEX_MODEL_SELECTION.md](CODEX_MODEL_SELECTION.md) | Selecao de modelo e raciocinio no Codex |
+| [CODEX_MODEL_SELECTION.md](CODEX_MODEL_SELECTION.md) | Selecao de modelo e raciocínio no Codex |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Arquitetura, camadas, responsabilidades |
 | [Framework-Operating-System.md](Framework-Operating-System.md) | Sistema operacional e governanca do framework |
+| [TEAM_TELEMETRY.md](TEAM_TELEMETRY.md) | Telemetria compartilhada do time e relatorios consolidados |
 | [Infrastructure-Intelligence.md](Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |
 | [Project-Registry.md](Project-Registry.md) | Registry por projeto |
 | [Infrastructure-Registry.md](Infrastructure-Registry.md) | Registry global de infraestrutura |
@@ -31,6 +32,10 @@
 | [DATA_INTELLIGENCE.md](DATA_INTELLIGENCE.md) | Domínio de dados, SQL, Power BI, BI |
 | [SECURITY_INTELLIGENCE.md](SECURITY_INTELLIGENCE.md) | SI, autorizacao, permissoes, cache de acesso e threat modeling |
 | [EXECUTION_RELIABILITY.md](EXECUTION_RELIABILITY.md) | Controle de loops, runtime frontend e regressao |
+| [../rules/execution-memory.md](../rules/execution-memory.md) | Memoria de execucao e recuperacao de aprendizados |
+| [../rules/evidence-anchoring.md](../rules/evidence-anchoring.md) | Ancoragem em evidencia para reduzir alucinacao operacional |
+| [../rules/post-mission-evaluation.md](../rules/post-mission-evaluation.md) | Avaliacao pos-missao e atualizacao de memoria |
+| [../rules/team-telemetry.md](../rules/team-telemetry.md) | Consolidacao de telemetria por projeto/time sem dados sensiveis |
 | [CONFIGURATION_HARDCODE_GOVERNANCE.md](CONFIGURATION_HARDCODE_GOVERNANCE.md) | Governanca anti-hardcode, parametrizacao e scan |
 | [DESIGN_INTELLIGENCE.md](DESIGN_INTELLIGENCE.md) | Product & Design, Design Modes, pipeline |
 | [DESIGN_GUIDE.md](DESIGN_GUIDE.md) | Guia operacional de interface |

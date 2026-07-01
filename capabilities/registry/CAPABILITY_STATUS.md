@@ -28,18 +28,18 @@
 | Product Evolution | 2.3.0 | **Stable** |
 | Continuous Improvement | 2.4.0 | **Stable** |
 | Capability Operating System | 2.10.0 | **Stable** |
-| RAG Intelligence | 1.0.0 | **Ready** |
+| RAG Intelligence | 1.1.0 | **Stable Candidate** |
 | OCR Intelligence | — | Planned |
 | Vision Intelligence | — | Idea |
 | Voice Intelligence | — | Idea |
-| Memory Intelligence | — | Planned |
+| Memory Intelligence | — | Planned (operational baseline) |
 | Agents Intelligence | — | Idea |
-| Evaluation Intelligence | — | Planned |
+| Evaluation Intelligence | — | Planned (operational baseline) |
 
 ## Resumo
 
 - **Stable:** 14
-- **Ready:** 1 (RAG)
+- **Stable Candidate:** 1 (RAG)
 - **Planned:** 3
 - **Idea:** 3
 

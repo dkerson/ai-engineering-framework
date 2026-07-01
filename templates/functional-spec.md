@@ -1,4 +1,4 @@
-<!-- Template: functional-spec — Personal AI Framework -->
+<!-- Template: functional-spec — AI Engineering Framework -->
 
 # Especificação Funcional
 

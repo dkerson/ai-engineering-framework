@@ -1,4 +1,4 @@
-<!-- Template: bug-report — Personal AI Framework -->
+<!-- Template: bug-report — AI Engineering Framework -->
 
 # Bug Report
 

@@ -47,9 +47,21 @@ Tarefa concluída → WC descartado
 - Mensagem de modelo deve usar:
 - Modelo atual detectavel: [sim|nao|parcial]
 
+### Execution Target Map
+- Workspace/repo:
+- Projeto/sistema:
+- Ambiente: [local|dev|homolog|producao|nao aplicavel|a confirmar]
+- Banco(s):
+- Servicos/APIs:
+- Frontend/rotas/telas:
+- Arquivos/areas candidatas:
+- Fora de escopo:
+- Campos a confirmar apos aprovacao:
+
 ### Model Routing
 - Superficie:
 - Modelo recomendado:
+- Raciocinio recomendado:
 - Modelo atual: [detectado|assumido|nao detectavel]
 - Motivo:
 - Gatilhos de escalonamento:
@@ -67,6 +79,25 @@ Tarefa concluída → WC descartado
 - Confidence:
 - Evidence:
 
+### Execution Memory
+- Query:
+- Sources checked:
+- Similar missions:
+- Reusable decisions:
+- Known failed hypotheses:
+- Applicable patterns:
+- Anti-patterns to avoid:
+- Impact on plan:
+- Confidence: [Alta|Media|Baixa]
+
+### Evidence Anchoring
+- Observed facts:
+- Inferences:
+- Hypotheses:
+- Evidence gaps:
+- Required validation:
+- Confidence:
+
 ### Attempt Ledger (quando houver retry/falha)
 - Attempt #:
 - Hypothesis:
@@ -77,6 +108,15 @@ Tarefa concluída → WC descartado
 - Same as previous attempt: [yes/no]
 - Decision: [continue|change hypothesis|escalate|ask user|stop]
 - Discarded hypotheses:
+
+### Post-Mission Evaluation
+- Outcome: [Done|Partial|Blocked|Recommendation-only]
+- Quality confidence: [Alta|Media|Baixa]
+- Validation fit: [Sufficient|Partial|Not run|Not applicable]
+- Token efficiency: [Good|Acceptable|Waste signal]
+- Reusable learning:
+- Memory index update: [yes/no + motivo]
+- Promotion candidate: [yes/no]
 
 ### Regression Boundary (quando alterar tela/rota/API/compartilhado)
 - Target surface:
@@ -239,8 +279,12 @@ Tarefa concluída → WC descartado
 | Classificar hardcode por categoria e destino | Manter valor variavel fixo no codigo |
 | Usar seed idempotente para defaults de produto | Usar AddRange/HasData cego para dados configuraveis |
 | Registrar superficie e confianca | Afirmar Cursor/Codex sem evidencia |
+| Declarar Execution Target Map antes da aprovacao | Pedir "pode seguir" sem dizer onde vai atuar |
 | Registrar modelo recomendado e aprovacao | Executar task sem plano/modelo aprovados |
 | Registrar execution metrics quando aplicavel | Converter unidades estimadas em tokens reais |
+| Consultar Execution Memory antes de task nao trivial | Ler ledgers longos quando o indice responde |
+| Ancorar conclusoes em evidencia | Declarar causa raiz sem prova |
+| Fazer Post-Mission Evaluation curta | Registrar aprendizado sem sinal reutilizavel |
 
 ## Quando pular leitura
 

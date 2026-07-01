@@ -102,9 +102,11 @@ Use o caminho completo NLME/SIL/COS quando houver ambiguidade, estrategia, multi
 
 Antes de executar task com leitura ampla, comandos, edicao ou validacao, o Orchestrator deve detectar superficie, apresentar banner, plano, modelo recomendado e pergunta de aprovacao conforme `rules/pre-execution-gate.md`, `rules/surface-routing.md`, `rules/model-routing.md` e `rules/execution-banner.md`. Depois disso deve parar ate aprovacao explicita.
 
-Padrao economico: Cursor `Composer 2.5 Standard`; Codex `gpt-5.4-mini`.
+Padrao economico: Cursor `Composer 2.5 Standard`; Codex `GPT-5.4-Mini` com raciocínio `Baixa` ou `Média`.
 
-Escalar para Cursor `Auto` ou Codex `gpt-5.5` quando houver auth, autorizacao, banco, seguranca, producao, integracao critica, arquitetura, refatoracao multi-modulo, dados fiscais/financeiros ou falha repetida.
+Usar Codex `GPT-5.4` com raciocínio `Média` ou `Alta` para features medias, bugs com contexto, backend/API localizado e implementacoes sem alto risco.
+
+Escalar para Cursor `Auto` ou Codex `GPT-5.5` com raciocínio `Alta` ou `Altíssimo` quando houver auth, autorizacao, banco, seguranca, producao, integracao critica, arquitetura, RAG, refatoracao multi-modulo, dados fiscais/financeiros ou falha repetida.
 
 Se o gatilho de escalonamento surgir durante a execucao, pausar, explicar o motivo e pedir ao usuario para alterar o modelo na superficie ativa antes de continuar.
 

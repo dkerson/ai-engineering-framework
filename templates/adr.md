@@ -1,4 +1,4 @@
-<!-- Template: adr — Personal AI Framework -->
+<!-- Template: adr — AI Engineering Framework -->
 
 # ADR-[NNN]: [Título]
 
