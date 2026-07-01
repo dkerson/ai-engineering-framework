@@ -6,6 +6,10 @@
 
 Antes dos modos operacionais, o Strategic Intelligence Layer pode escolher um Mission Mode: Analysis, Planning, Implementation, Validation, Continuous Improvement, Innovation, Emergency ou Learning. O Mission Mode não substitui Fast/Standard/Review/Council; ele orienta o Orchestrator.
 
+Quando a execucao acontecer no Codex, selecionar tambem o modelo e o nivel de raciocinio conforme
+`../docs/CODEX_MODEL_SELECTION.md`. O modo operacional define o processo; o modelo Codex define a
+capacidade de raciocinio disponivel para executar esse processo com seguranca.
+
 ```mermaid
 flowchart TB
     U[Pedido do usuário] --> O[Orchestrator]
@@ -88,6 +92,17 @@ Orchestrator → Technical Council → Decision Maker → Implementation Planner
 | Módulos | 1 | 1–2 | 2–3 | >3 |
 | Produção | Não | Não | Possível | Sim/incidente |
 | Auth/DB/Pagamento | Não | Não | Sim | Sim + conselho |
+
+## Matriz Codex
+
+| Modo | Modelo sugerido | Raciocinio sugerido |
+|------|-----------------|---------------------|
+| Fast | `GPT-5.3-Codex-Spark` ou `GPT-5.4-Mini` | `Baixa` |
+| Standard | `GPT-5.4-Mini` ou `GPT-5.4` | `Media` |
+| Review | `GPT-5.4` ou `GPT-5.5` | `Alta` |
+| Technical Council | `GPT-5.5` | `Altissimo` |
+
+Para Umbra RAG, usar `GPT-5.5` com `Alta` durante implementacao e `Altissimo` para decisoes de arquitetura, seguranca, banco, permissoes, deploy ou producao.
 
 ## Escalonamento
 

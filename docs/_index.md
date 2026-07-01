@@ -4,6 +4,7 @@
 |-----------|-----------|
 | [../README.md](../README.md) | Visão geral do framework |
 | [../AGENTS.md](../AGENTS.md) | Bootstrap para agentes |
+| [CODEX_MODEL_SELECTION.md](CODEX_MODEL_SELECTION.md) | Selecao de modelo e raciocinio no Codex |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | Arquitetura, camadas, responsabilidades |
 | [Framework-Operating-System.md](Framework-Operating-System.md) | Sistema operacional e governanca do framework |
 | [Infrastructure-Intelligence.md](Infrastructure-Intelligence.md) | Projetos, repositorios, bancos, servicos, APIs, MCPs e ambientes |

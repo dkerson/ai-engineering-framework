@@ -18,10 +18,13 @@ Default model recommendation for cost-sensitive usage:
 
 ```text
 Cursor: Composer 2.5 Standard -> Auto -> stronger explicit model
-Codex: gpt-5.4-mini -> gpt-5.5 -> latency-focused model when justified
+Codex: GPT-5.4-Mini -> GPT-5.5 -> GPT-5.3-Codex-Spark when latency is explicitly more important than depth
 ```
 
-The Orchestrator must detect the active surface, present the execution banner, recommended model and approval question, then stop until explicit approval before running an executable task.
+The Orchestrator must detect the active surface, choose the cheapest safe model/reasoning
+pair using `docs/CODEX_MODEL_SELECTION.md` and `rules/model-routing.md`, present the
+execution banner, recommended model and approval question, then stop until explicit
+approval before running an executable task.
 
 ## Fast Path
 
@@ -48,7 +51,13 @@ Use the full NLME/SIL/COS path when the request is:
 - Risky: auth, security, database, payments, production or architecture.
 - A broad modernization, audit, roadmap or transformation.
 
-Full Mission Path must include an explicit model recommendation. Prefer `Auto` when the task has high ambiguity, auth/security/database/production risk, multi-domain scope or repeated failure risk.
+Full Mission Path must include an explicit model recommendation. Prefer `Auto` on Cursor
+when the task has high ambiguity, auth/security/database/production risk, multi-domain
+scope or repeated failure risk.
+
+For high-risk full missions in Codex, prefer `GPT-5.5` with `Alta` reasoning. Use
+`Altissimo` for Technical Council, production, security, database migrations, RAG
+architecture, permission-aware retrieval or deploy decisions.
 
 ## Hard Guards
 

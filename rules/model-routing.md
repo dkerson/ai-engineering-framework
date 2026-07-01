@@ -17,7 +17,7 @@ Use a recomendacao padrao da superficie detectada:
 | Superficie | Padrao economico | Escalonamento |
 |------------|------------------|---------------|
 | Cursor | `Composer 2.5 Standard` | `Auto` ou modelo forte disponivel |
-| Codex | `gpt-5.4-mini` | `gpt-5.5` |
+| Codex | `GPT-5.4-Mini` | `GPT-5.5` |
 | Desconhecida | informar opcoes Cursor e Codex | perguntar se a escolha bloquear execucao |
 
 Use `Auto` ou modelo mais forte somente quando o risco, a ambiguidade ou a chance de retrabalho justificar o custo adicional.
@@ -33,7 +33,7 @@ Antes de executar qualquer task, o Orchestrator deve apresentar:
 
 ## Modelo recomendado
 - Superficie: [Cursor | Codex | Desconhecida]
-- Modelo: [Composer 2.5 Standard | Auto | gpt-5.4-mini | gpt-5.5 | modelo forte especifico]
+- Modelo: [Composer 2.5 Standard | Auto | GPT-5.4-Mini | GPT-5.4 | GPT-5.5 | modelo forte especifico]
 - Motivo: [custo, risco, complexidade, velocidade ou confiabilidade]
 - Escalonamento previsto: [quando mudar de modelo durante a execucao]
 
@@ -46,18 +46,19 @@ A execucao so continua apos aprovacao explicita do usuario depois do plano e ban
 
 | Cenario | Cursor | Codex |
 |---------|--------|-------|
-| Pergunta, explicacao, documentacao simples | Composer 2.5 Standard | gpt-5.4-mini |
-| Fast Path, ajuste localizado, label, copy, CSS simples | Composer 2.5 Standard | gpt-5.4-mini |
-| Analise inicial de bug ou feature pequena | Composer 2.5 Standard | gpt-5.4-mini |
-| Frontend simples ou componente isolado | Composer 2.5 Standard | gpt-5.4-mini |
-| Backend simples, DTO, controller ou service localizado | Composer 2.5 Standard | gpt-5.4-mini |
-| Auth, autorizacao, permissoes, tenants, claims | Auto | gpt-5.5 |
-| Banco, migration, query critica, dados financeiros/fiscais | Auto | gpt-5.5 |
-| Integracao externa, webhook, pagamento, SEFAZ, marketplace | Auto | gpt-5.5 |
-| Deploy, producao, incidente, Docker/infra critica | Auto | gpt-5.5 |
-| Refatoracao multi-modulo ou arquitetura | Auto | gpt-5.5 |
-| 2 falhas com a mesma hipotese ou causa incerta | Auto | gpt-5.5 |
-| Latencia humana mais importante que custo | Auto ou modo rapido explicitamente justificado | gpt-5.3-codex-spark se disponivel, senao gpt-5.5 |
+| Pergunta, explicacao, documentacao simples | Composer 2.5 Standard | `GPT-5.4-Mini` |
+| Fast Path, ajuste localizado, label, copy, CSS simples | Composer 2.5 Standard | `GPT-5.4-Mini` |
+| Analise inicial de bug ou feature pequena | Composer 2.5 Standard | `GPT-5.4-Mini` ou `GPT-5.4` |
+| Frontend simples ou componente isolado | Composer 2.5 Standard | `GPT-5.4-Mini` |
+| Backend simples, DTO, controller ou service localizado | Composer 2.5 Standard | `GPT-5.4` |
+| Auth, autorizacao, permissoes, tenants, claims | Auto | `GPT-5.5` |
+| Banco, migration, query critica, dados financeiros/fiscais | Auto | `GPT-5.5` |
+| Integracao externa, webhook, pagamento, SEFAZ, marketplace | Auto | `GPT-5.5` |
+| Deploy, producao, incidente, Docker/infra critica | Auto | `GPT-5.5` |
+| Refatoracao multi-modulo ou arquitetura | Auto | `GPT-5.5` |
+| RAG, chat com base de conhecimento, pgvector, Azure OpenAI | Auto | `GPT-5.5` |
+| 2 falhas com a mesma hipotese ou causa incerta | Auto | `GPT-5.5` |
+| Latencia humana mais importante que custo | Auto ou modo rapido explicitamente justificado | `GPT-5.3-Codex-Spark` se disponivel, senao `GPT-5.4-Mini` |
 
 ## Escalonamento durante a execucao
 
@@ -67,7 +68,7 @@ Se durante a task surgir um gatilho de escalonamento, o Orchestrator deve parar 
 Identifiquei necessidade de trocar o modelo.
 
 - Modelo atual assumido: [modelo informado/assumido]
-- Modelo recomendado agora: [Auto | gpt-5.5 | modelo forte]
+- Modelo recomendado agora: [Auto | GPT-5.5 | modelo forte]
 - Motivo: [risco/ambiguidade/retry/contexto]
 - Proxima acao apos a troca: [...]
 
